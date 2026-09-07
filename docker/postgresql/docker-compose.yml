@@ -15,6 +15,7 @@ services:
 
     volumes:
       - postgres_data:/var/lib/postgresql
+      - ${HOST_PROJECT_PATH}:/data
 
 volumes:
   postgres_data:
