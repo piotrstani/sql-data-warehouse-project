@@ -5,6 +5,7 @@ import great_expectations as gx
 
 load_dotenv()
 
+#--------------------------------------------------------------------------------------------------CONNECTION
 CONN_DATABASE = 'DataWarehouse'
 #CONN_DATABASE = os.environ['POSTGRES_DB']
 
@@ -20,6 +21,7 @@ connection_string = (
 #Inicjalizacja GX
 context = gx.get_context()
 
+#--------------------------------------------------------------------------------------------------SOURCE
 #Dodanie PostgreSQL jako Data Source
 datasource = context.data_sources.add_postgres(
     name="DataWarehouse",
@@ -28,6 +30,7 @@ datasource = context.data_sources.add_postgres(
 
 print(f"\ncrm_cust_info----------------------------------------------------------------------------------------------")
 
+#--------------------------------------------------------------------------------------------------ASSET
 #Dodanie tabeli jako Data Asset
 asset_crm_cust_info = datasource.add_table_asset(
     name="crm_cust_info",
@@ -35,17 +38,15 @@ asset_crm_cust_info = datasource.add_table_asset(
     schema_name="bronze",
 )
 
+#--------------------------------------------------------------------------------------------------BATCH
 #Utworzenie Batch Definition
 batch_definition_crm_cust_info = asset_crm_cust_info.add_batch_definition_whole_table(
     name="crm_cust_info_whole_table"
 )
-
 #Pobranie Batch
 batch_crm_cust_info = batch_definition_crm_cust_info.get_batch()
 
-
-#Utworzenie Expectation
-
+#---------------------------------------------------------------------------------------------EXPECTATION
 # Expectation not_null
 expectation_crm_cust_info_cst_id_not_null = gx.expectations.ExpectColumnValuesToNotBeNull(
     column="cst_id",
@@ -64,6 +65,7 @@ expectation_crm_cust_info_cst_id_unique = gx.expectations.ExpectColumnValuesToBe
     }
 )
 
+#---------------------------------------------------------------------------------------------SUITE
 # Expectation Suite
 suite_crm_cust_info = gx.ExpectationSuite(
     name="crm_cust_info_suite"
@@ -76,6 +78,7 @@ suite_crm_cust_info.add_expectation(expectation_crm_cust_info_cst_id_unique)
 # Zapisanie Suite
 context.suites.add(suite_crm_cust_info)
 
+#---------------------------------------------------------------------------------------------VALIDATION
 # Validation Definition
 validation_definition_cust_info = gx.ValidationDefinition(
     name="crm_cust_info_validation",
@@ -83,6 +86,7 @@ validation_definition_cust_info = gx.ValidationDefinition(
     suite=suite_crm_cust_info,
 )
 
+#---------------------------------------------------------------------------------------------RESULTS
 results_cust_info = validation_definition_cust_info.run()
 print(results_cust_info)
 
