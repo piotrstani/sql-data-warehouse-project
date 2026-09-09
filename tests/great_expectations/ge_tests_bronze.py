@@ -20,6 +20,8 @@ connection_string = (
 # 1. Inicjalizacja GX
 context = gx.get_context()
 
+
+
 # 2. Dodanie PostgreSQL jako Data Source
 datasource = context.data_sources.add_postgres(
     name="DataWarehouse",
@@ -43,8 +45,10 @@ batch_definition_crm_cust_info = asset_crm_cust_info.add_batch_definition_whole_
 # 5. Pobranie Batch
 batch_crm_cust_info = batch_definition_crm_cust_info.get_batch()
 
+
 # 6. Utworzenie Expectation
 
+# Expectation not_null
 expectation_crm_cust_info_cst_id_not_null = gx.expectations.ExpectColumnValuesToNotBeNull(
     column="cst_id",
     severity= "critical", #info,warning, critical
@@ -52,9 +56,8 @@ expectation_crm_cust_info_cst_id_not_null = gx.expectations.ExpectColumnValuesTo
         "description": "Customer ID cannot be NULL"
     }
 )
-result_crm_cust_info_cst_id_not_null = batch_crm_cust_info.validate(expectation_crm_cust_info_cst_id_not_null)
-print(result_crm_cust_info_cst_id_not_null)
 
+# Expectation unique
 expectation_crm_cust_info_cst_id_unique = gx.expectations.ExpectColumnValuesToBeUnique(
     column="cst_id",
     severity="warning",  # info,warning, critical
@@ -62,12 +65,32 @@ expectation_crm_cust_info_cst_id_unique = gx.expectations.ExpectColumnValuesToBe
         "description": "Customer ID should be UNIQUE"
     }
 )
-result_crm_cust_info_cst_id_unique = batch_crm_cust_info.validate(expectation_crm_cust_info_cst_id_unique)
-print(result_crm_cust_info_cst_id_unique)
+
+# Expectation Suite
+suite_crm_cust_info = gx.ExpectationSuite(
+    name="crm_cust_info_suite"
+)
+
+# Dodanie Expectations do Suite
+suite_crm_cust_info.add_expectation(expectation_crm_cust_info_cst_id_not_null)
+suite_crm_cust_info.add_expectation(expectation_crm_cust_info_cst_id_unique)
+
+# Zapisanie Suite
+context.suites.add(suite_crm_cust_info)
+
+# Validation Definition
+validation_definition_cust_info = gx.ValidationDefinition(
+    name="crm_cust_info_validation",
+    data=batch_definition_crm_cust_info,
+    suite=suite_crm_cust_info,
+)
+
+results_cust_info = validation_definition_cust_info.run()
+
+print(results_cust_info)
 
 
 print(f"\ncrm_prd_info----------------------------------------------------------------------------------------------")
-
 asset_crm_prd_info = datasource.add_table_asset(
     name="crm_prd_info",
     table_name="crm_prd_info",
@@ -90,6 +113,27 @@ expectation_crm_prd_info_prd_id_not_null = gx.expectations.ExpectColumnValuesToN
         "description": "Product ID is NULL"
     }
 )
-result_crm_prd_info_prd_id_not_null = batch_crm_prd_info_table.validate(expectation_crm_prd_info_prd_id_not_null)
-print(result_crm_prd_info_prd_id_not_null)
+
+suite_crm_prd_info_prd= gx.ExpectationSuite(
+    name="crm_prd_info_suite"
+)
+
+
+# Dodanie Expectations do Suite
+suite_crm_prd_info_prd.add_expectation(expectation_crm_prd_info_prd_id_not_null)
+
+# Zapisanie Suite
+context.suites.add(suite_crm_prd_info_prd)
+
+# Validation Definition
+validation_definition_crm_prd_info = gx.ValidationDefinition(
+    name="crm_prd_info_validation",
+    data=batch_definition_crm_prd_info,
+    suite=suite_crm_prd_info_prd,
+)
+
+# Jedna walidacja całego Suite
+results_crm_prd_info = validation_definition_crm_prd_info.run()
+
+print(results_crm_prd_info)
 
