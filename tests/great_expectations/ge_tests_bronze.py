@@ -17,12 +17,10 @@ connection_string = (
     f"{CONN_DATABASE}"
 )
 
-# 1. Inicjalizacja GX
+#Inicjalizacja GX
 context = gx.get_context()
 
-
-
-# 2. Dodanie PostgreSQL jako Data Source
+#Dodanie PostgreSQL jako Data Source
 datasource = context.data_sources.add_postgres(
     name="DataWarehouse",
     connection_string=connection_string,
@@ -30,23 +28,23 @@ datasource = context.data_sources.add_postgres(
 
 print(f"\ncrm_cust_info----------------------------------------------------------------------------------------------")
 
-# 3. Dodanie tabeli jako Data Asset
+#Dodanie tabeli jako Data Asset
 asset_crm_cust_info = datasource.add_table_asset(
     name="crm_cust_info",
     table_name="crm_cust_info",
     schema_name="bronze",
 )
 
-# 4. Utworzenie Batch Definition
+#Utworzenie Batch Definition
 batch_definition_crm_cust_info = asset_crm_cust_info.add_batch_definition_whole_table(
     name="crm_cust_info_whole_table"
 )
 
-# 5. Pobranie Batch
+#Pobranie Batch
 batch_crm_cust_info = batch_definition_crm_cust_info.get_batch()
 
 
-# 6. Utworzenie Expectation
+#Utworzenie Expectation
 
 # Expectation not_null
 expectation_crm_cust_info_cst_id_not_null = gx.expectations.ExpectColumnValuesToNotBeNull(
@@ -86,26 +84,23 @@ validation_definition_cust_info = gx.ValidationDefinition(
 )
 
 results_cust_info = validation_definition_cust_info.run()
-
 print(results_cust_info)
 
 
 print(f"\ncrm_prd_info----------------------------------------------------------------------------------------------")
+
 asset_crm_prd_info = datasource.add_table_asset(
     name="crm_prd_info",
     table_name="crm_prd_info",
     schema_name="bronze",
 )
 
-# 4. Utworzenie Batch Definition
 batch_definition_crm_prd_info= asset_crm_prd_info.add_batch_definition_whole_table(
     name="crm_prd_info_table"
 )
 
-# 5. Pobranie Batch
 batch_crm_prd_info_table = batch_definition_crm_prd_info.get_batch()
 
-# 6. Utworzenie Expectation
 expectation_crm_prd_info_prd_id_not_null = gx.expectations.ExpectColumnValuesToNotBeNull(
     column="prd_id",
     severity= "info", #info,warning, critical
@@ -118,22 +113,17 @@ suite_crm_prd_info_prd= gx.ExpectationSuite(
     name="crm_prd_info_suite"
 )
 
-
-# Dodanie Expectations do Suite
 suite_crm_prd_info_prd.add_expectation(expectation_crm_prd_info_prd_id_not_null)
 
-# Zapisanie Suite
 context.suites.add(suite_crm_prd_info_prd)
 
-# Validation Definition
 validation_definition_crm_prd_info = gx.ValidationDefinition(
     name="crm_prd_info_validation",
     data=batch_definition_crm_prd_info,
     suite=suite_crm_prd_info_prd,
 )
 
-# Jedna walidacja całego Suite
-results_crm_prd_info = validation_definition_crm_prd_info.run()
 
+results_crm_prd_info = validation_definition_crm_prd_info.run()
 print(results_crm_prd_info)
 
