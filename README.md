@@ -1,5 +1,5 @@
 
-
+Oparty na kontenerach projekt hurtowni danych. Airflow jako orkiestrator procesu ETL (Python) i walidacji (Great Expectations) przed zapisaniem czystych danych w architekturze Medallion na PostgreSQL.
 
 1. **DB**:PostgreSQL
 	 - [x] docker container
