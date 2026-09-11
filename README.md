@@ -3,127 +3,80 @@ Oparty na kontenerach projekt hurtowni danych. Airflow jako orkiestrator procesu
 
 1. **DB**:PostgreSQL
 	 - [x] docker container
-2. **Bronze Layer**
+2. **BRONZE Layer**
 	 - [x] 'pandas source analytics'
 	 - [x] bronze ddl
-3. **ETL**:plpgsql/Python
+3. **Data Ingestion**: plpgsql/Python
 	 - [x] plpgsql procedure
 	 - [ ] Python container
-	 - [ ] Python ETL :sign
+	 - [ ] Python Ingestion COPY 
 4. **DQ**:
+     - dbt
+     - [ ] SQL transformations (SILVER)   
+       - [ ] testy: 
+         - customer_id NOT NULL,  
+         - customer_id UNIQUE,
+         - FK istnieje
+       - [ ] Docker dla dbt       
+       - [ ] SQL transformations (SILVER)   
+       - ❓❓❓
+       - [ ] zależności między modelami: relationships ❓
+       - [ ] dokumentacja ❓
+       - [ ] lineage ❓
 	 - Great Expectations
-		 - [x] localhost
-		 - [ ] conteiner
-	 - BDD, Hybrid, PyTest, Allure ❓
-	 - dbt	❓
+       - [x] localhost
+       - [ ] conteiner
+       - [ ] zaawansowane kontrole
+         - czy liczba rekordów nie spadła nagle o 80%?
+         - czy dane są wystarczająco świeże?
+         - czy schema nie zmieniła się niespodziewanie?
+       
 5. **Airflow**
 
-**Architektura**:
+**Docelowa architektura**:
 ```
-                    ┌─────────────────────┐
-                    │       AIRFLOW       │
-                    │                     │
-                    │       DAG           │
-                    └──────────┬──────────┘
-                               │
-                    uruchamia zadania
-                               │
-              ┌────────────────┴────────────────┐
-              │                                 │
-              ▼                                 ▼
-      ┌─────────────────┐              ┌─────────────────┐
-      │     PYTHON      │              │     PYTHON      │
-      │                 │              │                 │
-      │ ETL             │              │ Great           │
-      │                 │              │ Expectations    │
-      │                 │              │                 │
-      └────────┬────────┘              └────────┬────────┘
-               │                                │
-               │                                │
-               └──────────────┬─────────────────┘
-                              │
-                              ▼
-                    ┌──────────────────┐
-                    │    POSTGRES      │
-                    │                  │
-                    │  DataWarehouse   │
-                    │                  │
-                    │ bronze           │
-                    │ silver           │
-                    │ gold             │
-                    └──────────────────┘
+                         ┌──────────────────────┐
+                         │       AIRFLOW        │
+                         │──────────────────────│
+                         │     orchestration    │
+                         └──────────┬───────────┘
+                                    │
+                ┌───────────────────────────────────┐
+                │                                   │
+                ▼                                   ▼
+        ┌──────────────┐                    ┌────────────────┐
+        │    PYTHON    │                    │      DBT       │
+        │────pandas────│                    │────────────────│
+        │analysis      │                    │transform       │
+        │visualization │                    │pipeline testing│
+        │──────GX──────│                    │docs            │ 
+        │observability │                    │lineage         │  
+        │advanced DQ   │                    │                │             
+        └──────┬───────┘                    └───────┬────────┘
+               │                                    │
+               └───────────────────┬────────────────┘
+                                   ▼
+                         ┌──────────────────┐
+                         │    POSTGRESQL    │
+                         │──────────────────│
+                         │     Bronze       │
+                         │       ↓          │
+                         │     Silver       │
+                         │       ↓          │
+                         │      Gold        │
+                         └──────────────────┘
 ```
-
-
 ---
-**Docker**
-```
-                    Docker Compose
-                         │
-          ┌──────────────┼──────────────┐
-          │              │              │
-          ▼              ▼              ▼
-     PostgreSQL        Python         Airflow
-      container       container       container
-          │              │              │
-          │              │              │
-          └──────────────┴──────────────┘
-                  Docker network
 
-```
+|Komponent|Odpowiedzialność|
+|---|---|
+|PostgreSQL|Storage|
+|Python / ingestion|Load|
+|`COPY`|CSV → Bronze|
+|dbt|Transformacje + standardowe testy + dokumentacja + lineage|
+|Python + GX|analiza + zaawansowana kontrola jakości + obserwowalność|
+|Airflow|Orkiestracja|
+|PyCharm|development|
 
----
-**Postgres**
-Przechowuje:
-```
-DataWarehouse
-├── bronze
-├── silver
-└── gold
-```
 
----
-**Python**
-```
-ETL / ELT
-  ↓
-import danych
-  ↓
-transformacje  --? 
-  ↓
-Great Expectations
-  ↓
-Data Quality
-```
-
----
-**Great Expectations**
-```
-Suite
-  ↓
-ValidationDefinition
-  ↓
-context.validation_definitions
-  ↓
-Checkpoint
-  ↓
-context.checkpoints
-  ↓
-run()
-```
-
----
-**Airflow**
-```
-Airflow DAG
-   │
-   ├── uruchom ETL Python
-   │
-   ├── czekaj na zakończenie
-   │
-   ├── uruchom Data Quality
-   │
-   └── jeśli DQ OK → następny etap
-       jeśli DQ FAIL → zatrzymaj DAG
-```
 
