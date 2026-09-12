@@ -8,10 +8,10 @@ python_user:  python analytics_user
  */
 
 
-/*----------------------------LOW-----------------------------------------------
 --user
 CREATE USER dwh_user1 WITH PASSWORD 'user1_password';
 
+/*----------------------------LOW-----------------------------------------------
 --databse
 -- Tylko prawo do połączenia z bazą (zamiast ALL PRIVILEGES ON DATABASE)
 GRANT CONNECT ON DATABASE "DataWarehouse" TO dwh_user1;
