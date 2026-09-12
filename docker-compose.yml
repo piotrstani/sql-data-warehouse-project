@@ -1,0 +1,40 @@
+name: sql-data-warehouse
+
+services:
+  postgres:
+    image: postgres:18.1-alpine
+    container_name: sql-data-warehouse-postgres
+
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql
+      - ${HOST_PROJECT_PATH}:/data
+
+  python_dev:
+      build:
+        # Wskazujemy folder, w którym leżą Dockerfile i requirements.txt
+        context: ./docker/python
+        dockerfile: dockerfile
+      container_name: sql-data-warehouse-python
+      depends_on:
+        - postgres
+      environment:
+        # Przekazujemy zmienne dla Pythona
+        - DB_HOST=postgres
+        - DB_PORT=5432
+        - DB_NAME=${POSTGRES_DB}
+        - DB_USER=${APP_USER}
+        - DB_PASSWORD=${APP_PASSWORD}
+      volumes:
+        # Montujemy cały Twój folder projektu z kodem Pycharm do /app
+        - .:/app
+      command: tail -f /dev/null
+volumes:
+  postgres_data:
