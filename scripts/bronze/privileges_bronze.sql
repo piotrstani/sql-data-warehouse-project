@@ -1,3 +1,20 @@
+
+/*
+SELECT datname
+FROM pg_database
+ORDER BY datname;
+
+SELECT current_database(),
+       current_user,
+       inet_server_addr(),
+       inet_server_port(),
+       version();
+
+SELECT schema_name
+FROM information_schema.schemata
+ORDER BY schema_name;
+  */
+
 --user
 --ALTER USER moj_user WITH SUPERUSER;
 CREATE USER dwh_user1 WITH PASSWORD 'user1_password';
