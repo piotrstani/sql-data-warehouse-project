@@ -44,12 +44,4 @@ with pd.option_context('display.max_columns', None, 'display.width', 1000):
     print (f"\n# 6. Sprawdzenie, jakie typy pandas zgadł domyślnie")
     print(df.dtypes)
 
-    # 2. Usuwanie duplikatów całych wierszy
-    #df = df.drop_duplicates()
-
-    # 3. Zastępowanie braków danych (np. NULL) domyślną wartością
-    #df["cst_gndr"] = df["cst_gndr"].fillna(0.0)
-
-    # 4. Asertywna weryfikacja unikalności klucza przed wysłaniem do bazy
-    assert df['cst_id'].is_unique, "Błąd: Znaleziono zduplikowane cst_id!"
 
