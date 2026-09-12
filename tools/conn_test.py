@@ -13,7 +13,7 @@ connection_string = (
     f"postgresql+psycopg2://"
     f"{os.environ['POSTGRES_USER']}:"
     f"{os.environ['POSTGRES_PASSWORD']}@"
-    f"{os.environ.get('POSTGRES_HOST', 'localhost')}:"
+    f"{os.environ.get('POSTGRES_HOST', 'postgres')}:"
     f"{os.environ.get('POSTGRES_PORT', '5432')}/"
     f"{CONN_DATABASE}"
 )
