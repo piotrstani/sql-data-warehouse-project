@@ -1,5 +1,5 @@
 import os
-
+import sys # Dodaj na górze pliku
 from dotenv import load_dotenv
 import great_expectations as gx
 
@@ -146,3 +146,10 @@ context.checkpoints.add(checkpoint_bronze)
 #---------------------------------------------------------------------------------------------RESULT
 results_bronze = checkpoint_bronze.run()
 print(results_bronze)
+
+# Weryfikacja sukcesu Checkpointu dla Airflow
+if not results_bronze.success:
+    print("❌ Błąd walidacji Data Quality na warstwie Bronze!")
+    sys.exit(1) # Rzuca kod błędu, który Airflow zinterpretuje jako "Task Failed"
+else:
+    print("✅ Wszystkie testy Great Expectations zakończone sukcesem.")
