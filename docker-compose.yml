@@ -47,8 +47,14 @@ services:
       - "8080:8080" # Port dla interfejsu graficznego
     environment:
       - AIRFLOW__CORE__LOAD_EXAMPLES=False # Wyłączamy domyślne, śmieciowe DAG-i od Airflow
+      # Automatyczna instalacja pakietów przy starcie kontenera do projektów szkoleniowych
+      # [!] wydłuża start kontenera i zależy od dostępności zewnętrznych repozytoriów PyPI
+      # Zamiast tego buduje się własny obraz (Custom Image) oparty na bazowym obrazie Airflow przy użyciu dedykowanego pliku Dockerfile.
+      - _PIP_ADDITIONAL_REQUIREMENTS=great_expectations python-dotenv psycopg2-binary SQLAlchemy pandas
     volumes:
       - ./dags:/opt/airflow/dags  # Montujemy folder z naszymi DAG-ami
+      - ./tests:/opt/airflow/tests
+      - ./.env:/opt/airflow/.env
     command: standalone
 volumes:
   postgres_data:
