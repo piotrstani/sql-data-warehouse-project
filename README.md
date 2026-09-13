@@ -8,31 +8,40 @@ Oparty na kontenerach projekt hurtowni danych. Airflow jako orkiestrator procesu
 	 - [x] bronze ddl
 3. **Data Ingestion**: plpgsql/Python
 	 - [x] plpgsql procedure
-	 - [ ] Python container
-	 - [ ] Python Ingestion COPY 
-4. **DQ**:
+	 - [x] Python container
+	 - [x] Airflow Ingestion COPY 
+4. **SILVER Layer**
+	 - [x] silver ddl
+5. **DQ**:
      - dbt
+     - [ ] Docker dla dbt
      - [ ] SQL transformations (SILVER)   
        - [ ] testy: 
          - customer_id NOT NULL,  
          - customer_id UNIQUE,
          - FK istnieje
-       - [ ] Docker dla dbt       
-       - [ ] SQL transformations (SILVER)   
        - ❓❓❓
        - [ ] zależności między modelami: relationships ❓
        - [ ] dokumentacja ❓
        - [ ] lineage ❓
 	 - Great Expectations
        - [x] localhost
-       - [ ] conteiner
+       - [ ] bronze Ingestion
        - [ ] zaawansowane kontrole
          - czy liczba rekordów nie spadła nagle o 80%?
          - czy dane są wystarczająco świeże?
          - czy schema nie zmieniła się niespodziewanie?
        
-5. **Airflow**
-
+6. **Airflow**
+ - [x] Airflow conteiner
+ - [x] Airflow config 
+ - [ ] DAG bronze plpgsql (CALL bronze.load_bronze()) 
+      - [ ] #TODO osobne zadania truncate_tables, load_crm_cust_info, ...  Lista tabel i równoległe zadania (Dynamic Task Mapping)
+      - [!] RAISE NOTICE - nie logowany do interfejsu Airflow, werfikacja w logach bazy danych
+      - [!] przy fail **Retry** uruchomi to zadanie ponownie,
+      - **Baza danych tylko liczy i przechowuje, a orkiestrator (Airflow) zarządza czasem, logiką i logowaniem**
+ - [ ] DAG bronze great_expectations
+ _-_ 
 **Docelowa architektura**:
 ```
                          ┌──────────────────────┐
