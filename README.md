@@ -28,7 +28,7 @@ Oparty na kontenerach projekt hurtowni danych. Airflow jako orkiestrator procesu
        - [x] localhost
        - [x] bronze Ingestion Dane [!] dane przepuszczane przez warstwę Bronze, czyszczenie na warstwie Silver za pomocą dbt
        - [x] logowanie na Airflow jako warrinning 
-       - [x] wynik GE kopiowana z Airflow do docs/
+       - [x] wynik GE kopiowana z Airflow do docs/gx/run_ts_airflow_id [!]777 aby pychram mógł usuwać 
        - [ ] zaawansowane kontrole
          - czy liczba rekordów nie spadła nagle o 80%?
          - czy dane są wystarczająco świeże?
