@@ -173,7 +173,7 @@ if local_site_url:
 
     # Kopiowanie z /tmp/... do zamontowanego /opt/airflow/docs/gx/run_ts_uuid
     shutil.copytree(site_dir, target_dir, dirs_exist_ok=True)
-    #  Nadanie pełnych uprawnień (rwx) dla wygenerowanego katalogu, aby host mógł swobodnie usuwać te pliki.
+    #[!]Nadanie pełnych uprawnień (rwx) dla wygenerowanego katalogu, TYLKO po to aby PyCharm mógł usuwać te pliki.
     os.system(f"chmod -R 777 {target_dir}")
     print(f"✅ Data Docs zostały wyeksportowane do: {target_dir}")
 
