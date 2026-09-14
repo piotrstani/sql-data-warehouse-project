@@ -1,6 +1,7 @@
 import os
 import shutil #do kopiowania plików
-import sys
+from datetime import datetime
+import uuid
 from dotenv import load_dotenv
 import great_expectations as gx
 
@@ -157,8 +158,13 @@ if local_site_url:
     local_site_path = local_site_url.replace("file://", "")
     site_dir = os.path.dirname(local_site_path)
 
-    # Kopiowanie z /tmp/... do zamontowanego /opt/airflow/docs/gx
-    target_dir = "/opt/airflow/docs/gx"
+    # Generowanie unikalnego podkatalogu: znacznik czasu + 8 znaków losowego ID
+    run_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    short_id = str(uuid.uuid4())[:8]
+
+    # Kopiowanie z /tmp/... do zamontowanego /opt/airflow/docs/gx/run_ts_uuid
+    target_dir = f"/opt/airflow/docs/gx/run_{run_timestamp}_{short_id}"
+    # Kopiowanie plików do nowego katalogu
     shutil.copytree(site_dir, target_dir, dirs_exist_ok=True)
     print(f"✅ Data Docs zostały wyeksportowane do: {target_dir}")
 
