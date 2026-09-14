@@ -55,6 +55,7 @@ services:
       - ./dags:/opt/airflow/dags  # Montujemy folder z naszymi DAG-ami
       - ./tests:/opt/airflow/tests
       - ./.env:/opt/airflow/.env
+      - ./docs:/opt/airflow/docs
     command: standalone
 volumes:
   postgres_data:

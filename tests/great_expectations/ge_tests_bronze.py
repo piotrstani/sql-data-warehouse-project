@@ -1,5 +1,6 @@
 import os
-import sys # Dodaj na górze pliku
+import shutil #do kopiowania plików
+import sys
 from dotenv import load_dotenv
 import great_expectations as gx
 
@@ -27,7 +28,6 @@ datasource = context.data_sources.add_postgres(
     name="DataWarehouse",
     connection_string=connection_string,
 )
-
 
 #----------------------------------------------------------------------------------------------------------crm_cust_info
 
@@ -147,9 +147,27 @@ context.checkpoints.add(checkpoint_bronze)
 results_bronze = checkpoint_bronze.run()
 print(results_bronze)
 
+#Budowanie Data Docs i wyciąganie ich z kontenera
+print("Budowanie dokumentacji HTML Data Docs...")
+site_urls = context.build_data_docs()
+local_site_url = site_urls.get("local_site")
+
+if local_site_url:
+    # Czyszczenie ścieżki z prefiksu i pobranie ścieżki katalogu
+    local_site_path = local_site_url.replace("file://", "")
+    site_dir = os.path.dirname(local_site_path)
+
+    # Kopiowanie z /tmp/... do zamontowanego /opt/airflow/docs/gx
+    target_dir = "/opt/airflow/docs/gx"
+    shutil.copytree(site_dir, target_dir, dirs_exist_ok=True)
+    print(f"✅ Data Docs zostały wyeksportowane do: {target_dir}")
+
 # Weryfikacja sukcesu Checkpointu dla Airflow
 if not results_bronze.success:
     print("❌ Błąd walidacji Data Quality na warstwie Bronze!")
-    sys.exit(1) # Rzuca kod błędu, który Airflow zinterpretuje jako "Task Failed"
+    #Rzuca kod błędu, który Airflow zinterpretuje jako "Task Failed"
+    # Dane pzrepuszczam przez warstwę Bronze, czyszczenie warstwie Silver za pomocą dbt
+    #sys.exit(1)
+
 else:
     print("✅ Wszystkie testy Great Expectations zakończone sukcesem.")

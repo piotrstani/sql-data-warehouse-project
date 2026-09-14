@@ -26,7 +26,9 @@ Oparty na kontenerach projekt hurtowni danych. Airflow jako orkiestrator procesu
        - [ ] lineage ❓
 	 - Great Expectations
        - [x] localhost
-       - [ ] bronze Ingestion
+       - [x] bronze Ingestion Dane [!] dane przepuszczane przez warstwę Bronze, czyszczenie na warstwie Silver za pomocą dbt
+       - [x] logowanie na Airflow jako warrinning 
+       - [x] wynik GE kopiowana z Airflow do docs/
        - [ ] zaawansowane kontrole
          - czy liczba rekordów nie spadła nagle o 80%?
          - czy dane są wystarczająco świeże?
@@ -40,8 +42,8 @@ Oparty na kontenerach projekt hurtowni danych. Airflow jako orkiestrator procesu
       - [!] RAISE NOTICE - nie logowany do interfejsu Airflow, werfikacja w logach bazy danych
       - [!] przy fail **Retry** uruchomi to zadanie ponownie,
       - **Baza danych tylko liczy i przechowuje, a orkiestrator (Airflow) zarządza czasem, logiką i logowaniem**
- - [ ] DAG bronze great_expectations
- _-_ 
+ - [x] DAG bronze great_expectations
+
 **Docelowa architektura**:
 ```
                          ┌──────────────────────┐
