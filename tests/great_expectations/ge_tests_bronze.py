@@ -171,7 +171,7 @@ if local_site_url:
         # Fallback (na wypadek testowego, ręcznego uruchomienia skryptu poza Airflow)
         target_dir = f"/opt/airflow/docs/gx/manual_python_run_{run_timestamp}_none"
 
-    # Kopiowanie z /tmp/... do zamontowanego /opt/airflow/docs/gx/run_ts_uuid
+    # Kopiowanie z /tmp/... do zamontowanego /opt/airflow/docs/gx/run_ts_airflow_id
     shutil.copytree(site_dir, target_dir, dirs_exist_ok=True)
     #[!]Nadanie pełnych uprawnień (rwx) dla wygenerowanego katalogu, TYLKO po to aby PyCharm mógł usuwać te pliki.
     os.system(f"chmod -R 777 {target_dir}")
