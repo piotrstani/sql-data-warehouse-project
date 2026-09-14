@@ -64,7 +64,7 @@ with DAG(
         run_ge_bronze_tests = BashOperator(
         task_id='run_great_expectations_bronze',
         # Uruchamiamy z głównego katalogu kontenera, gdzie znajduje się plik .env
-        bash_command='cd /opt/airflow && python tests/great_expectations/ge_tests_bronze.py',
+        bash_command='export AIRFLOW_RUN_ID={{ run_id }} && cd /opt/airflow && python tests/great_expectations/ge_tests_bronze.py',
         retries = 0  # <-- Ten parametr wyłącza Retry tylko dla tego zadania
         )
 

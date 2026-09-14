@@ -1,7 +1,6 @@
 import os
 import shutil #do kopiowania plików
 from datetime import datetime
-import uuid
 from dotenv import load_dotenv
 import great_expectations as gx
 
@@ -158,14 +157,24 @@ if local_site_url:
     local_site_path = local_site_url.replace("file://", "")
     site_dir = os.path.dirname(local_site_path)
 
+    # Pobranie run_id ze zmiennych wstrzykniętych przez Airflow
+    airflow_run_id = os.environ.get("AIRFLOW_RUN_ID")
+
     # Generowanie unikalnego podkatalogu: znacznik czasu + 8 znaków losowego ID
-    run_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    short_id = str(uuid.uuid4())[:8]
+    run_timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+
+    if airflow_run_id:
+        # Zamiana niedozwolonych znaków (np. dwukropków z timestampu) na bezpieczne
+        safe_run_id = airflow_run_id.replace(":", "").replace("+", "_")
+        target_dir = f"/opt/airflow/docs/gx/run_{run_timestamp}_{safe_run_id}"
+    else:
+        # Fallback (na wypadek testowego, ręcznego uruchomienia skryptu poza Airflow)
+        target_dir = f"/opt/airflow/docs/gx/manual_python_run_{run_timestamp}_none"
 
     # Kopiowanie z /tmp/... do zamontowanego /opt/airflow/docs/gx/run_ts_uuid
-    target_dir = f"/opt/airflow/docs/gx/run_{run_timestamp}_{short_id}"
-    # Kopiowanie plików do nowego katalogu
     shutil.copytree(site_dir, target_dir, dirs_exist_ok=True)
+    #  Nadanie pełnych uprawnień (rwx) dla wygenerowanego katalogu, aby host mógł swobodnie usuwać te pliki.
+    os.system(f"chmod -R 777 {target_dir}")
     print(f"✅ Data Docs zostały wyeksportowane do: {target_dir}")
 
 # Weryfikacja sukcesu Checkpointu dla Airflow
