@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS silver.crm_cust_info (
 DROP TABLE IF EXISTS silver.crm_prd_info;
 CREATE TABLE IF NOT EXISTS silver.crm_prd_info (
     prd_id       INT,
+    cat_id       VARCHAR(50),
     prd_key      VARCHAR(50),
     prd_nm       VARCHAR(50),
     prd_cost     INT,
