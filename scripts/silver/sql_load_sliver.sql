@@ -1,4 +1,5 @@
-------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------
 --silver.crm_cust_info
 --/*----------------------------Nulls,Duplicates in PK----------------------------
 select
@@ -50,7 +51,8 @@ from (
 select DISTINCT ON (cst_id) * f
 rom bronze.crm_cust_info ORDER BY cst_id, cst_create_date desc);
 
-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------
 --silver.crm_prd_info
 --/*----------------------------Nulls,Duplicates in PK----------------------------
 select
@@ -114,7 +116,10 @@ prd_start_dt,
 LEAD(prd_start_dt) over (partition by prd_key order by prd_start_dt ) - 1 as prd_end_dt /*new end_dt from start_dt */
 FROM bronze.crm_prd_info
 ------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------
 --silver.crm_sales_details
 --/*----------------------------Nulls,Duplicates in PK----------------------------
 select
@@ -143,7 +148,7 @@ nullif(sls_order_dt, 0) as sls_order_dt,
 sls_ship_dt,
 sls_due_dt
 from bronze.crm_sales_details
-where sls_order_dt <= 0 or	sls_ship_dt	<= 0 or sls_due_dt <= 0;
+where sls_order_dt <= 0 or	sls_ship_dt	<= 0 or sls_due_dt <= 0
 
 select sls_ord_num,
 sls_order_dt,
@@ -152,7 +157,7 @@ sls_due_dt
 from bronze.crm_sales_details
 where sls_order_dt::varchar !~ '\d{8}'
 or sls_ship_dt::varchar !~ '\d{8}'
-or sls_due_dt::varchar !~ '\d{8}';
+or sls_due_dt::varchar !~ '\d{8}'
 
 select sls_ord_num,
 sls_order_dt,
@@ -161,7 +166,7 @@ sls_due_dt
 from bronze.crm_sales_details
 where (sls_order_dt > '20500101' or  sls_order_dt < '19000101')
 or (sls_ship_dt > '20500101' or  sls_order_dt < '19000101')
-or (sls_due_dt > '20500101' or  sls_order_dt < '19000101');
+or (sls_due_dt > '20500101' or  sls_order_dt < '19000101')
 
 
 select sls_ord_num,
@@ -171,7 +176,7 @@ sls_due_dt
 from bronze.crm_sales_details
 where sls_order_dt > sls_ship_dt
 or sls_order_dt > sls_due_dt
-or sls_ship_dt > sls_due_dt;
+or sls_ship_dt > sls_due_dt
 
 
 ------------------Data consistency---------------------------------------------
@@ -185,9 +190,9 @@ case when sls_quantity <= 0 or  sls_price <= 0 or sls_sales <= 0 then 1 else 0 e
 from bronze.crm_sales_details
 where sls_quantity * sls_price != sls_sales
 or (sls_quantity is null or  sls_price is null or sls_sales is null)
-or (sls_quantity <= 0 or  sls_price <= 0 or sls_sales <= 0);
+or (sls_quantity <= 0 or  sls_price <= 0 or sls_sales <= 0)
 
---rules
+--rueles
 --1) if sls_sales is negative, zero or null: sls_quantity * sls_price
 --2) if sls_price is zero or null: sls_quantity * sls_sales
 --3) if sls_price is negative convert to positive
@@ -214,3 +219,57 @@ select
 from
 	bronze.crm_sales_details;
 ------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------
+--silver.erp_cust_az12
+--/*----------------------------Nulls,Duplicates in PK----------------------------
+select
+cid,
+count(*) as cnt
+from bronze.erp_cust_az12
+group by cid having count(*) > 1 or cid is null order by cnt ;
+
+---------------------------------------FK----------------------------------------
+SELECT * from (
+SELECT
+cid
+FROM bronze.erp_cust_az12
+) where case when cid ~ '^NAS' then substring(cid,4,length(cid))
+else cid end in ( select cst_key from silver.crm_cust_info)
+
+
+-------------------Date validation------------------------------
+select
+cid,
+bdate
+from bronze.erp_cust_az12
+where (bdate > CURRENT_DATE or  bdate < '19200101')
+order by bdate asc;
+------------------Data consistency---------------------------------------------
+
+select distinct
+gen,
+case when UPPER(TRIM(gen)) in ('F','FEMALE') then 'Female'
+	 when UPPER(TRIM(gen)) in ('M','MALE') then 'Male'
+	 else 'n/a' end as gen
+
+from bronze.erp_cust_az12
+------------------------------------------------------------------------------*/
+
+-----------------------------------------------------silver.erp_cust_az12-------------------------INSERT
+insert into silver.erp_cust_az12
+SELECT
+case when cid ~ '^NAS' then substring(cid,4,length(cid))
+	else cid end as cid,
+case when bdate > CURRENT_DATE then null
+else bdate end as bdate,
+case when UPPER(TRIM(gen)) in ('F','FEMALE') then 'Female'
+	 when UPPER(TRIM(gen)) in ('M','MALE') then 'Male'
+	 else 'n/a' end as gen
+FROM bronze.erp_cust_az12
+------------------------------------------------------------------------------------------------
+
+
+
+
+
