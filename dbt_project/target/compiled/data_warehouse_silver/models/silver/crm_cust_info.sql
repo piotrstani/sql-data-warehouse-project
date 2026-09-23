@@ -31,3 +31,7 @@ transformed_data AS (
 )
 
 SELECT * FROM transformed_data
+
+
+    -- Przetwarzaj tylko klientów zaktualizowanych/dodanych od wczoraj
+    WHERE cst_create_date > (SELECT MAX(cst_create_date) FROM "DataWarehouse"."silver"."crm_cust_info")
