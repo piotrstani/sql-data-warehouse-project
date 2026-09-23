@@ -1,10 +1,27 @@
 --Ustawienia zadeklarowane bezpośrednio w pliku .sql zawsze nadpisują te globalne z pliku dbt_project.yml.
+/*
+ --append-only
+
+
+-- Przetwarzaj tylko klientów zaktualizowanych/dodanych od wczoraj
+ unique_key do dopasowania rekordu wejściowego do już istniejącego rekordu w tabeli docelowej,
+ np. aby go zaktualizować albo zastąpić, zależnie od adaptera i strategii incremental.
+ Sama konfiguracja nie jest ogólną gwarancją constraintu UNIQUE w bazie
+
+
+ */
+
+/*
+
+*/
+
 
 
 WITH source_data AS (
     -- Deduplikacja danych źródłowych z warstwy Bronze
     SELECT DISTINCT ON (cst_id) *
     FROM "DataWarehouse"."bronze"."crm_cust_info"
+    WHERE cst_id is not null
     ORDER BY cst_id, cst_create_date DESC
 ),
 
@@ -30,8 +47,15 @@ transformed_data AS (
     FROM source_data
 )
 
-SELECT * FROM transformed_data
-
+SELECT * FROM transformed_data src
+/*
 
     -- Przetwarzaj tylko klientów zaktualizowanych/dodanych od wczoraj
+    WHERE NOT EXISTS (SELECT 1 FROM "DataWarehouse"."silver"."crm_cust_info" tgt WHERE tgt.cst_id = src.cst_id)
+
+*/
+
+
+-- Przetwarzaj tylko klientów zaktualizowanych/dodanych od wczoraj
+
     WHERE cst_create_date > (SELECT MAX(cst_create_date) FROM "DataWarehouse"."silver"."crm_cust_info")
