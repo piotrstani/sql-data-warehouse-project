@@ -1,6 +1,6 @@
 --Ustawienia zadeklarowane bezpośrednio w pliku .sql zawsze nadpisują te globalne z pliku dbt_project.yml.
 {{ config(
-    materialized='table',
+    materialized='incremental',
     unique_key='cst_id'
 ) }}
 
@@ -34,3 +34,8 @@ transformed_data AS (
 )
 
 SELECT * FROM transformed_data
+
+{% if is_incremental() %}
+    -- Przetwarzaj tylko klientów zaktualizowanych/dodanych od wczoraj
+    WHERE cst_create_date > (SELECT MAX(cst_create_date) FROM {{ this }})
+{% endif %}
