@@ -1,0 +1,13 @@
+# dbt_project/profiles.yml
+dwh_profile:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: postgres
+      user: "{{ env_var('APP_USER') }}"
+      password: "{{ env_var('APP_PASSWORD') }}"
+      port: 5432
+      dbname: DataWarehouse
+      schema: silver # Domyślny schemat, w którym dbt będzie budować tabele
+      threads: 4

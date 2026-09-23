@@ -1,0 +1,14 @@
+# dbt_project/dbt_project.yml
+name: 'data_warehouse_silver'
+version: '1.0.0'
+config-version: 2
+profile: 'dwh_profile'
+
+model-paths: ["models"]
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  data_warehouse_silver:
+    silver:
+      +materialized: table # DROP TABLE oraz INSERT INTO Domyślnie wszystkie modele stworzą fizyczne tabele (zastępując stare przy każdym uruchomieniu)
+      #+materialized: incremental # Zmiana z table na incremental
