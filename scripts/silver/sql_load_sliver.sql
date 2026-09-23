@@ -269,7 +269,46 @@ case when UPPER(TRIM(gen)) in ('F','FEMALE') then 'Female'
 FROM bronze.erp_cust_az12
 ------------------------------------------------------------------------------------------------
 
+--------------------------------------------------------------------------------------------------------------
+--silver.erp_loc_a101
+--/*----------------------------Nulls,Duplicates in PK----------------------------
+select
+cid,
+count(*) as cnt
+from bronze.erp_loc_a101
+group by cid having count(*) > 1 or cid is null order by cnt ;
 
+---------------------------------------FK----------------------------------------
+SELECT * from (
+SELECT
+replace(cid,'-','') as cid
+
+FROM bronze.erp_loc_a101
+) where replace(cid,'-','') not in ( select cst_key from silver.crm_cust_info)
+
+
+
+------------------Data consistency---------------------------------------------
+select distinct
+cntry,
+case when UPPER(TRIM(cntry)) in ('US','USA') then 'United States'
+	 when UPPER(TRIM(cntry)) in ('DE') then 'Germany'
+	 when UPPER(TRIM(cntry)) = '' or cntry is null then 'n/a'
+	 else TRIM(cntry) end as cntry
+from bronze.erp_loc_a101
+------------------------------------------------------------------------------*/
+
+-----------------------------------------------------silver.erp_loc_a101-------------------------INSERT
+insert into silver.erp_loc_a101
+
+SELECT
+replace(cid,'-','') as cid,
+case when UPPER(TRIM(cntry)) in ('US','USA') then 'United States'
+	 when UPPER(TRIM(cntry)) in ('DE') then 'Germany'
+	 when UPPER(TRIM(cntry)) = '' or cntry is null then 'n/a'
+	 else TRIM(cntry) end as cntry
+FROM bronze.erp_loc_a101;
+------------------------------------------------------------------------------------------------
 
 
 
