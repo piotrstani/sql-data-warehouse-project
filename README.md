@@ -12,10 +12,13 @@ Oparty na kontenerach projekt hurtowni danych. Airflow jako orkiestrator procesu
 	 - [x] Airflow Ingestion COPY 
 4. **SILVER Layer**
 	 - [x] silver ddl
+     - [x] docs
+     - [x] sliver sql
+     - [x] dbt transformations
+       - [ ]
 5. **DQ**:
      - dbt
      - [ ] Docker dla dbt
-     - [ ] SQL transformations (SILVER)   
        - [ ] testy: 
          - customer_id NOT NULL,  
          - customer_id UNIQUE,
@@ -43,6 +46,7 @@ Oparty na kontenerach projekt hurtowni danych. Airflow jako orkiestrator procesu
       - [!] przy fail **Retry** uruchomi to zadanie ponownie,
       - **Baza danych tylko liczy i przechowuje, a orkiestrator (Airflow) zarządza czasem, logiką i logowaniem**
  - [x] DAG bronze great_expectations
+ - [x] DAG silver dbt 
 
 **Docelowa architektura**:
 ```
