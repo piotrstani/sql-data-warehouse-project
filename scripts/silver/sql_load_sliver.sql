@@ -235,7 +235,7 @@ SELECT
 cid
 FROM bronze.erp_cust_az12
 ) where case when cid ~ '^NAS' then substring(cid,4,length(cid))
-else cid end in ( select cst_key from silver.crm_cust_info)
+else cid end in ( select cst_key from silver.crm_cust_info);
 
 
 -------------------Date validation------------------------------
@@ -253,7 +253,7 @@ case when UPPER(TRIM(gen)) in ('F','FEMALE') then 'Female'
 	 when UPPER(TRIM(gen)) in ('M','MALE') then 'Male'
 	 else 'n/a' end as gen
 
-from bronze.erp_cust_az12
+from bronze.erp_cust_az12;
 ------------------------------------------------------------------------------*/
 
 -----------------------------------------------------silver.erp_cust_az12-------------------------INSERT
@@ -266,7 +266,7 @@ else bdate end as bdate,
 case when UPPER(TRIM(gen)) in ('F','FEMALE') then 'Female'
 	 when UPPER(TRIM(gen)) in ('M','MALE') then 'Male'
 	 else 'n/a' end as gen
-FROM bronze.erp_cust_az12
+FROM bronze.erp_cust_az12;
 ------------------------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------------------------------------
@@ -284,7 +284,7 @@ SELECT
 replace(cid,'-','') as cid
 
 FROM bronze.erp_loc_a101
-) where replace(cid,'-','') not in ( select cst_key from silver.crm_cust_info)
+) where replace(cid,'-','') not in ( select cst_key from silver.crm_cust_info);
 
 
 
@@ -295,7 +295,7 @@ case when UPPER(TRIM(cntry)) in ('US','USA') then 'United States'
 	 when UPPER(TRIM(cntry)) in ('DE') then 'Germany'
 	 when UPPER(TRIM(cntry)) = '' or cntry is null then 'n/a'
 	 else TRIM(cntry) end as cntry
-from bronze.erp_loc_a101
+from bronze.erp_loc_a101;
 ------------------------------------------------------------------------------*/
 
 -----------------------------------------------------silver.erp_loc_a101-------------------------INSERT
@@ -310,5 +310,38 @@ case when UPPER(TRIM(cntry)) in ('US','USA') then 'United States'
 FROM bronze.erp_loc_a101;
 ------------------------------------------------------------------------------------------------
 
+--------------------------------------------------------------------------------------------------------------
+--silver.erp_px_cat_g1v2
+--/*----------------------------Nulls,Duplicates in PK----------------------------
+select
+id,
+count(*) as cnt
+from bronze.erp_px_cat_g1v2
+group by id having count(*) > 1 or id is null order by cnt ;
+
+---------------------------------------FK----------------------------------------
+SELECT * from (
+SELECT
+id
+FROM bronze.erp_px_cat_g1v2
+) where id not in ( select cat_id from silver.crm_prd_info);
+
+
+
+------------------Data consistency---------------------------------------------
+select distinct
+cat, subcat, maintenance
+from bronze.erp_px_cat_g1v2;
+------------------------------------------------------------------------------*/
+
+-----------------------------------------------------silver.erp_px_cat_g1v2-------------------------INSERT
+insert into silver.erp_px_cat_g1v2
+SELECT
+id,
+cat,
+subcat,
+maintenance
+FROM bronze.erp_px_cat_g1v2;
+------------------------------------------------------------------------------------------------
 
 
