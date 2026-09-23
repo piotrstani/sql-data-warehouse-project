@@ -1,0 +1,1 @@
+{"_invocation_id": "4c61152e-3d15-4f96-84f7-2b8ce8e933b0", "linked": {"0": {"name": "source.data_warehouse_silver.bronze.crm_cust_info", "type": "source", "succ": [1]}, "1": {"name": "model.data_warehouse_silver.crm_cust_info", "type": "model"}}}
