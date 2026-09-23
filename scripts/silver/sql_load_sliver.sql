@@ -114,3 +114,103 @@ prd_start_dt,
 LEAD(prd_start_dt) over (partition by prd_key order by prd_start_dt ) - 1 as prd_end_dt /*new end_dt from start_dt */
 FROM bronze.crm_prd_info
 ------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+--silver.crm_sales_details
+--/*----------------------------Nulls,Duplicates in PK----------------------------
+select
+sls_ord_num,
+count(*) as cnt
+from bronze.crm_sales_details
+group by sls_ord_num having count(*) > 1 or sls_ord_num is null order by cnt ;
+
+---------------------------------------FK----------------------------------------
+SELECT * from (
+SELECT
+sls_cust_id
+FROM bronze.crm_sales_details
+) where sls_cust_id not in ( select cst_id from silver.crm_cust_info)
+
+SELECT * from (
+SELECT
+sls_prd_key
+FROM bronze.crm_sales_details
+) where sls_prd_key  in ( select prd_key from silver.crm_prd_info)
+
+-------------------Date validation------------------------------
+select sls_ord_num,
+sls_order_dt,
+nullif(sls_order_dt, 0) as sls_order_dt,
+sls_ship_dt,
+sls_due_dt
+from bronze.crm_sales_details
+where sls_order_dt <= 0 or	sls_ship_dt	<= 0 or sls_due_dt <= 0;
+
+select sls_ord_num,
+sls_order_dt,
+sls_ship_dt,
+sls_due_dt
+from bronze.crm_sales_details
+where sls_order_dt::varchar !~ '\d{8}'
+or sls_ship_dt::varchar !~ '\d{8}'
+or sls_due_dt::varchar !~ '\d{8}';
+
+select sls_ord_num,
+sls_order_dt,
+sls_ship_dt,
+sls_due_dt
+from bronze.crm_sales_details
+where (sls_order_dt > '20500101' or  sls_order_dt < '19000101')
+or (sls_ship_dt > '20500101' or  sls_order_dt < '19000101')
+or (sls_due_dt > '20500101' or  sls_order_dt < '19000101');
+
+
+select sls_ord_num,
+sls_order_dt,
+sls_ship_dt,
+sls_due_dt
+from bronze.crm_sales_details
+where sls_order_dt > sls_ship_dt
+or sls_order_dt > sls_due_dt
+or sls_ship_dt > sls_due_dt;
+
+
+------------------Data consistency---------------------------------------------
+select sls_ord_num,
+sls_sales,
+sls_quantity,
+sls_price,
+case when sls_quantity * sls_price != sls_sales then 1 else 0 end as qps_flg,
+case when sls_quantity is null or  sls_price is null or sls_sales is null then 1 else 0 end as null_flg,
+case when sls_quantity <= 0 or  sls_price <= 0 or sls_sales <= 0 then 1 else 0 end as negtive_flg
+from bronze.crm_sales_details
+where sls_quantity * sls_price != sls_sales
+or (sls_quantity is null or  sls_price is null or sls_sales is null)
+or (sls_quantity <= 0 or  sls_price <= 0 or sls_sales <= 0);
+
+--rules
+--1) if sls_sales is negative, zero or null: sls_quantity * sls_price
+--2) if sls_price is zero or null: sls_quantity * sls_sales
+--3) if sls_price is negative convert to positive
+------------------------------------------------------------------------------*/
+
+-----------------------------------------------------silver.crm_sales_details-------------------------INSERT
+insert into silver.crm_sales_details
+select
+	sls_ord_num,
+	sls_prd_key,
+	sls_cust_id,
+	case when sls_order_dt::varchar !~ '\d{8}' then null
+		else sls_order_dt::varchar::date end as sls_order_dt,
+	case when sls_ship_dt::varchar !~ '\d{8}' then null
+		else sls_ship_dt::varchar::date end as sls_ship_dt,
+	case when sls_due_dt::varchar !~ '\d{8}' then null
+		else sls_due_dt::varchar::date 	end as sls_due_dt,
+	case when sls_sales <= 0 or sls_sales is null or sls_quantity * sls_price != sls_sales then sls_quantity * ABS(sls_price)
+		else sls_sales end as sls_sales,
+	sls_quantity,
+	case when sls_price = 0 or sls_price is null then sls_sales / nullif(sls_quantity,0)
+	    when sls_price < 0 then abs(sls_sales)
+		else sls_price end as sls_price
+from
+	bronze.crm_sales_details;
+------------------------------------------------------------------------------------------------
