@@ -50,7 +50,7 @@ services:
       # Automatyczna instalacja pakietów przy starcie kontenera do projektów szkoleniowych
       # [!] wydłuża start kontenera i zależy od dostępności zewnętrznych repozytoriów PyPI
       # Zamiast tego buduje się własny obraz (Custom Image) oparty na bazowym obrazie Airflow przy użyciu dedykowanego pliku Dockerfile.
-      - _PIP_ADDITIONAL_REQUIREMENTS=great_expectations python-dotenv psycopg2-binary SQLAlchemy pandas
+      - _PIP_ADDITIONAL_REQUIREMENTS=great_expectations python-dotenv psycopg2-binary SQLAlchemy pandas dbt-postgres
     volumes:
       - ./dags:/opt/airflow/dags  # Montujemy folder z naszymi DAG-ami
       - ./tests:/opt/airflow/tests
