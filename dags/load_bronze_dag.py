@@ -45,7 +45,8 @@ with DAG(
     dag_id='load_bronze_layer',
     default_args=default_args,
     start_date=datetime(2024, 1, 1),
-    schedule_interval='@daily', # Uruchamiaj raz dziennie
+    #schedule_interval='@daily', # Uruchamiaj raz dziennie
+    schedule=None,
     catchup=False,              # Nie nadrabiaj zaległych uruchomień z przeszłości
     tags=['bronze', 'ingestion', 'dq'],
     description='Ładuje surowe pliki CSV do warstwy Bronze w PostgreSQ, wykonuje prosty test GE'
