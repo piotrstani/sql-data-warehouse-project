@@ -59,6 +59,7 @@ services:
       - ./tests:/opt/airflow/tests
       - ./.env:/opt/airflow/.env
       - ./docs:/opt/airflow/docs
+      - ./dbt_project:/opt/airflow/dbt_project  #dbt
     command: standalone
 volumes:
   postgres_data:
