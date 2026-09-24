@@ -57,3 +57,51 @@ ALTER DEFAULT PRIVILEGES IN SCHEMA bronze
 GRANT ALL PRIVILEGES ON FUNCTIONS TO dwh_user1;
 
 -----------------------------------------------------------------------------------*/
+
+----------------------------HIGHER------------------------------------------------
+--ALTER USER moj_user WITH SUPERUSER;
+GRANT ALL PRIVILEGES ON DATABASE "DataWarehouse" TO dwh_user1;
+
+--databse
+GRANT ALL PRIVILEGES ON SCHEMA silver TO dwh_user1;
+
+--schema
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA silver TO dwh_user1;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA silver TO dwh_user1;
+GRANT ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA silver TO dwh_user1;
+
+--tables
+ALTER DEFAULT PRIVILEGES IN SCHEMA silver
+GRANT ALL PRIVILEGES ON TABLES TO dwh_user1;
+
+ALTER DEFAULT PRIVILEGES IN SCHEMA silver
+GRANT ALL PRIVILEGES ON SEQUENCES TO dwh_user1;
+
+ALTER DEFAULT PRIVILEGES IN SCHEMA silver
+GRANT ALL PRIVILEGES ON FUNCTIONS TO dwh_user1;
+
+-----------------------------------------------------------------------------------*/
+
+----------------------------HIGHER------------------------------------------------
+--ALTER USER moj_user WITH SUPERUSER;
+GRANT ALL PRIVILEGES ON DATABASE "DataWarehouse" TO dwh_user1;
+
+--databse
+GRANT ALL PRIVILEGES ON SCHEMA gold TO dwh_user1;
+
+--schema
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA gold TO dwh_user1;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA gold TO dwh_user1;
+GRANT ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA gold TO dwh_user1;
+
+--tables
+ALTER DEFAULT PRIVILEGES IN SCHEMA gold
+GRANT ALL PRIVILEGES ON TABLES TO dwh_user1;
+
+ALTER DEFAULT PRIVILEGES IN SCHEMA gold
+GRANT ALL PRIVILEGES ON SEQUENCES TO dwh_user1;
+
+ALTER DEFAULT PRIVILEGES IN SCHEMA gold
+GRANT ALL PRIVILEGES ON FUNCTIONS TO dwh_user1;
+
+-----------------------------------------------------------------------------------*/
