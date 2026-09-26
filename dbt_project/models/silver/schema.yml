@@ -1,0 +1,19 @@
+version: 2
+models:
+  - name: crm_cust_info
+    description: 'Stores customer information'
+    columns:
+      - name: cst_id
+        description: 'Unique numerical identifier assigned to each customer'
+      - name: cst_key
+        description: 'Alphanumeric identifier representing the customer'
+      - name: cst_firstname
+        description: 'The customer''s first name, as recorded in the system'
+      - name: cst_lastname
+        description: 'The customer''s last name or family name'
+      - name: cst_marital_status
+        description: 'The marital status of the customer'
+      - name: cst_gndr
+        description: 'The gender of the customer'
+      - name: cst_create_date
+        description: 'The date and time when the customer record was created in the system'

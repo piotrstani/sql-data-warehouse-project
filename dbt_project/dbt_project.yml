@@ -11,4 +11,6 @@ models:
   data_warehouse_silver:
     silver:
       +materialized: table # DROP TABLE oraz INSERT INTO Domyślnie wszystkie modele stworzą fizyczne tabele (zastępując stare przy każdym uruchomieniu)
-      #+materialized: incremental # Zmiana z table na incremental
+      +persist_docs:
+        relation: true
+        columns: true
