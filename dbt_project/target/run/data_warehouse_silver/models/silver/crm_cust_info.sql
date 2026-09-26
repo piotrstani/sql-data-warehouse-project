@@ -1,30 +1,69 @@
 
-      -- back compat for old kwarg name
+  
+    
+
+  create  table "DataWarehouse"."silver"."crm_cust_info__dbt_tmp"
   
   
-        
-            
-            
-            
-            
-        
-    
-
-    
-
-    merge into "DataWarehouse"."silver"."crm_cust_info" as DBT_INTERNAL_DEST
-        using "crm_cust_info__dbt_tmp141437279697" as DBT_INTERNAL_SOURCE
-        on ((DBT_INTERNAL_SOURCE.cst_id = DBT_INTERNAL_DEST.cst_id))
-
-    
-    when matched then update set
-        "cst_id" = DBT_INTERNAL_SOURCE."cst_id","cst_key" = DBT_INTERNAL_SOURCE."cst_key","cst_firstname" = DBT_INTERNAL_SOURCE."cst_firstname","cst_lastname" = DBT_INTERNAL_SOURCE."cst_lastname","cst_marital_status" = DBT_INTERNAL_SOURCE."cst_marital_status","cst_gndr" = DBT_INTERNAL_SOURCE."cst_gndr","cst_create_date" = DBT_INTERNAL_SOURCE."cst_create_date"
-    
-
-    when not matched then insert
-        ("cst_id", "cst_key", "cst_firstname", "cst_lastname", "cst_marital_status", "cst_gndr", "cst_create_date")
-    values
-        ("cst_id", "cst_key", "cst_firstname", "cst_lastname", "cst_marital_status", "cst_gndr", "cst_create_date")
+    as
+  
+  (
+    --Ustawienia zadeklarowane bezpośrednio w pliku .sql zawsze nadpisują te globalne z pliku dbt_project.yml.
+/*
+ --append-only
 
 
+-- Przetwarzaj tylko klientów zaktualizowanych/dodanych od wczoraj
+ unique_key do dopasowania rekordu wejściowego do już istniejącego rekordu w tabeli docelowej,
+ np. aby go zaktualizować albo zastąpić, zależnie od adaptera i strategii incremental.
+ Sama konfiguracja nie jest ogólną gwarancją constraintu UNIQUE w bazie
+
+
+ -------------------------------------------------------------------
+ --Strategia merge wykonuje upsert: rekord o tym samym unique_key jest aktualizowany, a nowy klucz jest dodawany
+
+
+*/
+
+
+
+WITH source_data AS (
+    -- Deduplikacja danych źródłowych z warstwy Bronze
+    SELECT DISTINCT ON (cst_id) *
+    FROM "DataWarehouse"."bronze"."crm_cust_info"
+    WHERE cst_id is not null
+    ORDER BY cst_id, cst_create_date DESC
+),
+
+transformed_data AS (
+    SELECT
+        cst_id,
+        cst_key,
+        TRIM(cst_firstname) AS cst_firstname,
+        TRIM(cst_lastname) AS cst_lastname,
+        -- Standaryzacja statusu cywilnego
+        CASE
+            WHEN UPPER(TRIM(cst_marital_status)) = 'S' THEN 'Single'
+            WHEN UPPER(TRIM(cst_marital_status)) = 'M' THEN 'Married'
+            ELSE 'n/a'
+        END AS cst_marital_status,
+        -- Standaryzacja płci
+        CASE
+            WHEN UPPER(TRIM(cst_gndr)) = 'F' THEN 'Female'
+            WHEN UPPER(TRIM(cst_gndr)) = 'M' THEN 'Male'
+            ELSE 'n/a'
+        END AS cst_gndr,
+        cst_create_date
+    FROM source_data
+)
+
+SELECT * FROM transformed_data src
+/*
+
+*/
+
+
+-- Przetwarzaj tylko klientów zaktualizowanych/dodanych od wczoraj
+
+  );
   

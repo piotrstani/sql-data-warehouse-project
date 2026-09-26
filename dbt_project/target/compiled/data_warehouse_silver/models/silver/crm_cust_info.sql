@@ -9,9 +9,9 @@
  Sama konfiguracja nie jest ogólną gwarancją constraintu UNIQUE w bazie
 
 
- */
+ -------------------------------------------------------------------
+ --Strategia merge wykonuje upsert: rekord o tym samym unique_key jest aktualizowany, a nowy klucz jest dodawany
 
-/*
 
 */
 
@@ -50,12 +50,7 @@ transformed_data AS (
 SELECT * FROM transformed_data src
 /*
 
-    -- Przetwarzaj tylko klientów zaktualizowanych/dodanych od wczoraj
-    WHERE NOT EXISTS (SELECT 1 FROM "DataWarehouse"."silver"."crm_cust_info" tgt WHERE tgt.cst_id = src.cst_id)
-
 */
 
 
 -- Przetwarzaj tylko klientów zaktualizowanych/dodanych od wczoraj
-
-    WHERE cst_create_date > (SELECT MAX(cst_create_date) FROM "DataWarehouse"."silver"."crm_cust_info")
