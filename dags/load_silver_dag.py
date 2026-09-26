@@ -34,7 +34,7 @@ def log_failure(context):
 # Domyślne argumenty dla zadań w DAG-u, nadpisywane w definicjami DAG-ów
 default_args = {
     'owner': 'data_engineer',
-    'retries': 1,
+    'retries': 0,
     'retry_delay': timedelta(minutes=2),
     'on_failure_callback': log_failure,  # <-- Przypinamy nasz system alertów do wszystkich zadań
 }
