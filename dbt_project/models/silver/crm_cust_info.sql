@@ -26,7 +26,7 @@
 */
 
 {{ config(
-    materialized='incremental',
+    materialized='table',
     incremental_strategy='merge',
     unique_key='cst_id'
 ) }}
