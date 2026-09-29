@@ -1,30 +1,3 @@
---Ustawienia zadeklarowane bezpośrednio w pliku .sql zawsze nadpisują te globalne z pliku dbt_project.yml.
-/*
- --append-only
-{{ config(
-    materialized='incremental',
-    incremental_strategy='append'
-) }}
-
--- Przetwarzaj tylko klientów zaktualizowanych/dodanych od wczoraj
- unique_key do dopasowania rekordu wejściowego do już istniejącego rekordu w tabeli docelowej,
- np. aby go zaktualizować albo zastąpić, zależnie od adaptera i strategii incremental.
- Sama konfiguracja nie jest ogólną gwarancją constraintu UNIQUE w bazie
-
-{{ config(
-    materialized='incremental',
-    unique_key='cst_id'
-) }}
- -------------------------------------------------------------------
- --Strategia merge wykonuje upsert: rekord o tym samym unique_key jest aktualizowany, a nowy klucz jest dodawany
-{{ config(
-    materialized='incremental',
-    incremental_strategy='merge',
-    unique_key='cst_id'
-) }}
-
-*/
-
 {{ config(
     materialized='table',
     unique_key='prd_id'
