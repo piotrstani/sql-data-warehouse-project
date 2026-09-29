@@ -5,3 +5,4 @@ sources:
     tables:
       - name: crm_cust_info
       - name: crm_prd_info
+      - name: crm_sales_details
