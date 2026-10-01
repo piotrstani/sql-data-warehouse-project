@@ -6,3 +6,4 @@ sources:
       - name: crm_cust_info
       - name: crm_prd_info
       - name: crm_sales_details
+      - name: erp_cust_az12
