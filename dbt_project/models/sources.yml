@@ -7,3 +7,4 @@ sources:
       - name: crm_prd_info
       - name: crm_sales_details
       - name: erp_cust_az12
+      - name: erp_loc_a101
