@@ -10,17 +10,23 @@ Oparty na kontenerach projekt hurtowni danych. Airflow jako orkiestrator procesu
      - [x] plpgsql procedure
      - [x] Python container
      - [x] Airflow Ingestion COPY 
+     - [x] pyspark over-enginering
 4. **SILVER Layer**
 	 - [x] ddl
      - [x] silver diagram
      - [x] dbt transformations
        - [x] crm_cust_info
-       - [ ] crm_prd_info
-       - [ ] crm_sales_details
-       - [ ] erp_cust_az12
-       - [ ] erp_loc_a101
+       - [x] crm_prd_info
+       - [x] crm_sales_details
+       - [x] erp_cust_az12
+       - [x] erp_loc_a101
        - [ ] erp_px_cat_g1v2
+     - [ ] dbt jina?
+     - [ ] dbt descrptions ?
      - [ ] dbt test
+     - [ ] dbt relationships ❓
+     - [ ] dbt docs ❓
+     - [ ] dbt lineage ❓
 4. **GOLD Layer**
 	 - [x] sql views with descrptions
      - [x] data markt diagram
@@ -33,10 +39,6 @@ Oparty na kontenerach projekt hurtowni danych. Airflow jako orkiestrator procesu
          - customer_id NOT NULL,  
          - customer_id UNIQUE,
          - FK istnieje
-       - ❓❓❓
-       - [ ] zależności między modelami: relationships ❓
-       - [ ] dokumentacja ❓
-       - [ ] lineage ❓
 	 - Great Expectations
        - [x] localhost
        - [x] bronze Ingestion Dane [!] dane przepuszczane przez warstwę Bronze, czyszczenie na warstwie Silver za pomocą dbt
@@ -97,9 +99,11 @@ Oparty na kontenerach projekt hurtowni danych. Airflow jako orkiestrator procesu
 |Komponent|Odpowiedzialność|
 |---|---|
 |PostgreSQL|Storage|
-|Python / ingestion|Load|
-|`COPY`|CSV → Bronze|
-|dbt|Transformacje + standardowe testy + dokumentacja + lineage|
+|~~PostgreSQL/ingestion~~|~~`COPY`CSV → Bronze~~|
+|Airflow/Python/ingestion|CALL bronze.load_bronze()|
+|PySpark|TODO|
+|~~PostgreSQL/Transformacje~~|~~Load Silver~~|
+|dbt|Transformacje + standardowe testy + dokumentacja + lineage (Silver,Gold)|
 |Python + GX|analiza + zaawansowana kontrola jakości + obserwowalność|
 |Airflow|Orkiestracja|
 |PyCharm|development|
