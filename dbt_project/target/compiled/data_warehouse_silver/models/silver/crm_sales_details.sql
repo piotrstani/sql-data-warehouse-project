@@ -26,3 +26,6 @@ select
 )
 
 SELECT * FROM transformed_data src
+
+
+    WHERE sls_order_dt > (SELECT coalesce(MAX(sls_order_dt), '1900-01-01') FROM "DataWarehouse"."silver"."crm_sales_details")
