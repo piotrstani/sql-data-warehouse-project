@@ -1,5 +1,7 @@
 {{ config(
-    materialized='table',
+    materialized='incremental',
+    incremental_strategy='append',
+    on_schema_change='fail',
     unique_key='sls_ord_num'
 ) }}
 
@@ -29,3 +31,7 @@ select
 )
 
 SELECT * FROM transformed_data src
+
+{% if is_incremental() %}
+    WHERE sls_order_dt > (SELECT coalesce(MAX(sls_order_dt), '1900-01-01') FROM {{ this }})
+{% endif %}
