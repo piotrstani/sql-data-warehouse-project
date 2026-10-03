@@ -2,7 +2,7 @@ import logging
 from airflow import DAG
 from datetime import datetime, timedelta
 from airflow.operators.bash import BashOperator # Nowy import
-
+from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 
 # Definicja funkcji przechwytującej błędy (Callback)
 def log_failure(context):
@@ -57,6 +57,15 @@ with DAG(
         bash_command=(
             "export DBT_PROFILES_DIR=/opt/airflow/dbt_project && "
             "/opt/airflow/dbt_venv/bin/dbt run "
-            "--project-dir /opt/airflow/dbt_project"
+            "--project-dir /opt/airflow/dbt_project "
+            "--select silver "
         ),
 )
+            # 4. Uruchomienie warstwy Gold po sukcesie Silver
+        trigger_gold_layer = TriggerDagRunOperator(
+            task_id='trigger_gold_layer_dag',
+            trigger_dag_id='load_gold_layer',  # Dokładny dag_id Twojego nowego DAG-a Gold
+            wait_for_completion=False,  # DAG Silver kończy pracę natychmiast po odpaleniu Gold
+            reset_dag_run=True  # Pozwala zrestartować proces przy testach ręcznych
+        )
+        run_dbt_silver >> trigger_gold_layer
