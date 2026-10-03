@@ -1,5 +1,5 @@
 # dbt_project/dbt_project.yml
-name: 'data_warehouse_silver'
+name: 'data_warehouse'
 version: '1.0.0'
 config-version: 2
 profile: 'dwh_profile'
@@ -8,9 +8,15 @@ model-paths: ["models"]
 clean-targets: ["target", "dbt_packages"]
 
 models:
-  data_warehouse_silver:
+  data_warehouse:
     silver:
       +materialized: table # DROP TABLE oraz INSERT INTO Domyślnie wszystkie modele stworzą fizyczne tabele (zastępując stare przy każdym uruchomieniu)
+      +persist_docs:
+        relation: true
+        columns: true
+    gold:
+      +materialized: view
+      +schema: gold # Dodany parametr kierujący widoki do schematu gold
       +persist_docs:
         relation: true
         columns: true
