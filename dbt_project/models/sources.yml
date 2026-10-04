@@ -5,6 +5,10 @@ sources:
     tables:
       - name: cci
         identifier: crm_cust_info
+        loaded_at_field: cst_create_date::timestamp
+        freshness:
+          warn_after: {count: 1, period: day}
+          error_after: {count: 5, period: day}
       - name: crm_prd_info
       - name: crm_sales_details
       - name: erp_cust_az12
