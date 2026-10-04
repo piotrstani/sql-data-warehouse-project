@@ -16,11 +16,11 @@ Oparty na kontenerach projekt hurtowni danych. Airflow jako orkiestrator procesu
      - [x] silver diagram
      - [x] dbt transformations
        - [x] crm_cust_info
-       - [x] crm_prd_info
-       - [x] crm_sales_details
+       - [x] crm_prd_info SCD FULL, /snapshots/crm_prd_info.sql
+       - [x] crm_sales_details FACT
        - [x] erp_cust_az12
        - [x] erp_loc_a101
-       - [ ] erp_px_cat_g1v2
+       - [x] erp_px_cat_g1v2
      - [ ] dbt jina?
      - [ ] dbt descrptions ?
      - [ ] dbt test
@@ -30,7 +30,7 @@ Oparty na kontenerach projekt hurtowni danych. Airflow jako orkiestrator procesu
 4. **GOLD Layer**
 	 - [x] sql views with descrptions
      - [x] data markt diagram
-     - [ ] dbt create view
+     - [x] dbt create view, /models/gold/dim_customers.sql + /macros/generate_schema_name.sql
      - [ ] dbt descrptions 
 5. **DQ**:
      - dbt
