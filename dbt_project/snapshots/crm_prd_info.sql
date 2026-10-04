@@ -1,7 +1,16 @@
-{{ config(
-    materialized='table',
-    unique_key='prd_id'
-) }}
+{% snapshot crm_prd_info %}
+{# unique_key Klucz biznesowy produktu #}
+{# strategy Strategia wykrywania zmian #}
+{# invalidate_hard_deletes Zamykaj rekordy również przy hard delete #}
+{{
+    config(
+        target_schema='silver',
+        unique_key='prd_id',
+        strategy='check',
+        check_cols='all',
+        invalidate_hard_deletes=True
+    )
+}}
 
 WITH source_data AS (
     SELECT *
@@ -29,3 +38,5 @@ transformed_data AS (
 )
 
 SELECT * FROM transformed_data src
+
+{% endsnapshot %}
