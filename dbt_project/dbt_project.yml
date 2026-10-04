@@ -6,6 +6,7 @@ profile: 'dwh_profile'
 
 model-paths: ["models"]
 clean-targets: ["target", "dbt_packages"]
+seed-paths: ["seeds"]
 
 models:
   data_warehouse:
