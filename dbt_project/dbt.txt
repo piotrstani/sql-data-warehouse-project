@@ -3,7 +3,12 @@
  --append-only
 {{ config(
     materialized='incremental',
+    --https://docs.getdbt.com/docs/build/incremental-strategy?version=2
     incremental_strategy='append'
+    incremental_strategy='merge'
+    incremental_strategy='delete+insert'
+    incremental_strategy='insert_overwrite' --no dbt-postgres
+    incremental_strategy='microbatch'
 ) }}
 
 -- Przetwarzaj tylko klientów zaktualizowanych/dodanych od wczoraj
