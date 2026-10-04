@@ -1,4 +1,5 @@
 {{ config(
+    schema='gold',
     materialized='view',
     unique_key='customer_key'
 ) }}
