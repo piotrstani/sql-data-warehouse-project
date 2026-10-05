@@ -6,16 +6,16 @@
 
 WITH crm_cust_info AS (
     SELECT  *
-    FROM {{ source('silver', 'crm_cust_info') }}
+    FROM {{ ref('crm_cust_info') }}
 )
  ,erp_cust_az12 AS (
     SELECT  *
-    FROM {{ source('silver', 'erp_cust_az12') }}
+    FROM {{ ref('erp_cust_az12') }}
 )
 
  ,erp_loc_a101 AS (
     SELECT  *
-    FROM {{ source('silver', 'erp_loc_a101') }}
+    FROM {{ ref('erp_loc_a101') }}
 )
 
 , dim_data AS (
