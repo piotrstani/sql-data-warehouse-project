@@ -80,4 +80,4 @@ with DAG(
     )
 
     # Kolejność wykonywania zadań
-    dbt_run_silver_snapshots >> run_dbt_silver >> trigger_gold_layer
+    run_dbt_snapshots >> run_dbt_silver >> trigger_gold_layer
