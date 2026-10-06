@@ -37516,3 +37516,2695 @@ drop view if exists "DataWarehouse"."gold"."fact_sales__dbt_backup" cascade
 [0m16:54:33.102399 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70ad5051d4f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70ad5022f950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70ad5022d280>]}
 [0m16:54:33.102587 [debug] [MainThread]: Flushing usage events
 [0m16:54:33.646132 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:36:46.564596 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d795517050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d794c37440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d796289940>]}
+
+
+============================== 20:36:46.568564 | cdefaefc-3a64-46ff-b706-49bb7ec17223 ==============================
+[0m20:36:46.568564 [info ] [MainThread]: Running with dbt=1.12.5
+[0m20:36:46.568843 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/opt/airflow/dbt_project', 'use_colors': 'True', 'no_print': 'None', 'invocation_command': 'dbt snapshot --project-dir /opt/airflow/dbt_project', 'log_format': 'default', 'maximum_seed_size_mib': '1', 'write_json': 'True', 'indirect_selection': 'eager', 'quiet': 'False', 'fail_fast': 'False', 'log_path': '/opt/airflow/dbt_project/logs', 'hints_enabled': 'True', 'warn_error': 'None', 'printer_width': '80', 'debug': 'False', 'static_parser': 'True', 'empty': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'version_check': 'True', 'log_cache_events': 'False'}
+[0m20:36:46.668247 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'cdefaefc-3a64-46ff-b706-49bb7ec17223', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d795b0ef60>]}
+[0m20:36:46.702842 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'cdefaefc-3a64-46ff-b706-49bb7ec17223', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d7979f1160>]}
+[0m20:36:46.703507 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m20:36:46.750699 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m20:36:46.850732 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m20:36:46.851223 [debug] [MainThread]: Partial parsing: updated file: data_warehouse://models/silver/schema.yml
+[0m20:36:47.226262 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'cdefaefc-3a64-46ff-b706-49bb7ec17223', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d790450dd0>]}
+[0m20:36:47.297194 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m20:36:47.299143 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m20:36:47.311046 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m20:36:47.320770 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'cdefaefc-3a64-46ff-b706-49bb7ec17223', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d79211f830>]}
+[0m20:36:47.321061 [info ] [MainThread]: Found 8 models, 1 snapshot, 1 seed, 2 data tests, 6 sources, 478 macros
+[0m20:36:47.321235 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cdefaefc-3a64-46ff-b706-49bb7ec17223', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d797d48fe0>]}
+[0m20:36:47.322290 [info ] [MainThread]: 
+[0m20:36:47.322493 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m20:36:47.322633 [info ] [MainThread]: 
+[0m20:36:47.322906 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m20:36:47.323587 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse'
+[0m20:36:47.343021 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse"
+[0m20:36:47.343234 [debug] [ThreadPool]: On list_DataWarehouse: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m20:36:47.343370 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:36:47.355570 [debug] [ThreadPool]: SQL status: SELECT 83 in 0.012 seconds
+[0m20:36:47.356315 [debug] [ThreadPool]: On list_DataWarehouse: Close
+[0m20:36:47.359054 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DataWarehouse, now list_DataWarehouse_silver)
+[0m20:36:47.359397 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse_gold'
+[0m20:36:47.362088 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_silver"
+[0m20:36:47.362640 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_gold"
+[0m20:36:47.362844 [debug] [ThreadPool]: On list_DataWarehouse_silver: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_silver"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'silver'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'silver'
+  
+[0m20:36:47.363020 [debug] [ThreadPool]: On list_DataWarehouse_gold: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_gold"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'gold'
+  
+[0m20:36:47.363177 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m20:36:47.363332 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:36:47.371401 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.008 seconds
+[0m20:36:47.371617 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.008 seconds
+[0m20:36:47.372328 [debug] [ThreadPool]: On list_DataWarehouse_gold: ROLLBACK
+[0m20:36:47.373042 [debug] [ThreadPool]: On list_DataWarehouse_silver: ROLLBACK
+[0m20:36:47.373261 [debug] [ThreadPool]: On list_DataWarehouse_gold: Close
+[0m20:36:47.373398 [debug] [ThreadPool]: On list_DataWarehouse_silver: Close
+[0m20:36:47.376795 [debug] [MainThread]: Using postgres connection "master"
+[0m20:36:47.377017 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m20:36:47.377192 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:36:47.382563 [debug] [MainThread]: SQL status: SELECT 8 in 0.005 seconds
+[0m20:36:47.384059 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cdefaefc-3a64-46ff-b706-49bb7ec17223', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d7935b28d0>]}
+[0m20:36:47.384332 [debug] [MainThread]: On master: ROLLBACK
+[0m20:36:47.384546 [debug] [MainThread]: On master: COMMIT
+[0m20:36:47.384810 [debug] [MainThread]: Using postgres connection "master"
+[0m20:36:47.384956 [debug] [MainThread]: On master: COMMIT
+[0m20:36:47.385134 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m20:36:47.385274 [debug] [MainThread]: On master: Close
+[0m20:36:47.387608 [debug] [Thread-1 (]: Began running node snapshot.data_warehouse.crm_prd_info
+[0m20:36:47.387887 [info ] [Thread-1 (]: 1 of 1 START snapshot silver.crm_prd_info ...................................... [RUN]
+[0m20:36:47.388106 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DataWarehouse_silver, now snapshot.data_warehouse.crm_prd_info)
+[0m20:36:47.388265 [debug] [Thread-1 (]: Began compiling node snapshot.data_warehouse.crm_prd_info
+[0m20:36:47.392513 [debug] [Thread-1 (]: Writing injected SQL for node "snapshot.data_warehouse.crm_prd_info"
+[0m20:36:47.392845 [debug] [Thread-1 (]: Began executing node snapshot.data_warehouse.crm_prd_info
+[0m20:36:47.418612 [debug] [Thread-1 (]: Using postgres connection "snapshot.data_warehouse.crm_prd_info"
+[0m20:36:47.418867 [debug] [Thread-1 (]: On snapshot.data_warehouse.crm_prd_info: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "snapshot.data_warehouse.crm_prd_info"} */
+select * from (
+        
+
+
+
+
+
+WITH source_data AS (
+    SELECT *
+    FROM "DataWarehouse"."bronze"."crm_prd_info"
+),
+
+transformed_data AS (
+    SELECT
+    prd_id,  /*PK*/
+    --prd_key,
+    replace (substring(prd_key, 1, 5), '-', '_') as cat_id, /*FK, 'AC_BR', select cat_id from bronze.erp_px_cat_g1v2*/
+    substring(prd_key, 7, LENGTH(prd_key)) as prd_key, /*FK, 'HL-U509', select sls_prd_key from bronze.crm_sales_details*/
+    prd_nm,
+    coalesce(prd_cost, 0) as prd_cost,
+    case UPPER(TRIM(prd_line))
+        when 'M' then 'Moutain'
+        when 'R' then 'Road'
+        when 'S' then 'Other Sales'
+        when 'T' then 'Touring'
+        else 'n/a' end as prd_line,
+    prd_start_dt,
+    --prd_end_dt,
+    LEAD(prd_start_dt) over (partition by prd_key order by prd_start_dt ) - 1 as prd_end_dt /*new end_dt from start_dt */
+    FROM source_data
+)
+
+SELECT * FROM transformed_data src
+
+    ) as __dbt_sbq
+    where false
+    limit 0
+
+    
+[0m20:36:47.419047 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:36:47.423318 [debug] [Thread-1 (]: SQL status: SELECT 0 in 0.004 seconds
+[0m20:36:47.429245 [debug] [Thread-1 (]: Using postgres connection "snapshot.data_warehouse.crm_prd_info"
+[0m20:36:47.429451 [debug] [Thread-1 (]: On snapshot.data_warehouse.crm_prd_info: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "snapshot.data_warehouse.crm_prd_info"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "DataWarehouse".INFORMATION_SCHEMA.columns
+      where table_name = 'crm_prd_info'
+        
+        and table_schema = 'silver'
+        
+      order by ordinal_position
+
+  
+[0m20:36:47.436161 [debug] [Thread-1 (]: SQL status: SELECT 12 in 0.006 seconds
+[0m20:36:47.439589 [debug] [Thread-1 (]: Using postgres connection "snapshot.data_warehouse.crm_prd_info"
+[0m20:36:47.439795 [debug] [Thread-1 (]: On snapshot.data_warehouse.crm_prd_info: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "snapshot.data_warehouse.crm_prd_info"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "DataWarehouse".INFORMATION_SCHEMA.columns
+      where table_name = 'crm_prd_info'
+        
+        and table_schema = 'silver'
+        
+      order by ordinal_position
+
+  
+[0m20:36:47.441239 [debug] [Thread-1 (]: SQL status: SELECT 12 in 0.001 seconds
+[0m20:36:47.464868 [debug] [Thread-1 (]: Using postgres connection "snapshot.data_warehouse.crm_prd_info"
+[0m20:36:47.465175 [debug] [Thread-1 (]: On snapshot.data_warehouse.crm_prd_info: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "snapshot.data_warehouse.crm_prd_info"} */
+
+        
+  
+    
+
+  create temporary table "crm_prd_info__dbt_tmp203647461259"
+  
+  
+    as
+  
+  (
+    
+    
+    with snapshot_query as (
+
+        
+
+
+
+
+
+WITH source_data AS (
+    SELECT *
+    FROM "DataWarehouse"."bronze"."crm_prd_info"
+),
+
+transformed_data AS (
+    SELECT
+    prd_id,  /*PK*/
+    --prd_key,
+    replace (substring(prd_key, 1, 5), '-', '_') as cat_id, /*FK, 'AC_BR', select cat_id from bronze.erp_px_cat_g1v2*/
+    substring(prd_key, 7, LENGTH(prd_key)) as prd_key, /*FK, 'HL-U509', select sls_prd_key from bronze.crm_sales_details*/
+    prd_nm,
+    coalesce(prd_cost, 0) as prd_cost,
+    case UPPER(TRIM(prd_line))
+        when 'M' then 'Moutain'
+        when 'R' then 'Road'
+        when 'S' then 'Other Sales'
+        when 'T' then 'Touring'
+        else 'n/a' end as prd_line,
+    prd_start_dt,
+    --prd_end_dt,
+    LEAD(prd_start_dt) over (partition by prd_key order by prd_start_dt ) - 1 as prd_end_dt /*new end_dt from start_dt */
+    FROM source_data
+)
+
+SELECT * FROM transformed_data src
+
+
+    ),
+
+    snapshotted_data as (
+
+        select *, 
+    
+        prd_id as dbt_unique_key
+    
+
+        from "DataWarehouse"."silver"."crm_prd_info"
+        where
+            
+                dbt_valid_to is null
+            
+
+    ),
+
+    insertions_source_data as (
+
+        select *, 
+    
+        prd_id as dbt_unique_key
+    
+,
+            now()::timestamp without time zone as dbt_updated_at,
+            now()::timestamp without time zone as dbt_valid_from,
+            
+  
+  coalesce(nullif(now()::timestamp without time zone, now()::timestamp without time zone), null)
+  as dbt_valid_to
+,
+            md5(coalesce(cast(prd_id as varchar ), '')
+         || '|' || coalesce(cast(now()::timestamp without time zone as varchar ), '')
+        ) as dbt_scd_id
+
+        from snapshot_query
+    ),
+
+    updates_source_data as (
+
+        select *, 
+    
+        prd_id as dbt_unique_key
+    
+,
+            now()::timestamp without time zone as dbt_updated_at,
+            now()::timestamp without time zone as dbt_valid_from,
+            now()::timestamp without time zone as dbt_valid_to
+
+        from snapshot_query
+    ),
+
+    deletes_source_data as (
+
+        select *, 
+    
+        prd_id as dbt_unique_key
+    
+
+        from snapshot_query
+    ),
+    
+
+    insertions as (
+
+        select
+            'insert' as dbt_change_type,
+            source_data.*
+
+        from insertions_source_data as source_data
+        left outer join snapshotted_data
+            on 
+    
+        snapshotted_data.dbt_unique_key = source_data.dbt_unique_key
+    
+
+            where 
+    
+        snapshotted_data.dbt_unique_key is null
+    
+
+            or (
+    
+        snapshotted_data.dbt_unique_key is not null
+    
+ and (
+               (snapshotted_data."prd_id" != source_data."prd_id"
+        or
+        (
+            ((snapshotted_data."prd_id" is null) and not (source_data."prd_id" is null))
+            or
+            ((not snapshotted_data."prd_id" is null) and (source_data."prd_id" is null))
+        ) or snapshotted_data."cat_id" != source_data."cat_id"
+        or
+        (
+            ((snapshotted_data."cat_id" is null) and not (source_data."cat_id" is null))
+            or
+            ((not snapshotted_data."cat_id" is null) and (source_data."cat_id" is null))
+        ) or snapshotted_data."prd_key" != source_data."prd_key"
+        or
+        (
+            ((snapshotted_data."prd_key" is null) and not (source_data."prd_key" is null))
+            or
+            ((not snapshotted_data."prd_key" is null) and (source_data."prd_key" is null))
+        ) or snapshotted_data."prd_nm" != source_data."prd_nm"
+        or
+        (
+            ((snapshotted_data."prd_nm" is null) and not (source_data."prd_nm" is null))
+            or
+            ((not snapshotted_data."prd_nm" is null) and (source_data."prd_nm" is null))
+        ) or snapshotted_data."prd_cost" != source_data."prd_cost"
+        or
+        (
+            ((snapshotted_data."prd_cost" is null) and not (source_data."prd_cost" is null))
+            or
+            ((not snapshotted_data."prd_cost" is null) and (source_data."prd_cost" is null))
+        ) or snapshotted_data."prd_line" != source_data."prd_line"
+        or
+        (
+            ((snapshotted_data."prd_line" is null) and not (source_data."prd_line" is null))
+            or
+            ((not snapshotted_data."prd_line" is null) and (source_data."prd_line" is null))
+        ) or snapshotted_data."prd_start_dt" != source_data."prd_start_dt"
+        or
+        (
+            ((snapshotted_data."prd_start_dt" is null) and not (source_data."prd_start_dt" is null))
+            or
+            ((not snapshotted_data."prd_start_dt" is null) and (source_data."prd_start_dt" is null))
+        ) or snapshotted_data."prd_end_dt" != source_data."prd_end_dt"
+        or
+        (
+            ((snapshotted_data."prd_end_dt" is null) and not (source_data."prd_end_dt" is null))
+            or
+            ((not snapshotted_data."prd_end_dt" is null) and (source_data."prd_end_dt" is null))
+        ))
+            )
+
+        )
+
+    ),
+
+    updates as (
+
+        select
+            'update' as dbt_change_type,
+            source_data.*,
+            snapshotted_data.dbt_scd_id
+
+        from updates_source_data as source_data
+        join snapshotted_data
+            on 
+    
+        snapshotted_data.dbt_unique_key = source_data.dbt_unique_key
+    
+
+        where (
+            (snapshotted_data."prd_id" != source_data."prd_id"
+        or
+        (
+            ((snapshotted_data."prd_id" is null) and not (source_data."prd_id" is null))
+            or
+            ((not snapshotted_data."prd_id" is null) and (source_data."prd_id" is null))
+        ) or snapshotted_data."cat_id" != source_data."cat_id"
+        or
+        (
+            ((snapshotted_data."cat_id" is null) and not (source_data."cat_id" is null))
+            or
+            ((not snapshotted_data."cat_id" is null) and (source_data."cat_id" is null))
+        ) or snapshotted_data."prd_key" != source_data."prd_key"
+        or
+        (
+            ((snapshotted_data."prd_key" is null) and not (source_data."prd_key" is null))
+            or
+            ((not snapshotted_data."prd_key" is null) and (source_data."prd_key" is null))
+        ) or snapshotted_data."prd_nm" != source_data."prd_nm"
+        or
+        (
+            ((snapshotted_data."prd_nm" is null) and not (source_data."prd_nm" is null))
+            or
+            ((not snapshotted_data."prd_nm" is null) and (source_data."prd_nm" is null))
+        ) or snapshotted_data."prd_cost" != source_data."prd_cost"
+        or
+        (
+            ((snapshotted_data."prd_cost" is null) and not (source_data."prd_cost" is null))
+            or
+            ((not snapshotted_data."prd_cost" is null) and (source_data."prd_cost" is null))
+        ) or snapshotted_data."prd_line" != source_data."prd_line"
+        or
+        (
+            ((snapshotted_data."prd_line" is null) and not (source_data."prd_line" is null))
+            or
+            ((not snapshotted_data."prd_line" is null) and (source_data."prd_line" is null))
+        ) or snapshotted_data."prd_start_dt" != source_data."prd_start_dt"
+        or
+        (
+            ((snapshotted_data."prd_start_dt" is null) and not (source_data."prd_start_dt" is null))
+            or
+            ((not snapshotted_data."prd_start_dt" is null) and (source_data."prd_start_dt" is null))
+        ) or snapshotted_data."prd_end_dt" != source_data."prd_end_dt"
+        or
+        (
+            ((snapshotted_data."prd_end_dt" is null) and not (source_data."prd_end_dt" is null))
+            or
+            ((not snapshotted_data."prd_end_dt" is null) and (source_data."prd_end_dt" is null))
+        ))
+        )
+    )
+    ,
+    deletes as (
+
+        select
+            'delete' as dbt_change_type,
+            source_data.*,
+            now()::timestamp without time zone as dbt_valid_from,
+            now()::timestamp without time zone as dbt_updated_at,
+            now()::timestamp without time zone as dbt_valid_to,
+            snapshotted_data.dbt_scd_id
+        from snapshotted_data
+        left join deletes_source_data as source_data
+            on 
+    
+        snapshotted_data.dbt_unique_key = source_data.dbt_unique_key
+    
+
+            where 
+    
+        source_data.dbt_unique_key is null
+    
+
+    )
+
+    select * from insertions
+    union all
+    select * from updates
+    union all
+    select * from deletes
+
+  );
+  
+    
+[0m20:36:47.472541 [debug] [Thread-1 (]: SQL status: SELECT 0 in 0.007 seconds
+[0m20:36:47.473630 [debug] [Thread-1 (]: Using postgres connection "snapshot.data_warehouse.crm_prd_info"
+[0m20:36:47.473820 [debug] [Thread-1 (]: On snapshot.data_warehouse.crm_prd_info: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "snapshot.data_warehouse.crm_prd_info"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from INFORMATION_SCHEMA.columns
+      where table_name = 'crm_prd_info__dbt_tmp203647461259'
+        
+      order by ordinal_position
+
+  
+[0m20:36:47.475351 [debug] [Thread-1 (]: SQL status: SELECT 14 in 0.001 seconds
+[0m20:36:47.476446 [debug] [Thread-1 (]: Using postgres connection "snapshot.data_warehouse.crm_prd_info"
+[0m20:36:47.476625 [debug] [Thread-1 (]: On snapshot.data_warehouse.crm_prd_info: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "snapshot.data_warehouse.crm_prd_info"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "DataWarehouse".INFORMATION_SCHEMA.columns
+      where table_name = 'crm_prd_info'
+        
+        and table_schema = 'silver'
+        
+      order by ordinal_position
+
+  
+[0m20:36:47.478123 [debug] [Thread-1 (]: SQL status: SELECT 12 in 0.001 seconds
+[0m20:36:47.479190 [debug] [Thread-1 (]: Using postgres connection "snapshot.data_warehouse.crm_prd_info"
+[0m20:36:47.479369 [debug] [Thread-1 (]: On snapshot.data_warehouse.crm_prd_info: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "snapshot.data_warehouse.crm_prd_info"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from INFORMATION_SCHEMA.columns
+      where table_name = 'crm_prd_info__dbt_tmp203647461259'
+        
+      order by ordinal_position
+
+  
+[0m20:36:47.480707 [debug] [Thread-1 (]: SQL status: SELECT 14 in 0.001 seconds
+[0m20:36:47.481864 [debug] [Thread-1 (]: Using postgres connection "snapshot.data_warehouse.crm_prd_info"
+[0m20:36:47.482042 [debug] [Thread-1 (]: On snapshot.data_warehouse.crm_prd_info: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "snapshot.data_warehouse.crm_prd_info"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "DataWarehouse".INFORMATION_SCHEMA.columns
+      where table_name = 'crm_prd_info'
+        
+        and table_schema = 'silver'
+        
+      order by ordinal_position
+
+  
+[0m20:36:47.483490 [debug] [Thread-1 (]: SQL status: SELECT 12 in 0.001 seconds
+[0m20:36:47.486384 [debug] [Thread-1 (]: Using postgres connection "snapshot.data_warehouse.crm_prd_info"
+[0m20:36:47.486588 [debug] [Thread-1 (]: On snapshot.data_warehouse.crm_prd_info: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "snapshot.data_warehouse.crm_prd_info"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from INFORMATION_SCHEMA.columns
+      where table_name = 'crm_prd_info__dbt_tmp203647461259'
+        
+      order by ordinal_position
+
+  
+[0m20:36:47.487923 [debug] [Thread-1 (]: SQL status: SELECT 14 in 0.001 seconds
+[0m20:36:47.494862 [debug] [Thread-1 (]: Using postgres connection "snapshot.data_warehouse.crm_prd_info"
+[0m20:36:47.495158 [debug] [Thread-1 (]: On snapshot.data_warehouse.crm_prd_info: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "snapshot.data_warehouse.crm_prd_info"} */
+select * from (
+        
+    
+    with snapshot_query as (
+
+        
+
+
+
+
+
+WITH source_data AS (
+    SELECT *
+    FROM "DataWarehouse"."bronze"."crm_prd_info"
+),
+
+transformed_data AS (
+    SELECT
+    prd_id,  /*PK*/
+    --prd_key,
+    replace (substring(prd_key, 1, 5), '-', '_') as cat_id, /*FK, 'AC_BR', select cat_id from bronze.erp_px_cat_g1v2*/
+    substring(prd_key, 7, LENGTH(prd_key)) as prd_key, /*FK, 'HL-U509', select sls_prd_key from bronze.crm_sales_details*/
+    prd_nm,
+    coalesce(prd_cost, 0) as prd_cost,
+    case UPPER(TRIM(prd_line))
+        when 'M' then 'Moutain'
+        when 'R' then 'Road'
+        when 'S' then 'Other Sales'
+        when 'T' then 'Touring'
+        else 'n/a' end as prd_line,
+    prd_start_dt,
+    --prd_end_dt,
+    LEAD(prd_start_dt) over (partition by prd_key order by prd_start_dt ) - 1 as prd_end_dt /*new end_dt from start_dt */
+    FROM source_data
+)
+
+SELECT * FROM transformed_data src
+
+
+    ),
+
+    snapshotted_data as (
+
+        select *, 
+    
+        prd_id as dbt_unique_key
+    
+
+        from "DataWarehouse"."silver"."crm_prd_info"
+        where
+            
+                dbt_valid_to is null
+            
+
+    ),
+
+    insertions_source_data as (
+
+        select *, 
+    
+        prd_id as dbt_unique_key
+    
+,
+            now()::timestamp without time zone as dbt_updated_at,
+            now()::timestamp without time zone as dbt_valid_from,
+            
+  
+  coalesce(nullif(now()::timestamp without time zone, now()::timestamp without time zone), null)
+  as dbt_valid_to
+,
+            md5(coalesce(cast(prd_id as varchar ), '')
+         || '|' || coalesce(cast(now()::timestamp without time zone as varchar ), '')
+        ) as dbt_scd_id
+
+        from snapshot_query
+    ),
+
+    updates_source_data as (
+
+        select *, 
+    
+        prd_id as dbt_unique_key
+    
+,
+            now()::timestamp without time zone as dbt_updated_at,
+            now()::timestamp without time zone as dbt_valid_from,
+            now()::timestamp without time zone as dbt_valid_to
+
+        from snapshot_query
+    ),
+
+    deletes_source_data as (
+
+        select *, 
+    
+        prd_id as dbt_unique_key
+    
+
+        from snapshot_query
+    ),
+    
+
+    insertions as (
+
+        select
+            'insert' as dbt_change_type,
+            source_data.*
+
+        from insertions_source_data as source_data
+        left outer join snapshotted_data
+            on 
+    
+        snapshotted_data.dbt_unique_key = source_data.dbt_unique_key
+    
+
+            where 
+    
+        snapshotted_data.dbt_unique_key is null
+    
+
+            or (
+    
+        snapshotted_data.dbt_unique_key is not null
+    
+ and (
+               (snapshotted_data."prd_id" != source_data."prd_id"
+        or
+        (
+            ((snapshotted_data."prd_id" is null) and not (source_data."prd_id" is null))
+            or
+            ((not snapshotted_data."prd_id" is null) and (source_data."prd_id" is null))
+        ) or snapshotted_data."cat_id" != source_data."cat_id"
+        or
+        (
+            ((snapshotted_data."cat_id" is null) and not (source_data."cat_id" is null))
+            or
+            ((not snapshotted_data."cat_id" is null) and (source_data."cat_id" is null))
+        ) or snapshotted_data."prd_key" != source_data."prd_key"
+        or
+        (
+            ((snapshotted_data."prd_key" is null) and not (source_data."prd_key" is null))
+            or
+            ((not snapshotted_data."prd_key" is null) and (source_data."prd_key" is null))
+        ) or snapshotted_data."prd_nm" != source_data."prd_nm"
+        or
+        (
+            ((snapshotted_data."prd_nm" is null) and not (source_data."prd_nm" is null))
+            or
+            ((not snapshotted_data."prd_nm" is null) and (source_data."prd_nm" is null))
+        ) or snapshotted_data."prd_cost" != source_data."prd_cost"
+        or
+        (
+            ((snapshotted_data."prd_cost" is null) and not (source_data."prd_cost" is null))
+            or
+            ((not snapshotted_data."prd_cost" is null) and (source_data."prd_cost" is null))
+        ) or snapshotted_data."prd_line" != source_data."prd_line"
+        or
+        (
+            ((snapshotted_data."prd_line" is null) and not (source_data."prd_line" is null))
+            or
+            ((not snapshotted_data."prd_line" is null) and (source_data."prd_line" is null))
+        ) or snapshotted_data."prd_start_dt" != source_data."prd_start_dt"
+        or
+        (
+            ((snapshotted_data."prd_start_dt" is null) and not (source_data."prd_start_dt" is null))
+            or
+            ((not snapshotted_data."prd_start_dt" is null) and (source_data."prd_start_dt" is null))
+        ) or snapshotted_data."prd_end_dt" != source_data."prd_end_dt"
+        or
+        (
+            ((snapshotted_data."prd_end_dt" is null) and not (source_data."prd_end_dt" is null))
+            or
+            ((not snapshotted_data."prd_end_dt" is null) and (source_data."prd_end_dt" is null))
+        ))
+            )
+
+        )
+
+    ),
+
+    updates as (
+
+        select
+            'update' as dbt_change_type,
+            source_data.*,
+            snapshotted_data.dbt_scd_id
+
+        from updates_source_data as source_data
+        join snapshotted_data
+            on 
+    
+        snapshotted_data.dbt_unique_key = source_data.dbt_unique_key
+    
+
+        where (
+            (snapshotted_data."prd_id" != source_data."prd_id"
+        or
+        (
+            ((snapshotted_data."prd_id" is null) and not (source_data."prd_id" is null))
+            or
+            ((not snapshotted_data."prd_id" is null) and (source_data."prd_id" is null))
+        ) or snapshotted_data."cat_id" != source_data."cat_id"
+        or
+        (
+            ((snapshotted_data."cat_id" is null) and not (source_data."cat_id" is null))
+            or
+            ((not snapshotted_data."cat_id" is null) and (source_data."cat_id" is null))
+        ) or snapshotted_data."prd_key" != source_data."prd_key"
+        or
+        (
+            ((snapshotted_data."prd_key" is null) and not (source_data."prd_key" is null))
+            or
+            ((not snapshotted_data."prd_key" is null) and (source_data."prd_key" is null))
+        ) or snapshotted_data."prd_nm" != source_data."prd_nm"
+        or
+        (
+            ((snapshotted_data."prd_nm" is null) and not (source_data."prd_nm" is null))
+            or
+            ((not snapshotted_data."prd_nm" is null) and (source_data."prd_nm" is null))
+        ) or snapshotted_data."prd_cost" != source_data."prd_cost"
+        or
+        (
+            ((snapshotted_data."prd_cost" is null) and not (source_data."prd_cost" is null))
+            or
+            ((not snapshotted_data."prd_cost" is null) and (source_data."prd_cost" is null))
+        ) or snapshotted_data."prd_line" != source_data."prd_line"
+        or
+        (
+            ((snapshotted_data."prd_line" is null) and not (source_data."prd_line" is null))
+            or
+            ((not snapshotted_data."prd_line" is null) and (source_data."prd_line" is null))
+        ) or snapshotted_data."prd_start_dt" != source_data."prd_start_dt"
+        or
+        (
+            ((snapshotted_data."prd_start_dt" is null) and not (source_data."prd_start_dt" is null))
+            or
+            ((not snapshotted_data."prd_start_dt" is null) and (source_data."prd_start_dt" is null))
+        ) or snapshotted_data."prd_end_dt" != source_data."prd_end_dt"
+        or
+        (
+            ((snapshotted_data."prd_end_dt" is null) and not (source_data."prd_end_dt" is null))
+            or
+            ((not snapshotted_data."prd_end_dt" is null) and (source_data."prd_end_dt" is null))
+        ))
+        )
+    )
+    ,
+    deletes as (
+
+        select
+            'delete' as dbt_change_type,
+            source_data.*,
+            now()::timestamp without time zone as dbt_valid_from,
+            now()::timestamp without time zone as dbt_updated_at,
+            now()::timestamp without time zone as dbt_valid_to,
+            snapshotted_data.dbt_scd_id
+        from snapshotted_data
+        left join deletes_source_data as source_data
+            on 
+    
+        snapshotted_data.dbt_unique_key = source_data.dbt_unique_key
+    
+
+            where 
+    
+        source_data.dbt_unique_key is null
+    
+
+    )
+
+    select * from insertions
+    union all
+    select * from updates
+    union all
+    select * from deletes
+
+    ) as __dbt_sbq
+    where false
+    limit 0
+
+[0m20:36:47.495743 [debug] [Thread-1 (]: SQL status: SELECT 0 in 0.000 seconds
+[0m20:36:47.497212 [debug] [Thread-1 (]: Using postgres connection "snapshot.data_warehouse.crm_prd_info"
+[0m20:36:47.497398 [debug] [Thread-1 (]: On snapshot.data_warehouse.crm_prd_info: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "snapshot.data_warehouse.crm_prd_info"} */
+select * from (
+        select now()::timestamp without time zone as dbt_snapshot_time
+    ) as __dbt_sbq
+    where false
+    limit 0
+
+[0m20:36:47.497608 [debug] [Thread-1 (]: SQL status: SELECT 0 in 0.000 seconds
+[0m20:36:47.497873 [debug] [Thread-1 (]: Writing runtime sql for node "snapshot.data_warehouse.crm_prd_info"
+[0m20:36:47.498157 [debug] [Thread-1 (]: Using postgres connection "snapshot.data_warehouse.crm_prd_info"
+[0m20:36:47.498331 [debug] [Thread-1 (]: On snapshot.data_warehouse.crm_prd_info: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "snapshot.data_warehouse.crm_prd_info"} */
+
+      update "DataWarehouse"."silver"."crm_prd_info"
+    set dbt_valid_to = DBT_INTERNAL_SOURCE.dbt_valid_to
+    from "crm_prd_info__dbt_tmp203647461259" as DBT_INTERNAL_SOURCE
+    where DBT_INTERNAL_SOURCE.dbt_scd_id::text = "DataWarehouse"."silver"."crm_prd_info".dbt_scd_id::text
+      and DBT_INTERNAL_SOURCE.dbt_change_type::text in ('update'::text, 'delete'::text)
+      
+        and "DataWarehouse"."silver"."crm_prd_info".dbt_valid_to is null;
+      
+
+
+    insert into "DataWarehouse"."silver"."crm_prd_info" ("prd_id", "cat_id", "prd_key", "prd_nm", "prd_cost", "prd_line", "prd_start_dt", "prd_end_dt", "dbt_updated_at", "dbt_valid_from", "dbt_valid_to", "dbt_scd_id")
+    select DBT_INTERNAL_SOURCE."prd_id",DBT_INTERNAL_SOURCE."cat_id",DBT_INTERNAL_SOURCE."prd_key",DBT_INTERNAL_SOURCE."prd_nm",DBT_INTERNAL_SOURCE."prd_cost",DBT_INTERNAL_SOURCE."prd_line",DBT_INTERNAL_SOURCE."prd_start_dt",DBT_INTERNAL_SOURCE."prd_end_dt",DBT_INTERNAL_SOURCE."dbt_updated_at",DBT_INTERNAL_SOURCE."dbt_valid_from",DBT_INTERNAL_SOURCE."dbt_valid_to",DBT_INTERNAL_SOURCE."dbt_scd_id"
+    from "crm_prd_info__dbt_tmp203647461259" as DBT_INTERNAL_SOURCE
+    where DBT_INTERNAL_SOURCE.dbt_change_type::text = 'insert'::text;
+
+  
+[0m20:36:47.499130 [debug] [Thread-1 (]: SQL status: INSERT 0 0 in 0.001 seconds
+[0m20:36:47.506601 [debug] [Thread-1 (]: On snapshot.data_warehouse.crm_prd_info: COMMIT
+[0m20:36:47.506814 [debug] [Thread-1 (]: Using postgres connection "snapshot.data_warehouse.crm_prd_info"
+[0m20:36:47.506963 [debug] [Thread-1 (]: On snapshot.data_warehouse.crm_prd_info: COMMIT
+[0m20:36:47.508095 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m20:36:47.509838 [debug] [Thread-1 (]: On snapshot.data_warehouse.crm_prd_info: Close
+[0m20:36:47.510827 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cdefaefc-3a64-46ff-b706-49bb7ec17223', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d7979f0230>]}
+[0m20:36:47.511267 [info ] [Thread-1 (]: 1 of 1 OK snapshotted silver.crm_prd_info ...................................... [[32mINSERT 0 0[0m in 0.12s]
+[0m20:36:47.511549 [debug] [Thread-1 (]: Finished running node snapshot.data_warehouse.crm_prd_info
+[0m20:36:47.512337 [debug] [MainThread]: On master: COMMIT
+[0m20:36:47.512540 [debug] [MainThread]: Using postgres connection "master"
+[0m20:36:47.512684 [debug] [MainThread]: On master: COMMIT
+[0m20:36:47.512829 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m20:36:47.515923 [debug] [MainThread]: SQL status: COMMIT in 0.003 seconds
+[0m20:36:47.516115 [debug] [MainThread]: On master: Close
+[0m20:36:47.516340 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m20:36:47.516480 [debug] [MainThread]: Connection 'snapshot.data_warehouse.crm_prd_info' was properly closed.
+[0m20:36:47.516594 [debug] [MainThread]: Connection 'list_DataWarehouse_gold' was properly closed.
+[0m20:36:47.516732 [info ] [MainThread]: 
+[0m20:36:47.516937 [info ] [MainThread]: Finished running 1 snapshot in 0 hours 0 minutes and 0.19 seconds (0.19s).
+[0m20:36:47.517352 [debug] [MainThread]: Command end result
+[0m20:36:47.534748 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m20:36:47.536586 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m20:36:47.538163 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m20:36:47.541743 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_project/target/run_results.json
+[0m20:36:47.541935 [info ] [MainThread]: 
+[0m20:36:47.542187 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m20:36:47.542413 [info ] [MainThread]: 
+[0m20:36:47.542642 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=1
+[0m20:36:47.543217 [debug] [MainThread]: Resource report: {"command_name": "snapshot", "command_success": true, "command_wall_clock_time": 1.0138552, "process_in_blocks": "79440", "process_kernel_time": 0.121045, "process_mem_max_rss": "140212", "process_out_blocks": "3552", "process_user_time": 1.825765}
+[0m20:36:47.543489 [debug] [MainThread]: Command `dbt snapshot` succeeded at 20:36:47.543440 after 1.01 seconds
+[0m20:36:47.543676 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d794b7e780>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d7977d8830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70d7954e57f0>]}
+[0m20:36:47.543870 [debug] [MainThread]: Flushing usage events
+[0m20:36:48.219454 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:36:50.826398 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c59e11b6540>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c59e1743da0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c59e14e3830>]}
+
+
+============================== 20:36:50.829571 | 9ead1c67-77ca-4c84-a955-1c77570ac750 ==============================
+[0m20:36:50.829571 [info ] [MainThread]: Running with dbt=1.12.5
+[0m20:36:50.829837 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'introspect': 'True', 'profiles_dir': '/opt/airflow/dbt_project', 'maximum_seed_size_mib': '1', 'invocation_command': 'dbt run --project-dir /opt/airflow/dbt_project --select silver', 'empty': 'False', 'log_path': '/opt/airflow/dbt_project/logs', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'warn_error': 'None', 'write_json': 'True', 'debug': 'False', 'target_path': 'None', 'quiet': 'False', 'log_cache_events': 'False', 'version_check': 'True', 'hints_enabled': 'True', 'static_parser': 'True', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'indirect_selection': 'eager', 'printer_width': '80'}
+[0m20:36:50.915656 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9ead1c67-77ca-4c84-a955-1c77570ac750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c59de3044a0>]}
+[0m20:36:50.951515 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9ead1c67-77ca-4c84-a955-1c77570ac750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c59de304a70>]}
+[0m20:36:50.952078 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m20:36:50.998459 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m20:36:51.088975 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m20:36:51.089252 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m20:36:51.089404 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m20:36:51.095217 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9ead1c67-77ca-4c84-a955-1c77570ac750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c59dfdcbd70>]}
+[0m20:36:51.195704 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m20:36:51.197380 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m20:36:51.203989 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m20:36:51.211439 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9ead1c67-77ca-4c84-a955-1c77570ac750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c59dbb57620>]}
+[0m20:36:51.211702 [info ] [MainThread]: Found 8 models, 1 snapshot, 1 seed, 2 data tests, 6 sources, 478 macros
+[0m20:36:51.211879 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9ead1c67-77ca-4c84-a955-1c77570ac750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c59dbb1bc80>]}
+[0m20:36:51.212873 [info ] [MainThread]: 
+[0m20:36:51.213068 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m20:36:51.213206 [info ] [MainThread]: 
+[0m20:36:51.213471 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m20:36:51.215699 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse'
+[0m20:36:51.230691 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse"
+[0m20:36:51.230892 [debug] [ThreadPool]: On list_DataWarehouse: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m20:36:51.231029 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:36:51.235986 [debug] [ThreadPool]: SQL status: SELECT 85 in 0.005 seconds
+[0m20:36:51.236703 [debug] [ThreadPool]: On list_DataWarehouse: Close
+[0m20:36:51.237675 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DataWarehouse, now list_DataWarehouse_silver)
+[0m20:36:51.238015 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse_gold'
+[0m20:36:51.241215 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_silver"
+[0m20:36:51.241754 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_gold"
+[0m20:36:51.241960 [debug] [ThreadPool]: On list_DataWarehouse_silver: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_silver"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'silver'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'silver'
+  
+[0m20:36:51.242142 [debug] [ThreadPool]: On list_DataWarehouse_gold: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_gold"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'gold'
+  
+[0m20:36:51.242294 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m20:36:51.242432 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:36:51.248289 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.006 seconds
+[0m20:36:51.248478 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.006 seconds
+[0m20:36:51.249133 [debug] [ThreadPool]: On list_DataWarehouse_gold: ROLLBACK
+[0m20:36:51.249747 [debug] [ThreadPool]: On list_DataWarehouse_silver: ROLLBACK
+[0m20:36:51.249962 [debug] [ThreadPool]: On list_DataWarehouse_gold: Close
+[0m20:36:51.250094 [debug] [ThreadPool]: On list_DataWarehouse_silver: Close
+[0m20:36:51.252883 [debug] [MainThread]: Using postgres connection "master"
+[0m20:36:51.253103 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m20:36:51.253270 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:36:51.258118 [debug] [MainThread]: SQL status: SELECT 8 in 0.005 seconds
+[0m20:36:51.259440 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9ead1c67-77ca-4c84-a955-1c77570ac750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c59dbb88a10>]}
+[0m20:36:51.259671 [debug] [MainThread]: On master: ROLLBACK
+[0m20:36:51.259874 [debug] [MainThread]: On master: COMMIT
+[0m20:36:51.260024 [debug] [MainThread]: Using postgres connection "master"
+[0m20:36:51.260154 [debug] [MainThread]: On master: COMMIT
+[0m20:36:51.260321 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m20:36:51.260458 [debug] [MainThread]: On master: Close
+[0m20:36:51.262617 [debug] [Thread-1 (]: Began running node model.data_warehouse.crm_cust_info
+[0m20:36:51.262858 [debug] [Thread-2 (]: Began running node model.data_warehouse.crm_sales_details
+[0m20:36:51.263104 [debug] [Thread-3 (]: Began running node model.data_warehouse.erp_cust_az12
+[0m20:36:51.263335 [debug] [Thread-4 (]: Began running node model.data_warehouse.erp_loc_a101
+[0m20:36:51.263600 [info ] [Thread-1 (]: 1 of 5 START sql table model silver.crm_cust_info .............................. [RUN]
+[0m20:36:51.263870 [info ] [Thread-2 (]: 2 of 5 START sql incremental model silver.crm_sales_details .................... [RUN]
+[0m20:36:51.264136 [info ] [Thread-3 (]: 3 of 5 START sql table model silver.erp_cust_az12 .............................. [RUN]
+[0m20:36:51.264408 [info ] [Thread-4 (]: 4 of 5 START sql table model silver.erp_loc_a101 ............................... [RUN]
+[0m20:36:51.264668 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DataWarehouse_silver, now model.data_warehouse.crm_cust_info)
+[0m20:36:51.264874 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DataWarehouse_gold, now model.data_warehouse.crm_sales_details)
+[0m20:36:51.265120 [debug] [Thread-3 (]: Acquiring new postgres connection 'model.data_warehouse.erp_cust_az12'
+[0m20:36:51.265375 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.data_warehouse.erp_loc_a101'
+[0m20:36:51.265565 [debug] [Thread-1 (]: Began compiling node model.data_warehouse.crm_cust_info
+[0m20:36:51.265733 [debug] [Thread-2 (]: Began compiling node model.data_warehouse.crm_sales_details
+[0m20:36:51.265898 [debug] [Thread-3 (]: Began compiling node model.data_warehouse.erp_cust_az12
+[0m20:36:51.266061 [debug] [Thread-4 (]: Began compiling node model.data_warehouse.erp_loc_a101
+[0m20:36:51.269257 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_warehouse.crm_cust_info"
+[0m20:36:51.273035 [debug] [Thread-2 (]: Writing injected SQL for node "model.data_warehouse.crm_sales_details"
+[0m20:36:51.274128 [debug] [Thread-3 (]: Writing injected SQL for node "model.data_warehouse.erp_cust_az12"
+[0m20:36:51.275286 [debug] [Thread-4 (]: Writing injected SQL for node "model.data_warehouse.erp_loc_a101"
+[0m20:36:51.275827 [debug] [Thread-1 (]: Began executing node model.data_warehouse.crm_cust_info
+[0m20:36:51.276033 [debug] [Thread-2 (]: Began executing node model.data_warehouse.crm_sales_details
+[0m20:36:51.303006 [debug] [Thread-1 (]: Writing runtime sql for node "model.data_warehouse.crm_cust_info"
+[0m20:36:51.306183 [debug] [Thread-2 (]: Using postgres connection "model.data_warehouse.crm_sales_details"
+[0m20:36:51.306427 [debug] [Thread-4 (]: Began executing node model.data_warehouse.erp_loc_a101
+[0m20:36:51.306639 [debug] [Thread-3 (]: Began executing node model.data_warehouse.erp_cust_az12
+[0m20:36:51.306920 [debug] [Thread-2 (]: On model.data_warehouse.crm_sales_details: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.crm_sales_details"} */
+
+    
+  
+    
+
+  create temporary table "crm_sales_details__dbt_tmp203651303575"
+  
+  
+    as
+  
+  (
+    
+
+WITH source_data AS (
+    SELECT *
+    FROM "DataWarehouse"."bronze"."crm_sales_details"
+),
+
+transformed_data AS (
+select
+	sls_ord_num,
+	sls_prd_key,
+	sls_cust_id,
+	case when sls_order_dt::varchar !~ '\d{8}' then null
+		else sls_order_dt::varchar::date end as sls_order_dt,
+	case when sls_ship_dt::varchar !~ '\d{8}' then null
+		else sls_ship_dt::varchar::date end as sls_ship_dt,
+	case when sls_due_dt::varchar !~ '\d{8}' then null
+		else sls_due_dt::varchar::date 	end as sls_due_dt,
+	case when sls_sales <= 0 or sls_sales is null or sls_quantity * sls_price != sls_sales then sls_quantity * ABS(sls_price)
+		else sls_sales end as sls_sales,
+	sls_quantity,
+	case when sls_price = 0 or sls_price is null then sls_sales / nullif(sls_quantity,0)
+	    when sls_price < 0 then abs(sls_sales)
+		else sls_price end as sls_price
+    FROM source_data
+)
+
+SELECT * FROM transformed_data src
+
+
+    WHERE sls_order_dt > (SELECT coalesce(MAX(sls_order_dt), '1900-01-01') FROM "DataWarehouse"."silver"."crm_sales_details")
+
+  );
+  
+  
+[0m20:36:51.307146 [debug] [Thread-1 (]: Using postgres connection "model.data_warehouse.crm_cust_info"
+[0m20:36:51.308317 [debug] [Thread-4 (]: Writing runtime sql for node "model.data_warehouse.erp_loc_a101"
+[0m20:36:51.309487 [debug] [Thread-3 (]: Writing runtime sql for node "model.data_warehouse.erp_cust_az12"
+[0m20:36:51.309677 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m20:36:51.309879 [debug] [Thread-1 (]: On model.data_warehouse.crm_cust_info: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.crm_cust_info"} */
+
+  
+    
+
+  create  table "DataWarehouse"."silver"."crm_cust_info__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH source_data AS (
+    -- Deduplikacja danych źródłowych z warstwy Bronze
+    SELECT DISTINCT ON (cst_id) *
+    FROM "DataWarehouse"."bronze"."crm_cust_info"
+    WHERE cst_id is not null
+    ORDER BY cst_id, cst_create_date DESC
+),
+
+transformed_data AS (
+    SELECT
+        cst_id,
+        cst_key,
+        TRIM(cst_firstname) AS cst_firstname,
+        TRIM(cst_lastname) AS cst_lastname,
+        -- Standaryzacja statusu cywilnego
+        CASE
+            WHEN UPPER(TRIM(cst_marital_status)) = 'S' THEN 'Single'
+            WHEN UPPER(TRIM(cst_marital_status)) = 'M' THEN 'Married'
+            ELSE 'n/a'
+        END AS cst_marital_status,
+        -- Standaryzacja płci
+        CASE
+            WHEN UPPER(TRIM(cst_gndr)) = 'F' THEN 'Female'
+            WHEN UPPER(TRIM(cst_gndr)) = 'M' THEN 'Male'
+            ELSE 'n/a'
+        END AS cst_gndr,
+        cst_create_date
+    FROM source_data
+)
+
+SELECT * FROM transformed_data src
+  );
+  
+[0m20:36:51.310197 [debug] [Thread-4 (]: Using postgres connection "model.data_warehouse.erp_loc_a101"
+[0m20:36:51.310436 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:36:51.310652 [debug] [Thread-3 (]: Using postgres connection "model.data_warehouse.erp_cust_az12"
+[0m20:36:51.310860 [debug] [Thread-4 (]: On model.data_warehouse.erp_loc_a101: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.erp_loc_a101"} */
+
+  
+    
+
+  create  table "DataWarehouse"."silver"."erp_loc_a101__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH source_data AS (
+    SELECT *
+    FROM "DataWarehouse"."bronze"."erp_loc_a101"
+),
+
+transformed_data AS (
+SELECT
+replace(cid,'-','') as cid,
+case when UPPER(TRIM(cntry)) in ('US','USA') then 'United States'
+	 when UPPER(TRIM(cntry)) in ('DE') then 'Germany'
+	 when UPPER(TRIM(cntry)) = '' or cntry is null then 'n/a'
+	 else TRIM(cntry) end as cntry
+FROM source_data
+)
+
+SELECT * FROM transformed_data src
+  );
+  
+[0m20:36:51.311142 [debug] [Thread-3 (]: On model.data_warehouse.erp_cust_az12: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.erp_cust_az12"} */
+
+  
+    
+
+  create  table "DataWarehouse"."silver"."erp_cust_az12__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH source_data AS (
+    SELECT *
+    FROM "DataWarehouse"."bronze"."erp_cust_az12"
+),
+
+transformed_data AS (
+SELECT
+case when cid ~ '^NAS' then substring(cid,4,length(cid))
+	else cid end as cid,
+case when bdate > CURRENT_DATE then null
+else bdate end as bdate,
+case when UPPER(TRIM(gen)) in ('F','FEMALE') then 'Female'
+	 when UPPER(TRIM(gen)) in ('M','MALE') then 'Male'
+	 else 'n/a' end as gen
+FROM source_data
+)
+
+SELECT * FROM transformed_data src
+  );
+  
+[0m20:36:51.311313 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m20:36:51.311493 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m20:36:51.335078 [debug] [Thread-3 (]: SQL status: SELECT 18484 in 0.023 seconds
+[0m20:36:51.340960 [debug] [Thread-3 (]: Using postgres connection "model.data_warehouse.erp_cust_az12"
+[0m20:36:51.341252 [debug] [Thread-4 (]: SQL status: SELECT 18484 in 0.030 seconds
+[0m20:36:51.341532 [debug] [Thread-1 (]: SQL status: SELECT 18489 in 0.031 seconds
+[0m20:36:51.341734 [debug] [Thread-3 (]: On model.data_warehouse.erp_cust_az12: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.erp_cust_az12"} */
+alter table "DataWarehouse"."silver"."erp_cust_az12" rename to "erp_cust_az12__dbt_backup"
+[0m20:36:51.342859 [debug] [Thread-4 (]: Using postgres connection "model.data_warehouse.erp_loc_a101"
+[0m20:36:51.343971 [debug] [Thread-1 (]: Using postgres connection "model.data_warehouse.crm_cust_info"
+[0m20:36:51.344251 [debug] [Thread-4 (]: On model.data_warehouse.erp_loc_a101: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.erp_loc_a101"} */
+alter table "DataWarehouse"."silver"."erp_loc_a101" rename to "erp_loc_a101__dbt_backup"
+[0m20:36:51.344517 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:36:51.344729 [debug] [Thread-1 (]: On model.data_warehouse.crm_cust_info: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.crm_cust_info"} */
+alter table "DataWarehouse"."silver"."crm_cust_info" rename to "crm_cust_info__dbt_backup"
+[0m20:36:51.345710 [debug] [Thread-3 (]: Using postgres connection "model.data_warehouse.erp_cust_az12"
+[0m20:36:51.345906 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m20:36:51.346124 [debug] [Thread-3 (]: On model.data_warehouse.erp_cust_az12: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.erp_cust_az12"} */
+alter table "DataWarehouse"."silver"."erp_cust_az12__dbt_tmp" rename to "erp_cust_az12"
+[0m20:36:51.346290 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:36:51.347211 [debug] [Thread-4 (]: Using postgres connection "model.data_warehouse.erp_loc_a101"
+[0m20:36:51.348208 [debug] [Thread-1 (]: Using postgres connection "model.data_warehouse.crm_cust_info"
+[0m20:36:51.348375 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m20:36:51.348564 [debug] [Thread-4 (]: On model.data_warehouse.erp_loc_a101: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.erp_loc_a101"} */
+alter table "DataWarehouse"."silver"."erp_loc_a101__dbt_tmp" rename to "erp_loc_a101"
+[0m20:36:51.348758 [debug] [Thread-1 (]: On model.data_warehouse.crm_cust_info: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.crm_cust_info"} */
+alter table "DataWarehouse"."silver"."crm_cust_info__dbt_tmp" rename to "crm_cust_info"
+[0m20:36:51.354421 [debug] [Thread-2 (]: SQL status: SELECT 0 in 0.045 seconds
+[0m20:36:51.358182 [debug] [Thread-3 (]: On model.data_warehouse.erp_cust_az12: COMMIT
+[0m20:36:51.364318 [debug] [Thread-2 (]: Using postgres connection "model.data_warehouse.crm_sales_details"
+[0m20:36:51.364518 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.006 seconds
+[0m20:36:51.364721 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.006 seconds
+[0m20:36:51.364963 [debug] [Thread-3 (]: Using postgres connection "model.data_warehouse.erp_cust_az12"
+[0m20:36:51.365190 [debug] [Thread-2 (]: On model.data_warehouse.crm_sales_details: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.crm_sales_details"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from INFORMATION_SCHEMA.columns
+      where table_name = 'crm_sales_details__dbt_tmp203651303575'
+        
+      order by ordinal_position
+
+  
+[0m20:36:51.408193 [debug] [Thread-1 (]: Using postgres connection "model.data_warehouse.crm_cust_info"
+[0m20:36:51.409370 [debug] [Thread-4 (]: On model.data_warehouse.erp_loc_a101: COMMIT
+[0m20:36:51.409621 [debug] [Thread-3 (]: On model.data_warehouse.erp_cust_az12: COMMIT
+[0m20:36:51.409923 [debug] [Thread-1 (]: On model.data_warehouse.crm_cust_info: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.crm_cust_info"} */
+
+    
+  
+  comment on table "DataWarehouse"."silver"."crm_cust_info" is $dbt_comment_literal_block$Stores customer information$dbt_comment_literal_block$;
+
+  
+[0m20:36:51.410257 [debug] [Thread-4 (]: Using postgres connection "model.data_warehouse.erp_loc_a101"
+[0m20:36:51.410789 [debug] [Thread-4 (]: On model.data_warehouse.erp_loc_a101: COMMIT
+[0m20:36:51.411125 [debug] [Thread-1 (]: SQL status: COMMENT in 0.000 seconds
+[0m20:36:51.412229 [debug] [Thread-1 (]: Using postgres connection "model.data_warehouse.crm_cust_info"
+[0m20:36:51.412416 [debug] [Thread-1 (]: On model.data_warehouse.crm_cust_info: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.crm_cust_info"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "DataWarehouse".INFORMATION_SCHEMA.columns
+      where table_name = 'crm_cust_info'
+        
+        and table_schema = 'silver'
+        
+      order by ordinal_position
+
+  
+[0m20:36:51.413932 [debug] [Thread-3 (]: SQL status: COMMIT in 0.003 seconds
+[0m20:36:51.416525 [debug] [Thread-3 (]: Applying DROP to: "DataWarehouse"."silver"."erp_cust_az12__dbt_backup"
+[0m20:36:51.416748 [debug] [Thread-2 (]: SQL status: SELECT 9 in 0.007 seconds
+[0m20:36:51.416970 [debug] [Thread-4 (]: SQL status: COMMIT in 0.006 seconds
+[0m20:36:51.417195 [debug] [Thread-1 (]: SQL status: SELECT 7 in 0.005 seconds
+[0m20:36:51.419706 [debug] [Thread-3 (]: Using postgres connection "model.data_warehouse.erp_cust_az12"
+[0m20:36:51.421762 [debug] [Thread-2 (]: Using postgres connection "model.data_warehouse.crm_sales_details"
+[0m20:36:51.422599 [debug] [Thread-4 (]: Applying DROP to: "DataWarehouse"."silver"."erp_loc_a101__dbt_backup"
+[0m20:36:51.428687 [debug] [Thread-1 (]: Using postgres connection "model.data_warehouse.crm_cust_info"
+[0m20:36:51.429041 [debug] [Thread-3 (]: On model.data_warehouse.erp_cust_az12: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.erp_cust_az12"} */
+drop table if exists "DataWarehouse"."silver"."erp_cust_az12__dbt_backup" cascade
+[0m20:36:51.429289 [debug] [Thread-2 (]: On model.data_warehouse.crm_sales_details: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.crm_sales_details"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "DataWarehouse".INFORMATION_SCHEMA.columns
+      where table_name = 'crm_sales_details'
+        
+        and table_schema = 'silver'
+        
+      order by ordinal_position
+
+  
+[0m20:36:51.429654 [debug] [Thread-4 (]: Using postgres connection "model.data_warehouse.erp_loc_a101"
+[0m20:36:51.429881 [debug] [Thread-1 (]: On model.data_warehouse.crm_cust_info: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.crm_cust_info"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "DataWarehouse".INFORMATION_SCHEMA.columns
+      where table_name = 'crm_cust_info'
+        
+        and table_schema = 'silver'
+        
+      order by ordinal_position
+
+  
+[0m20:36:51.430187 [debug] [Thread-4 (]: On model.data_warehouse.erp_loc_a101: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.erp_loc_a101"} */
+drop table if exists "DataWarehouse"."silver"."erp_loc_a101__dbt_backup" cascade
+[0m20:36:51.431632 [debug] [Thread-2 (]: SQL status: SELECT 9 in 0.002 seconds
+[0m20:36:51.431840 [debug] [Thread-1 (]: SQL status: SELECT 7 in 0.001 seconds
+[0m20:36:51.437121 [debug] [Thread-3 (]: SQL status: DROP TABLE in 0.007 seconds
+[0m20:36:51.438939 [debug] [Thread-2 (]: Using postgres connection "model.data_warehouse.crm_sales_details"
+[0m20:36:51.439187 [debug] [Thread-4 (]: SQL status: DROP TABLE in 0.009 seconds
+[0m20:36:51.440180 [debug] [Thread-1 (]: Using postgres connection "model.data_warehouse.crm_cust_info"
+[0m20:36:51.441397 [debug] [Thread-3 (]: On model.data_warehouse.erp_cust_az12: Close
+[0m20:36:51.441624 [debug] [Thread-2 (]: On model.data_warehouse.crm_sales_details: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.crm_sales_details"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from INFORMATION_SCHEMA.columns
+      where table_name = 'crm_sales_details__dbt_tmp203651303575'
+        
+      order by ordinal_position
+
+  
+[0m20:36:51.442314 [debug] [Thread-4 (]: On model.data_warehouse.erp_loc_a101: Close
+[0m20:36:51.442541 [debug] [Thread-1 (]: On model.data_warehouse.crm_cust_info: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.crm_cust_info"} */
+
+    
+  
+  
+    
+    
+    comment on column "DataWarehouse"."silver"."crm_cust_info".cst_id is $dbt_comment_literal_block$Unique numerical identifier assigned to each customer$dbt_comment_literal_block$;
+  
+    
+    
+    comment on column "DataWarehouse"."silver"."crm_cust_info".cst_key is $dbt_comment_literal_block$Alphanumeric identifier representing the customer$dbt_comment_literal_block$;
+  
+    
+    
+    comment on column "DataWarehouse"."silver"."crm_cust_info".cst_firstname is $dbt_comment_literal_block$The customer's first name, as recorded in the system$dbt_comment_literal_block$;
+  
+    
+    
+    comment on column "DataWarehouse"."silver"."crm_cust_info".cst_lastname is $dbt_comment_literal_block$The customer's last name or family name$dbt_comment_literal_block$;
+  
+    
+    
+    comment on column "DataWarehouse"."silver"."crm_cust_info".cst_marital_status is $dbt_comment_literal_block$The marital status of the customer$dbt_comment_literal_block$;
+  
+    
+    
+    comment on column "DataWarehouse"."silver"."crm_cust_info".cst_gndr is $dbt_comment_literal_block$The gender of the customer$dbt_comment_literal_block$;
+  
+    
+    
+    comment on column "DataWarehouse"."silver"."crm_cust_info".cst_create_date is $dbt_comment_literal_block$The date and time when the customer record was created in the system$dbt_comment_literal_block$;
+  
+
+  
+[0m20:36:51.443704 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9ead1c67-77ca-4c84-a955-1c77570ac750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c59e13d00e0>]}
+[0m20:36:51.443913 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9ead1c67-77ca-4c84-a955-1c77570ac750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c59dbb89cd0>]}
+[0m20:36:51.444127 [debug] [Thread-1 (]: SQL status: COMMENT in 0.001 seconds
+[0m20:36:51.444358 [debug] [Thread-2 (]: SQL status: SELECT 9 in 0.002 seconds
+[0m20:36:51.444706 [info ] [Thread-3 (]: 3 of 5 OK created sql table model silver.erp_cust_az12 ......................... [[32mSELECT 18484[0m in 0.18s]
+[0m20:36:51.445064 [info ] [Thread-4 (]: 4 of 5 OK created sql table model silver.erp_loc_a101 .......................... [[32mSELECT 18484[0m in 0.18s]
+[0m20:36:51.445649 [debug] [Thread-1 (]: On model.data_warehouse.crm_cust_info: COMMIT
+[0m20:36:51.446765 [debug] [Thread-2 (]: Using postgres connection "model.data_warehouse.crm_sales_details"
+[0m20:36:51.447111 [debug] [Thread-3 (]: Finished running node model.data_warehouse.erp_cust_az12
+[0m20:36:51.447417 [debug] [Thread-4 (]: Finished running node model.data_warehouse.erp_loc_a101
+[0m20:36:51.447614 [debug] [Thread-1 (]: Using postgres connection "model.data_warehouse.crm_cust_info"
+[0m20:36:51.447857 [debug] [Thread-2 (]: On model.data_warehouse.crm_sales_details: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.crm_sales_details"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "DataWarehouse".INFORMATION_SCHEMA.columns
+      where table_name = 'crm_sales_details'
+        
+        and table_schema = 'silver'
+        
+      order by ordinal_position
+
+  
+[0m20:36:51.448108 [debug] [Thread-3 (]: Began running node model.data_warehouse.erp_px_cat_g1v2
+[0m20:36:51.448430 [debug] [Thread-1 (]: On model.data_warehouse.crm_cust_info: COMMIT
+[0m20:36:51.448692 [info ] [Thread-3 (]: 5 of 5 START sql table model silver.erp_px_cat_g1v2 ............................ [RUN]
+[0m20:36:51.448976 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.data_warehouse.erp_cust_az12, now model.data_warehouse.erp_px_cat_g1v2)
+[0m20:36:51.449155 [debug] [Thread-3 (]: Began compiling node model.data_warehouse.erp_px_cat_g1v2
+[0m20:36:51.450119 [debug] [Thread-3 (]: Writing injected SQL for node "model.data_warehouse.erp_px_cat_g1v2"
+[0m20:36:51.450296 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m20:36:51.450512 [debug] [Thread-2 (]: SQL status: SELECT 9 in 0.002 seconds
+[0m20:36:51.451405 [debug] [Thread-1 (]: Applying DROP to: "DataWarehouse"."silver"."crm_cust_info__dbt_backup"
+[0m20:36:51.451661 [debug] [Thread-3 (]: Began executing node model.data_warehouse.erp_px_cat_g1v2
+[0m20:36:51.456895 [debug] [Thread-2 (]: 
+    In "DataWarehouse"."silver"."crm_sales_details":
+        Schema changed: False
+        Source columns not in target: []
+        Target columns not in source: []
+        New column types: []
+  
+[0m20:36:51.457209 [debug] [Thread-1 (]: Using postgres connection "model.data_warehouse.crm_cust_info"
+[0m20:36:51.458521 [debug] [Thread-3 (]: Writing runtime sql for node "model.data_warehouse.erp_px_cat_g1v2"
+[0m20:36:51.461885 [debug] [Thread-2 (]: Writing runtime sql for node "model.data_warehouse.crm_sales_details"
+[0m20:36:51.462098 [debug] [Thread-1 (]: On model.data_warehouse.crm_cust_info: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.crm_cust_info"} */
+drop table if exists "DataWarehouse"."silver"."crm_cust_info__dbt_backup" cascade
+[0m20:36:51.462439 [debug] [Thread-3 (]: Using postgres connection "model.data_warehouse.erp_px_cat_g1v2"
+[0m20:36:51.462640 [debug] [Thread-3 (]: On model.data_warehouse.erp_px_cat_g1v2: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.erp_px_cat_g1v2"} */
+
+  
+    
+
+  create  table "DataWarehouse"."silver"."erp_px_cat_g1v2__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH source_data AS (
+    SELECT *
+    FROM "DataWarehouse"."bronze"."erp_px_cat_g1v2"
+),
+
+transformed_data AS (
+SELECT
+id,
+cat,
+subcat,
+maintenance
+FROM source_data
+)
+
+SELECT * FROM transformed_data src
+  );
+  
+[0m20:36:51.462816 [debug] [Thread-2 (]: Using postgres connection "model.data_warehouse.crm_sales_details"
+[0m20:36:51.462989 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m20:36:51.463156 [debug] [Thread-2 (]: On model.data_warehouse.crm_sales_details: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.crm_sales_details"} */
+
+      insert into "DataWarehouse"."silver"."crm_sales_details" ("sls_ord_num", "sls_prd_key", "sls_cust_id", "sls_order_dt", "sls_ship_dt", "sls_due_dt", "sls_sales", "sls_quantity", "sls_price")
+    (
+        select "sls_ord_num", "sls_prd_key", "sls_cust_id", "sls_order_dt", "sls_ship_dt", "sls_due_dt", "sls_sales", "sls_quantity", "sls_price"
+        from "crm_sales_details__dbt_tmp203651303575"
+    )
+
+
+  
+[0m20:36:51.463572 [debug] [Thread-2 (]: SQL status: INSERT 0 0 in 0.000 seconds
+[0m20:36:51.464238 [debug] [Thread-2 (]: On model.data_warehouse.crm_sales_details: COMMIT
+[0m20:36:51.464424 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.002 seconds
+[0m20:36:51.464617 [debug] [Thread-2 (]: Using postgres connection "model.data_warehouse.crm_sales_details"
+[0m20:36:51.465226 [debug] [Thread-1 (]: On model.data_warehouse.crm_cust_info: Close
+[0m20:36:51.465397 [debug] [Thread-2 (]: On model.data_warehouse.crm_sales_details: COMMIT
+[0m20:36:51.465672 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9ead1c67-77ca-4c84-a955-1c77570ac750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c59dbb89bb0>]}
+[0m20:36:51.465959 [info ] [Thread-1 (]: 1 of 5 OK created sql table model silver.crm_cust_info ......................... [[32mSELECT 18489[0m in 0.20s]
+[0m20:36:51.466196 [debug] [Thread-1 (]: Finished running node model.data_warehouse.crm_cust_info
+[0m20:36:51.466436 [debug] [Thread-2 (]: SQL status: COMMIT in 0.001 seconds
+[0m20:36:51.466857 [debug] [Thread-2 (]: On model.data_warehouse.crm_sales_details: Close
+[0m20:36:51.467107 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9ead1c67-77ca-4c84-a955-1c77570ac750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c59dac92060>]}
+[0m20:36:51.467366 [info ] [Thread-2 (]: 2 of 5 OK created sql incremental model silver.crm_sales_details ............... [[32mINSERT 0 0[0m in 0.20s]
+[0m20:36:51.467551 [debug] [Thread-3 (]: SQL status: SELECT 37 in 0.005 seconds
+[0m20:36:51.467816 [debug] [Thread-2 (]: Finished running node model.data_warehouse.crm_sales_details
+[0m20:36:51.468984 [debug] [Thread-3 (]: Using postgres connection "model.data_warehouse.erp_px_cat_g1v2"
+[0m20:36:51.469254 [debug] [Thread-3 (]: On model.data_warehouse.erp_px_cat_g1v2: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.erp_px_cat_g1v2"} */
+alter table "DataWarehouse"."silver"."erp_px_cat_g1v2" rename to "erp_px_cat_g1v2__dbt_backup"
+[0m20:36:51.469633 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:36:51.470526 [debug] [Thread-3 (]: Using postgres connection "model.data_warehouse.erp_px_cat_g1v2"
+[0m20:36:51.470690 [debug] [Thread-3 (]: On model.data_warehouse.erp_px_cat_g1v2: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.erp_px_cat_g1v2"} */
+alter table "DataWarehouse"."silver"."erp_px_cat_g1v2__dbt_tmp" rename to "erp_px_cat_g1v2"
+[0m20:36:51.471009 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:36:51.471687 [debug] [Thread-3 (]: On model.data_warehouse.erp_px_cat_g1v2: COMMIT
+[0m20:36:51.471864 [debug] [Thread-3 (]: Using postgres connection "model.data_warehouse.erp_px_cat_g1v2"
+[0m20:36:51.472004 [debug] [Thread-3 (]: On model.data_warehouse.erp_px_cat_g1v2: COMMIT
+[0m20:36:51.472924 [debug] [Thread-3 (]: SQL status: COMMIT in 0.001 seconds
+[0m20:36:51.473623 [debug] [Thread-3 (]: Applying DROP to: "DataWarehouse"."silver"."erp_px_cat_g1v2__dbt_backup"
+[0m20:36:51.473974 [debug] [Thread-3 (]: Using postgres connection "model.data_warehouse.erp_px_cat_g1v2"
+[0m20:36:51.474177 [debug] [Thread-3 (]: On model.data_warehouse.erp_px_cat_g1v2: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.erp_px_cat_g1v2"} */
+drop table if exists "DataWarehouse"."silver"."erp_px_cat_g1v2__dbt_backup" cascade
+[0m20:36:51.475922 [debug] [Thread-3 (]: SQL status: DROP TABLE in 0.002 seconds
+[0m20:36:51.476496 [debug] [Thread-3 (]: On model.data_warehouse.erp_px_cat_g1v2: Close
+[0m20:36:51.476746 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9ead1c67-77ca-4c84-a955-1c77570ac750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c59dcf1d280>]}
+[0m20:36:51.477016 [info ] [Thread-3 (]: 5 of 5 OK created sql table model silver.erp_px_cat_g1v2 ....................... [[32mSELECT 37[0m in 0.03s]
+[0m20:36:51.477247 [debug] [Thread-3 (]: Finished running node model.data_warehouse.erp_px_cat_g1v2
+[0m20:36:51.477979 [debug] [MainThread]: On master: COMMIT
+[0m20:36:51.478180 [debug] [MainThread]: Using postgres connection "master"
+[0m20:36:51.478326 [debug] [MainThread]: On master: COMMIT
+[0m20:36:51.478455 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m20:36:51.481397 [debug] [MainThread]: SQL status: COMMIT in 0.003 seconds
+[0m20:36:51.481584 [debug] [MainThread]: On master: Close
+[0m20:36:51.481813 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m20:36:51.481959 [debug] [MainThread]: Connection 'model.data_warehouse.crm_cust_info' was properly closed.
+[0m20:36:51.482081 [debug] [MainThread]: Connection 'model.data_warehouse.crm_sales_details' was properly closed.
+[0m20:36:51.482194 [debug] [MainThread]: Connection 'model.data_warehouse.erp_px_cat_g1v2' was properly closed.
+[0m20:36:51.482305 [debug] [MainThread]: Connection 'model.data_warehouse.erp_loc_a101' was properly closed.
+[0m20:36:51.482479 [info ] [MainThread]: 
+[0m20:36:51.482633 [info ] [MainThread]: Finished running 1 incremental model, 4 table models in 0 hours 0 minutes and 0.27 seconds (0.27s).
+[0m20:36:51.483195 [debug] [MainThread]: Command end result
+[0m20:36:51.501187 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m20:36:51.502771 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m20:36:51.504252 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m20:36:51.507976 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_project/target/run_results.json
+[0m20:36:51.508160 [info ] [MainThread]: 
+[0m20:36:51.508336 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m20:36:51.508476 [info ] [MainThread]: 
+[0m20:36:51.508630 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=5
+[0m20:36:51.509116 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.71710134, "process_in_blocks": "0", "process_kernel_time": 0.096729, "process_mem_max_rss": "136432", "process_out_blocks": "2544", "process_user_time": 1.509379}
+[0m20:36:51.509379 [debug] [MainThread]: Command `dbt run` succeeded at 20:36:51.509333 after 0.72 seconds
+[0m20:36:51.509556 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c59e070eab0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c59de598ef0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c59dbb32c30>]}
+[0m20:36:51.509726 [debug] [MainThread]: Flushing usage events
+[0m20:36:52.210993 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:36:56.442735 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a1ff75b620>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a20045ef00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a20031d880>]}
+
+
+============================== 20:36:56.445791 | f98b7921-a455-44eb-9610-18a2c82df8c0 ==============================
+[0m20:36:56.445791 [info ] [MainThread]: Running with dbt=1.12.5
+[0m20:36:56.446060 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'static_parser': 'True', 'cache_selected_only': 'False', 'write_json': 'True', 'log_path': '/opt/airflow/dbt_project/logs', 'log_cache_events': 'False', 'printer_width': '80', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'profiles_dir': '/opt/airflow/dbt_project', 'fail_fast': 'False', 'use_colors': 'True', 'empty': 'False', 'maximum_seed_size_mib': '1', 'partial_parse': 'True', 'log_format': 'default', 'no_print': 'None', 'hints_enabled': 'True', 'warn_error': 'None', 'invocation_command': 'dbt run --project-dir /opt/airflow/dbt_project --select gold', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'introspect': 'True', 'debug': 'False', 'target_path': 'None'}
+[0m20:36:56.533187 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f98b7921-a455-44eb-9610-18a2c82df8c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a1fe96a240>]}
+[0m20:36:56.568563 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f98b7921-a455-44eb-9610-18a2c82df8c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a1febfcf50>]}
+[0m20:36:56.569251 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m20:36:56.613308 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m20:36:56.702483 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m20:36:56.702762 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m20:36:56.702919 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m20:36:56.708761 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f98b7921-a455-44eb-9610-18a2c82df8c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a1fd923140>]}
+[0m20:36:56.810493 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m20:36:56.812271 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m20:36:56.819376 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m20:36:56.827007 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f98b7921-a455-44eb-9610-18a2c82df8c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a1fc557b00>]}
+[0m20:36:56.827277 [info ] [MainThread]: Found 8 models, 1 snapshot, 1 seed, 2 data tests, 6 sources, 478 macros
+[0m20:36:56.827447 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f98b7921-a455-44eb-9610-18a2c82df8c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a1fd9b51f0>]}
+[0m20:36:56.828348 [info ] [MainThread]: 
+[0m20:36:56.828539 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m20:36:56.828674 [info ] [MainThread]: 
+[0m20:36:56.828950 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m20:36:56.831258 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse'
+[0m20:36:56.846219 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse"
+[0m20:36:56.846430 [debug] [ThreadPool]: On list_DataWarehouse: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m20:36:56.846568 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:36:56.851461 [debug] [ThreadPool]: SQL status: SELECT 85 in 0.005 seconds
+[0m20:36:56.852308 [debug] [ThreadPool]: On list_DataWarehouse: Close
+[0m20:36:56.853377 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DataWarehouse, now list_DataWarehouse_gold)
+[0m20:36:56.853725 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse_silver'
+[0m20:36:56.857160 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_gold"
+[0m20:36:56.857724 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_silver"
+[0m20:36:56.857984 [debug] [ThreadPool]: On list_DataWarehouse_gold: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_gold"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'gold'
+  
+[0m20:36:56.858206 [debug] [ThreadPool]: On list_DataWarehouse_silver: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_silver"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'silver'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'silver'
+  
+[0m20:36:56.858387 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m20:36:56.858531 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:36:56.864470 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.006 seconds
+[0m20:36:56.864660 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.006 seconds
+[0m20:36:56.865285 [debug] [ThreadPool]: On list_DataWarehouse_gold: ROLLBACK
+[0m20:36:56.865926 [debug] [ThreadPool]: On list_DataWarehouse_silver: ROLLBACK
+[0m20:36:56.866137 [debug] [ThreadPool]: On list_DataWarehouse_gold: Close
+[0m20:36:56.866267 [debug] [ThreadPool]: On list_DataWarehouse_silver: Close
+[0m20:36:56.869241 [debug] [MainThread]: Using postgres connection "master"
+[0m20:36:56.869477 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m20:36:56.869655 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:36:56.874647 [debug] [MainThread]: SQL status: SELECT 0 in 0.005 seconds
+[0m20:36:56.875325 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f98b7921-a455-44eb-9610-18a2c82df8c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a1fdddd5e0>]}
+[0m20:36:56.875584 [debug] [MainThread]: On master: ROLLBACK
+[0m20:36:56.875790 [debug] [MainThread]: On master: COMMIT
+[0m20:36:56.875939 [debug] [MainThread]: Using postgres connection "master"
+[0m20:36:56.876070 [debug] [MainThread]: On master: COMMIT
+[0m20:36:56.876240 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m20:36:56.876382 [debug] [MainThread]: On master: Close
+[0m20:36:56.878506 [debug] [Thread-1 (]: Began running node model.data_warehouse.dim_customers
+[0m20:36:56.878742 [debug] [Thread-2 (]: Began running node model.data_warehouse.dim_products
+[0m20:36:56.879046 [info ] [Thread-1 (]: 1 of 3 START sql view model gold.dim_customers ................................. [RUN]
+[0m20:36:56.879323 [info ] [Thread-2 (]: 2 of 3 START sql view model gold.dim_products .................................. [RUN]
+[0m20:36:56.879563 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DataWarehouse_silver, now model.data_warehouse.dim_customers)
+[0m20:36:56.879774 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DataWarehouse_gold, now model.data_warehouse.dim_products)
+[0m20:36:56.879961 [debug] [Thread-1 (]: Began compiling node model.data_warehouse.dim_customers
+[0m20:36:56.880129 [debug] [Thread-2 (]: Began compiling node model.data_warehouse.dim_products
+[0m20:36:56.883389 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_warehouse.dim_customers"
+[0m20:36:56.884609 [debug] [Thread-2 (]: Writing injected SQL for node "model.data_warehouse.dim_products"
+[0m20:36:56.885048 [debug] [Thread-2 (]: Began executing node model.data_warehouse.dim_products
+[0m20:36:56.885251 [debug] [Thread-1 (]: Began executing node model.data_warehouse.dim_customers
+[0m20:36:56.900713 [debug] [Thread-2 (]: Writing runtime sql for node "model.data_warehouse.dim_products"
+[0m20:36:56.901893 [debug] [Thread-1 (]: Writing runtime sql for node "model.data_warehouse.dim_customers"
+[0m20:36:56.902362 [debug] [Thread-2 (]: Using postgres connection "model.data_warehouse.dim_products"
+[0m20:36:56.902585 [debug] [Thread-1 (]: Using postgres connection "model.data_warehouse.dim_customers"
+[0m20:36:56.902818 [debug] [Thread-2 (]: On model.data_warehouse.dim_products: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.dim_products"} */
+
+  create view "DataWarehouse"."gold"."dim_products__dbt_tmp"
+    
+    
+  as (
+    
+
+WITH crm_prd_info AS (
+    SELECT  *
+    FROM "DataWarehouse"."silver"."crm_prd_info"
+)
+ ,erp_px_cat_g1v2 AS (
+    SELECT  *
+    FROM "DataWarehouse"."silver"."erp_px_cat_g1v2"
+)
+
+, dim_data AS (
+select
+	MD5(cpi.prd_key::text) AS product_key,
+	cpi.prd_id as product_id,
+	cpi.prd_key as product_number,
+	cpi.prd_nm as product_name,
+	cpi.cat_id as category_id,
+	epcgv.cat as category,
+	epcgv.subcat as subcategory,
+	epcgv.maintenance as maintenance,
+	cpi.prd_cost as cost,
+	cpi.prd_line as product_line,
+	cpi.prd_start_dt as start_date
+from crm_prd_info as cpi
+left join erp_px_cat_g1v2 epcgv
+	on cpi.cat_id=epcgv.id
+where cpi.prd_end_dt is null
+and dbt_valid_to is null
+)
+
+SELECT * FROM dim_data dim
+  );
+[0m20:36:56.903047 [debug] [Thread-1 (]: On model.data_warehouse.dim_customers: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.dim_customers"} */
+
+  create view "DataWarehouse"."gold"."dim_customers__dbt_tmp"
+    
+    
+  as (
+    
+
+WITH crm_cust_info AS (
+    SELECT  *
+    FROM "DataWarehouse"."silver"."crm_cust_info"
+)
+ ,erp_cust_az12 AS (
+    SELECT  *
+    FROM "DataWarehouse"."silver"."erp_cust_az12"
+)
+
+ ,erp_loc_a101 AS (
+    SELECT  *
+    FROM "DataWarehouse"."silver"."erp_loc_a101"
+)
+
+, dim_data AS (
+select
+	MD5(cci.cst_id::text) AS customer_key,
+	cci.cst_id as customer_id,
+	cci.cst_key as customer_number,
+	cci.cst_firstname as first_name,
+	cci.cst_lastname as last_name,
+	cci.cst_marital_status as martial_status,
+	case when cci.cst_gndr != 'n/a' then cci.cst_gndr
+		else coalesce (eca.gen, 'n/a') end as gender,
+	eca.bdate as birthdate,
+	ela.cntry as country,
+	cci.cst_create_date as create_date
+from crm_cust_info as cci
+left join erp_cust_az12 as eca
+	on cci.cst_key = eca.cid
+left join erp_loc_a101 ela
+	on cci.cst_key = ela.cid
+)
+
+SELECT * FROM dim_data dim
+  );
+[0m20:36:56.903269 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m20:36:56.903468 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:36:56.909549 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.006 seconds
+[0m20:36:56.909772 [debug] [Thread-2 (]: SQL status: CREATE VIEW in 0.006 seconds
+[0m20:36:56.912583 [debug] [Thread-1 (]: Using postgres connection "model.data_warehouse.dim_customers"
+[0m20:36:56.913572 [debug] [Thread-2 (]: Using postgres connection "model.data_warehouse.dim_products"
+[0m20:36:56.913791 [debug] [Thread-1 (]: On model.data_warehouse.dim_customers: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.dim_customers"} */
+alter table "DataWarehouse"."gold"."dim_customers__dbt_tmp" rename to "dim_customers"
+[0m20:36:56.914016 [debug] [Thread-2 (]: On model.data_warehouse.dim_products: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.dim_products"} */
+alter table "DataWarehouse"."gold"."dim_products__dbt_tmp" rename to "dim_products"
+[0m20:36:56.914463 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:36:56.914670 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:36:56.922244 [debug] [Thread-1 (]: On model.data_warehouse.dim_customers: COMMIT
+[0m20:36:56.922976 [debug] [Thread-2 (]: On model.data_warehouse.dim_products: COMMIT
+[0m20:36:56.923214 [debug] [Thread-1 (]: Using postgres connection "model.data_warehouse.dim_customers"
+[0m20:36:56.923439 [debug] [Thread-2 (]: Using postgres connection "model.data_warehouse.dim_products"
+[0m20:36:56.923652 [debug] [Thread-1 (]: On model.data_warehouse.dim_customers: COMMIT
+[0m20:36:56.923863 [debug] [Thread-2 (]: On model.data_warehouse.dim_products: COMMIT
+[0m20:36:56.925157 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m20:36:56.927670 [debug] [Thread-1 (]: Applying DROP to: "DataWarehouse"."gold"."dim_customers__dbt_backup"
+[0m20:36:56.927887 [debug] [Thread-2 (]: SQL status: COMMIT in 0.004 seconds
+[0m20:36:56.930155 [debug] [Thread-1 (]: Using postgres connection "model.data_warehouse.dim_customers"
+[0m20:36:56.930871 [debug] [Thread-2 (]: Applying DROP to: "DataWarehouse"."gold"."dim_products__dbt_backup"
+[0m20:36:56.931094 [debug] [Thread-1 (]: On model.data_warehouse.dim_customers: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.dim_customers"} */
+drop view if exists "DataWarehouse"."gold"."dim_customers__dbt_backup" cascade
+[0m20:36:56.931436 [debug] [Thread-2 (]: Using postgres connection "model.data_warehouse.dim_products"
+[0m20:36:56.931679 [debug] [Thread-2 (]: On model.data_warehouse.dim_products: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.dim_products"} */
+drop view if exists "DataWarehouse"."gold"."dim_products__dbt_backup" cascade
+[0m20:36:56.931879 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.000 seconds
+[0m20:36:56.933114 [debug] [Thread-1 (]: On model.data_warehouse.dim_customers: Close
+[0m20:36:56.933310 [debug] [Thread-2 (]: SQL status: DROP VIEW in 0.001 seconds
+[0m20:36:56.934635 [debug] [Thread-2 (]: On model.data_warehouse.dim_products: Close
+[0m20:36:56.935126 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f98b7921-a455-44eb-9610-18a2c82df8c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a201a941d0>]}
+[0m20:36:56.935319 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f98b7921-a455-44eb-9610-18a2c82df8c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a1fb47a9f0>]}
+[0m20:36:56.935684 [info ] [Thread-1 (]: 1 of 3 OK created sql view model gold.dim_customers ............................ [[32mCREATE VIEW[0m in 0.05s]
+[0m20:36:56.936048 [info ] [Thread-2 (]: 2 of 3 OK created sql view model gold.dim_products ............................. [[32mCREATE VIEW[0m in 0.06s]
+[0m20:36:56.936446 [debug] [Thread-1 (]: Finished running node model.data_warehouse.dim_customers
+[0m20:36:56.936734 [debug] [Thread-2 (]: Finished running node model.data_warehouse.dim_products
+[0m20:36:56.937284 [debug] [Thread-4 (]: Began running node model.data_warehouse.fact_sales
+[0m20:36:56.937551 [info ] [Thread-4 (]: 3 of 3 START sql view model gold.fact_sales .................................... [RUN]
+[0m20:36:56.937810 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.data_warehouse.fact_sales'
+[0m20:36:56.937974 [debug] [Thread-4 (]: Began compiling node model.data_warehouse.fact_sales
+[0m20:36:56.939317 [debug] [Thread-4 (]: Writing injected SQL for node "model.data_warehouse.fact_sales"
+[0m20:36:56.939614 [debug] [Thread-4 (]: Began executing node model.data_warehouse.fact_sales
+[0m20:36:56.940881 [debug] [Thread-4 (]: Writing runtime sql for node "model.data_warehouse.fact_sales"
+[0m20:36:56.941181 [debug] [Thread-4 (]: Using postgres connection "model.data_warehouse.fact_sales"
+[0m20:36:56.941353 [debug] [Thread-4 (]: On model.data_warehouse.fact_sales: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.fact_sales"} */
+
+  create view "DataWarehouse"."gold"."fact_sales__dbt_tmp"
+    
+    
+  as (
+    
+
+WITH crm_sales_details AS (
+    SELECT  *
+    FROM "DataWarehouse"."silver"."crm_sales_details"
+)
+ ,dim_products AS (
+    SELECT  *
+    FROM "DataWarehouse"."gold"."dim_products"
+)
+
+ ,dim_customers AS (
+    SELECT  *
+    FROM "DataWarehouse"."gold"."dim_customers"
+)
+
+, fact_data AS (
+select
+	csd.sls_ord_num as order_number,
+	dp.product_key as product_key,
+	dc.customer_key as customer_key,
+	csd.sls_order_dt as order_date,
+	csd.sls_ship_dt as shipping_date,
+	csd.sls_due_dt as due_dt,
+	csd.sls_sales as sales_amount,
+	csd.sls_quantity as quantity,
+	csd.sls_price as price
+from crm_sales_details as csd
+left join dim_products as dp
+	on csd.sls_prd_key = dp.product_number
+left join dim_customers dc
+	on csd.sls_cust_id = dc.customer_id
+)
+
+SELECT * FROM fact_data fact
+  );
+[0m20:36:56.941504 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m20:36:56.946658 [debug] [Thread-4 (]: SQL status: CREATE VIEW in 0.005 seconds
+[0m20:36:56.947722 [debug] [Thread-4 (]: Using postgres connection "model.data_warehouse.fact_sales"
+[0m20:36:56.947928 [debug] [Thread-4 (]: On model.data_warehouse.fact_sales: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.fact_sales"} */
+alter table "DataWarehouse"."gold"."fact_sales__dbt_tmp" rename to "fact_sales"
+[0m20:36:56.948371 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:36:56.948991 [debug] [Thread-4 (]: On model.data_warehouse.fact_sales: COMMIT
+[0m20:36:56.949160 [debug] [Thread-4 (]: Using postgres connection "model.data_warehouse.fact_sales"
+[0m20:36:56.949295 [debug] [Thread-4 (]: On model.data_warehouse.fact_sales: COMMIT
+[0m20:36:56.950252 [debug] [Thread-4 (]: SQL status: COMMIT in 0.001 seconds
+[0m20:36:56.950863 [debug] [Thread-4 (]: Applying DROP to: "DataWarehouse"."gold"."fact_sales__dbt_backup"
+[0m20:36:56.951142 [debug] [Thread-4 (]: Using postgres connection "model.data_warehouse.fact_sales"
+[0m20:36:56.951391 [debug] [Thread-4 (]: On model.data_warehouse.fact_sales: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "model.data_warehouse.fact_sales"} */
+drop view if exists "DataWarehouse"."gold"."fact_sales__dbt_backup" cascade
+[0m20:36:56.951747 [debug] [Thread-4 (]: SQL status: DROP VIEW in 0.000 seconds
+[0m20:36:56.952350 [debug] [Thread-4 (]: On model.data_warehouse.fact_sales: Close
+[0m20:36:56.952635 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f98b7921-a455-44eb-9610-18a2c82df8c0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a1fb3915e0>]}
+[0m20:36:56.952922 [info ] [Thread-4 (]: 3 of 3 OK created sql view model gold.fact_sales ............................... [[32mCREATE VIEW[0m in 0.01s]
+[0m20:36:56.953160 [debug] [Thread-4 (]: Finished running node model.data_warehouse.fact_sales
+[0m20:36:56.953884 [debug] [MainThread]: On master: COMMIT
+[0m20:36:56.954095 [debug] [MainThread]: Using postgres connection "master"
+[0m20:36:56.954246 [debug] [MainThread]: On master: COMMIT
+[0m20:36:56.954379 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m20:36:56.957331 [debug] [MainThread]: SQL status: COMMIT in 0.003 seconds
+[0m20:36:56.957538 [debug] [MainThread]: On master: Close
+[0m20:36:56.957768 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m20:36:56.957922 [debug] [MainThread]: Connection 'model.data_warehouse.dim_products' was properly closed.
+[0m20:36:56.958050 [debug] [MainThread]: Connection 'model.data_warehouse.dim_customers' was properly closed.
+[0m20:36:56.958166 [debug] [MainThread]: Connection 'model.data_warehouse.fact_sales' was properly closed.
+[0m20:36:56.958344 [info ] [MainThread]: 
+[0m20:36:56.958501 [info ] [MainThread]: Finished running 3 view models in 0 hours 0 minutes and 0.13 seconds (0.13s).
+[0m20:36:56.958937 [debug] [MainThread]: Command end result
+[0m20:36:57.016319 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m20:36:57.018093 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m20:36:57.019689 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m20:36:57.023490 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_project/target/run_results.json
+[0m20:36:57.023683 [info ] [MainThread]: 
+[0m20:36:57.023879 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m20:36:57.024022 [info ] [MainThread]: 
+[0m20:36:57.024181 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=3
+[0m20:36:57.024694 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.6160873, "process_in_blocks": "0", "process_kernel_time": 0.083985, "process_mem_max_rss": "134468", "process_out_blocks": "2464", "process_user_time": 1.460746}
+[0m20:36:57.024962 [debug] [MainThread]: Command `dbt run` succeeded at 20:36:57.024913 after 0.62 seconds
+[0m20:36:57.025144 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a1fb5ec2c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a1fc981a00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a20031d880>]}
+[0m20:36:57.025328 [debug] [MainThread]: Flushing usage events
+[0m20:36:57.707949 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:37:47.601835 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a8622f5c6e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a8622f5f5f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a8622f5c620>]}
+
+
+============================== 20:37:47.604766 | 1fcde51a-4ff1-4b84-bdd6-49a7f51dedd7 ==============================
+[0m20:37:47.604766 [info ] [MainThread]: Running with dbt=1.12.5
+[0m20:37:47.605051 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'empty': 'None', 'debug': 'False', 'indirect_selection': 'eager', 'log_format': 'default', 'fail_fast': 'False', 'cache_selected_only': 'False', 'quiet': 'False', 'partial_parse': 'True', 'write_json': 'True', 'introspect': 'True', 'warn_error': 'None', 'log_cache_events': 'False', 'maximum_seed_size_mib': '1', 'profiles_dir': '/opt/airflow/dbt_project', 'version_check': 'True', 'printer_width': '80', 'use_colors': 'True', 'hints_enabled': 'True', 'static_parser': 'True', 'invocation_command': 'dbt test', 'target_path': 'None', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'log_path': '/opt/airflow/dbt_project/logs'}
+[0m20:37:47.705038 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1fcde51a-4ff1-4b84-bdd6-49a7f51dedd7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a862312bef0>]}
+[0m20:37:47.739117 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1fcde51a-4ff1-4b84-bdd6-49a7f51dedd7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a862241dbb0>]}
+[0m20:37:47.739675 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m20:37:47.785690 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m20:37:47.889188 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m20:37:47.889444 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m20:37:47.889596 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m20:37:47.894875 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1fcde51a-4ff1-4b84-bdd6-49a7f51dedd7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a86217ed700>]}
+[0m20:37:47.994599 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m20:37:47.995760 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m20:37:48.005709 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m20:37:48.019813 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1fcde51a-4ff1-4b84-bdd6-49a7f51dedd7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a861ffe3140>]}
+[0m20:37:48.020085 [info ] [MainThread]: Found 8 models, 1 snapshot, 1 seed, 2 data tests, 6 sources, 478 macros
+[0m20:37:48.020263 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1fcde51a-4ff1-4b84-bdd6-49a7f51dedd7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a8620352ae0>]}
+[0m20:37:48.021349 [info ] [MainThread]: 
+[0m20:37:48.021576 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m20:37:48.021732 [info ] [MainThread]: 
+[0m20:37:48.022030 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m20:37:48.024481 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse_gold'
+[0m20:37:48.024815 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse_silver'
+[0m20:37:48.042151 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_gold"
+[0m20:37:48.042425 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_silver"
+[0m20:37:48.042720 [debug] [ThreadPool]: On list_DataWarehouse_gold: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_gold"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'gold'
+  
+[0m20:37:48.042909 [debug] [ThreadPool]: On list_DataWarehouse_silver: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_silver"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'silver'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'silver'
+  
+[0m20:37:48.043071 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:37:48.043210 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:37:48.055247 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.012 seconds
+[0m20:37:48.055472 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.012 seconds
+[0m20:37:48.056154 [debug] [ThreadPool]: On list_DataWarehouse_gold: ROLLBACK
+[0m20:37:48.056785 [debug] [ThreadPool]: On list_DataWarehouse_silver: ROLLBACK
+[0m20:37:48.057012 [debug] [ThreadPool]: On list_DataWarehouse_gold: Close
+[0m20:37:48.057147 [debug] [ThreadPool]: On list_DataWarehouse_silver: Close
+[0m20:37:48.060041 [debug] [MainThread]: Using postgres connection "master"
+[0m20:37:48.060260 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m20:37:48.060433 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:37:48.064363 [debug] [MainThread]: SQL status: SELECT 8 in 0.004 seconds
+[0m20:37:48.065667 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1fcde51a-4ff1-4b84-bdd6-49a7f51dedd7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a861fe0d1f0>]}
+[0m20:37:48.065905 [debug] [MainThread]: On master: ROLLBACK
+[0m20:37:48.066098 [debug] [MainThread]: On master: COMMIT
+[0m20:37:48.066244 [debug] [MainThread]: Using postgres connection "master"
+[0m20:37:48.066371 [debug] [MainThread]: On master: COMMIT
+[0m20:37:48.066532 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m20:37:48.066668 [debug] [MainThread]: On master: Close
+[0m20:37:48.068733 [debug] [Thread-1 (]: Began running node test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c
+[0m20:37:48.068957 [debug] [Thread-2 (]: Began running node test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c
+[0m20:37:48.069179 [info ] [Thread-1 (]: 1 of 2 START test not_null_crm_cust_info_cst_id ................................ [RUN]
+[0m20:37:48.069386 [info ] [Thread-2 (]: 2 of 2 START test unique_crm_cust_info_cst_id .................................. [RUN]
+[0m20:37:48.069612 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DataWarehouse_silver, now test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c)
+[0m20:37:48.069817 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DataWarehouse_gold, now test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c)
+[0m20:37:48.069986 [debug] [Thread-1 (]: Began compiling node test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c
+[0m20:37:48.070145 [debug] [Thread-2 (]: Began compiling node test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c
+[0m20:37:48.078358 [debug] [Thread-1 (]: Writing injected SQL for node "test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c"
+[0m20:37:48.082058 [debug] [Thread-2 (]: Writing injected SQL for node "test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c"
+[0m20:37:48.082412 [debug] [Thread-1 (]: Began executing node test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c
+[0m20:37:48.082628 [debug] [Thread-2 (]: Began executing node test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c
+[0m20:37:48.090419 [debug] [Thread-1 (]: Writing runtime sql for node "test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c"
+[0m20:37:48.091540 [debug] [Thread-2 (]: Writing runtime sql for node "test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c"
+[0m20:37:48.091935 [debug] [Thread-2 (]: Using postgres connection "test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c"
+[0m20:37:48.092128 [debug] [Thread-1 (]: Using postgres connection "test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c"
+[0m20:37:48.092314 [debug] [Thread-2 (]: On test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    cst_id as unique_field,
+    count(*) as n_records
+
+from "DataWarehouse"."silver"."crm_cust_info"
+where cst_id is not null
+group by cst_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:37:48.092485 [debug] [Thread-1 (]: On test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select cst_id
+from "DataWarehouse"."silver"."crm_cust_info"
+where cst_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:37:48.092644 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m20:37:48.092794 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:37:48.095677 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.003 seconds
+[0m20:37:48.097905 [debug] [Thread-1 (]: On test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c: ROLLBACK
+[0m20:37:48.098110 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.005 seconds
+[0m20:37:48.098805 [debug] [Thread-2 (]: On test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c: ROLLBACK
+[0m20:37:48.098970 [debug] [Thread-1 (]: On test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c: Close
+[0m20:37:48.099177 [debug] [Thread-2 (]: On test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c: Close
+[0m20:37:48.099442 [info ] [Thread-1 (]: 1 of 2 PASS not_null_crm_cust_info_cst_id ...................................... [[32mPASS[0m in 0.03s]
+[0m20:37:48.099756 [debug] [Thread-1 (]: Finished running node test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c
+[0m20:37:48.100194 [info ] [Thread-2 (]: 2 of 2 PASS unique_crm_cust_info_cst_id ........................................ [[32mPASS[0m in 0.03s]
+[0m20:37:48.100775 [debug] [Thread-2 (]: Finished running node test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c
+[0m20:37:48.101420 [debug] [MainThread]: On master: COMMIT
+[0m20:37:48.101628 [debug] [MainThread]: Using postgres connection "master"
+[0m20:37:48.101783 [debug] [MainThread]: On master: COMMIT
+[0m20:37:48.101918 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m20:37:48.103815 [debug] [MainThread]: SQL status: COMMIT in 0.002 seconds
+[0m20:37:48.104005 [debug] [MainThread]: On master: Close
+[0m20:37:48.104228 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m20:37:48.104376 [debug] [MainThread]: Connection 'test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c' was properly closed.
+[0m20:37:48.104505 [debug] [MainThread]: Connection 'test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c' was properly closed.
+[0m20:37:48.104656 [info ] [MainThread]: 
+[0m20:37:48.104827 [info ] [MainThread]: Finished running 2 data tests in 0 hours 0 minutes and 0.08 seconds (0.08s).
+[0m20:37:48.105211 [debug] [MainThread]: Command end result
+[0m20:37:48.163296 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m20:37:48.164552 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m20:37:48.165587 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m20:37:48.169632 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_project/target/run_results.json
+[0m20:37:48.169825 [info ] [MainThread]: 
+[0m20:37:48.170021 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m20:37:48.170190 [info ] [MainThread]: 
+[0m20:37:48.170361 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=2
+[0m20:37:48.170888 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 0.60338014, "process_in_blocks": "39880", "process_kernel_time": 0.097425, "process_mem_max_rss": "136176", "process_out_blocks": "2440", "process_user_time": 1.480665}
+[0m20:37:48.171137 [debug] [MainThread]: Command `dbt test` succeeded at 20:37:48.171092 after 0.60 seconds
+[0m20:37:48.171318 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a86246a2540>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a8620befb00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a8620bed7c0>]}
+[0m20:37:48.171494 [debug] [MainThread]: Flushing usage events
+[0m20:37:48.957481 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:44:24.535205 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a15a87c6540>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a15a8021e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a15a70adeb0>]}
+
+
+============================== 20:44:24.538286 | d93821b5-fc11-4885-b794-707e5c8cdf60 ==============================
+[0m20:44:24.538286 [info ] [MainThread]: Running with dbt=1.12.5
+[0m20:44:24.538568 [debug] [MainThread]: running dbt with arguments {'hints_enabled': 'True', 'partial_parse': 'True', 'indirect_selection': 'eager', 'empty': 'None', 'use_colors': 'True', 'warn_error': 'None', 'log_path': '/opt/airflow/dbt_project/logs', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'cache_selected_only': 'False', 'log_format': 'default', 'fail_fast': 'False', 'introspect': 'True', 'write_json': 'True', 'no_print': 'None', 'target_path': 'None', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'quiet': 'False', 'invocation_command': 'dbt test', 'version_check': 'True', 'printer_width': '80', 'profiles_dir': '/opt/airflow/dbt_project'}
+[0m20:44:24.637941 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd93821b5-fc11-4885-b794-707e5c8cdf60', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a15a51412b0>]}
+[0m20:44:24.673608 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd93821b5-fc11-4885-b794-707e5c8cdf60', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a15a5e137d0>]}
+[0m20:44:24.674143 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m20:44:24.718840 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m20:44:24.807241 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m20:44:24.807721 [debug] [MainThread]: Partial parsing: updated file: data_warehouse://models/silver/schema.yml
+[0m20:44:25.127528 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Compilation Error in test relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_ (models/silver/schema.yml)
+  unexpected char "'" at 7
+    line 1
+      {{ ref('erp_cust_az12) }}
+[0m20:44:25.128210 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 0.6280056, "process_in_blocks": "512", "process_kernel_time": 0.080098, "process_mem_max_rss": "131796", "process_out_blocks": "16", "process_user_time": 1.534893}
+[0m20:44:25.128488 [debug] [MainThread]: Command `dbt test` failed at 20:44:25.128436 after 0.63 seconds
+[0m20:44:25.128686 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a15a2068200>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a15a206a3c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a15a206acf0>]}
+[0m20:44:25.128877 [debug] [MainThread]: Flushing usage events
+[0m20:44:25.812005 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:44:43.529655 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7720140c5220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7720140493a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x772014029760>]}
+
+
+============================== 20:44:43.532660 | a2f4a3cc-f7c3-48ed-a06b-a1049f439d0f ==============================
+[0m20:44:43.532660 [info ] [MainThread]: Running with dbt=1.12.5
+[0m20:44:43.532940 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'static_parser': 'True', 'use_colors': 'True', 'profiles_dir': '/opt/airflow/dbt_project', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'debug': 'False', 'no_print': 'None', 'empty': 'None', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'printer_width': '80', 'invocation_command': 'dbt test', 'target_path': 'None', 'log_path': '/opt/airflow/dbt_project/logs', 'introspect': 'True', 'quiet': 'False', 'fail_fast': 'False', 'maximum_seed_size_mib': '1', 'hints_enabled': 'True', 'cache_selected_only': 'False', 'version_check': 'True', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True'}
+[0m20:44:43.627564 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a2f4a3cc-f7c3-48ed-a06b-a1049f439d0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7720129f0aa0>]}
+[0m20:44:43.661555 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a2f4a3cc-f7c3-48ed-a06b-a1049f439d0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7720141084d0>]}
+[0m20:44:43.662022 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m20:44:43.706457 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m20:44:43.794485 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m20:44:43.794928 [debug] [MainThread]: Partial parsing: updated file: data_warehouse://models/silver/schema.yml
+[0m20:44:44.162199 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a2f4a3cc-f7c3-48ed-a06b-a1049f439d0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7720119ff7d0>]}
+[0m20:44:44.232574 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m20:44:44.233749 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m20:44:44.239880 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m20:44:44.252066 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a2f4a3cc-f7c3-48ed-a06b-a1049f439d0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7720132ffef0>]}
+[0m20:44:44.252333 [info ] [MainThread]: Found 8 models, 1 snapshot, 1 seed, 4 data tests, 6 sources, 478 macros
+[0m20:44:44.252512 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a2f4a3cc-f7c3-48ed-a06b-a1049f439d0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x772015484aa0>]}
+[0m20:44:44.253696 [info ] [MainThread]: 
+[0m20:44:44.253922 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m20:44:44.254090 [info ] [MainThread]: 
+[0m20:44:44.254377 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m20:44:44.256893 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse_gold'
+[0m20:44:44.257276 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse_silver'
+[0m20:44:44.272058 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_gold"
+[0m20:44:44.272247 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_silver"
+[0m20:44:44.272449 [debug] [ThreadPool]: On list_DataWarehouse_gold: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_gold"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'gold'
+  
+[0m20:44:44.272655 [debug] [ThreadPool]: On list_DataWarehouse_silver: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_silver"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'silver'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'silver'
+  
+[0m20:44:44.272827 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:44:44.272971 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:44:44.278305 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.005 seconds
+[0m20:44:44.278507 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.006 seconds
+[0m20:44:44.279203 [debug] [ThreadPool]: On list_DataWarehouse_gold: ROLLBACK
+[0m20:44:44.279827 [debug] [ThreadPool]: On list_DataWarehouse_silver: ROLLBACK
+[0m20:44:44.280037 [debug] [ThreadPool]: On list_DataWarehouse_gold: Close
+[0m20:44:44.280177 [debug] [ThreadPool]: On list_DataWarehouse_silver: Close
+[0m20:44:44.282961 [debug] [MainThread]: Using postgres connection "master"
+[0m20:44:44.283174 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m20:44:44.283336 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:44:44.287301 [debug] [MainThread]: SQL status: SELECT 8 in 0.004 seconds
+[0m20:44:44.288607 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a2f4a3cc-f7c3-48ed-a06b-a1049f439d0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x772014fa7110>]}
+[0m20:44:44.288878 [debug] [MainThread]: On master: ROLLBACK
+[0m20:44:44.289130 [debug] [MainThread]: On master: COMMIT
+[0m20:44:44.289292 [debug] [MainThread]: Using postgres connection "master"
+[0m20:44:44.289426 [debug] [MainThread]: On master: COMMIT
+[0m20:44:44.289593 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m20:44:44.289734 [debug] [MainThread]: On master: Close
+[0m20:44:44.291794 [debug] [Thread-1 (]: Began running node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m20:44:44.292016 [debug] [Thread-2 (]: Began running node test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c
+[0m20:44:44.292256 [debug] [Thread-3 (]: Began running node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m20:44:44.292487 [debug] [Thread-4 (]: Began running node test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c
+[0m20:44:44.292692 [info ] [Thread-1 (]: 1 of 4 START test accepted_values_crm_cust_info_cst_marital_status__Single__Married  [RUN]
+[0m20:44:44.292936 [info ] [Thread-2 (]: 2 of 4 START test not_null_crm_cust_info_cst_id ................................ [RUN]
+[0m20:44:44.293188 [info ] [Thread-3 (]: 3 of 4 START test relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_ . [RUN]
+[0m20:44:44.293406 [info ] [Thread-4 (]: 4 of 4 START test unique_crm_cust_info_cst_id .................................. [RUN]
+[0m20:44:44.293662 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DataWarehouse_silver, now test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a)
+[0m20:44:44.293886 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DataWarehouse_gold, now test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c)
+[0m20:44:44.294146 [debug] [Thread-3 (]: Acquiring new postgres connection 'test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528'
+[0m20:44:44.294390 [debug] [Thread-4 (]: Acquiring new postgres connection 'test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c'
+[0m20:44:44.294568 [debug] [Thread-1 (]: Began compiling node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m20:44:44.294735 [debug] [Thread-2 (]: Began compiling node test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c
+[0m20:44:44.294906 [debug] [Thread-3 (]: Began compiling node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m20:44:44.295071 [debug] [Thread-4 (]: Began compiling node test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c
+[0m20:44:44.299859 [debug] [Thread-1 (]: Writing injected SQL for node "test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a"
+[0m20:44:44.304601 [debug] [Thread-2 (]: Writing injected SQL for node "test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c"
+[0m20:44:44.308929 [debug] [Thread-3 (]: Writing injected SQL for node "test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528"
+[0m20:44:44.313132 [debug] [Thread-4 (]: Writing injected SQL for node "test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c"
+[0m20:44:44.313483 [debug] [Thread-1 (]: Began executing node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m20:44:44.313757 [debug] [Thread-2 (]: Began executing node test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c
+[0m20:44:44.314032 [debug] [Thread-3 (]: Began executing node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m20:44:44.322297 [debug] [Thread-2 (]: Writing runtime sql for node "test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c"
+[0m20:44:44.323150 [debug] [Thread-1 (]: Writing runtime sql for node "test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a"
+[0m20:44:44.323400 [debug] [Thread-4 (]: Began executing node test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c
+[0m20:44:44.324221 [debug] [Thread-3 (]: Writing runtime sql for node "test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528"
+[0m20:44:44.325141 [debug] [Thread-4 (]: Writing runtime sql for node "test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c"
+[0m20:44:44.325397 [debug] [Thread-1 (]: Using postgres connection "test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a"
+[0m20:44:44.325607 [debug] [Thread-2 (]: Using postgres connection "test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c"
+[0m20:44:44.325932 [debug] [Thread-3 (]: Using postgres connection "test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528"
+[0m20:44:44.326129 [debug] [Thread-1 (]: On test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        cst_marital_status as value_field,
+        count(*) as n_records
+
+    from "DataWarehouse"."silver"."crm_cust_info"
+    group by cst_marital_status
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'Single','Married'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:44:44.326362 [debug] [Thread-4 (]: Using postgres connection "test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c"
+[0m20:44:44.326528 [debug] [Thread-2 (]: On test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select cst_id
+from "DataWarehouse"."silver"."crm_cust_info"
+where cst_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:44:44.326708 [debug] [Thread-3 (]: On test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select cst_key as from_field
+    from "DataWarehouse"."silver"."crm_cust_info"
+    where cst_key is not null
+),
+
+parent as (
+    select cid as to_field
+    from "DataWarehouse"."silver"."erp_cust_az12"
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:44:44.326899 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:44:44.327064 [debug] [Thread-4 (]: On test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    cst_id as unique_field,
+    count(*) as n_records
+
+from "DataWarehouse"."silver"."crm_cust_info"
+where cst_id is not null
+group by cst_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:44:44.327218 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m20:44:44.327369 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m20:44:44.327562 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m20:44:44.330541 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.003 seconds
+[0m20:44:44.332791 [debug] [Thread-2 (]: On test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c: ROLLBACK
+[0m20:44:44.333014 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.006 seconds
+[0m20:44:44.333227 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.006 seconds
+[0m20:44:44.333456 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.006 seconds
+[0m20:44:44.334173 [debug] [Thread-1 (]: On test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a: ROLLBACK
+[0m20:44:44.334355 [debug] [Thread-2 (]: On test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c: Close
+[0m20:44:44.335003 [debug] [Thread-3 (]: On test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528: ROLLBACK
+[0m20:44:44.335649 [debug] [Thread-4 (]: On test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c: ROLLBACK
+[0m20:44:44.335876 [debug] [Thread-1 (]: On test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a: Close
+[0m20:44:44.336241 [info ] [Thread-2 (]: 2 of 4 PASS not_null_crm_cust_info_cst_id ...................................... [[32mPASS[0m in 0.04s]
+[0m20:44:44.336522 [debug] [Thread-3 (]: On test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528: Close
+[0m20:44:44.336763 [debug] [Thread-4 (]: On test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c: Close
+[0m20:44:44.337380 [debug] [Thread-2 (]: Finished running node test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c
+[0m20:44:44.337087 [info ] [Thread-1 (]: 1 of 4 PASS accepted_values_crm_cust_info_cst_marital_status__Single__Married .. [[32mPASS[0m in 0.04s]
+[0m20:44:44.337755 [error] [Thread-3 (]: 3 of 4 FAIL 5 relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_ ..... [[31mFAIL 5[0m in 0.04s]
+[0m20:44:44.338162 [info ] [Thread-4 (]: 4 of 4 PASS unique_crm_cust_info_cst_id ........................................ [[32mPASS[0m in 0.04s]
+[0m20:44:44.338587 [debug] [Thread-1 (]: Finished running node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m20:44:44.338851 [debug] [Thread-3 (]: Finished running node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m20:44:44.339118 [debug] [Thread-4 (]: Finished running node test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c
+[0m20:44:44.339866 [debug] [MainThread]: On master: COMMIT
+[0m20:44:44.340075 [debug] [MainThread]: Using postgres connection "master"
+[0m20:44:44.340225 [debug] [MainThread]: On master: COMMIT
+[0m20:44:44.340355 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m20:44:44.342379 [debug] [MainThread]: SQL status: COMMIT in 0.002 seconds
+[0m20:44:44.342569 [debug] [MainThread]: On master: Close
+[0m20:44:44.342796 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m20:44:44.342939 [debug] [MainThread]: Connection 'test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c' was properly closed.
+[0m20:44:44.343059 [debug] [MainThread]: Connection 'test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a' was properly closed.
+[0m20:44:44.343172 [debug] [MainThread]: Connection 'test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528' was properly closed.
+[0m20:44:44.343280 [debug] [MainThread]: Connection 'test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c' was properly closed.
+[0m20:44:44.343419 [info ] [MainThread]: 
+[0m20:44:44.343582 [info ] [MainThread]: Finished running 4 data tests in 0 hours 0 minutes and 0.09 seconds (0.09s).
+[0m20:44:44.344092 [debug] [MainThread]: Command end result
+[0m20:44:44.361032 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m20:44:44.362137 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m20:44:44.363150 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m20:44:44.367189 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_project/target/run_results.json
+[0m20:44:44.367374 [info ] [MainThread]: 
+[0m20:44:44.367564 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m20:44:44.367720 [info ] [MainThread]: 
+[0m20:44:44.367915 [error] [MainThread]: [[31mERROR[0m]: in test relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_ (models/silver/schema.yml)
+[0m20:44:44.368090 [error] [MainThread]:   Got 5 results, configured to fail if != 0
+[0m20:44:44.368224 [info ] [MainThread]: 
+[0m20:44:44.368389 [info ] [MainThread]:   compiled code at target/compiled/data_warehouse/models/silver/schema.yml/relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.sql
+[0m20:44:44.368531 [info ] [MainThread]: 
+[0m20:44:44.368701 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=1 SKIP=0 NO-OP=0 REUSED=0 TOTAL=4
+[0m20:44:44.369212 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 0.8736881, "process_in_blocks": "0", "process_kernel_time": 0.104892, "process_mem_max_rss": "142776", "process_out_blocks": "3600", "process_user_time": 1.734218}
+[0m20:44:44.369476 [debug] [MainThread]: Command `dbt test` failed at 20:44:44.369426 after 0.87 seconds
+[0m20:44:44.369680 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x772013146e70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x772013362570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x772013e76de0>]}
+[0m20:44:44.369874 [debug] [MainThread]: Flushing usage events
+[0m20:44:44.949058 [debug] [MainThread]: An error was encountered while trying to flush usage events
