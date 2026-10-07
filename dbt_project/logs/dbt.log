@@ -40208,3 +40208,1156 @@ having count(*) > 1
 [0m20:44:44.369680 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x772013146e70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x772013362570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x772013e76de0>]}
 [0m20:44:44.369874 [debug] [MainThread]: Flushing usage events
 [0m20:44:44.949058 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:24:17.222018 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bae2626120>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bae2668ef0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bae266b0b0>]}
+
+
+============================== 19:24:17.225169 | 795a4162-5a87-4c16-8fca-ad0e38a2cd17 ==============================
+[0m19:24:17.225169 [info ] [MainThread]: Running with dbt=1.12.5
+[0m19:24:17.225463 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'hints_enabled': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'invocation_command': 'dbt test', 'target_path': 'None', 'fail_fast': 'False', 'cache_selected_only': 'False', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'write_json': 'True', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'static_parser': 'True', 'maximum_seed_size_mib': '1', 'log_format': 'default', 'indirect_selection': 'eager', 'version_check': 'True', 'log_path': '/opt/airflow/dbt_project/logs', 'profiles_dir': '/opt/airflow/dbt_project', 'warn_error': 'None', 'use_colors': 'True', 'log_cache_events': 'False', 'introspect': 'True'}
+[0m19:24:17.332197 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '795a4162-5a87-4c16-8fca-ad0e38a2cd17', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bae19b7080>]}
+[0m19:24:17.366005 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '795a4162-5a87-4c16-8fca-ad0e38a2cd17', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bae3fcf740>]}
+[0m19:24:17.366546 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m19:24:17.413356 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m19:24:17.492533 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m19:24:17.492811 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '795a4162-5a87-4c16-8fca-ad0e38a2cd17', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bae01bae10>]}
+[0m19:24:18.482430 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '795a4162-5a87-4c16-8fca-ad0e38a2cd17', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75badda8b920>]}
+[0m19:24:18.594420 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m19:24:18.595634 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m19:24:18.606150 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m19:24:18.621111 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '795a4162-5a87-4c16-8fca-ad0e38a2cd17', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75badde46ff0>]}
+[0m19:24:18.621387 [info ] [MainThread]: Found 8 models, 1 snapshot, 1 seed, 4 data tests, 6 sources, 478 macros
+[0m19:24:18.621567 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '795a4162-5a87-4c16-8fca-ad0e38a2cd17', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75baddb48ef0>]}
+[0m19:24:18.622746 [info ] [MainThread]: 
+[0m19:24:18.622962 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m19:24:18.623111 [info ] [MainThread]: 
+[0m19:24:18.623404 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m19:24:18.625687 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse'
+[0m19:24:18.641696 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse"
+[0m19:24:18.641892 [debug] [ThreadPool]: On list_DataWarehouse: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m19:24:18.642029 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:24:18.659909 [debug] [ThreadPool]: SQL status: SELECT 85 in 0.018 seconds
+[0m19:24:18.660905 [debug] [ThreadPool]: On list_DataWarehouse: Close
+[0m19:24:18.661293 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DataWarehouse, now create_DataWarehouse_dbt_test__audit)
+[0m19:24:18.661535 [debug] [ThreadPool]: Creating schema "database: "DataWarehouse"
+schema: "dbt_test__audit"
+"
+[0m19:24:18.663917 [debug] [ThreadPool]: Using postgres connection "create_DataWarehouse_dbt_test__audit"
+[0m19:24:18.664097 [debug] [ThreadPool]: On create_DataWarehouse_dbt_test__audit: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "create_DataWarehouse_dbt_test__audit"} */
+create schema if not exists "dbt_test__audit"
+[0m19:24:18.664223 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:24:18.667955 [debug] [ThreadPool]: SQL status: CREATE SCHEMA in 0.004 seconds
+[0m19:24:18.668404 [debug] [ThreadPool]: On create_DataWarehouse_dbt_test__audit: COMMIT
+[0m19:24:18.668555 [debug] [ThreadPool]: Using postgres connection "create_DataWarehouse_dbt_test__audit"
+[0m19:24:18.668674 [debug] [ThreadPool]: On create_DataWarehouse_dbt_test__audit: COMMIT
+[0m19:24:18.669760 [debug] [ThreadPool]: SQL status: COMMIT in 0.001 seconds
+[0m19:24:18.669886 [debug] [ThreadPool]: On create_DataWarehouse_dbt_test__audit: Close
+[0m19:24:18.671164 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_DataWarehouse_dbt_test__audit, now list_DataWarehouse_silver)
+[0m19:24:18.671650 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse_gold'
+[0m19:24:18.674008 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_silver"
+[0m19:24:18.674371 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse_dbt_test__audit'
+[0m19:24:18.674851 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_gold"
+[0m19:24:18.675062 [debug] [ThreadPool]: On list_DataWarehouse_silver: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_silver"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'silver'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'silver'
+  
+[0m19:24:18.675601 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_dbt_test__audit"
+[0m19:24:18.675782 [debug] [ThreadPool]: On list_DataWarehouse_gold: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_gold"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'gold'
+  
+[0m19:24:18.675941 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:24:18.676101 [debug] [ThreadPool]: On list_DataWarehouse_dbt_test__audit: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_dbt_test__audit"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'dbt_test__audit'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'dbt_test__audit'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'dbt_test__audit'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'dbt_test__audit'
+  
+[0m19:24:18.676250 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:24:18.676439 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:24:18.686463 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.010 seconds
+[0m19:24:18.686668 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.010 seconds
+[0m19:24:18.686886 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.011 seconds
+[0m19:24:18.687622 [debug] [ThreadPool]: On list_DataWarehouse_gold: ROLLBACK
+[0m19:24:18.688169 [debug] [ThreadPool]: On list_DataWarehouse_dbt_test__audit: ROLLBACK
+[0m19:24:18.688773 [debug] [ThreadPool]: On list_DataWarehouse_silver: ROLLBACK
+[0m19:24:18.689022 [debug] [ThreadPool]: On list_DataWarehouse_gold: Close
+[0m19:24:18.689185 [debug] [ThreadPool]: On list_DataWarehouse_dbt_test__audit: Close
+[0m19:24:18.689328 [debug] [ThreadPool]: On list_DataWarehouse_silver: Close
+[0m19:24:18.692581 [debug] [MainThread]: Using postgres connection "master"
+[0m19:24:18.692801 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m19:24:18.692973 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:24:18.698769 [debug] [MainThread]: SQL status: SELECT 8 in 0.006 seconds
+[0m19:24:18.700065 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '795a4162-5a87-4c16-8fca-ad0e38a2cd17', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75badda377a0>]}
+[0m19:24:18.700293 [debug] [MainThread]: On master: ROLLBACK
+[0m19:24:18.700507 [debug] [MainThread]: On master: COMMIT
+[0m19:24:18.700651 [debug] [MainThread]: Using postgres connection "master"
+[0m19:24:18.700777 [debug] [MainThread]: On master: COMMIT
+[0m19:24:18.700940 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m19:24:18.701076 [debug] [MainThread]: On master: Close
+[0m19:24:18.703645 [debug] [Thread-1 (]: Began running node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m19:24:18.703881 [debug] [Thread-2 (]: Began running node test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c
+[0m19:24:18.704137 [debug] [Thread-3 (]: Began running node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m19:24:18.704374 [debug] [Thread-4 (]: Began running node test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c
+[0m19:24:18.704585 [info ] [Thread-1 (]: 1 of 4 START test accepted_values_crm_cust_info_cst_marital_status__Single__Married  [RUN]
+[0m19:24:18.704807 [info ] [Thread-2 (]: 2 of 4 START test not_null_crm_cust_info_cst_id ................................ [RUN]
+[0m19:24:18.705032 [info ] [Thread-3 (]: 3 of 4 START test relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_ . [RUN]
+[0m19:24:18.705252 [info ] [Thread-4 (]: 4 of 4 START test unique_crm_cust_info_cst_id .................................. [RUN]
+[0m19:24:18.705510 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DataWarehouse_silver, now test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a)
+[0m19:24:18.705732 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DataWarehouse_dbt_test__audit, now test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c)
+[0m19:24:18.705952 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_DataWarehouse_gold, now test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528)
+[0m19:24:18.706209 [debug] [Thread-4 (]: Acquiring new postgres connection 'test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c'
+[0m19:24:18.706400 [debug] [Thread-1 (]: Began compiling node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m19:24:18.706576 [debug] [Thread-2 (]: Began compiling node test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c
+[0m19:24:18.706752 [debug] [Thread-3 (]: Began compiling node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m19:24:18.706924 [debug] [Thread-4 (]: Began compiling node test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c
+[0m19:24:18.712154 [debug] [Thread-1 (]: Writing injected SQL for node "test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a"
+[0m19:24:18.717018 [debug] [Thread-2 (]: Writing injected SQL for node "test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c"
+[0m19:24:18.721481 [debug] [Thread-3 (]: Writing injected SQL for node "test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528"
+[0m19:24:18.725284 [debug] [Thread-4 (]: Writing injected SQL for node "test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c"
+[0m19:24:18.725755 [debug] [Thread-1 (]: Began executing node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m19:24:18.725992 [debug] [Thread-2 (]: Began executing node test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c
+[0m19:24:18.733416 [debug] [Thread-1 (]: Applying CREATE to: "DataWarehouse"."dbt_test__audit"."accepted_values_crm_cust_info_2d57811ba1144c68fc1b574d36dd9824"
+[0m19:24:18.734168 [debug] [Thread-2 (]: Applying CREATE to: "DataWarehouse"."dbt_test__audit"."not_null_crm_cust_info_cst_id"
+[0m19:24:18.734401 [debug] [Thread-3 (]: Began executing node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m19:24:18.734659 [debug] [Thread-4 (]: Began executing node test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c
+[0m19:24:18.740771 [debug] [Thread-1 (]: Using postgres connection "test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a"
+[0m19:24:18.741224 [debug] [Thread-2 (]: Using postgres connection "test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c"
+[0m19:24:18.742052 [debug] [Thread-3 (]: Applying CREATE to: "DataWarehouse"."dbt_test__audit"."relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_"
+[0m19:24:18.742773 [debug] [Thread-4 (]: Applying CREATE to: "DataWarehouse"."dbt_test__audit"."unique_crm_cust_info_cst_id"
+[0m19:24:18.743003 [debug] [Thread-1 (]: On test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a"} */
+
+        
+        
+  
+    
+
+  create  table "DataWarehouse"."dbt_test__audit"."accepted_values_crm_cust_info_2d57811ba1144c68fc1b574d36dd9824"
+  
+  
+    as
+  
+  (
+    
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        cst_marital_status as value_field,
+        count(*) as n_records
+
+    from "DataWarehouse"."silver"."crm_cust_info"
+    group by cst_marital_status
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'Single','Married'
+)
+
+
+
+  
+  
+  );
+  
+    
+[0m19:24:18.743236 [debug] [Thread-2 (]: On test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c"} */
+
+        
+        
+  
+    
+
+  create  table "DataWarehouse"."dbt_test__audit"."not_null_crm_cust_info_cst_id"
+  
+  
+    as
+  
+  (
+    
+    
+  
+    
+    
+
+
+
+select *
+from "DataWarehouse"."silver"."crm_cust_info"
+where cst_id is null
+
+
+
+  
+  
+  );
+  
+    
+[0m19:24:18.743634 [debug] [Thread-3 (]: Using postgres connection "test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528"
+[0m19:24:18.744011 [debug] [Thread-4 (]: Using postgres connection "test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c"
+[0m19:24:18.744223 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:24:18.744443 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m19:24:18.744644 [debug] [Thread-3 (]: On test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528"} */
+
+        
+        
+  
+    
+
+  create  table "DataWarehouse"."dbt_test__audit"."relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_"
+  
+  
+    as
+  
+  (
+    
+    
+  
+    
+    
+
+with child as (
+    select cst_key as from_field
+    from "DataWarehouse"."silver"."crm_cust_info"
+    where cst_key is not null
+),
+
+parent as (
+    select cid as to_field
+    from "DataWarehouse"."silver"."erp_cust_az12"
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+  );
+  
+    
+[0m19:24:18.744828 [debug] [Thread-4 (]: On test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c"} */
+
+        
+        
+  
+    
+
+  create  table "DataWarehouse"."dbt_test__audit"."unique_crm_cust_info_cst_id"
+  
+  
+    as
+  
+  (
+    
+    
+  
+    
+    
+
+select
+    cst_id as unique_field,
+    count(*) as n_records
+
+from "DataWarehouse"."silver"."crm_cust_info"
+where cst_id is not null
+group by cst_id
+having count(*) > 1
+
+
+
+  
+  
+  );
+  
+    
+[0m19:24:18.745140 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m19:24:18.745311 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m19:24:18.752682 [debug] [Thread-2 (]: SQL status: SELECT 0 in 0.008 seconds
+[0m19:24:18.752933 [debug] [Thread-1 (]: SQL status: SELECT 0 in 0.009 seconds
+[0m19:24:18.753522 [debug] [Thread-2 (]: On test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c: COMMIT
+[0m19:24:18.753730 [debug] [Thread-4 (]: SQL status: SELECT 0 in 0.008 seconds
+[0m19:24:18.754227 [debug] [Thread-1 (]: On test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a: COMMIT
+[0m19:24:18.754440 [debug] [Thread-2 (]: Using postgres connection "test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c"
+[0m19:24:18.754638 [debug] [Thread-3 (]: SQL status: SELECT 5 in 0.009 seconds
+[0m19:24:18.755124 [debug] [Thread-4 (]: On test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c: COMMIT
+[0m19:24:18.755326 [debug] [Thread-1 (]: Using postgres connection "test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a"
+[0m19:24:18.755495 [debug] [Thread-2 (]: On test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c: COMMIT
+[0m19:24:18.755942 [debug] [Thread-3 (]: On test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528: COMMIT
+[0m19:24:18.756133 [debug] [Thread-4 (]: Using postgres connection "test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c"
+[0m19:24:18.756302 [debug] [Thread-1 (]: On test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a: COMMIT
+[0m19:24:18.756503 [debug] [Thread-3 (]: Using postgres connection "test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528"
+[0m19:24:18.756671 [debug] [Thread-4 (]: On test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c: COMMIT
+[0m19:24:18.756849 [debug] [Thread-3 (]: On test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528: COMMIT
+[0m19:24:18.757502 [debug] [Thread-2 (]: SQL status: COMMIT in 0.001 seconds
+[0m19:24:18.759454 [debug] [Thread-2 (]: Writing runtime sql for node "test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c"
+[0m19:24:18.759660 [debug] [Thread-3 (]: SQL status: COMMIT in 0.003 seconds
+[0m19:24:18.759868 [debug] [Thread-4 (]: SQL status: COMMIT in 0.003 seconds
+[0m19:24:18.760081 [debug] [Thread-1 (]: SQL status: COMMIT in 0.003 seconds
+[0m19:24:18.760495 [debug] [Thread-3 (]: Writing runtime sql for node "test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528"
+[0m19:24:18.760933 [debug] [Thread-4 (]: Writing runtime sql for node "test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c"
+[0m19:24:18.761137 [debug] [Thread-2 (]: Using postgres connection "test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c"
+[0m19:24:18.761495 [debug] [Thread-1 (]: Writing runtime sql for node "test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a"
+[0m19:24:18.761785 [debug] [Thread-2 (]: On test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+        select *
+        from "DataWarehouse"."dbt_test__audit"."not_null_crm_cust_info_cst_id"
+    
+      
+    ) dbt_internal_test
+[0m19:24:18.762019 [debug] [Thread-4 (]: Using postgres connection "test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c"
+[0m19:24:18.762207 [debug] [Thread-3 (]: Using postgres connection "test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528"
+[0m19:24:18.762429 [debug] [Thread-4 (]: On test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+        select *
+        from "DataWarehouse"."dbt_test__audit"."unique_crm_cust_info_cst_id"
+    
+      
+    ) dbt_internal_test
+[0m19:24:18.762603 [debug] [Thread-3 (]: On test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+        select *
+        from "DataWarehouse"."dbt_test__audit"."relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_"
+    
+      
+    ) dbt_internal_test
+[0m19:24:18.762796 [debug] [Thread-1 (]: Using postgres connection "test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a"
+[0m19:24:18.762982 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.001 seconds
+[0m19:24:18.763193 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.000 seconds
+[0m19:24:18.763368 [debug] [Thread-1 (]: On test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+        select *
+        from "DataWarehouse"."dbt_test__audit"."accepted_values_crm_cust_info_2d57811ba1144c68fc1b574d36dd9824"
+    
+      
+    ) dbt_internal_test
+[0m19:24:18.763551 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.000 seconds
+[0m19:24:18.765692 [debug] [Thread-2 (]: On test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c: ROLLBACK
+[0m19:24:18.766352 [debug] [Thread-4 (]: On test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c: ROLLBACK
+[0m19:24:18.767032 [debug] [Thread-3 (]: On test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528: ROLLBACK
+[0m19:24:18.767218 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.001 seconds
+[0m19:24:18.767482 [debug] [Thread-2 (]: On test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c: Close
+[0m19:24:18.767670 [debug] [Thread-4 (]: On test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c: Close
+[0m19:24:18.767830 [debug] [Thread-3 (]: On test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528: Close
+[0m19:24:18.768480 [debug] [Thread-1 (]: On test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a: ROLLBACK
+[0m19:24:18.768832 [info ] [Thread-2 (]: 2 of 4 PASS not_null_crm_cust_info_cst_id ...................................... [[32mPASS[0m in 0.06s]
+[0m19:24:18.769130 [info ] [Thread-4 (]: 4 of 4 PASS unique_crm_cust_info_cst_id ........................................ [[32mPASS[0m in 0.06s]
+[0m19:24:18.769528 [error] [Thread-3 (]: 3 of 4 FAIL 5 relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_ ..... [[31mFAIL 5[0m in 0.06s]
+[0m19:24:18.769805 [debug] [Thread-1 (]: On test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a: Close
+[0m19:24:18.770136 [debug] [Thread-2 (]: Finished running node test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c
+[0m19:24:18.770487 [debug] [Thread-4 (]: Finished running node test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c
+[0m19:24:18.770769 [debug] [Thread-3 (]: Finished running node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m19:24:18.771077 [info ] [Thread-1 (]: 1 of 4 PASS accepted_values_crm_cust_info_cst_marital_status__Single__Married .. [[32mPASS[0m in 0.07s]
+[0m19:24:18.771668 [debug] [Thread-1 (]: Finished running node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m19:24:18.772421 [debug] [MainThread]: On master: COMMIT
+[0m19:24:18.772624 [debug] [MainThread]: Using postgres connection "master"
+[0m19:24:18.772772 [debug] [MainThread]: On master: COMMIT
+[0m19:24:18.772906 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:24:18.775054 [debug] [MainThread]: SQL status: COMMIT in 0.002 seconds
+[0m19:24:18.775246 [debug] [MainThread]: On master: Close
+[0m19:24:18.775479 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:24:18.775620 [debug] [MainThread]: Connection 'test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a' was properly closed.
+[0m19:24:18.775738 [debug] [MainThread]: Connection 'test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528' was properly closed.
+[0m19:24:18.775849 [debug] [MainThread]: Connection 'test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c' was properly closed.
+[0m19:24:18.775959 [debug] [MainThread]: Connection 'test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c' was properly closed.
+[0m19:24:18.776099 [info ] [MainThread]: 
+[0m19:24:18.776260 [info ] [MainThread]: Finished running 4 data tests in 0 hours 0 minutes and 0.15 seconds (0.15s).
+[0m19:24:18.776779 [debug] [MainThread]: Command end result
+[0m19:24:18.794576 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m19:24:18.795704 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m19:24:18.796735 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m19:24:18.800707 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_project/target/run_results.json
+[0m19:24:18.800891 [info ] [MainThread]: 
+[0m19:24:18.801074 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m19:24:18.801235 [info ] [MainThread]: 
+[0m19:24:18.801432 [error] [MainThread]: [[31mERROR[0m]: in test relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_ (models/silver/schema.yml)
+[0m19:24:18.801609 [error] [MainThread]:   Got 5 results, configured to fail if != 0
+[0m19:24:18.801740 [info ] [MainThread]: 
+[0m19:24:18.801909 [info ] [MainThread]:   compiled code at target/compiled/data_warehouse/models/silver/schema.yml/relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.sql
+[0m19:24:18.802040 [info ] [MainThread]: 
+[0m19:24:18.802205 [info ] [MainThread]:   See test failures:
+  --------------------------------------------------------------------------------------------------------------
+  select * from "DataWarehouse"."dbt_test__audit"."relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_"
+  --------------------------------------------------------------------------------------------------------------
+[0m19:24:18.802355 [info ] [MainThread]: 
+[0m19:24:18.802524 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=1 SKIP=0 NO-OP=0 REUSED=0 TOTAL=4
+[0m19:24:18.803033 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 1.6221647, "process_in_blocks": "13368", "process_kernel_time": 0.103951, "process_mem_max_rss": "147148", "process_out_blocks": "3624", "process_user_time": 2.407871}
+[0m19:24:18.803288 [debug] [MainThread]: Command `dbt test` failed at 19:24:18.803243 after 1.62 seconds
+[0m19:24:18.803488 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bae2626120>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75baddcb8920>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75baddaa0e60>]}
+[0m19:24:18.803669 [debug] [MainThread]: Flushing usage events
+[0m19:24:19.781054 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:33:40.914312 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73dead9a0860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73deadd372c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73deae8f1940>]}
+
+
+============================== 19:33:40.917304 | 8e9590a5-a560-4ec8-82ee-2d660c8ae9b4 ==============================
+[0m19:33:40.917304 [info ] [MainThread]: Running with dbt=1.12.5
+[0m19:33:40.917583 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'version_check': 'True', 'use_experimental_parser': 'False', 'profiles_dir': '/opt/airflow/dbt_project', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'log_cache_events': 'False', 'introspect': 'True', 'debug': 'False', 'quiet': 'False', 'no_print': 'None', 'empty': 'None', 'invocation_command': 'dbt test', 'log_path': '/opt/airflow/dbt_project/logs', 'warn_error': 'None', 'log_format': 'default', 'write_json': 'True', 'maximum_seed_size_mib': '1', 'partial_parse': 'True', 'printer_width': '80', 'indirect_selection': 'eager', 'hints_enabled': 'True'}
+[0m19:33:41.012799 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8e9590a5-a560-4ec8-82ee-2d660c8ae9b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73deb01742f0>]}
+[0m19:33:41.047150 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8e9590a5-a560-4ec8-82ee-2d660c8ae9b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73deaff17860>]}
+[0m19:33:41.047720 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m19:33:41.092351 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m19:33:41.172148 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m19:33:41.172495 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '8e9590a5-a560-4ec8-82ee-2d660c8ae9b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73deae5aaa50>]}
+[0m19:33:42.241140 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8e9590a5-a560-4ec8-82ee-2d660c8ae9b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73dea9990200>]}
+[0m19:33:42.315010 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m19:33:42.316296 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m19:33:42.322548 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m19:33:42.336124 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8e9590a5-a560-4ec8-82ee-2d660c8ae9b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73dea9e976b0>]}
+[0m19:33:42.336418 [info ] [MainThread]: Found 8 models, 1 snapshot, 5 data tests, 1 seed, 6 sources, 478 macros
+[0m19:33:42.336612 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8e9590a5-a560-4ec8-82ee-2d660c8ae9b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73dea9950830>]}
+[0m19:33:42.337855 [info ] [MainThread]: 
+[0m19:33:42.338075 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m19:33:42.338228 [info ] [MainThread]: 
+[0m19:33:42.338520 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m19:33:42.340811 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse'
+[0m19:33:42.355508 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse"
+[0m19:33:42.355703 [debug] [ThreadPool]: On list_DataWarehouse: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m19:33:42.355843 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:33:42.359522 [debug] [ThreadPool]: SQL status: SELECT 86 in 0.004 seconds
+[0m19:33:42.360240 [debug] [ThreadPool]: On list_DataWarehouse: Close
+[0m19:33:42.360623 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DataWarehouse, now create_DataWarehouse__test_failures)
+[0m19:33:42.360889 [debug] [ThreadPool]: Creating schema "database: "DataWarehouse"
+schema: "_test_failures"
+"
+[0m19:33:42.363076 [debug] [ThreadPool]: Using postgres connection "create_DataWarehouse__test_failures"
+[0m19:33:42.363253 [debug] [ThreadPool]: On create_DataWarehouse__test_failures: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "create_DataWarehouse__test_failures"} */
+create schema if not exists "_test_failures"
+[0m19:33:42.363390 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:33:42.365676 [debug] [ThreadPool]: SQL status: CREATE SCHEMA in 0.002 seconds
+[0m19:33:42.366117 [debug] [ThreadPool]: On create_DataWarehouse__test_failures: COMMIT
+[0m19:33:42.366265 [debug] [ThreadPool]: Using postgres connection "create_DataWarehouse__test_failures"
+[0m19:33:42.366389 [debug] [ThreadPool]: On create_DataWarehouse__test_failures: COMMIT
+[0m19:33:42.367611 [debug] [ThreadPool]: SQL status: COMMIT in 0.001 seconds
+[0m19:33:42.367745 [debug] [ThreadPool]: On create_DataWarehouse__test_failures: Close
+[0m19:33:42.368784 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_DataWarehouse__test_failures, now list_DataWarehouse_gold)
+[0m19:33:42.369121 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse_silver'
+[0m19:33:42.371794 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_gold"
+[0m19:33:42.372094 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse__test_failures'
+[0m19:33:42.372560 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_silver"
+[0m19:33:42.372767 [debug] [ThreadPool]: On list_DataWarehouse_gold: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_gold"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'gold'
+  
+[0m19:33:42.373291 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse__test_failures"
+[0m19:33:42.373471 [debug] [ThreadPool]: On list_DataWarehouse_silver: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_silver"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'silver'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'silver'
+  
+[0m19:33:42.373625 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:33:42.373783 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse__test_failures"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike '_test_failures'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike '_test_failures'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike '_test_failures'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike '_test_failures'
+  
+[0m19:33:42.373928 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:33:42.374113 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:33:42.378581 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.005 seconds
+[0m19:33:42.378809 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.005 seconds
+[0m19:33:42.379014 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.005 seconds
+[0m19:33:42.379655 [debug] [ThreadPool]: On list_DataWarehouse_gold: ROLLBACK
+[0m19:33:42.380241 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: ROLLBACK
+[0m19:33:42.380866 [debug] [ThreadPool]: On list_DataWarehouse_silver: ROLLBACK
+[0m19:33:42.381103 [debug] [ThreadPool]: On list_DataWarehouse_gold: Close
+[0m19:33:42.381283 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: Close
+[0m19:33:42.381631 [debug] [ThreadPool]: On list_DataWarehouse_silver: Close
+[0m19:33:42.384642 [debug] [MainThread]: Using postgres connection "master"
+[0m19:33:42.384859 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m19:33:42.385029 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:33:42.388946 [debug] [MainThread]: SQL status: SELECT 8 in 0.004 seconds
+[0m19:33:42.390245 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8e9590a5-a560-4ec8-82ee-2d660c8ae9b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73dea9b73320>]}
+[0m19:33:42.390482 [debug] [MainThread]: On master: ROLLBACK
+[0m19:33:42.390682 [debug] [MainThread]: On master: COMMIT
+[0m19:33:42.390824 [debug] [MainThread]: Using postgres connection "master"
+[0m19:33:42.390950 [debug] [MainThread]: On master: COMMIT
+[0m19:33:42.391111 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m19:33:42.391249 [debug] [MainThread]: On master: Close
+[0m19:33:42.393403 [debug] [Thread-1 (]: Began running node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m19:33:42.393669 [debug] [Thread-2 (]: Began running node test.data_warehouse.crm_cust_info_jon
+[0m19:33:42.393922 [debug] [Thread-3 (]: Began running node test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c
+[0m19:33:42.394146 [debug] [Thread-4 (]: Began running node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m19:33:42.394375 [info ] [Thread-1 (]: 1 of 5 START test accepted_values_crm_cust_info_cst_marital_status__Single__Married  [RUN]
+[0m19:33:42.394618 [info ] [Thread-2 (]: 2 of 5 START test crm_cust_info_jon ............................................ [RUN]
+[0m19:33:42.394837 [info ] [Thread-3 (]: 3 of 5 START test not_null_crm_cust_info_cst_id ................................ [RUN]
+[0m19:33:42.395041 [info ] [Thread-4 (]: 4 of 5 START test relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_ . [RUN]
+[0m19:33:42.395268 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DataWarehouse_silver, now test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a)
+[0m19:33:42.395483 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DataWarehouse__test_failures, now test.data_warehouse.crm_cust_info_jon)
+[0m19:33:42.395691 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_DataWarehouse_gold, now test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c)
+[0m19:33:42.395920 [debug] [Thread-4 (]: Acquiring new postgres connection 'test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528'
+[0m19:33:42.396096 [debug] [Thread-1 (]: Began compiling node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m19:33:42.396257 [debug] [Thread-2 (]: Began compiling node test.data_warehouse.crm_cust_info_jon
+[0m19:33:42.396428 [debug] [Thread-3 (]: Began compiling node test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c
+[0m19:33:42.396598 [debug] [Thread-4 (]: Began compiling node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m19:33:42.402218 [debug] [Thread-1 (]: Writing injected SQL for node "test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a"
+[0m19:33:42.403068 [debug] [Thread-2 (]: Writing injected SQL for node "test.data_warehouse.crm_cust_info_jon"
+[0m19:33:42.407871 [debug] [Thread-3 (]: Writing injected SQL for node "test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c"
+[0m19:33:42.412396 [debug] [Thread-4 (]: Writing injected SQL for node "test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528"
+[0m19:33:42.412839 [debug] [Thread-1 (]: Began executing node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m19:33:42.413108 [debug] [Thread-2 (]: Began executing node test.data_warehouse.crm_cust_info_jon
+[0m19:33:42.413297 [debug] [Thread-3 (]: Began executing node test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c
+[0m19:33:42.420359 [debug] [Thread-1 (]: Applying CREATE to: "DataWarehouse"."_test_failures"."accepted_values_crm_cust_info_2d57811ba1144c68fc1b574d36dd9824"
+[0m19:33:42.421135 [debug] [Thread-2 (]: Applying CREATE to: "DataWarehouse"."_test_failures"."crm_cust_info_jon"
+[0m19:33:42.421345 [debug] [Thread-4 (]: Began executing node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m19:33:42.422047 [debug] [Thread-3 (]: Applying CREATE to: "DataWarehouse"."_test_failures"."not_null_crm_cust_info_cst_id"
+[0m19:33:42.428433 [debug] [Thread-1 (]: Using postgres connection "test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a"
+[0m19:33:42.428872 [debug] [Thread-2 (]: Using postgres connection "test.data_warehouse.crm_cust_info_jon"
+[0m19:33:42.429560 [debug] [Thread-4 (]: Applying CREATE to: "DataWarehouse"."_test_failures"."relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_"
+[0m19:33:42.430059 [debug] [Thread-3 (]: Using postgres connection "test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c"
+[0m19:33:42.430281 [debug] [Thread-1 (]: On test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a"} */
+
+        
+        
+  
+    
+
+  create  table "DataWarehouse"."_test_failures"."accepted_values_crm_cust_info_2d57811ba1144c68fc1b574d36dd9824"
+  
+  
+    as
+  
+  (
+    
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        cst_marital_status as value_field,
+        count(*) as n_records
+
+    from "DataWarehouse"."silver"."crm_cust_info"
+    group by cst_marital_status
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'Single','Married'
+)
+
+
+
+  
+  
+  );
+  
+    
+[0m19:33:42.430480 [debug] [Thread-2 (]: On test.data_warehouse.crm_cust_info_jon: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.crm_cust_info_jon"} */
+
+        
+        
+  
+    
+
+  create  table "DataWarehouse"."_test_failures"."crm_cust_info_jon"
+  
+  
+    as
+  
+  (
+    
+    
+  SELECT cci.* FROM "DataWarehouse"."silver"."crm_cust_info" AS cci
+WHERE cst_firstname IN ('Jon')
+  
+  
+  );
+  
+    
+[0m19:33:42.430847 [debug] [Thread-4 (]: Using postgres connection "test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528"
+[0m19:33:42.431042 [debug] [Thread-3 (]: On test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c"} */
+
+        
+        
+  
+    
+
+  create  table "DataWarehouse"."_test_failures"."not_null_crm_cust_info_cst_id"
+  
+  
+    as
+  
+  (
+    
+    
+  
+    
+    
+
+
+
+select *
+from "DataWarehouse"."silver"."crm_cust_info"
+where cst_id is null
+
+
+
+  
+  
+  );
+  
+    
+[0m19:33:42.431220 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:33:42.431380 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m19:33:42.431550 [debug] [Thread-4 (]: On test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528"} */
+
+        
+        
+  
+    
+
+  create  table "DataWarehouse"."_test_failures"."relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_"
+  
+  
+    as
+  
+  (
+    
+    
+  
+    
+    
+
+with child as (
+    select cst_key as from_field
+    from "DataWarehouse"."silver"."crm_cust_info"
+    where cst_key is not null
+),
+
+parent as (
+    select cid as to_field
+    from "DataWarehouse"."silver"."erp_cust_az12"
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+  );
+  
+    
+[0m19:33:42.431719 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m19:33:42.431985 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m19:33:42.436687 [debug] [Thread-3 (]: SQL status: SELECT 0 in 0.005 seconds
+[0m19:33:42.436997 [debug] [Thread-2 (]: SQL status: SELECT 44 in 0.006 seconds
+[0m19:33:42.437235 [debug] [Thread-1 (]: SQL status: SELECT 0 in 0.006 seconds
+[0m19:33:42.437891 [debug] [Thread-3 (]: On test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c: COMMIT
+[0m19:33:42.438389 [debug] [Thread-2 (]: On test.data_warehouse.crm_cust_info_jon: COMMIT
+[0m19:33:42.438880 [debug] [Thread-1 (]: On test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a: COMMIT
+[0m19:33:42.439098 [debug] [Thread-4 (]: SQL status: SELECT 5 in 0.007 seconds
+[0m19:33:42.439317 [debug] [Thread-3 (]: Using postgres connection "test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c"
+[0m19:33:42.439527 [debug] [Thread-2 (]: Using postgres connection "test.data_warehouse.crm_cust_info_jon"
+[0m19:33:42.439729 [debug] [Thread-1 (]: Using postgres connection "test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a"
+[0m19:33:42.440198 [debug] [Thread-4 (]: On test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528: COMMIT
+[0m19:33:42.440389 [debug] [Thread-3 (]: On test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c: COMMIT
+[0m19:33:42.440582 [debug] [Thread-2 (]: On test.data_warehouse.crm_cust_info_jon: COMMIT
+[0m19:33:42.440769 [debug] [Thread-1 (]: On test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a: COMMIT
+[0m19:33:42.440966 [debug] [Thread-4 (]: Using postgres connection "test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528"
+[0m19:33:42.441242 [debug] [Thread-4 (]: On test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528: COMMIT
+[0m19:33:42.441990 [debug] [Thread-3 (]: SQL status: COMMIT in 0.001 seconds
+[0m19:33:42.444293 [debug] [Thread-3 (]: Writing runtime sql for node "test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c"
+[0m19:33:42.444519 [debug] [Thread-1 (]: SQL status: COMMIT in 0.003 seconds
+[0m19:33:42.444738 [debug] [Thread-2 (]: SQL status: COMMIT in 0.004 seconds
+[0m19:33:42.444944 [debug] [Thread-4 (]: SQL status: COMMIT in 0.004 seconds
+[0m19:33:42.445372 [debug] [Thread-1 (]: Writing runtime sql for node "test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a"
+[0m19:33:42.445749 [debug] [Thread-2 (]: Writing runtime sql for node "test.data_warehouse.crm_cust_info_jon"
+[0m19:33:42.445989 [debug] [Thread-3 (]: Using postgres connection "test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c"
+[0m19:33:42.446318 [debug] [Thread-4 (]: Writing runtime sql for node "test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528"
+[0m19:33:42.446667 [debug] [Thread-1 (]: Using postgres connection "test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a"
+[0m19:33:42.446877 [debug] [Thread-3 (]: On test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+        select *
+        from "DataWarehouse"."_test_failures"."not_null_crm_cust_info_cst_id"
+    
+      
+    ) dbt_internal_test
+[0m19:33:42.447078 [debug] [Thread-2 (]: Using postgres connection "test.data_warehouse.crm_cust_info_jon"
+[0m19:33:42.447341 [debug] [Thread-1 (]: On test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+        select *
+        from "DataWarehouse"."_test_failures"."accepted_values_crm_cust_info_2d57811ba1144c68fc1b574d36dd9824"
+    
+      
+    ) dbt_internal_test
+[0m19:33:42.447590 [debug] [Thread-4 (]: Using postgres connection "test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528"
+[0m19:33:42.447799 [debug] [Thread-2 (]: On test.data_warehouse.crm_cust_info_jon: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.crm_cust_info_jon"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+        select *
+        from "DataWarehouse"."_test_failures"."crm_cust_info_jon"
+    
+      
+    ) dbt_internal_test
+[0m19:33:42.447999 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.000 seconds
+[0m19:33:42.448210 [debug] [Thread-4 (]: On test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+        select *
+        from "DataWarehouse"."_test_failures"."relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_"
+    
+      
+    ) dbt_internal_test
+[0m19:33:42.448406 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.000 seconds
+[0m19:33:42.450818 [debug] [Thread-3 (]: On test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c: ROLLBACK
+[0m19:33:42.451017 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.002 seconds
+[0m19:33:42.451797 [debug] [Thread-1 (]: On test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a: ROLLBACK
+[0m19:33:42.452009 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.001 seconds
+[0m19:33:42.452694 [debug] [Thread-2 (]: On test.data_warehouse.crm_cust_info_jon: ROLLBACK
+[0m19:33:42.452891 [debug] [Thread-3 (]: On test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c: Close
+[0m19:33:42.453621 [debug] [Thread-4 (]: On test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528: ROLLBACK
+[0m19:33:42.453803 [debug] [Thread-1 (]: On test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a: Close
+[0m19:33:42.454372 [debug] [Thread-2 (]: On test.data_warehouse.crm_cust_info_jon: Close
+[0m19:33:42.454203 [info ] [Thread-3 (]: 3 of 5 PASS not_null_crm_cust_info_cst_id ...................................... [[32mPASS[0m in 0.06s]
+[0m19:33:42.454625 [debug] [Thread-4 (]: On test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528: Close
+[0m19:33:42.455021 [info ] [Thread-1 (]: 1 of 5 PASS accepted_values_crm_cust_info_cst_marital_status__Single__Married .. [[32mPASS[0m in 0.06s]
+[0m19:33:42.455385 [error] [Thread-2 (]: 2 of 5 FAIL 44 crm_cust_info_jon ............................................... [[31mFAIL 44[0m in 0.06s]
+[0m19:33:42.455775 [debug] [Thread-3 (]: Finished running node test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c
+[0m19:33:42.456406 [debug] [Thread-1 (]: Finished running node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m19:33:42.456150 [error] [Thread-4 (]: 4 of 5 FAIL 5 relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_ ..... [[31mFAIL 5[0m in 0.06s]
+[0m19:33:42.456744 [debug] [Thread-2 (]: Finished running node test.data_warehouse.crm_cust_info_jon
+[0m19:33:42.456990 [debug] [Thread-3 (]: Began running node test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c
+[0m19:33:42.457408 [debug] [Thread-4 (]: Finished running node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m19:33:42.457665 [info ] [Thread-3 (]: 5 of 5 START test unique_crm_cust_info_cst_id .................................. [RUN]
+[0m19:33:42.457957 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.data_warehouse.not_null_crm_cust_info_cst_id.91241b201c, now test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c)
+[0m19:33:42.458127 [debug] [Thread-3 (]: Began compiling node test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c
+[0m19:33:42.462202 [debug] [Thread-3 (]: Writing injected SQL for node "test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c"
+[0m19:33:42.462494 [debug] [Thread-3 (]: Began executing node test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c
+[0m19:33:42.463150 [debug] [Thread-3 (]: Applying CREATE to: "DataWarehouse"."_test_failures"."unique_crm_cust_info_cst_id"
+[0m19:33:42.463510 [debug] [Thread-3 (]: Using postgres connection "test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c"
+[0m19:33:42.463672 [debug] [Thread-3 (]: On test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c"} */
+
+        
+        
+  
+    
+
+  create  table "DataWarehouse"."_test_failures"."unique_crm_cust_info_cst_id"
+  
+  
+    as
+  
+  (
+    
+    
+  
+    
+    
+
+select
+    cst_id as unique_field,
+    count(*) as n_records
+
+from "DataWarehouse"."silver"."crm_cust_info"
+where cst_id is not null
+group by cst_id
+having count(*) > 1
+
+
+
+  
+  
+  );
+  
+    
+[0m19:33:42.463814 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m19:33:42.469216 [debug] [Thread-3 (]: SQL status: SELECT 0 in 0.005 seconds
+[0m19:33:42.469703 [debug] [Thread-3 (]: On test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c: COMMIT
+[0m19:33:42.469879 [debug] [Thread-3 (]: Using postgres connection "test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c"
+[0m19:33:42.470022 [debug] [Thread-3 (]: On test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c: COMMIT
+[0m19:33:42.470993 [debug] [Thread-3 (]: SQL status: COMMIT in 0.001 seconds
+[0m19:33:42.471328 [debug] [Thread-3 (]: Writing runtime sql for node "test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c"
+[0m19:33:42.471583 [debug] [Thread-3 (]: Using postgres connection "test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c"
+[0m19:33:42.471739 [debug] [Thread-3 (]: On test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+        select *
+        from "DataWarehouse"."_test_failures"."unique_crm_cust_info_cst_id"
+    
+      
+    ) dbt_internal_test
+[0m19:33:42.472051 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.000 seconds
+[0m19:33:42.472658 [debug] [Thread-3 (]: On test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c: ROLLBACK
+[0m19:33:42.472863 [debug] [Thread-3 (]: On test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c: Close
+[0m19:33:42.473120 [info ] [Thread-3 (]: 5 of 5 PASS unique_crm_cust_info_cst_id ........................................ [[32mPASS[0m in 0.02s]
+[0m19:33:42.473360 [debug] [Thread-3 (]: Finished running node test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c
+[0m19:33:42.474067 [debug] [MainThread]: On master: COMMIT
+[0m19:33:42.474248 [debug] [MainThread]: Using postgres connection "master"
+[0m19:33:42.474395 [debug] [MainThread]: On master: COMMIT
+[0m19:33:42.474525 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:33:42.476828 [debug] [MainThread]: SQL status: COMMIT in 0.002 seconds
+[0m19:33:42.477037 [debug] [MainThread]: On master: Close
+[0m19:33:42.477291 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:33:42.477453 [debug] [MainThread]: Connection 'test.data_warehouse.unique_crm_cust_info_cst_id.7c73f5004c' was properly closed.
+[0m19:33:42.477588 [debug] [MainThread]: Connection 'test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a' was properly closed.
+[0m19:33:42.477709 [debug] [MainThread]: Connection 'test.data_warehouse.crm_cust_info_jon' was properly closed.
+[0m19:33:42.477826 [debug] [MainThread]: Connection 'test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528' was properly closed.
+[0m19:33:42.477979 [info ] [MainThread]: 
+[0m19:33:42.478141 [info ] [MainThread]: Finished running 5 data tests in 0 hours 0 minutes and 0.14 seconds (0.14s).
+[0m19:33:42.478713 [debug] [MainThread]: Command end result
+[0m19:33:42.496866 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m19:33:42.497977 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m19:33:42.498987 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m19:33:42.503041 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_project/target/run_results.json
+[0m19:33:42.503231 [info ] [MainThread]: 
+[0m19:33:42.503453 [info ] [MainThread]: [31mCompleted with 2 errors, 0 partial successes, and 0 warnings:[0m
+[0m19:33:42.503666 [info ] [MainThread]: 
+[0m19:33:42.503965 [error] [MainThread]: [[31mERROR[0m]: in test crm_cust_info_jon (tests/crm_cust_info_jon.sql)
+[0m19:33:42.504248 [error] [MainThread]:   Got 44 results, configured to fail if != 0
+[0m19:33:42.504425 [info ] [MainThread]: 
+[0m19:33:42.504610 [info ] [MainThread]:   compiled code at target/compiled/data_warehouse/tests/crm_cust_info_jon.sql
+[0m19:33:42.504754 [info ] [MainThread]: 
+[0m19:33:42.504933 [info ] [MainThread]:   See test failures:
+  ------------------------------------------------------------------
+  select * from "DataWarehouse"."_test_failures"."crm_cust_info_jon"
+  ------------------------------------------------------------------
+[0m19:33:42.505155 [info ] [MainThread]: 
+[0m19:33:42.505417 [error] [MainThread]: [[31mERROR[0m]: in test relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_ (models/silver/schema.yml)
+[0m19:33:42.505607 [error] [MainThread]:   Got 5 results, configured to fail if != 0
+[0m19:33:42.505745 [info ] [MainThread]: 
+[0m19:33:42.505918 [info ] [MainThread]:   compiled code at target/compiled/data_warehouse/models/silver/schema.yml/relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.sql
+[0m19:33:42.506054 [info ] [MainThread]: 
+[0m19:33:42.506225 [info ] [MainThread]:   See test failures:
+  -------------------------------------------------------------------------------------------------------------
+  select * from "DataWarehouse"."_test_failures"."relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_"
+  -------------------------------------------------------------------------------------------------------------
+[0m19:33:42.506377 [info ] [MainThread]: 
+[0m19:33:42.506550 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=2 SKIP=0 NO-OP=0 REUSED=0 TOTAL=5
+[0m19:33:42.507078 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 1.6269435, "process_in_blocks": "0", "process_kernel_time": 0.089055, "process_mem_max_rss": "148064", "process_out_blocks": "3648", "process_user_time": 2.486552}
+[0m19:33:42.507353 [debug] [MainThread]: Command `dbt test` failed at 19:33:42.507294 after 1.63 seconds
+[0m19:33:42.507548 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73dead9c4800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73deaf440f80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73dea9e45430>]}
+[0m19:33:42.507734 [debug] [MainThread]: Flushing usage events
+[0m19:33:43.394138 [debug] [MainThread]: An error was encountered while trying to flush usage events

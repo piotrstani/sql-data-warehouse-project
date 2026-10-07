@@ -6,20 +6,8 @@
       count(*) != 0 as should_error
     from (
       
+        select *
+        from "DataWarehouse"."_test_failures"."not_null_crm_cust_info_cst_id"
     
-  
-    
-    
-
-
-
-select cst_id
-from "DataWarehouse"."silver"."crm_cust_info"
-where cst_id is null
-
-
-
-  
-  
       
     ) dbt_internal_test

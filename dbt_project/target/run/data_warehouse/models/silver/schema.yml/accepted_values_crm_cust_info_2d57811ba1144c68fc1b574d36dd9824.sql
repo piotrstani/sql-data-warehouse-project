@@ -6,31 +6,8 @@
       count(*) != 0 as should_error
     from (
       
+        select *
+        from "DataWarehouse"."_test_failures"."accepted_values_crm_cust_info_2d57811ba1144c68fc1b574d36dd9824"
     
-  
-    
-    
-
-with all_values as (
-
-    select
-        cst_marital_status as value_field,
-        count(*) as n_records
-
-    from "DataWarehouse"."silver"."crm_cust_info"
-    group by cst_marital_status
-
-)
-
-select *
-from all_values
-where value_field not in (
-    'Single','Married'
-)
-
-
-
-  
-  
       
     ) dbt_internal_test

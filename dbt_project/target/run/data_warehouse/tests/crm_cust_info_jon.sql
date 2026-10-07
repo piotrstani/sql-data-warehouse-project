@@ -7,7 +7,7 @@
     from (
       
         select *
-        from "DataWarehouse"."_test_failures"."relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_"
+        from "DataWarehouse"."_test_failures"."crm_cust_info_jon"
     
       
     ) dbt_internal_test
