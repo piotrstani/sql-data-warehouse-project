@@ -22,3 +22,6 @@ models:
       +persist_docs:
         relation: true
         columns: true
+data_tests:
+  +store_failures: true
+  +schema: _test_failures
