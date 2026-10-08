@@ -1,0 +1,21 @@
+unit_tests:
+  - name: test_minimum_birthdate
+    description: "min 1920"
+    model: dim_customers
+    given:
+      - input: ref('crm_cust_info')
+        rows:
+          - {cst_key: '1', cst_gndr: 'Male'}
+          - {cst_key: '2', cst_gndr: 'n/a'}
+      - input: ref('erp_cust_az12')
+        rows:
+          - {cid: '1', gen: 'n/a'}
+          - {cid: '2', gen: 'Female' }
+      - input: ref('erp_loc_a101')
+        rows:
+          - {cid: '1', cntry: 'n/a' }
+          - {cid: '2', cntry: 'n/a' }
+    expect:
+      rows:
+        - {gender: 'Male'}
+        - {gender: 'test' }
