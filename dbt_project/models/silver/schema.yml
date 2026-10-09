@@ -4,6 +4,10 @@ models:
     config:
       contract:
         enforced: true
+    data_tests:
+      - min_row:
+          arguments:
+            min_row_cnt: 1000000
     description: 'Stores customer information'
     columns:
       - name: cst_id
@@ -20,6 +24,7 @@ models:
               arguments:
                 to: ref('erp_cust_az12')
                 field: cid
+              severity: warn
       - name: cst_firstname
         data_type: string
         description: 'The customer''s first name, as recorded in the system'
@@ -32,10 +37,13 @@ models:
         data_tests:
           - accepted_values:
               arguments:
-                values: ['Single','Married']
+                values: ['Singlex','Marriedx']
+              severity: error
       - name: cst_gndr
         data_type: string
         description: 'The gender of the customer'
       - name: cst_create_date
         data_type: date
         description: 'The date and time when the customer record was created in the system'
+        data_tests:
+          - create_cust_date_test
