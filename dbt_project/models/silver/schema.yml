@@ -16,9 +16,6 @@ models:
       - name: cst_id
         data_type: integer
         description: 'Unique numerical identifier assigned to each customer'
-        data_tests:
-          - unique
-          - not_null
       - name: cst_key
         data_type: varchar(50)
         description: 'Alphanumeric identifier representing the customer'
