@@ -1,1 +1,7 @@
-Zoltan
+SELECT * from "DataWarehouse"."silver"."crm_cust_info" WHERE 
+            cst_key IS NOT NULL AND cst_key <> '' AND
+            cst_firstname IS NOT NULL AND cst_firstname <> '' AND
+            cst_lastname IS NOT NULL AND cst_lastname <> '' AND
+            cst_marital_status IS NOT NULL AND cst_marital_status <> '' AND
+            cst_gndr IS NOT NULL AND cst_gndr <> '' AND
+    TRUE
