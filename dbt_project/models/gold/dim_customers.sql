@@ -20,7 +20,8 @@ WITH crm_cust_info AS (
 
 , dim_data AS (
 select
-	MD5(cci.cst_id::text) AS customer_key,
+	--MD5(cci.cst_id::text) AS customer_key,
+    {{ dbt_utils.generate_surrogate_key(['cci.cst_id']) }} AS customer_key,
 	cci.cst_id as customer_id,
 	cci.cst_key as customer_number,
 	cci.cst_firstname as first_name,
