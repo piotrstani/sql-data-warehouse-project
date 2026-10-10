@@ -11,11 +11,12 @@
     cst_id integer,
     cst_key varchar(50),
     cst_firstname TEXT,
-    cst_lastname TEXT,
+    cst_lastname TEXT not null,
     cst_marital_status TEXT,
     cst_gndr TEXT,
-    cst_create_date date
+    cst_create_date date,
     
+    primary key (cst_id)
     )
  ;
     insert into "DataWarehouse"."silver"."crm_cust_info__dbt_tmp" (
