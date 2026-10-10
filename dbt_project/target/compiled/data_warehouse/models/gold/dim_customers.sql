@@ -16,7 +16,8 @@ WITH crm_cust_info AS (
 
 , dim_data AS (
 select
-	MD5(cci.cst_id::text) AS customer_key,
+	--MD5(cci.cst_id::text) AS customer_key,
+    md5(cast(coalesce(cast(cci.cst_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) AS customer_key,
 	cci.cst_id as customer_id,
 	cci.cst_key as customer_number,
 	cci.cst_firstname as first_name,
