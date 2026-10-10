@@ -1,0 +1,180 @@
+--Ustawienia zadeklarowane bezpośrednio w pliku .sql zawsze nadpisują te globalne z pliku dbt_project.yml.
+/*
+ --append-only
+{{ config(
+    materialized='incremental',
+    --https://docs.getdbt.com/docs/build/incremental-strategy?version=2
+    incremental_strategy='append'
+    incremental_strategy='merge'
+    incremental_strategy='delete+insert'
+    incremental_strategy='insert_overwrite' --no dbt-postgres
+    incremental_strategy='microbatch'
+) }}
+
+-- Przetwarzaj tylko klientów zaktualizowanych/dodanych od wczoraj
+ unique_key do dopasowania rekordu wejściowego do już istniejącego rekordu w tabeli docelowej,
+ np. aby go zaktualizować albo zastąpić, zależnie od adaptera i strategii incremental.
+ Sama konfiguracja nie jest ogólną gwarancją constraintu UNIQUE w bazie
+
+{{ config(
+    materialized='incremental',
+    unique_key='cst_id'
+) }}
+ -------------------------------------------------------------------
+ --Strategia merge wykonuje upsert: rekord o tym samym unique_key jest aktualizowany, a nowy klucz jest dodawany
+{{ config(
+    materialized='incremental',
+    incremental_strategy='merge',
+    unique_key='cst_id'
+) }}
+
+*/
+
+
+/*
+{% if is_incremental() %}
+    -- Przetwarzaj tylko klientów zaktualizowanych
+    WHERE NOT EXISTS (SELECT 1 FROM {{ this }} tgt WHERE tgt.cst_id = src.cst_id)
+{% endif %}
+*/
+
+
+-- Przetwarzaj tylko klientów zaktualizowanych/dodanych od wczoraj
+{% if is_incremental() %}
+    WHERE cst_create_date > (SELECT MAX(cst_create_date) FROM {{ this }})
+{% endif %}
+
+---------------------------------------------------------------------------------------------------------------------------
+--TEST /RUN
+
+airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt test -s crm_cust_info
+16:04:05  Running with dbt=1.12.5
+16:04:05  Registered adapter: postgres=1.11.0
+16:04:05  Found 8 models, 1 snapshot, 1 seed, 5 data tests, 6 sources, 481 macros, 1 unit test
+16:04:05
+16:04:05  Concurrency: 4 threads (target='dev')
+16:04:05
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+16:04:05  1 of 5 START test accepted_values_crm_cust_info_cst_marital_status__Singlex__Marriedx  [RUN]
+16:04:05  2 of 5 START test create_cust_date_test_crm_cust_info_cst_create_date .......... [RUN]
+16:04:05  3 of 5 START test crm_cust_info_jon ............................................ [RUN]
+16:04:05  4 of 5 START test min_row_crm_cust_info_1000000 ................................ [RUN]
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+16:04:05  4 of 5 WARN 1 min_row_crm_cust_info_1000000 .................................... [WARN 1 in 0.11s]
+16:04:05  5 of 5 START test relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_ . [RUN]
+16:04:05  2 of 5 PASS create_cust_date_test_crm_cust_info_cst_create_date ................ [PASS in 0.12s]
+16:04:05  3 of 5 PASS crm_cust_info_jon .................................................. [PASS in 0.12s]
+16:04:05  1 of 5 FAIL 2 accepted_values_crm_cust_info_cst_marital_status__Singlex__Marriedx  [FAIL 2 in 0.13s]
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+16:04:06  5 of 5 WARN 5 relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_ ..... [WARN 5 in 0.03s]
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+16:04:06
+16:04:06  Finished running 5 data tests in 0 hours 0 minutes and 0.20 seconds (0.20s).
+16:04:06
+16:04:06  Completed with 1 error, 0 partial successes, and 2 warnings:
+16:04:06
+16:04:06  [ERROR]: in test accepted_values_crm_cust_info_cst_marital_status__Singlex__Marriedx (models/silver/schema.yml)
+16:04:06    Got 2 results, configured to fail if != 0
+16:04:06
+16:04:06    compiled code at target/compiled/data_warehouse/models/silver/schema.yml/accepted_values_crm_cust_info_718b81d6c1c1931b2e18e8ae84caccfa.sql
+16:04:06
+16:04:06    See test failures:
+  ---------------------------------------------------------------------------------------------------------------
+  select * from "DataWarehouse"."_test_failures"."accepted_values_crm_cust_info_718b81d6c1c1931b2e18e8ae84caccfa"
+  ---------------------------------------------------------------------------------------------------------------
+16:04:06
+16:04:06  [WARNING]: in test min_row_crm_cust_info_1000000 (models/silver/schema.yml)
+16:04:06  [WARNING]: Got 1 result, configured to warn if != 0
+16:04:06
+16:04:06    compiled code at target/compiled/data_warehouse/models/silver/schema.yml/min_row_crm_cust_info_1000000.sql
+16:04:06
+16:04:06    See test failures:
+  ------------------------------------------------------------------------------
+  select * from "DataWarehouse"."_test_failures"."min_row_crm_cust_info_1000000"
+  ------------------------------------------------------------------------------
+16:04:06
+16:04:06  [WARNING]: in test relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_ (models/silver/schema.yml)
+16:04:06  [WARNING]: Got 5 results, configured to warn if != 0
+16:04:06
+16:04:06    compiled code at target/compiled/data_warehouse/models/silver/schema.yml/relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.sql
+16:04:06
+16:04:06    See test failures:
+  -------------------------------------------------------------------------------------------------------------
+  select * from "DataWarehouse"."_test_failures"."relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_"
+  -------------------------------------------------------------------------------------------------------------
+16:04:06
+16:04:06  Done. PASS=2 WARN=2 ERROR=1 SKIP=0 NO-OP=0 REUSED=0 TOTAL=5
+airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt run -s crm_cust_info
+16:04:14  Running with dbt=1.12.5
+16:04:14  Registered adapter: postgres=1.11.0
+16:04:14  Found 8 models, 1 snapshot, 1 seed, 5 data tests, 6 sources, 481 macros, 1 unit test
+16:04:14
+16:04:14  Concurrency: 4 threads (target='dev')
+16:04:14
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+16:04:14  1 of 1 START sql table model silver.crm_cust_info .............................. [RUN]
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+16:04:15  1 of 1 OK created sql table model silver.crm_cust_info ......................... [INSERT 0 18489 in 0.18s]
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+16:04:15
+16:04:15  Finished running 1 table model in 0 hours 0 minutes and 0.24 seconds (0.24s).
+16:04:15
+16:04:15  Completed successfully
+16:04:15
+16:04:15  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=1
+
+---------------------------------------------------------------------------------------------------------------------------
+--COMPILE /SHOW
+airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt compile --inline 'SELECT * from {{ ref("crm_cust_info") }} WHERE {{ no_empty_strings(ref("crm_cust_info")) }}'
+16:02:27  Running with dbt=1.12.5
+16:02:27  Registered adapter: postgres=1.11.0
+16:02:27  Found 8 models, 1 snapshot, 1 seed, 5 data tests, 1 sql operation, 6 sources, 481 macros, 1 unit test
+16:02:27
+16:02:27  Concurrency: 4 threads (target='dev')
+16:02:27
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+Compiled inline node is:
+SELECT * from "DataWarehouse"."silver"."crm_cust_info" WHERE
+            cst_key IS NOT NULL AND cst_key <> '' AND
+            cst_firstname IS NOT NULL AND cst_firstname <> '' AND
+            cst_lastname IS NOT NULL AND cst_lastname <> '' AND
+            cst_marital_status IS NOT NULL AND cst_marital_status <> '' AND
+            cst_gndr IS NOT NULL AND cst_gndr <> '' AND
+    TRUE
+
+airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt show --inline 'SELECT * from {{ ref("crm_cust_info") }} WHERE {{ no_empty_strings(ref("crm_cust_info")) }}'
+16:02:44  Running with dbt=1.12.5
+16:02:44  Registered adapter: postgres=1.11.0
+16:02:45  Found 8 models, 1 snapshot, 1 seed, 5 data tests, 1 sql operation, 6 sources, 481 macros, 1 unit test
+16:02:45
+16:02:45  Concurrency: 4 threads (target='dev')
+16:02:45
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+Previewing inline node:
+| cst_id | cst_key    | cst_firstname | cst_lastname | cst_marital_status | cst_gndr | ... |
+| ------ | ---------- | ------------- | ------------ | ------------------ | -------- | --- |
+|  11000 | AW00011000 | Jon           | Yang         | Married            | Male     | ... |
+|  11001 | AW00011001 | Eugene        | Huang        | Single             | Male     | ... |
+|  11002 | AW00011002 | Ruben         | Torres       | Married            | Male     | ... |
+|  11003 | AW00011003 | Christy       | Zhu          | Single             | Female   | ... |
+|  11004 | AW00011004 | Elizabeth     | Johnson      | Single             | Female   | ... |
+
