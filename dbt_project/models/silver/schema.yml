@@ -4,6 +4,9 @@ models:
     config:
       contract:
         enforced: true
+    constraints:
+      - type: primary_key
+        columns: [cst_id]
     data_tests:
       - min_row:
           arguments:
@@ -24,12 +27,15 @@ models:
               arguments:
                 to: ref('erp_cust_az12')
                 field: cid
-              severity: warn
+              config:
+                severity: warn
       - name: cst_firstname
         data_type: string
         description: 'The customer''s first name, as recorded in the system'
       - name: cst_lastname
         data_type: string
+        constraints:
+          - type: not_null
         description: 'The customer''s last name or family name'
       - name: cst_marital_status
         data_type: string
@@ -38,7 +44,8 @@ models:
           - accepted_values:
               arguments:
                 values: ['Singlex','Marriedx']
-              severity: error
+              config:
+                severity: error
       - name: cst_gndr
         data_type: string
         description: 'The gender of the customer'
