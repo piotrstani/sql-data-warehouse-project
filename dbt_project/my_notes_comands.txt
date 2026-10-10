@@ -177,4 +177,36 @@ Previewing inline node:
 |  11002 | AW00011002 | Ruben         | Torres       | Married            | Male     | ... |
 |  11003 | AW00011003 | Christy       | Zhu          | Single             | Female   | ... |
 |  11004 | AW00011004 | Elizabeth     | Johnson      | Single             | Female   | ... |
+---------------------------------------------------------------------------------------------------------------------------
+--DEPS
+airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt deps
+16:27:34  Running with dbt=1.12.5
+16:27:34  Updating lock file in file path: /opt/airflow/dbt_project/package-lock.yml
+16:27:34  Installing dbt-labs/dbt_utils
+16:27:34  Installed from version 1.4.1
+16:27:34  Up to date!
+
+airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt run --select dim_customers
+16:32:23  Running with dbt=1.12.5
+16:32:23  Registered adapter: postgres=1.11.0
+16:32:23  Unable to do partial parsing because a project dependency has been added
+16:32:24  Found 8 models, 1 snapshot, 5 data tests, 1 seed, 6 sources, 597 macros, 1 unit test
+16:32:24
+16:32:24  Concurrency: 4 threads (target='dev')
+16:32:24
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+16:32:24  1 of 1 START sql view model gold.dim_customers ................................. [RUN]
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+16:32:24  1 of 1 OK created sql view model gold.dim_customers ............................ [CREATE VIEW in 0.04s]
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+16:32:24
+16:32:24  Finished running 1 view model in 0 hours 0 minutes and 0.10 seconds (0.10s).
+16:32:24
+16:32:24  Completed successfully
+16:32:24
+16:32:24  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=1
 
