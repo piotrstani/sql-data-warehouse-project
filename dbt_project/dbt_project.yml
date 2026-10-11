@@ -8,6 +8,7 @@ model-paths: ["models"]
 clean-targets: ["target", "dbt_packages"]
 seed-paths: ["seeds"]
 snapshot-paths: ["snapshots"]
+asset-paths: ["assets"]
 
 models:
   data_warehouse:
