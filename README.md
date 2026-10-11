@@ -10,45 +10,79 @@ Oparty na kontenerach projekt hurtowni danych. Airflow jako orkiestrator procesu
      - [x] plpgsql procedure
      - [x] Python container
      - [x] Airflow Ingestion COPY 
-     - [x] pyspark over-enginering
+     - [ ] TODDO pyspark over-enginering
 4. **SILVER Layer**
 	 - [x] ddl
-     - [x] silver diagram
-     - [x] dbt transformations
+     - [ ] DAG dbt snpashot
+     - [ ] DAG dbt test
+     - [ ] DAG dbt docs ?
+     - [x] dbt
        - [x] crm_cust_info
-       - [x] crm_prd_info SCD FULL, /snapshots/crm_prd_info.sql
+         - [ ] dbt description 
+         - [ ] dbt tests
+         - [ ] dbt contracts
+         - [ ] dbt docs
+       - [x] crm_prd_info SCD FULL, /snapshots/crm_prd_info.sql      
+         - [ ] dbt description 
+         - [ ] dbt tests
+         - [ ] dbt contracts
+         - [ ] dbt docs
        - [x] crm_sales_details FACT
+         - [ ] dbt description 
+         - [ ] dbt tests
+         - [ ] dbt contracts
+         - [ ] dbt docs
        - [x] erp_cust_az12
+         - [ ] dbt description 
+         - [ ] dbt tests
+         - [ ] dbt contracts
+         - [ ] dbt docs
        - [x] erp_loc_a101
+         - [ ] dbt description 
+         - [ ] dbt tests
+         - [ ] dbt contracts
+         - [ ] dbt docs
        - [x] erp_px_cat_g1v2
-     - [ ] dbt jina?
-     - [ ] dbt descrptions ?
-     - [ ] dbt test
-     - [ ] dbt relationships ❓
-     - [ ] dbt docs ❓
-     - [ ] dbt lineage ❓
+         - [ ] dbt description 
+         - [ ] dbt tests
+         - [ ] dbt contracts
+         - [ ] dbt docs
 4. **GOLD Layer**
-	 - [x] sql views with descrptions
+	 - [x] sql views with description
      - [x] data markt diagram
      - [x] dbt create view, /models/gold/dim_customers.sql + /macros/generate_schema_name.sql
-     - [ ] dbt descrptions 
+     - [x] dbt
+       - [x] dim_customers
+         - [x] dbt description 
+         - [ ] dbt tests
+         - [ ] dbt contracts
+         - [x] dbt docs
+       - [x] dim_products
+         - [ ] dbt description 
+         - [ ] dbt tests
+         - [ ] dbt contracts
+         - [ ] dbt docs
+       - [x] fact_sales
+         - [ ] dbt description 
+         - [ ] dbt tests
+         - [ ] dbt contracts
+         - [ ] dbt docs
 5. **DQ**:
      - dbt
      - [x] Docker dla dbt -- as aditional install pip dbt-postgres
-       - [ ] testy: 
+       - [x] testy: 
          - customer_id NOT NULL,  
          - customer_id UNIQUE,
-         - FK istnieje
+         - FK (relationships)
 	 - Great Expectations
        - [x] localhost
        - [x] bronze Ingestion Dane [!] dane przepuszczane przez warstwę Bronze, czyszczenie na warstwie Silver za pomocą dbt
        - [x] logowanie na Airflow jako warrinning 
-       - [x] wynik GE kopiowana z Airflow do docs/gx/run_ts_airflow_id [!]777 aby pychram mógł usuwać 
-       
+       - [x] wynik GE kopiowana z Airflow do docs/gx/run_ts_airflow_id [!]777 aby pychram mógł usuwać
        - [ ] zaawansowane kontrole
-                - czy liczba rekordów nie spadła nagle o 80%?
-                - czy dane są wystarczająco świeże?
-                - czy schema nie zmieniła się niespodziewanie?
+                - czy liczba rekordów nie spadła nagle o 80%? ---dbt genric
+                - czy dane są wystarczająco świeże?  
+                - czy schema nie zmieniła się niespodziewanie? ---dbt schema / contracts 
        
 6. **Airflow**
  - [x] Airflow conteiner --as standalone
