@@ -1,0 +1,1 @@
+browser: /sql-data-warehouse-project/dbt_project/target/index.html
