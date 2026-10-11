@@ -1,0 +1,25 @@
+version: 2
+models:
+  - name: dim_customers
+    description: 'Stores customer information'
+    columns:
+      - name: customer_key
+        description: 'Surrogate key uniquely identifying each customer record in the dimension table'
+      - name: customer_id
+        description: 'Unique numerical identifier assigned to each customer'
+      - name: customer_number
+        description: 'Alphanumeric identifier representing the customer, used for tracking and referencing'
+      - name: first_name
+        description: 'The customer''s first name, as recorded in the system'
+      - name: last_name
+        description: 'The customer''s last name or family name'
+      - name: country
+        description: 'The country of residence for the customer'
+      - name: martial_status
+        description: 'The marital status of the customer'
+      - name: gender
+        description: 'The gender of the customer'
+      - name: birthdate
+        description: 'The date of birth of the customer, formatted as YYYY-MM-DD'
+      - name: create_date
+        description: 'The date and time when the customer record was created in the system'
