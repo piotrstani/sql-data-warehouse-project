@@ -1,7 +1,7 @@
 version: 2
 models:
   - name: dim_customers
-    description: 'Stores customer information'
+    description: '{{ doc("dim_customers") }}'
     columns:
       - name: customer_key
         description: 'Surrogate key uniquely identifying each customer record in the dimension table'
