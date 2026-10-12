@@ -4,14 +4,27 @@ version: '1.0.0'
 config-version: 2
 profile: 'dwh_profile'
 
+# Definicja zmiennej Jinja
+vars:
+  audit_schema: "audit"
+
 model-paths: ["models"]
 clean-targets: ["target", "dbt_packages"]
 seed-paths: ["seeds"]
 snapshot-paths: ["snapshots"]
 asset-paths: ["assets"]
 
+on-run-start:
+  - "CREATE SCHEMA IF NOT EXISTS {{ var('audit_schema') }}"
+  - "CREATE TABLE IF NOT EXISTS {{ var('audit_schema') }}.audit_log (
+      model_nm VARCHAR,
+      run_ts TIMESTAMP
+    )"
+
 models:
   data_warehouse:
+    +post-hook:
+      - "INSERT INTO {{ var('audit_schema') }}.audit_log VALUES ('{{ this }}', CURRENT_TIMESTAMP)"
     silver:
       +materialized: table # DROP TABLE oraz INSERT INTO Domyślnie wszystkie modele stworzą fizyczne tabele (zastępując stare przy każdym uruchomieniu)
       +persist_docs:
