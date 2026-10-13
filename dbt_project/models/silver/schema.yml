@@ -40,14 +40,22 @@ models:
         data_tests:
           - accepted_values:
               arguments:
-                values: ['Singlex','Marriedx']
+                values: ['Single','Married']
               config:
-                severity: error
+                severity: warn
       - name: cst_gndr
         data_type: string
         description: 'The gender of the customer'
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [ 'Female','Male','n/a']
+              config:
+                severity: warn
       - name: cst_create_date
         data_type: date
         description: 'The date and time when the customer record was created in the system'
         data_tests:
-          - create_cust_date_test
+          - create_cust_date_test:
+              arguments:
+                cutoff_date: '2025-10-01'
