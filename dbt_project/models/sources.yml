@@ -9,6 +9,20 @@ sources:
         freshness:
           warn_after: {count: 1, period: day}
           error_after: {count: 5, period: day}
+        columns:
+          - name: cst_id
+            data_type: integer
+            description: 'Unique numerical identifier assigned to each customer'
+          - name: cst_key
+            data_type: varchar(50)
+            description: 'Alphanumeric identifier representing the customer'
+            data_tests:
+              - relationships:
+                  arguments:
+                    to: ref('erp_cust_az12')
+                    field: cid
+                  config:
+                    severity: warn
       - name: crm_prd_info
       - name: crm_sales_details
       - name: erp_cust_az12

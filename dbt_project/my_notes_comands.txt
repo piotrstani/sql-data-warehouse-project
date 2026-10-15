@@ -227,4 +227,57 @@ WARNING:  database "DataWarehouse" has no actual collation version, but a versio
 WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
 16:16:39  Catalog written to /opt/airflow/dbt_project/target/catalog.json
 
+---------------------------------------------------------------------------------------------------------------------------
+--SOURCES TESTING
+
+airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt test --select source:bronze
+18:43:34  Running with dbt=1.12.5
+18:43:34  Registered adapter: postgres=1.11.0
+18:43:35  Found 1 seed, 2 operations, 8 models, 1 snapshot, 1 analysis, 8 data tests, 6 sources, 864 macros, 1 unit test
+18:43:35
+18:43:35  Concurrency: 4 threads (target='dev')
+18:43:35
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+18:43:35  1 of 2 START hook: data_warehouse.on-run-start.0 ............................... [RUN]
+18:43:35  1 of 2 OK hook: data_warehouse.on-run-start.0 .................................. [OK in 0.01s]
+18:43:35  2 of 2 START hook: data_warehouse.on-run-start.1 ............................... [RUN]
+18:43:35  2 of 2 OK hook: data_warehouse.on-run-start.1 .................................. [OK in 0.00s]
+18:43:35
+18:43:35  1 of 2 START test dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_  [RUN]
+18:43:35  2 of 2 START test source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_  [RUN]
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+18:43:35  2 of 2 WARN 9 source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_ . [WARN 9 in 0.06s]
+18:43:35  1 of 2 FAIL 1 dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_  [FAIL 1 in 0.06s]
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+18:43:35
+18:43:35  Finished running 2 project hooks, 2 data tests in 0 hours 0 minutes and 0.13 seconds (0.13s).
+18:43:35
+18:43:35  Completed with 1 error, 0 partial successes, and 1 warning:
+18:43:35
+18:43:35  [ERROR]: in test dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_ (models/silver/schema.yml)
+18:43:35    Got 1 result, configured to fail if != 0
+18:43:35
+18:43:35    compiled code at target/compiled/data_warehouse/models/silver/schema.yml/dbt_expectations_expect_table__f54ba646b15da1f34349ef44861ee9ed.sql
+18:43:35
+18:43:35    See test failures:
+  ----------------------------------------------------------------------------------------------------------------
+  select * from "DataWarehouse"."_test_failures"."dbt_expectations_expect_table__f54ba646b15da1f34349ef44861ee9ed"
+  ----------------------------------------------------------------------------------------------------------------
+18:43:35
+18:43:35  [WARNING]: in test source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_ (models/sources.yml)
+18:43:35  [WARNING]: Got 9 results, configured to warn if != 0
+18:43:35
+18:43:35    compiled code at target/compiled/data_warehouse/models/sources.yml/source_relationships_bronze_cc_050072b8f49b7844142d24c5003ba592.sql
+18:43:35
+18:43:35    See test failures:
+  ----------------------------------------------------------------------------------------------------------------
+  select * from "DataWarehouse"."_test_failures"."source_relationships_bronze_cc_050072b8f49b7844142d24c5003ba592"
+  ----------------------------------------------------------------------------------------------------------------
+18:43:35
+18:43:35  Done. PASS=2 WARN=1 ERROR=1 SKIP=0 NO-OP=0 REUSED=0 TOTAL=4
 
