@@ -25,6 +25,13 @@ sources:
                     severity: warn
       - name: crm_prd_info
       - name: crm_sales_details
+        columns:
+          - name: sls_price
+            data_tests:
+              - dbt_expectations.expect_column_quantile_values_to_be_between:
+                  quantile: .95
+                  min_value: 0
+                  max_value: 200
       - name: erp_cust_az12
       - name: erp_loc_a101
       - name: erp_px_cat_g1v2
