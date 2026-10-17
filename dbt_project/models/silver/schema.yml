@@ -61,3 +61,4 @@ models:
           - create_cust_date_test:
               arguments:
                 cutoff_date: '2025-10-01'
+  - name: erp_cust_az12

@@ -33,5 +33,15 @@ sources:
                   min_value: 0
                   max_value: 200
       - name: erp_cust_az12
+        data_tests:
+          - dbt_utils.equality:
+              arguments:
+                # Wskazujesz tabelę/model referencyjny do porównania
+                compare_model: "ref('erp_cust_az12')"
+                # Wskazujesz tylko te kolumny, których wartości chcesz sprawdzić
+                compare_columns:
+                  - cid
+                  - bdate
+                  - gen
       - name: erp_loc_a101
       - name: erp_px_cat_g1v2
