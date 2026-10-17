@@ -1,1 +1,6 @@
-CREATE SCHEMA IF NOT EXISTS audit
+
+    --wyswietalenie w konsoli:  info=True
+    
+    --
+    
+ 

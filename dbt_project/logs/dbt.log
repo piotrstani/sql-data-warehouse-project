@@ -105238,3 +105238,1408 @@ parsing.
 [0m15:55:53.531288 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71c18ea936b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71c183ea3f20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71c18ccb7140>]}
 [0m15:55:53.531486 [debug] [MainThread]: Flushing usage events
 [0m15:55:54.142586 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:06:36.548924 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a9da6fc9280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a9da85dfb00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a9da6ea57c0>]}
+
+
+============================== 16:06:36.552142 | 09c5107c-d890-49c5-a418-ad1a188221a2 ==============================
+[0m16:06:36.552142 [info ] [MainThread]: Running with dbt=1.12.5
+[0m16:06:36.552421 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'hints_enabled': 'True', 'profiles_dir': '/opt/airflow/dbt_project', 'empty': 'None', 'version_check': 'True', 'invocation_command': 'dbt run-operation learn_log', 'write_json': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'log_cache_events': 'False', 'warn_error': 'None', 'log_format': 'default', 'partial_parse': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_path': '/opt/airflow/dbt_project/logs', 'printer_width': '80', 'use_experimental_parser': 'False', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'quiet': 'False', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'introspect': 'True'}
+[0m16:06:36.650548 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '09c5107c-d890-49c5-a418-ad1a188221a2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a9da4fffd40>]}
+[0m16:06:36.685745 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '09c5107c-d890-49c5-a418-ad1a188221a2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a9da6165700>]}
+[0m16:06:36.686184 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m16:06:36.739446 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m16:06:36.868050 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m16:06:36.868430 [debug] [MainThread]: Partial parsing: added file: data_warehouse://macros/tools/logging.sql
+[0m16:06:36.949075 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '09c5107c-d890-49c5-a418-ad1a188221a2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a9da811f020>]}
+[0m16:06:37.102628 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m16:06:37.103867 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m16:06:37.110006 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m16:06:37.116616 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '09c5107c-d890-49c5-a418-ad1a188221a2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a9da4be9730>]}
+[0m16:06:37.116886 [info ] [MainThread]: Found 1 seed, 2 operations, 8 models, 1 snapshot, 1 analysis, 14 data tests, 6 sources, 866 macros, 1 unit test
+[0m16:06:37.117064 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '09c5107c-d890-49c5-a418-ad1a188221a2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a9da8536b40>]}
+[0m16:06:37.117520 [debug] [MainThread]: Acquiring new postgres connection 'macro_learn_log'
+[0m16:06:37.117784 [debug] [MainThread]: On macro_learn_log: COMMIT
+[0m16:06:37.118023 [debug] [MainThread]: Using postgres connection "macro_learn_log"
+[0m16:06:37.118239 [debug] [MainThread]: On macro_learn_log: COMMIT
+[0m16:06:37.118411 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:06:37.121929 [debug] [MainThread]: SQL status: COMMIT in 0.003 seconds
+[0m16:06:37.123848 [debug] [MainThread]: Hello there!
+[0m16:06:37.124049 [debug] [MainThread]: On macro_learn_log: Close
+[0m16:06:37.127870 [debug] [MainThread]: Wrote artifact RunResultsArtifact to /opt/airflow/dbt_project/target/run_results.json
+[0m16:06:37.128379 [debug] [MainThread]: Resource report: {"command_name": "run-operation", "command_success": true, "command_wall_clock_time": 0.61351824, "process_in_blocks": "24", "process_kernel_time": 0.085219, "process_mem_max_rss": "131804", "process_out_blocks": "4632", "process_user_time": 1.51189}
+[0m16:06:37.128665 [debug] [MainThread]: Command `dbt run-operation` succeeded at 16:06:37.128613 after 0.61 seconds
+[0m16:06:37.128830 [debug] [MainThread]: Connection 'macro_learn_log' was properly closed.
+[0m16:06:37.128986 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a9da6fc9280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a9da4be9e20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a9da6c4f440>]}
+[0m16:06:37.129151 [debug] [MainThread]: Flushing usage events
+[0m16:06:37.869980 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:10:00.493820 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75aab4d3f590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75aab5a5b680>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75aab6fdf920>]}
+
+
+============================== 16:10:00.497030 | 8d360a55-5396-4423-a039-7bb6a4342461 ==============================
+[0m16:10:00.497030 [info ] [MainThread]: Running with dbt=1.12.5
+[0m16:10:00.497329 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'log_cache_events': 'False', 'quiet': 'False', 'hints_enabled': 'True', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'partial_parse': 'True', 'log_path': '/opt/airflow/dbt_project/logs', 'target_path': 'None', 'version_check': 'True', 'log_format': 'default', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True', 'warn_error': 'None', 'profiles_dir': '/opt/airflow/dbt_project', 'introspect': 'True', 'printer_width': '80', 'use_colors': 'True', 'debug': 'False', 'no_print': 'None', 'static_parser': 'True', 'fail_fast': 'False', 'empty': 'None', 'invocation_command': 'dbt test -s source:bronze.erp_loc_a101', 'indirect_selection': 'eager'}
+[0m16:10:00.596402 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8d360a55-5396-4423-a039-7bb6a4342461', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75aab78ebcb0>]}
+[0m16:10:00.631330 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8d360a55-5396-4423-a039-7bb6a4342461', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75aab5e80980>]}
+[0m16:10:00.631781 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m16:10:00.685096 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m16:10:00.814438 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m16:10:00.815278 [debug] [MainThread]: Partial parsing: updated file: data_warehouse://models/bronze/sources.yml
+[0m16:10:00.815513 [debug] [MainThread]: Partial parsing: updated file: data_warehouse://macros/tools/logging.sql
+[0m16:10:01.390834 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test
+`dbt_expectations.expect_table_row_count_to_equal_other_table` defined on
+'crm_cust_info' in package 'data_warehouse' (models/silver/schema.yml).
+Arguments to generic tests should be nested under the `arguments` property.
+[0m16:10:01.391174 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '8d360a55-5396-4423-a039-7bb6a4342461', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75aab0c4ea20>]}
+[0m16:10:01.523732 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Parsing Error
+  Invalid test config given in models/bronze/sources.yml:
+  	test arguments must be a dict, got <class 'NoneType'> (value None)
+  	@: UnpatchedSourceDefinition(name='bronze_erp_p...ne)
+[0m16:10:01.524124 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 4 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m16:10:01.524688 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 1.0650414, "process_in_blocks": "0", "process_kernel_time": 0.089113, "process_mem_max_rss": "141812", "process_out_blocks": "16", "process_user_time": 1.972501}
+[0m16:10:01.524965 [debug] [MainThread]: Command `dbt test` failed at 16:10:01.524915 after 1.07 seconds
+[0m16:10:01.525164 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75aab5a5b680>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75aab0b990d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75aab25b30b0>]}
+[0m16:10:01.525355 [debug] [MainThread]: Flushing usage events
+[0m16:10:02.142972 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:10:45.814701 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790e0c0d7560>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790e0c7beea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790e0c2fa180>]}
+
+
+============================== 16:10:45.817794 | 5ba3fc74-bbf4-4917-a317-1e0424ebf829 ==============================
+[0m16:10:45.817794 [info ] [MainThread]: Running with dbt=1.12.5
+[0m16:10:45.818074 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'debug': 'False', 'indirect_selection': 'eager', 'warn_error': 'None', 'log_path': '/opt/airflow/dbt_project/logs', 'use_experimental_parser': 'False', 'write_json': 'True', 'introspect': 'True', 'use_colors': 'True', 'hints_enabled': 'True', 'target_path': 'None', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/airflow/dbt_project', 'fail_fast': 'False', 'version_check': 'True', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'invocation_command': 'dbt test -s source:bronze.erp_loc_a101'}
+[0m16:10:45.917357 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5ba3fc74-bbf4-4917-a317-1e0424ebf829', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790e0b5e7e00>]}
+[0m16:10:45.952766 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5ba3fc74-bbf4-4917-a317-1e0424ebf829', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790e0ad38500>]}
+[0m16:10:45.953216 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m16:10:46.007914 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m16:10:46.139092 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m16:10:46.139959 [debug] [MainThread]: Partial parsing: updated file: data_warehouse://models/bronze/sources.yml
+[0m16:10:46.140216 [debug] [MainThread]: Partial parsing: updated file: data_warehouse://macros/tools/logging.sql
+[0m16:10:46.725379 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test
+`dbt_expectations.expect_table_row_count_to_equal_other_table` defined on
+'crm_cust_info' in package 'data_warehouse' (models/silver/schema.yml).
+Arguments to generic tests should be nested under the `arguments` property.
+[0m16:10:46.725729 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '5ba3fc74-bbf4-4917-a317-1e0424ebf829', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790e036364e0>]}
+[0m16:10:46.922169 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5ba3fc74-bbf4-4917-a317-1e0424ebf829', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790e034103b0>]}
+[0m16:10:47.029514 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m16:10:47.030732 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m16:10:47.036880 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m16:10:47.100596 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5ba3fc74-bbf4-4917-a317-1e0424ebf829', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790e033c9310>]}
+[0m16:10:47.100936 [info ] [MainThread]: Found 1 seed, 2 operations, 8 models, 1 snapshot, 1 analysis, 14 data tests, 6 sources, 866 macros, 1 unit test
+[0m16:10:47.101139 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5ba3fc74-bbf4-4917-a317-1e0424ebf829', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790e099502c0>]}
+[0m16:10:47.102205 [info ] [MainThread]: 
+[0m16:10:47.102431 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m16:10:47.102605 [info ] [MainThread]: 
+[0m16:10:47.102919 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m16:10:47.105117 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse'
+[0m16:10:47.120014 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse"
+[0m16:10:47.120206 [debug] [ThreadPool]: On list_DataWarehouse: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m16:10:47.120345 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:10:47.123715 [debug] [ThreadPool]: SQL status: SELECT 99 in 0.003 seconds
+[0m16:10:47.124395 [debug] [ThreadPool]: On list_DataWarehouse: Close
+[0m16:10:47.125870 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DataWarehouse, now list_DataWarehouse__test_failures)
+[0m16:10:47.126364 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse_gold'
+[0m16:10:47.129197 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse__test_failures"
+[0m16:10:47.129495 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse_silver'
+[0m16:10:47.130042 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_gold"
+[0m16:10:47.130237 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse__test_failures"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike '_test_failures'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike '_test_failures'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike '_test_failures'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike '_test_failures'
+  
+[0m16:10:47.130713 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_silver"
+[0m16:10:47.130892 [debug] [ThreadPool]: On list_DataWarehouse_gold: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_gold"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'gold'
+  
+[0m16:10:47.131060 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:10:47.131218 [debug] [ThreadPool]: On list_DataWarehouse_silver: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_silver"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'silver'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'silver'
+  
+[0m16:10:47.131359 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:10:47.131547 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:10:47.136090 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.005 seconds
+[0m16:10:47.136311 [debug] [ThreadPool]: SQL status: SELECT 32 in 0.005 seconds
+[0m16:10:47.136513 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.005 seconds
+[0m16:10:47.137156 [debug] [ThreadPool]: On list_DataWarehouse_gold: ROLLBACK
+[0m16:10:47.137922 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: ROLLBACK
+[0m16:10:47.138535 [debug] [ThreadPool]: On list_DataWarehouse_silver: ROLLBACK
+[0m16:10:47.138753 [debug] [ThreadPool]: On list_DataWarehouse_gold: Close
+[0m16:10:47.138902 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: Close
+[0m16:10:47.139174 [debug] [ThreadPool]: On list_DataWarehouse_silver: Close
+[0m16:10:47.144614 [debug] [MainThread]: Using postgres connection "master"
+[0m16:10:47.144839 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m16:10:47.145020 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:10:47.148946 [debug] [MainThread]: SQL status: SELECT 2 in 0.004 seconds
+[0m16:10:47.149816 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5ba3fc74-bbf4-4917-a317-1e0424ebf829', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790e03166f60>]}
+[0m16:10:47.150055 [debug] [MainThread]: On master: ROLLBACK
+[0m16:10:47.150246 [debug] [MainThread]: On master: COMMIT
+[0m16:10:47.150392 [debug] [MainThread]: Using postgres connection "master"
+[0m16:10:47.150533 [debug] [MainThread]: On master: COMMIT
+[0m16:10:47.150700 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m16:10:47.153758 [debug] [MainThread]: Writing injected SQL for node "operation.data_warehouse.data_warehouse-on-run-start-0"
+[0m16:10:47.156202 [info ] [MainThread]: 1 of 2 START hook: data_warehouse.on-run-start.0 ............................... [RUN]
+[0m16:10:47.156474 [debug] [MainThread]: Using postgres connection "master"
+[0m16:10:47.156651 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "master"} */
+CREATE SCHEMA IF NOT EXISTS audit
+[0m16:10:47.156962 [debug] [MainThread]: SQL status: CREATE SCHEMA in 0.000 seconds
+[0m16:10:47.157546 [info ] [MainThread]: 1 of 2 OK hook: data_warehouse.on-run-start.0 .................................. [[32mOK[0m in 0.01s]
+[0m16:10:47.158387 [debug] [MainThread]: Writing injected SQL for node "operation.data_warehouse.data_warehouse-on-run-start-1"
+[0m16:10:47.158781 [info ] [MainThread]: 2 of 2 START hook: data_warehouse.on-run-start.1 ............................... [RUN]
+[0m16:10:47.159008 [debug] [MainThread]: Using postgres connection "master"
+[0m16:10:47.159176 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "master"} */
+CREATE TABLE IF NOT EXISTS audit.audit_log ( model_nm VARCHAR, run_ts TIMESTAMP )
+[0m16:10:47.159419 [debug] [MainThread]: SQL status: CREATE TABLE in 0.000 seconds
+[0m16:10:47.159917 [info ] [MainThread]: 2 of 2 OK hook: data_warehouse.on-run-start.1 .................................. [[32mOK[0m in 0.00s]
+[0m16:10:47.160081 [info ] [MainThread]: 
+[0m16:10:47.160245 [debug] [MainThread]: On master: Close
+[0m16:10:47.162553 [debug] [Thread-1 (]: Began running node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7.eeb98ed7c8
+[0m16:10:47.162783 [debug] [Thread-2 (]: Began running node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_.8eed905850
+[0m16:10:47.163011 [info ] [Thread-1 (]: 1 of 2 START test dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7  [RUN]
+[0m16:10:47.163231 [info ] [Thread-2 (]: 2 of 2 START test dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_  [RUN]
+[0m16:10:47.163486 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DataWarehouse_silver, now test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7.eeb98ed7c8)
+[0m16:10:47.163704 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DataWarehouse__test_failures, now test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_.8eed905850)
+[0m16:10:47.163886 [debug] [Thread-1 (]: Began compiling node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7.eeb98ed7c8
+[0m16:10:47.164055 [debug] [Thread-2 (]: Began compiling node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_.8eed905850
+[0m16:10:47.167111 [debug] [Thread-1 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7.eeb98ed7c8"
+[0m16:10:47.170066 [debug] [Thread-2 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_.8eed905850"
+[0m16:10:47.170412 [debug] [Thread-1 (]: Began executing node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7.eeb98ed7c8
+[0m16:10:47.170621 [debug] [Thread-2 (]: Began executing node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_.8eed905850
+[0m16:10:47.180402 [debug] [Thread-1 (]: Applying DROP to: "DataWarehouse"."_test_failures"."dbt_expectations_source_expect_50ddb5a06b6dc85c0b5b9519f53c06d8"
+[0m16:10:47.181636 [debug] [Thread-2 (]: Applying DROP to: "DataWarehouse"."_test_failures"."dbt_expectations_source_expect_ea7d172a2a02a2e86c8eaaf2b001d6af"
+[0m16:10:47.183827 [debug] [Thread-1 (]: Using postgres connection "test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7.eeb98ed7c8"
+[0m16:10:47.184152 [debug] [Thread-2 (]: Using postgres connection "test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_.8eed905850"
+[0m16:10:47.184365 [debug] [Thread-1 (]: On test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7.eeb98ed7c8: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7.eeb98ed7c8"} */
+drop table if exists "DataWarehouse"."_test_failures"."dbt_expectations_source_expect_50ddb5a06b6dc85c0b5b9519f53c06d8" cascade
+[0m16:10:47.184563 [debug] [Thread-2 (]: On test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_.8eed905850: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_.8eed905850"} */
+drop table if exists "DataWarehouse"."_test_failures"."dbt_expectations_source_expect_ea7d172a2a02a2e86c8eaaf2b001d6af" cascade
+[0m16:10:47.184730 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:10:47.184895 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m16:10:47.187644 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.003 seconds
+[0m16:10:47.187885 [debug] [Thread-2 (]: SQL status: DROP TABLE in 0.003 seconds
+[0m16:10:47.189292 [debug] [Thread-1 (]: Applying CREATE to: "DataWarehouse"."_test_failures"."dbt_expectations_source_expect_50ddb5a06b6dc85c0b5b9519f53c06d8"
+[0m16:10:47.189849 [debug] [Thread-2 (]: Applying CREATE to: "DataWarehouse"."_test_failures"."dbt_expectations_source_expect_ea7d172a2a02a2e86c8eaaf2b001d6af"
+[0m16:10:47.196021 [debug] [Thread-1 (]: Using postgres connection "test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7.eeb98ed7c8"
+[0m16:10:47.196427 [debug] [Thread-2 (]: Using postgres connection "test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_.8eed905850"
+[0m16:10:47.196634 [debug] [Thread-1 (]: On test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7.eeb98ed7c8: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7.eeb98ed7c8"} */
+
+        
+        
+  
+    
+
+  create  table "DataWarehouse"."_test_failures"."dbt_expectations_source_expect_50ddb5a06b6dc85c0b5b9519f53c06d8"
+  
+  
+    as
+  
+  (
+    
+    
+  
+
+
+    with grouped_expression as (
+    select
+        
+        
+    
+  
+count(distinct cntry) = 7
+ as expression
+
+
+    from "DataWarehouse"."bronze"."erp_loc_a101"
+    
+
+),
+validation_errors as (
+
+    select
+        *
+    from
+        grouped_expression
+    where
+        not(expression = true)
+
+)
+
+select *
+from validation_errors
+
+
+
+  
+  
+  );
+  
+    
+[0m16:10:47.196834 [debug] [Thread-2 (]: On test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_.8eed905850: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_.8eed905850"} */
+
+        
+        
+  
+    
+
+  create  table "DataWarehouse"."_test_failures"."dbt_expectations_source_expect_ea7d172a2a02a2e86c8eaaf2b001d6af"
+  
+  
+    as
+  
+  (
+    
+    
+  
+
+
+
+
+    with grouped_expression as (
+    select
+        
+        
+    
+  
+
+
+    
+
+coalesce(array_length((select regexp_matches(cntry, '\w+', '')), 1), 0)
+
+
+ > 0
+ as expression
+
+
+    from "DataWarehouse"."bronze"."erp_loc_a101"
+    
+
+),
+validation_errors as (
+
+    select
+        *
+    from
+        grouped_expression
+    where
+        not(expression = true)
+
+)
+
+select *
+from validation_errors
+
+
+
+
+
+  
+  
+  );
+  
+    
+[0m16:10:47.199664 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.003 seconds
+[0m16:10:47.200143 [debug] [Thread-1 (]: On test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7.eeb98ed7c8: COMMIT
+[0m16:10:47.200320 [debug] [Thread-1 (]: Using postgres connection "test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7.eeb98ed7c8"
+[0m16:10:47.200477 [debug] [Thread-1 (]: On test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7.eeb98ed7c8: COMMIT
+[0m16:10:47.201546 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m16:10:47.203281 [debug] [Thread-1 (]: Writing runtime sql for node "test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7.eeb98ed7c8"
+[0m16:10:47.203604 [debug] [Thread-1 (]: Using postgres connection "test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7.eeb98ed7c8"
+[0m16:10:47.203787 [debug] [Thread-1 (]: On test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7.eeb98ed7c8: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7.eeb98ed7c8"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+        select *
+        from "DataWarehouse"."_test_failures"."dbt_expectations_source_expect_50ddb5a06b6dc85c0b5b9519f53c06d8"
+    
+      
+    ) dbt_internal_test
+[0m16:10:47.204178 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.000 seconds
+[0m16:10:47.206189 [debug] [Thread-1 (]: On test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7.eeb98ed7c8: ROLLBACK
+[0m16:10:47.206387 [debug] [Thread-2 (]: SQL status: SELECT 337 in 0.009 seconds
+[0m16:10:47.206869 [debug] [Thread-2 (]: On test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_.8eed905850: COMMIT
+[0m16:10:47.207053 [debug] [Thread-1 (]: On test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7.eeb98ed7c8: Close
+[0m16:10:47.207253 [debug] [Thread-2 (]: Using postgres connection "test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_.8eed905850"
+[0m16:10:47.207434 [debug] [Thread-2 (]: On test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_.8eed905850: COMMIT
+[0m16:10:47.207722 [error] [Thread-1 (]: 1 of 2 FAIL 1 dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7  [[31mFAIL 1[0m in 0.04s]
+[0m16:10:47.208082 [debug] [Thread-1 (]: Finished running node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7.eeb98ed7c8
+[0m16:10:47.208757 [debug] [Thread-2 (]: SQL status: COMMIT in 0.001 seconds
+[0m16:10:47.209079 [debug] [Thread-2 (]: Writing runtime sql for node "test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_.8eed905850"
+[0m16:10:47.209340 [debug] [Thread-2 (]: Using postgres connection "test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_.8eed905850"
+[0m16:10:47.209514 [debug] [Thread-2 (]: On test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_.8eed905850: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_.8eed905850"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+        select *
+        from "DataWarehouse"."_test_failures"."dbt_expectations_source_expect_ea7d172a2a02a2e86c8eaaf2b001d6af"
+    
+      
+    ) dbt_internal_test
+[0m16:10:47.209882 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.000 seconds
+[0m16:10:47.210548 [debug] [Thread-2 (]: On test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_.8eed905850: ROLLBACK
+[0m16:10:47.210771 [debug] [Thread-2 (]: On test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_.8eed905850: Close
+[0m16:10:47.211057 [error] [Thread-2 (]: 2 of 2 FAIL 337 dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_  [[31mFAIL 337[0m in 0.05s]
+[0m16:10:47.211309 [debug] [Thread-2 (]: Finished running node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_.8eed905850
+[0m16:10:47.212003 [debug] [MainThread]: On master: COMMIT
+[0m16:10:47.212209 [debug] [MainThread]: Using postgres connection "master"
+[0m16:10:47.212356 [debug] [MainThread]: On master: COMMIT
+[0m16:10:47.212528 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m16:10:47.214643 [debug] [MainThread]: SQL status: COMMIT in 0.002 seconds
+[0m16:10:47.214840 [debug] [MainThread]: On master: Close
+[0m16:10:47.215075 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:10:47.215221 [debug] [MainThread]: Connection 'test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_.8eed905850' was properly closed.
+[0m16:10:47.215343 [debug] [MainThread]: Connection 'list_DataWarehouse_gold' was properly closed.
+[0m16:10:47.215457 [debug] [MainThread]: Connection 'test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7.eeb98ed7c8' was properly closed.
+[0m16:10:47.215635 [info ] [MainThread]: 
+[0m16:10:47.215807 [info ] [MainThread]: Finished running 2 project hooks, 2 data tests in 0 hours 0 minutes and 0.11 seconds (0.11s).
+[0m16:10:47.216311 [debug] [MainThread]: Command end result
+[0m16:10:47.249005 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m16:10:47.250146 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m16:10:47.251187 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m16:10:47.255216 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_project/target/run_results.json
+[0m16:10:47.255406 [info ] [MainThread]: 
+[0m16:10:47.255627 [info ] [MainThread]: [31mCompleted with 2 errors, 0 partial successes, and 0 warnings:[0m
+[0m16:10:47.255794 [info ] [MainThread]: 
+[0m16:10:47.255995 [error] [MainThread]: [[31mERROR[0m]: in test dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7 (models/bronze/sources.yml)
+[0m16:10:47.256177 [error] [MainThread]:   Got 1 result, configured to fail if != 0
+[0m16:10:47.256311 [info ] [MainThread]: 
+[0m16:10:47.256486 [info ] [MainThread]:   compiled code at target/compiled/data_warehouse/models/bronze/sources.yml/dbt_expectations_source_expect_50ddb5a06b6dc85c0b5b9519f53c06d8.sql
+[0m16:10:47.256634 [info ] [MainThread]: 
+[0m16:10:47.256808 [info ] [MainThread]:   See test failures:
+  ----------------------------------------------------------------------------------------------------------------
+  select * from "DataWarehouse"."_test_failures"."dbt_expectations_source_expect_50ddb5a06b6dc85c0b5b9519f53c06d8"
+  ----------------------------------------------------------------------------------------------------------------
+[0m16:10:47.256953 [info ] [MainThread]: 
+[0m16:10:47.257127 [error] [MainThread]: [[31mERROR[0m]: in test dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_ (models/bronze/sources.yml)
+[0m16:10:47.257294 [error] [MainThread]:   Got 337 results, configured to fail if != 0
+[0m16:10:47.257421 [info ] [MainThread]: 
+[0m16:10:47.257603 [info ] [MainThread]:   compiled code at target/compiled/data_warehouse/models/bronze/sources.yml/dbt_expectations_source_expect_ea7d172a2a02a2e86c8eaaf2b001d6af.sql
+[0m16:10:47.257734 [info ] [MainThread]: 
+[0m16:10:47.257893 [info ] [MainThread]:   See test failures:
+  ----------------------------------------------------------------------------------------------------------------
+  select * from "DataWarehouse"."_test_failures"."dbt_expectations_source_expect_ea7d172a2a02a2e86c8eaaf2b001d6af"
+  ----------------------------------------------------------------------------------------------------------------
+[0m16:10:47.258035 [info ] [MainThread]: 
+[0m16:10:47.258198 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=2 SKIP=0 NO-OP=0 REUSED=0 TOTAL=4
+[0m16:10:47.258496 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 4 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m16:10:47.259008 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 1.478645, "process_in_blocks": "0", "process_kernel_time": 0.076229, "process_mem_max_rss": "151208", "process_out_blocks": "7008", "process_user_time": 2.376145}
+[0m16:10:47.259268 [debug] [MainThread]: Command `dbt test` failed at 16:10:47.259222 after 1.48 seconds
+[0m16:10:47.259461 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790e0c95f590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790e0b70d1f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790e031afa70>]}
+[0m16:10:47.260015 [debug] [MainThread]: Flushing usage events
+[0m16:10:47.836597 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:17:57.192234 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74da90144680>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74da918b2300>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74da902c89b0>]}
+
+
+============================== 16:17:57.195167 | b438cb4e-0853-4abf-aaee-c74f672d5d90 ==============================
+[0m16:17:57.195167 [info ] [MainThread]: Running with dbt=1.12.5
+[0m16:17:57.195450 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'fail_fast': 'False', 'empty': 'None', 'log_cache_events': 'False', 'no_print': 'None', 'profiles_dir': '/opt/airflow/dbt_project', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'quiet': 'False', 'printer_width': '80', 'partial_parse': 'True', 'introspect': 'True', 'use_experimental_parser': 'False', 'target_path': 'None', 'log_path': '/opt/airflow/dbt_project/logs', 'cache_selected_only': 'False', 'use_colors': 'True', 'write_json': 'True', 'log_format': 'default', 'static_parser': 'True', 'maximum_seed_size_mib': '1', 'debug': 'False', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt run-operation learn_log'}
+[0m16:17:57.293989 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b438cb4e-0853-4abf-aaee-c74f672d5d90', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74da91e804a0>]}
+[0m16:17:57.329437 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b438cb4e-0853-4abf-aaee-c74f672d5d90', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74da8f714800>]}
+[0m16:17:57.329938 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m16:17:57.382494 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m16:17:57.512190 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m16:17:57.512614 [debug] [MainThread]: Partial parsing: updated file: data_warehouse://macros/tools/logging.sql
+[0m16:17:57.513488 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Compilation Error
+  expected token 'end of print statement', got '='
+    line 3
+      {{ log("--------------------------------------------Hello there!---------------------------------------"), info=True }}
+[0m16:17:57.514036 [debug] [MainThread]: Resource report: {"command_name": "run-operation", "command_success": false, "command_wall_clock_time": 0.35641408, "process_in_blocks": "16", "process_kernel_time": 0.075047, "process_mem_max_rss": "127640", "process_out_blocks": "16", "process_user_time": 1.271807}
+[0m16:17:57.514306 [debug] [MainThread]: Command `dbt run-operation` failed at 16:17:57.514255 after 0.36 seconds
+[0m16:17:57.514504 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74da9026bbf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74da8ede47a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74da8e9ca480>]}
+[0m16:17:57.514691 [debug] [MainThread]: Flushing usage events
+[0m16:17:58.149667 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:18:22.821397 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7edb109bb2f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7edb1158c440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7edb11534da0>]}
+
+
+============================== 16:18:22.824352 | d59d0347-261c-4afe-bb68-f6460fdad023 ==============================
+[0m16:18:22.824352 [info ] [MainThread]: Running with dbt=1.12.5
+[0m16:18:22.824653 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt run-operation learn_log', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'log_path': '/opt/airflow/dbt_project/logs', 'log_cache_events': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'version_check': 'True', 'maximum_seed_size_mib': '1', 'use_experimental_parser': 'False', 'log_format': 'default', 'warn_error': 'None', 'empty': 'None', 'debug': 'False', 'profiles_dir': '/opt/airflow/dbt_project', 'use_colors': 'True', 'fail_fast': 'False', 'printer_width': '80', 'hints_enabled': 'True', 'static_parser': 'True', 'write_json': 'True'}
+[0m16:18:22.925423 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd59d0347-261c-4afe-bb68-f6460fdad023', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7edb10363ec0>]}
+[0m16:18:22.961167 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd59d0347-261c-4afe-bb68-f6460fdad023', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7edb12194860>]}
+[0m16:18:22.961676 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m16:18:23.015288 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m16:18:23.148674 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m16:18:23.149090 [debug] [MainThread]: Partial parsing: updated file: data_warehouse://macros/tools/logging.sql
+[0m16:18:23.149809 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Compilation Error
+  expected token 'end of print statement', got '='
+    line 2
+      {{ log("--------------------------------------------Hello there!---------------------------------------"), info=True }}
+[0m16:18:23.150427 [debug] [MainThread]: Resource report: {"command_name": "run-operation", "command_success": false, "command_wall_clock_time": 0.36325106, "process_in_blocks": "0", "process_kernel_time": 0.065128, "process_mem_max_rss": "127676", "process_out_blocks": "8", "process_user_time": 1.275517}
+[0m16:18:23.150962 [debug] [MainThread]: Command `dbt run-operation` failed at 16:18:23.150893 after 0.36 seconds
+[0m16:18:23.151177 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7edb109db110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7edb0e26acc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7edb0e20a600>]}
+[0m16:18:23.151369 [debug] [MainThread]: Flushing usage events
+[0m16:18:23.712846 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:18:48.920011 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fba5abbdbb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fba5951a9f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fba59519880>]}
+
+
+============================== 16:18:48.923069 | 058cd7dd-f79e-4786-afe8-1038a680daff ==============================
+[0m16:18:48.923069 [info ] [MainThread]: Running with dbt=1.12.5
+[0m16:18:48.923334 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'log_path': '/opt/airflow/dbt_project/logs', 'hints_enabled': 'True', 'printer_width': '80', 'no_print': 'None', 'warn_error': 'None', 'use_experimental_parser': 'False', 'quiet': 'False', 'introspect': 'True', 'profiles_dir': '/opt/airflow/dbt_project', 'write_json': 'True', 'use_colors': 'True', 'log_cache_events': 'False', 'debug': 'False', 'invocation_command': 'dbt run-operation learn_log', 'maximum_seed_size_mib': '1', 'empty': 'None', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'static_parser': 'True', 'fail_fast': 'False', 'target_path': 'None'}
+[0m16:18:49.024064 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '058cd7dd-f79e-4786-afe8-1038a680daff', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fba5798af60>]}
+[0m16:18:49.060534 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '058cd7dd-f79e-4786-afe8-1038a680daff', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fba58e40c80>]}
+[0m16:18:49.061070 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m16:18:49.114726 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m16:18:49.244708 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m16:18:49.245148 [debug] [MainThread]: Partial parsing: updated file: data_warehouse://macros/tools/logging.sql
+[0m16:18:49.365329 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '058cd7dd-f79e-4786-afe8-1038a680daff', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fba55d8bc80>]}
+[0m16:18:49.482814 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m16:18:49.484105 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m16:18:49.490346 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m16:18:49.496887 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '058cd7dd-f79e-4786-afe8-1038a680daff', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fba5798b7d0>]}
+[0m16:18:49.497170 [info ] [MainThread]: Found 1 seed, 2 operations, 8 models, 1 snapshot, 1 analysis, 14 data tests, 6 sources, 866 macros, 1 unit test
+[0m16:18:49.497353 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '058cd7dd-f79e-4786-afe8-1038a680daff', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fba575944a0>]}
+[0m16:18:49.497682 [debug] [MainThread]: Acquiring new postgres connection 'macro_learn_log'
+[0m16:18:49.497854 [debug] [MainThread]: On macro_learn_log: COMMIT
+[0m16:18:49.497999 [debug] [MainThread]: Using postgres connection "macro_learn_log"
+[0m16:18:49.498133 [debug] [MainThread]: On macro_learn_log: COMMIT
+[0m16:18:49.498259 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:18:49.501279 [debug] [MainThread]: SQL status: COMMIT in 0.003 seconds
+[0m16:18:49.503689 [info ] [MainThread]: --------------------------------------------Hello there!---------------------------------------
+[0m16:18:49.503932 [debug] [MainThread]: On macro_learn_log: Close
+[0m16:18:49.507797 [debug] [MainThread]: Wrote artifact RunResultsArtifact to /opt/airflow/dbt_project/target/run_results.json
+[0m16:18:49.508309 [debug] [MainThread]: Resource report: {"command_name": "run-operation", "command_success": true, "command_wall_clock_time": 0.62324524, "process_in_blocks": "0", "process_kernel_time": 0.075008, "process_mem_max_rss": "131504", "process_out_blocks": "4624", "process_user_time": 1.53517}
+[0m16:18:49.508585 [debug] [MainThread]: Command `dbt run-operation` succeeded at 16:18:49.508536 after 0.62 seconds
+[0m16:18:49.508745 [debug] [MainThread]: Connection 'macro_learn_log' was properly closed.
+[0m16:18:49.508902 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fba5614e6c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fba57112120>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fba594e2f90>]}
+[0m16:18:49.509066 [debug] [MainThread]: Flushing usage events
+[0m16:18:50.076328 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:19:26.505205 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7766362004a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7766371a2c00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x776637107770>]}
+
+
+============================== 16:19:26.508316 | 224856a5-0fa5-4e33-a072-4950b035177e ==============================
+[0m16:19:26.508316 [info ] [MainThread]: Running with dbt=1.12.5
+[0m16:19:26.508590 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'partial_parse': 'True', 'quiet': 'False', 'printer_width': '80', 'maximum_seed_size_mib': '1', 'static_parser': 'True', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'fail_fast': 'False', 'invocation_command': 'dbt test -s source:bronze.erp_loc_a101', 'indirect_selection': 'eager', 'debug': 'False', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'log_path': '/opt/airflow/dbt_project/logs', 'target_path': 'None', 'write_json': 'True', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'hints_enabled': 'True', 'empty': 'None', 'cache_selected_only': 'False', 'use_colors': 'True', 'version_check': 'True', 'profiles_dir': '/opt/airflow/dbt_project'}
+[0m16:19:26.607683 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '224856a5-0fa5-4e33-a072-4950b035177e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x776635911bb0>]}
+[0m16:19:26.643776 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '224856a5-0fa5-4e33-a072-4950b035177e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x776636dfc860>]}
+[0m16:19:26.644337 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m16:19:26.697715 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m16:19:26.813265 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m16:19:26.813594 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '224856a5-0fa5-4e33-a072-4950b035177e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7766341b5370>]}
+[0m16:19:28.032229 [info ] [MainThread]: --------------------------------------------Hello there!---------------------------------------
+[0m16:19:28.328452 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test
+`dbt_expectations.expect_table_row_count_to_equal_other_table` defined on
+'crm_cust_info' in package 'data_warehouse' (models/silver/schema.yml).
+Arguments to generic tests should be nested under the `arguments` property.
+[0m16:19:28.328811 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '224856a5-0fa5-4e33-a072-4950b035177e', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x776634529490>]}
+[0m16:19:28.471183 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '224856a5-0fa5-4e33-a072-4950b035177e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x776633c63a10>]}
+[0m16:19:28.582195 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m16:19:28.583506 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m16:19:28.589792 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m16:19:28.602917 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '224856a5-0fa5-4e33-a072-4950b035177e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7766359f5f10>]}
+[0m16:19:28.603194 [info ] [MainThread]: Found 8 models, 1 snapshot, 1 analysis, 14 data tests, 1 seed, 3 operations, 6 sources, 866 macros, 1 unit test
+[0m16:19:28.603377 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '224856a5-0fa5-4e33-a072-4950b035177e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x776634939940>]}
+[0m16:19:28.604439 [info ] [MainThread]: 
+[0m16:19:28.604662 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m16:19:28.604810 [info ] [MainThread]: 
+[0m16:19:28.605085 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m16:19:28.607200 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse'
+[0m16:19:28.621258 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse"
+[0m16:19:28.621450 [debug] [ThreadPool]: On list_DataWarehouse: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m16:19:28.621593 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:19:28.625177 [debug] [ThreadPool]: SQL status: SELECT 99 in 0.004 seconds
+[0m16:19:28.625898 [debug] [ThreadPool]: On list_DataWarehouse: Close
+[0m16:19:28.627293 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DataWarehouse, now list_DataWarehouse_silver)
+[0m16:19:28.627675 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse__test_failures'
+[0m16:19:28.630075 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_silver"
+[0m16:19:28.630408 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse_gold'
+[0m16:19:28.630976 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse__test_failures"
+[0m16:19:28.631185 [debug] [ThreadPool]: On list_DataWarehouse_silver: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_silver"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'silver'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'silver'
+  
+[0m16:19:28.631716 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_gold"
+[0m16:19:28.631909 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse__test_failures"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike '_test_failures'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike '_test_failures'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike '_test_failures'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike '_test_failures'
+  
+[0m16:19:28.632072 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:19:28.632230 [debug] [ThreadPool]: On list_DataWarehouse_gold: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_gold"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'gold'
+  
+[0m16:19:28.632381 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:19:28.632582 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:19:28.637291 [debug] [ThreadPool]: SQL status: SELECT 32 in 0.005 seconds
+[0m16:19:28.637486 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.005 seconds
+[0m16:19:28.637674 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.006 seconds
+[0m16:19:28.638532 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: ROLLBACK
+[0m16:19:28.639115 [debug] [ThreadPool]: On list_DataWarehouse_gold: ROLLBACK
+[0m16:19:28.639738 [debug] [ThreadPool]: On list_DataWarehouse_silver: ROLLBACK
+[0m16:19:28.640013 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: Close
+[0m16:19:28.640210 [debug] [ThreadPool]: On list_DataWarehouse_gold: Close
+[0m16:19:28.640387 [debug] [ThreadPool]: On list_DataWarehouse_silver: Close
+[0m16:19:28.646079 [debug] [MainThread]: Using postgres connection "master"
+[0m16:19:28.646305 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m16:19:28.646481 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:19:28.650441 [debug] [MainThread]: SQL status: SELECT 2 in 0.004 seconds
+[0m16:19:28.651317 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '224856a5-0fa5-4e33-a072-4950b035177e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77663221c230>]}
+[0m16:19:28.651570 [debug] [MainThread]: On master: ROLLBACK
+[0m16:19:28.651790 [debug] [MainThread]: On master: COMMIT
+[0m16:19:28.651953 [debug] [MainThread]: Using postgres connection "master"
+[0m16:19:28.652088 [debug] [MainThread]: On master: COMMIT
+[0m16:19:28.652275 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m16:19:28.655416 [info ] [MainThread]: --------------------------------------------Hello there!---------------------------------------
+[0m16:19:28.655674 [debug] [MainThread]: Writing injected SQL for node "operation.data_warehouse.data_warehouse-on-run-start-0"
+[0m16:19:28.657750 [info ] [MainThread]: 1 of 3 START hook: data_warehouse.on-run-start.0 ............................... [RUN]
+[0m16:19:28.658005 [debug] [MainThread]: Using postgres connection "master"
+[0m16:19:28.658181 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "master"} */
+
+    --wyswietalenie w konsoli:  info=True
+    
+ 
+[0m16:19:28.658429 [debug] [MainThread]: Postgres adapter: Postgres error: can't execute an empty query
+[0m16:19:28.658715 [info ] [MainThread]: 1 of 3 ERROR hook: data_warehouse.on-run-start.0 ............................... [[31mERROR[0m in 0.01s]
+[0m16:19:28.658934 [info ] [MainThread]: 2 of 3 SKIP hook: data_warehouse.on-run-start.1 ................................ [[33mSKIP[0m in 0.00s]
+[0m16:19:28.659129 [info ] [MainThread]: 3 of 3 SKIP hook: data_warehouse.on-run-start.2 ................................ [[33mSKIP[0m in 0.00s]
+[0m16:19:28.659265 [info ] [MainThread]: 
+[0m16:19:28.659412 [debug] [MainThread]: On master: Close
+[0m16:19:28.659775 [info ] [MainThread]: 1 of 2 SKIP test dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7  [[33mSKIP[0m]
+[0m16:19:28.660102 [info ] [MainThread]: 2 of 2 SKIP test dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_  [[33mSKIP[0m]
+[0m16:19:28.660451 [debug] [MainThread]: On master: COMMIT
+[0m16:19:28.660656 [debug] [MainThread]: Using postgres connection "master"
+[0m16:19:28.660791 [debug] [MainThread]: On master: COMMIT
+[0m16:19:28.660912 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m16:19:28.662927 [debug] [MainThread]: SQL status: COMMIT in 0.002 seconds
+[0m16:19:28.663122 [debug] [MainThread]: On master: Close
+[0m16:19:28.663387 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:19:28.663623 [debug] [MainThread]: Connection 'list_DataWarehouse_silver' was properly closed.
+[0m16:19:28.663814 [debug] [MainThread]: Connection 'list_DataWarehouse__test_failures' was properly closed.
+[0m16:19:28.664000 [debug] [MainThread]: Connection 'list_DataWarehouse_gold' was properly closed.
+[0m16:19:28.664246 [info ] [MainThread]: 
+[0m16:19:28.664415 [info ] [MainThread]: Finished running 3 project hooks, 2 data tests in 0 hours 0 minutes and 0.06 seconds (0.06s).
+[0m16:19:28.664791 [debug] [MainThread]: Command end result
+[0m16:19:28.697893 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m16:19:28.699053 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m16:19:28.700071 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m16:19:28.704073 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_project/target/run_results.json
+[0m16:19:28.704266 [info ] [MainThread]: 
+[0m16:19:28.704453 [info ] [MainThread]: [31mCompleted with 3 errors, 0 partial successes, and 0 warnings:[0m
+[0m16:19:28.704612 [info ] [MainThread]: 
+[0m16:19:28.704798 [error] [MainThread]: [[31mERROR[0m]: in operation data_warehouse-on-run-start-0 (./dbt_project.yml)
+[0m16:19:28.704976 [error] [MainThread]:   data_warehouse.on-run-start.0 failed, error:
+ can't execute an empty query
+[0m16:19:28.705104 [info ] [MainThread]: 
+[0m16:19:28.705265 [info ] [MainThread]:   compiled code at target/compiled/data_warehouse/./dbt_project.yml/hooks/data_warehouse-on-run-start-0.sql
+[0m16:19:28.705396 [debug] [MainThread]: 
+[0m16:19:28.705523 [debug] [MainThread]:   data_warehouse.on-run-start.1 skipped
+[0m16:19:28.705642 [debug] [MainThread]: 
+[0m16:19:28.705756 [debug] [MainThread]:   data_warehouse.on-run-start.2 skipped
+[0m16:19:28.705869 [info ] [MainThread]: 
+[0m16:19:28.706022 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=4 NO-OP=0 REUSED=0 TOTAL=5
+[0m16:19:28.706307 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 4 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m16:19:28.706838 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 2.2361138, "process_in_blocks": "16", "process_kernel_time": 0.100012, "process_mem_max_rss": "151240", "process_out_blocks": "6952", "process_user_time": 3.136379}
+[0m16:19:28.707107 [debug] [MainThread]: Command `dbt test` failed at 16:19:28.707060 after 2.24 seconds
+[0m16:19:28.707302 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x776637061bb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x776637097860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7766359307d0>]}
+[0m16:19:28.707493 [debug] [MainThread]: Flushing usage events
+[0m16:19:29.335304 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:19:55.614020 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1fa1c7bad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1fa13ec470>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1fa13ed460>]}
+
+
+============================== 16:19:55.617025 | adc3afa0-fa83-4959-9bd0-d2a26fc2ea3a ==============================
+[0m16:19:55.617025 [info ] [MainThread]: Running with dbt=1.12.5
+[0m16:19:55.617318 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'maximum_seed_size_mib': '1', 'use_experimental_parser': 'False', 'use_colors': 'True', 'fail_fast': 'False', 'indirect_selection': 'eager', 'quiet': 'False', 'printer_width': '80', 'cache_selected_only': 'False', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'log_path': '/opt/airflow/dbt_project/logs', 'no_print': 'None', 'warn_error': 'None', 'profiles_dir': '/opt/airflow/dbt_project', 'empty': 'None', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'hints_enabled': 'True', 'introspect': 'True', 'write_json': 'True', 'target_path': 'None', 'version_check': 'True', 'partial_parse': 'True', 'invocation_command': 'dbt test -s source:bronze.erp_loc_a101', 'debug': 'False'}
+[0m16:19:55.715952 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'adc3afa0-fa83-4959-9bd0-d2a26fc2ea3a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1f9f3f7aa0>]}
+[0m16:19:55.751205 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'adc3afa0-fa83-4959-9bd0-d2a26fc2ea3a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1fa0049400>]}
+[0m16:19:55.751697 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m16:19:55.805120 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m16:19:55.933375 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m16:19:55.933791 [debug] [MainThread]: Partial parsing: updated file: data_warehouse://macros/tools/logging.sql
+[0m16:19:56.058853 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'adc3afa0-fa83-4959-9bd0-d2a26fc2ea3a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1f9da97b30>]}
+[0m16:19:56.175443 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m16:19:56.176635 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m16:19:56.182776 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m16:19:56.195755 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'adc3afa0-fa83-4959-9bd0-d2a26fc2ea3a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1f9ef1ca10>]}
+[0m16:19:56.196022 [info ] [MainThread]: Found 8 models, 1 snapshot, 1 analysis, 14 data tests, 1 seed, 3 operations, 6 sources, 866 macros, 1 unit test
+[0m16:19:56.196225 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'adc3afa0-fa83-4959-9bd0-d2a26fc2ea3a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1f9da6be00>]}
+[0m16:19:56.197270 [info ] [MainThread]: 
+[0m16:19:56.197501 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m16:19:56.197659 [info ] [MainThread]: 
+[0m16:19:56.197948 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m16:19:56.200053 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse'
+[0m16:19:56.215380 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse"
+[0m16:19:56.215583 [debug] [ThreadPool]: On list_DataWarehouse: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m16:19:56.215723 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:19:56.219621 [debug] [ThreadPool]: SQL status: SELECT 99 in 0.004 seconds
+[0m16:19:56.220316 [debug] [ThreadPool]: On list_DataWarehouse: Close
+[0m16:19:56.221684 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DataWarehouse, now list_DataWarehouse_silver)
+[0m16:19:56.222012 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse__test_failures'
+[0m16:19:56.224455 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_silver"
+[0m16:19:56.224854 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse_gold'
+[0m16:19:56.225347 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse__test_failures"
+[0m16:19:56.225565 [debug] [ThreadPool]: On list_DataWarehouse_silver: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_silver"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'silver'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'silver'
+  
+[0m16:19:56.226094 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_gold"
+[0m16:19:56.226275 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse__test_failures"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike '_test_failures'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike '_test_failures'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike '_test_failures'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike '_test_failures'
+  
+[0m16:19:56.226430 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:19:56.226599 [debug] [ThreadPool]: On list_DataWarehouse_gold: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_gold"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'gold'
+  
+[0m16:19:56.226757 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:19:56.226945 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:19:56.231586 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.005 seconds
+[0m16:19:56.231791 [debug] [ThreadPool]: SQL status: SELECT 32 in 0.005 seconds
+[0m16:19:56.232008 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.005 seconds
+[0m16:19:56.232676 [debug] [ThreadPool]: On list_DataWarehouse_silver: ROLLBACK
+[0m16:19:56.233432 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: ROLLBACK
+[0m16:19:56.233996 [debug] [ThreadPool]: On list_DataWarehouse_gold: ROLLBACK
+[0m16:19:56.234208 [debug] [ThreadPool]: On list_DataWarehouse_silver: Close
+[0m16:19:56.234362 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: Close
+[0m16:19:56.234626 [debug] [ThreadPool]: On list_DataWarehouse_gold: Close
+[0m16:19:56.239812 [debug] [MainThread]: Using postgres connection "master"
+[0m16:19:56.240037 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m16:19:56.240213 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:19:56.244412 [debug] [MainThread]: SQL status: SELECT 2 in 0.004 seconds
+[0m16:19:56.245306 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'adc3afa0-fa83-4959-9bd0-d2a26fc2ea3a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1f9f3d66c0>]}
+[0m16:19:56.245564 [debug] [MainThread]: On master: ROLLBACK
+[0m16:19:56.245765 [debug] [MainThread]: On master: COMMIT
+[0m16:19:56.245916 [debug] [MainThread]: Using postgres connection "master"
+[0m16:19:56.246047 [debug] [MainThread]: On master: COMMIT
+[0m16:19:56.246212 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m16:19:56.249730 [info ] [MainThread]: 
+--------------------------------------------Hello there!---------------------------------------
+
+[0m16:19:56.249987 [debug] [MainThread]: Writing injected SQL for node "operation.data_warehouse.data_warehouse-on-run-start-0"
+[0m16:19:56.252114 [info ] [MainThread]: 1 of 3 START hook: data_warehouse.on-run-start.0 ............................... [RUN]
+[0m16:19:56.252373 [debug] [MainThread]: Using postgres connection "master"
+[0m16:19:56.252554 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "master"} */
+
+    --wyswietalenie w konsoli:  info=True
+    
+ 
+[0m16:19:56.252776 [debug] [MainThread]: Postgres adapter: Postgres error: can't execute an empty query
+[0m16:19:56.253034 [info ] [MainThread]: 1 of 3 ERROR hook: data_warehouse.on-run-start.0 ............................... [[31mERROR[0m in 0.01s]
+[0m16:19:56.253263 [info ] [MainThread]: 2 of 3 SKIP hook: data_warehouse.on-run-start.1 ................................ [[33mSKIP[0m in 0.00s]
+[0m16:19:56.253482 [info ] [MainThread]: 3 of 3 SKIP hook: data_warehouse.on-run-start.2 ................................ [[33mSKIP[0m in 0.00s]
+[0m16:19:56.253633 [info ] [MainThread]: 
+[0m16:19:56.253791 [debug] [MainThread]: On master: Close
+[0m16:19:56.254069 [info ] [MainThread]: 1 of 2 SKIP test dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7  [[33mSKIP[0m]
+[0m16:19:56.254278 [info ] [MainThread]: 2 of 2 SKIP test dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_  [[33mSKIP[0m]
+[0m16:19:56.254512 [debug] [MainThread]: On master: COMMIT
+[0m16:19:56.254653 [debug] [MainThread]: Using postgres connection "master"
+[0m16:19:56.254778 [debug] [MainThread]: On master: COMMIT
+[0m16:19:56.254898 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m16:19:56.256891 [debug] [MainThread]: SQL status: COMMIT in 0.002 seconds
+[0m16:19:56.257093 [debug] [MainThread]: On master: Close
+[0m16:19:56.257319 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:19:56.257460 [debug] [MainThread]: Connection 'list_DataWarehouse_silver' was properly closed.
+[0m16:19:56.257591 [debug] [MainThread]: Connection 'list_DataWarehouse__test_failures' was properly closed.
+[0m16:19:56.257705 [debug] [MainThread]: Connection 'list_DataWarehouse_gold' was properly closed.
+[0m16:19:56.257870 [info ] [MainThread]: 
+[0m16:19:56.258042 [info ] [MainThread]: Finished running 3 project hooks, 2 data tests in 0 hours 0 minutes and 0.06 seconds (0.06s).
+[0m16:19:56.258429 [debug] [MainThread]: Command end result
+[0m16:19:56.290343 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m16:19:56.291453 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m16:19:56.292464 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m16:19:56.296361 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_project/target/run_results.json
+[0m16:19:56.296556 [info ] [MainThread]: 
+[0m16:19:56.296745 [info ] [MainThread]: [31mCompleted with 3 errors, 0 partial successes, and 0 warnings:[0m
+[0m16:19:56.296905 [info ] [MainThread]: 
+[0m16:19:56.297096 [error] [MainThread]: [[31mERROR[0m]: in operation data_warehouse-on-run-start-0 (./dbt_project.yml)
+[0m16:19:56.297278 [error] [MainThread]:   data_warehouse.on-run-start.0 failed, error:
+ can't execute an empty query
+[0m16:19:56.297413 [info ] [MainThread]: 
+[0m16:19:56.297586 [info ] [MainThread]:   compiled code at target/compiled/data_warehouse/./dbt_project.yml/hooks/data_warehouse-on-run-start-0.sql
+[0m16:19:56.297725 [debug] [MainThread]: 
+[0m16:19:56.297841 [debug] [MainThread]:   data_warehouse.on-run-start.1 skipped
+[0m16:19:56.297956 [debug] [MainThread]: 
+[0m16:19:56.298067 [debug] [MainThread]:   data_warehouse.on-run-start.2 skipped
+[0m16:19:56.298181 [info ] [MainThread]: 
+[0m16:19:56.298337 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=4 NO-OP=0 REUSED=0 TOTAL=5
+[0m16:19:56.298856 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 0.71929, "process_in_blocks": "0", "process_kernel_time": 0.095404, "process_mem_max_rss": "136576", "process_out_blocks": "6952", "process_user_time": 1.599786}
+[0m16:19:56.299144 [debug] [MainThread]: Command `dbt test` failed at 16:19:56.299097 after 0.72 seconds
+[0m16:19:56.299341 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1fa1c7bad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1fa23de450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e1fa0ba5070>]}
+[0m16:19:56.299532 [debug] [MainThread]: Flushing usage events
+[0m16:19:56.858938 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:23:34.486525 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77d4e002baa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77d4df01db80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77d4ded7c980>]}
+
+
+============================== 16:23:34.489494 | 5e92e66e-1658-44b9-b6d5-f034456683b2 ==============================
+[0m16:23:34.489494 [info ] [MainThread]: Running with dbt=1.12.5
+[0m16:23:34.489785 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'no_print': 'None', 'warn_error': 'None', 'log_cache_events': 'False', 'maximum_seed_size_mib': '1', 'introspect': 'True', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'profiles_dir': '/opt/airflow/dbt_project', 'log_format': 'default', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'hints_enabled': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'write_json': 'True', 'static_parser': 'True', 'target_path': 'None', 'quiet': 'False', 'partial_parse': 'True', 'empty': 'None', 'invocation_command': 'dbt test -s source:bronze.erp_loc_a101', 'printer_width': '80', 'log_path': '/opt/airflow/dbt_project/logs', 'version_check': 'True', 'use_experimental_parser': 'False'}
+[0m16:23:34.588996 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5e92e66e-1658-44b9-b6d5-f034456683b2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77d4e0b3c050>]}
+[0m16:23:34.624040 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5e92e66e-1658-44b9-b6d5-f034456683b2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77d4de24bbf0>]}
+[0m16:23:34.624505 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m16:23:34.678222 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m16:23:34.804667 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m16:23:34.805077 [debug] [MainThread]: Partial parsing: updated file: data_warehouse://macros/tools/logging.sql
+[0m16:23:34.805813 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Compilation Error
+  unexpected char '#' at 207
+    line 5
+      {{# log("\n--------------------------------------------Hello there!---------------------------------------\n", info=True) #}}
+[0m16:23:34.806348 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 0.35407087, "process_in_blocks": "0", "process_kernel_time": 0.087102, "process_mem_max_rss": "127796", "process_out_blocks": "16", "process_user_time": 1.263484}
+[0m16:23:34.806633 [debug] [MainThread]: Command `dbt test` failed at 16:23:34.806583 after 0.35 seconds
+[0m16:23:34.806826 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77d4df6069f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77d4dc5f8080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77d4dd15c500>]}
+[0m16:23:34.807010 [debug] [MainThread]: Flushing usage events
+[0m16:23:35.433789 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:23:58.151493 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e4f701c980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e4f7070260>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e4f8420fb0>]}
+
+
+============================== 16:23:58.154449 | 4c578968-dfc8-4060-808a-b5c8795554ef ==============================
+[0m16:23:58.154449 [info ] [MainThread]: Running with dbt=1.12.5
+[0m16:23:58.154764 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'static_parser': 'True', 'introspect': 'True', 'no_print': 'None', 'indirect_selection': 'eager', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'fail_fast': 'False', 'log_cache_events': 'False', 'write_json': 'True', 'use_experimental_parser': 'False', 'debug': 'False', 'log_path': '/opt/airflow/dbt_project/logs', 'quiet': 'False', 'invocation_command': 'dbt test -s source:bronze.erp_loc_a101', 'use_colors': 'True', 'empty': 'None', 'cache_selected_only': 'False', 'hints_enabled': 'True', 'partial_parse': 'True', 'profiles_dir': '/opt/airflow/dbt_project', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'target_path': 'None', 'printer_width': '80'}
+[0m16:23:58.254550 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4c578968-dfc8-4060-808a-b5c8795554ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e4f98f81d0>]}
+[0m16:23:58.289621 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4c578968-dfc8-4060-808a-b5c8795554ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e4f6ebaf30>]}
+[0m16:23:58.290074 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m16:23:58.343524 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m16:23:58.470593 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m16:23:58.471003 [debug] [MainThread]: Partial parsing: updated file: data_warehouse://macros/tools/logging.sql
+[0m16:23:58.589187 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '4c578968-dfc8-4060-808a-b5c8795554ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e4f4b9b8f0>]}
+[0m16:23:58.706031 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m16:23:58.707223 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m16:23:58.713303 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m16:23:58.726145 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '4c578968-dfc8-4060-808a-b5c8795554ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e4f4b9bd40>]}
+[0m16:23:58.726418 [info ] [MainThread]: Found 8 models, 1 snapshot, 1 analysis, 14 data tests, 1 seed, 3 operations, 6 sources, 866 macros, 1 unit test
+[0m16:23:58.726624 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4c578968-dfc8-4060-808a-b5c8795554ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e4f6357f50>]}
+[0m16:23:58.727691 [info ] [MainThread]: 
+[0m16:23:58.727921 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m16:23:58.728090 [info ] [MainThread]: 
+[0m16:23:58.728383 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m16:23:58.730506 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse'
+[0m16:23:58.745647 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse"
+[0m16:23:58.745839 [debug] [ThreadPool]: On list_DataWarehouse: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m16:23:58.745980 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:23:58.749647 [debug] [ThreadPool]: SQL status: SELECT 99 in 0.004 seconds
+[0m16:23:58.750344 [debug] [ThreadPool]: On list_DataWarehouse: Close
+[0m16:23:58.751803 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DataWarehouse, now list_DataWarehouse_gold)
+[0m16:23:58.752295 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse__test_failures'
+[0m16:23:58.754788 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_gold"
+[0m16:23:58.755061 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse_silver'
+[0m16:23:58.755585 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse__test_failures"
+[0m16:23:58.755779 [debug] [ThreadPool]: On list_DataWarehouse_gold: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_gold"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'gold'
+  
+[0m16:23:58.756309 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_silver"
+[0m16:23:58.756498 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse__test_failures"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike '_test_failures'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike '_test_failures'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike '_test_failures'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike '_test_failures'
+  
+[0m16:23:58.756668 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:23:58.756842 [debug] [ThreadPool]: On list_DataWarehouse_silver: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_silver"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'silver'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'silver'
+  
+[0m16:23:58.756995 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:23:58.757186 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:23:58.761804 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.005 seconds
+[0m16:23:58.762054 [debug] [ThreadPool]: SQL status: SELECT 32 in 0.005 seconds
+[0m16:23:58.762251 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.005 seconds
+[0m16:23:58.762930 [debug] [ThreadPool]: On list_DataWarehouse_gold: ROLLBACK
+[0m16:23:58.763701 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: ROLLBACK
+[0m16:23:58.764317 [debug] [ThreadPool]: On list_DataWarehouse_silver: ROLLBACK
+[0m16:23:58.764571 [debug] [ThreadPool]: On list_DataWarehouse_gold: Close
+[0m16:23:58.764761 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: Close
+[0m16:23:58.765012 [debug] [ThreadPool]: On list_DataWarehouse_silver: Close
+[0m16:23:58.769794 [debug] [MainThread]: Using postgres connection "master"
+[0m16:23:58.770015 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m16:23:58.770188 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:23:58.774110 [debug] [MainThread]: SQL status: SELECT 2 in 0.004 seconds
+[0m16:23:58.775005 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4c578968-dfc8-4060-808a-b5c8795554ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e4f63b8a70>]}
+[0m16:23:58.775253 [debug] [MainThread]: On master: ROLLBACK
+[0m16:23:58.775448 [debug] [MainThread]: On master: COMMIT
+[0m16:23:58.775602 [debug] [MainThread]: Using postgres connection "master"
+[0m16:23:58.775731 [debug] [MainThread]: On master: COMMIT
+[0m16:23:58.775894 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m16:23:58.779401 [info ] [MainThread]: 
+--------------------------------------------Hello there!---------------------------------------
+
+[0m16:23:58.779676 [debug] [MainThread]: Writing injected SQL for node "operation.data_warehouse.data_warehouse-on-run-start-0"
+[0m16:23:58.781779 [info ] [MainThread]: 1 of 3 START hook: data_warehouse.on-run-start.0 ............................... [RUN]
+[0m16:23:58.782046 [debug] [MainThread]: Using postgres connection "master"
+[0m16:23:58.782236 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "master"} */
+
+    --wyswietalenie w konsoli:  info=True
+    
+    --
+    
+ 
+[0m16:23:58.782457 [debug] [MainThread]: Postgres adapter: Postgres error: can't execute an empty query
+[0m16:23:58.782721 [info ] [MainThread]: 1 of 3 ERROR hook: data_warehouse.on-run-start.0 ............................... [[31mERROR[0m in 0.01s]
+[0m16:23:58.782960 [info ] [MainThread]: 2 of 3 SKIP hook: data_warehouse.on-run-start.1 ................................ [[33mSKIP[0m in 0.00s]
+[0m16:23:58.783180 [info ] [MainThread]: 3 of 3 SKIP hook: data_warehouse.on-run-start.2 ................................ [[33mSKIP[0m in 0.00s]
+[0m16:23:58.783335 [info ] [MainThread]: 
+[0m16:23:58.783508 [debug] [MainThread]: On master: Close
+[0m16:23:58.783790 [info ] [MainThread]: 1 of 2 SKIP test dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_cntry___w_  [[33mSKIP[0m]
+[0m16:23:58.784013 [info ] [MainThread]: 2 of 2 SKIP test dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_cntry__7  [[33mSKIP[0m]
+[0m16:23:58.784255 [debug] [MainThread]: On master: COMMIT
+[0m16:23:58.784398 [debug] [MainThread]: Using postgres connection "master"
+[0m16:23:58.784533 [debug] [MainThread]: On master: COMMIT
+[0m16:23:58.784654 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m16:23:58.786628 [debug] [MainThread]: SQL status: COMMIT in 0.002 seconds
+[0m16:23:58.786835 [debug] [MainThread]: On master: Close
+[0m16:23:58.787065 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:23:58.787230 [debug] [MainThread]: Connection 'list_DataWarehouse_gold' was properly closed.
+[0m16:23:58.787352 [debug] [MainThread]: Connection 'list_DataWarehouse__test_failures' was properly closed.
+[0m16:23:58.787470 [debug] [MainThread]: Connection 'list_DataWarehouse_silver' was properly closed.
+[0m16:23:58.787635 [info ] [MainThread]: 
+[0m16:23:58.787798 [info ] [MainThread]: Finished running 3 project hooks, 2 data tests in 0 hours 0 minutes and 0.06 seconds (0.06s).
+[0m16:23:58.788176 [debug] [MainThread]: Command end result
+[0m16:23:58.819856 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m16:23:58.820961 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m16:23:58.821960 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m16:23:58.825868 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_project/target/run_results.json
+[0m16:23:58.826059 [info ] [MainThread]: 
+[0m16:23:58.826263 [info ] [MainThread]: [31mCompleted with 3 errors, 0 partial successes, and 0 warnings:[0m
+[0m16:23:58.826436 [info ] [MainThread]: 
+[0m16:23:58.826648 [error] [MainThread]: [[31mERROR[0m]: in operation data_warehouse-on-run-start-0 (./dbt_project.yml)
+[0m16:23:58.826842 [error] [MainThread]:   data_warehouse.on-run-start.0 failed, error:
+ can't execute an empty query
+[0m16:23:58.826985 [info ] [MainThread]: 
+[0m16:23:58.827159 [info ] [MainThread]:   compiled code at target/compiled/data_warehouse/./dbt_project.yml/hooks/data_warehouse-on-run-start-0.sql
+[0m16:23:58.827306 [debug] [MainThread]: 
+[0m16:23:58.827425 [debug] [MainThread]:   data_warehouse.on-run-start.1 skipped
+[0m16:23:58.827551 [debug] [MainThread]: 
+[0m16:23:58.827663 [debug] [MainThread]:   data_warehouse.on-run-start.2 skipped
+[0m16:23:58.827780 [info ] [MainThread]: 
+[0m16:23:58.827947 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=4 NO-OP=0 REUSED=0 TOTAL=5
+[0m16:23:58.828472 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 0.711461, "process_in_blocks": "0", "process_kernel_time": 0.093971, "process_mem_max_rss": "136880", "process_out_blocks": "6952", "process_user_time": 1.593523}
+[0m16:23:58.828735 [debug] [MainThread]: Command `dbt test` failed at 16:23:58.828690 after 0.71 seconds
+[0m16:23:58.828926 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e4f7cb2e70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e4f7a9b590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e4f4f94c50>]}
+[0m16:23:58.829110 [debug] [MainThread]: Flushing usage events
+[0m16:23:59.498694 [debug] [MainThread]: An error was encountered while trying to flush usage events
