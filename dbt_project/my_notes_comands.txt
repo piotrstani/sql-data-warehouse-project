@@ -281,3 +281,10 @@ WARNING:  database "DataWarehouse" has no actual collation version, but a versio
 18:43:35
 18:43:35  Done. PASS=2 WARN=1 ERROR=1 SKIP=0 NO-OP=0 REUSED=0 TOTAL=4
 
+---------------------------------------------------------------------------------------------------------------------------
+--RUN MACRO
+airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt run-operation learn_log
+16:06:36  Running with dbt=1.12.5
+16:06:36  Registered adapter: postgres=1.11.0
+16:06:37  Found 1 seed, 2 operations, 8 models, 1 snapshot, 1 analysis, 14 data tests, 6 sources, 866 macros, 1 unit test
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded

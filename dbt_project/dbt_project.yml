@@ -15,6 +15,7 @@ snapshot-paths: ["snapshots"]
 asset-paths: ["assets"]
 
 on-run-start:
+  - "{{ learn_log() }}" # <-- makra hello
   - "CREATE SCHEMA IF NOT EXISTS {{ var('audit_schema') }}"
   - "CREATE TABLE IF NOT EXISTS {{ var('audit_schema') }}.audit_log (
       model_nm VARCHAR,
