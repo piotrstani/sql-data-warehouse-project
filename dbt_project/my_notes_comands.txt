@@ -282,9 +282,31 @@ WARNING:  database "DataWarehouse" has no actual collation version, but a versio
 18:43:35  Done. PASS=2 WARN=1 ERROR=1 SKIP=0 NO-OP=0 REUSED=0 TOTAL=4
 
 ---------------------------------------------------------------------------------------------------------------------------
---RUN MACRO
+--RUN ONLY MACRO
 airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt run-operation learn_log
 16:06:36  Running with dbt=1.12.5
 16:06:36  Registered adapter: postgres=1.11.0
 16:06:37  Found 1 seed, 2 operations, 8 models, 1 snapshot, 1 analysis, 14 data tests, 6 sources, 866 macros, 1 unit test
 WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+
+---------------------------------------------------------------------------------------------------------------------------
+--PARSING
+airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt parse
+20:10:52  Running with dbt=1.12.5
+20:10:52  Registered adapter: postgres=1.11.0
+20:10:53  [WARNING][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test
+`dbt_expectations.expect_table_row_count_to_equal_other_table` defined on
+'crm_cust_info' in package 'data_warehouse' (models/silver/schema.yml).
+Arguments to generic tests should be nested under the `arguments` property.
+20:10:53  [ERROR]: Encountered an error:
+Compilation Error
+  Snapshot 'snapshot.data_warehouse.crm_prd_info' (snapshots/crm_prd_info.sql) depends on a source named 'bronze.crm_prd_info' which was not found
+20:10:53  [WARNING][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 7 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
