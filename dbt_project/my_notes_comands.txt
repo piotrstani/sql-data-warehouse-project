@@ -310,3 +310,61 @@ To see all deprecation instances instead of just the first occurrence of each,
 run command again with the `--show-all-deprecations` flag. You may also need to
 run with `--no-partial-parse` as some deprecations are only encountered during
 parsing.
+
+---------------------------------------------------------------------------------------------------------------------------
+--RUN BY TAG
+airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt test -s source:bronze.ela,tag:gwk
+20:23:40  Running with dbt=1.12.5
+20:23:40  Registered adapter: postgres=1.11.0
+20:23:41  [WARNING][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test
+`dbt_expectations.expect_table_row_count_to_equal_other_table` defined on
+'crm_cust_info' in package 'data_warehouse' (models/silver/schema.yml).
+Arguments to generic tests should be nested under the `arguments` property.
+20:23:41  Found 1 seed, 3 operations, 20 data tests, 8 models, 1 snapshot, 1 analysis, 12 sources, 866 macros, 1 unit test
+20:23:41
+20:23:41  Concurrency: 4 threads (target='dev')
+20:23:41
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+20:23:41
+--------------------------------------------Hello there!---------------------------------------
+
+20:23:41  1 of 3 START hook: data_warehouse.on-run-start.0 ............................... [RUN]
+20:23:41  1 of 3 OK hook: data_warehouse.on-run-start.0 .................................. [OK in 0.01s]
+20:23:41  2 of 3 START hook: data_warehouse.on-run-start.1 ............................... [RUN]
+20:23:41  2 of 3 OK hook: data_warehouse.on-run-start.1 .................................. [OK in 0.00s]
+20:23:41  3 of 3 START hook: data_warehouse.on-run-start.2 ............................... [RUN]
+20:23:41  3 of 3 OK hook: data_warehouse.on-run-start.2 .................................. [OK in 0.00s]
+20:23:41
+20:23:41  1 of 1 START test dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_  [RUN]
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+20:23:41  1 of 1 FAIL 337 dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_  [FAIL 337 in 0.04s]
+WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+20:23:41
+20:23:41  Finished running 3 project hooks, 1 test in 0 hours 0 minutes and 0.11 seconds (0.11s).
+20:23:41
+20:23:41  Completed with 1 error, 0 partial successes, and 0 warnings:
+20:23:41
+20:23:41  [ERROR]: in test dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_ (models/bronze/sources.yml)
+20:23:41    Got 337 results, configured to fail if != 0
+20:23:41
+20:23:41    compiled code at target/compiled/data_warehouse/models/bronze/sources.yml/dbt_expectations_source_expect_822c008b8b384c7b9911ffb5e497b5e6.sql
+20:23:41
+20:23:41    See test failures:
+  ----------------------------------------------------------------------------------------------------------------
+  select * from "DataWarehouse"."_test_failures"."dbt_expectations_source_expect_822c008b8b384c7b9911ffb5e497b5e6"
+  ----------------------------------------------------------------------------------------------------------------
+20:23:41
+20:23:41  Done. PASS=3 WARN=0 ERROR=1 SKIP=0 NO-OP=0 REUSED=0 TOTAL=4
+20:23:41  [WARNING][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 4 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
