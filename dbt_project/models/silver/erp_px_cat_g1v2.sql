@@ -5,7 +5,7 @@
 
 WITH source_data AS (
     SELECT *
-    FROM {{ source('bronze', 'erp_px_cat_g1v2') }}
+    FROM {{ source('bronze', 'epcg') }}
 ),
 
 transformed_data AS (

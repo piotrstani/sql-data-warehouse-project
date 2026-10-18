@@ -23,8 +23,10 @@ sources:
                     field: cid
                   config:
                     severity: warn
-      - name: crm_prd_info
-      - name: crm_sales_details
+      - name: cpi
+        identifier: crm_prd_info
+      - name: csd
+        identifier: crm_sales_details
         columns:
           - name: sls_price
             data_tests:
@@ -32,7 +34,8 @@ sources:
                   quantile: .95
                   min_value: 0
                   max_value: 200
-      - name: erp_cust_az12
+      - name: eca
+        identifier: erp_cust_az12
         data_tests:
           - dbt_utils.equality:
               arguments:
@@ -43,7 +46,8 @@ sources:
                   - cid
                   - bdate
                   - gen
-      - name: erp_loc_a101
+      - name: ela
+        identifier: erp_loc_a101
         columns:
           - name: cntry
             data_tests:
@@ -51,7 +55,8 @@ sources:
                 value: 7
             - dbt_expectations.expect_column_values_to_match_regex:
                 regex: '\w+'
-      - name: erp_px_cat_g1v2
+      - name: epcg
+        identifier: erp_px_cat_g1v2
         data_tests:
            # dwa testy:
            # /tests/compare_dynamic_columns_erp_px_cat_g1v2.sql -- leci po ref()

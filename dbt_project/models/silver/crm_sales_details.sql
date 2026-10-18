@@ -7,7 +7,7 @@
 
 WITH source_data AS (
     SELECT *
-    FROM {{ source('bronze', 'crm_sales_details') }}
+    FROM {{ source('bronze', 'csd') }}
 ),
 
 transformed_data AS (
