@@ -1,1 +1,1 @@
-CREATE TABLE IF NOT EXISTS audit.audit_log ( model_nm VARCHAR, run_ts TIMESTAMP )
+CREATE SCHEMA IF NOT EXISTS audit
