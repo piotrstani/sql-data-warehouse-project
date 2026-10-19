@@ -9,7 +9,7 @@ vars:
   audit_schema: "audit"
 
 model-paths: ["models"]
-clean-targets: ["target", "dbt_packages"]
+clean-targets: ["target"]
 seed-paths: ["seeds"]
 snapshot-paths: ["snapshots"]
 asset-paths: ["assets"]
