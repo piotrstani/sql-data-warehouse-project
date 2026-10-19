@@ -45,6 +45,17 @@
 {% endif %}
 
 ---------------------------------------------------------------------------------------------------------------------------
+--CLEAN TARGET FOLDER
+airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt clean
+18:50:46  Running with dbt=1.12.5
+18:50:47  Checking /opt/airflow/dbt_project/target/*
+18:50:47  Cleaned /opt/airflow/dbt_project/target/*
+18:50:47  Checking /opt/airflow/dbt_project/dbt_packages/*
+18:50:47  Cleaned /opt/airflow/dbt_project/dbt_packages/*
+18:50:47  Finished cleaning all paths.
+
+
+---------------------------------------------------------------------------------------------------------------------------
 --TEST /RUN
 
 airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt test -s crm_cust_info
