@@ -3,7 +3,7 @@ sources:
   - name: bronze
     schema: bronze
     tables:
-      - name: crm_cust_info_gwk
+      - name: crm_cust_info_2
         identifier: crm_cust_info
         loaded_at_field: cst_create_date::timestamp
         freshness:
@@ -23,17 +23,18 @@ sources:
                     field: cid
                   config:
                     severity: warn
-      - name: crm_prd_info_gwk
+      - name: crm_prd_info_2
         identifier: crm_prd_info
       - name: crm_sales_details
         columns:
           - name: sls_price
             data_tests:
               - dbt_expectations.expect_column_quantile_values_to_be_between:
-                  quantile: .95
-                  min_value: 0
-                  max_value: 200
-      - name: erp_cust_az12_gwk
+                  arguments:
+                    quantile: .95
+                    min_value: 0
+                    max_value: 200
+      - name: erp_cust_az12_2
         identifier: erp_cust_az12
         data_tests:
           - dbt_utils.equality:
@@ -45,16 +46,18 @@ sources:
                   - cid
                   - bdate
                   - gen
-      - name: erp_loc_a101_gwk
+      - name: erp_loc_a101_2
         identifier: erp_loc_a101
         columns:
           - name: cntry
             data_tests:
             - dbt_expectations.expect_column_distinct_count_to_equal:
-                value: 7
+                arguments:
+                  value: 7
             - dbt_expectations.expect_column_values_to_match_regex:
-                regex: '\w+'
-      - name: erp_px_cat_g1v2_gwk
+                arguments:
+                  regex: '\w+'
+      - name: erp_px_cat_g1v2_2
         identifier: erp_px_cat_g1v2
         data_tests:
            # dwa testy:
