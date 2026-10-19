@@ -45,337 +45,49 @@
 {% endif %}
 
 ---------------------------------------------------------------------------------------------------------------------------
---CLEAN TARGET FOLDER
-airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt clean
-18:50:46  Running with dbt=1.12.5
-18:50:47  Checking /opt/airflow/dbt_project/target/*
-18:50:47  Cleaned /opt/airflow/dbt_project/target/*
-18:50:47  Checking /opt/airflow/dbt_project/dbt_packages/*
-18:50:47  Cleaned /opt/airflow/dbt_project/dbt_packages/*
-18:50:47  Finished cleaning all paths.
-
-
+--warehouse connection
+dbt debug
 ---------------------------------------------------------------------------------------------------------------------------
---TEST /RUN
-
-airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt test -s crm_cust_info
-16:04:05  Running with dbt=1.12.5
-16:04:05  Registered adapter: postgres=1.11.0
-16:04:05  Found 8 models, 1 snapshot, 1 seed, 5 data tests, 6 sources, 481 macros, 1 unit test
-16:04:05
-16:04:05  Concurrency: 4 threads (target='dev')
-16:04:05
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-16:04:05  1 of 5 START test accepted_values_crm_cust_info_cst_marital_status__Singlex__Marriedx  [RUN]
-16:04:05  2 of 5 START test create_cust_date_test_crm_cust_info_cst_create_date .......... [RUN]
-16:04:05  3 of 5 START test crm_cust_info_jon ............................................ [RUN]
-16:04:05  4 of 5 START test min_row_crm_cust_info_1000000 ................................ [RUN]
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-16:04:05  4 of 5 WARN 1 min_row_crm_cust_info_1000000 .................................... [WARN 1 in 0.11s]
-16:04:05  5 of 5 START test relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_ . [RUN]
-16:04:05  2 of 5 PASS create_cust_date_test_crm_cust_info_cst_create_date ................ [PASS in 0.12s]
-16:04:05  3 of 5 PASS crm_cust_info_jon .................................................. [PASS in 0.12s]
-16:04:05  1 of 5 FAIL 2 accepted_values_crm_cust_info_cst_marital_status__Singlex__Marriedx  [FAIL 2 in 0.13s]
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-16:04:06  5 of 5 WARN 5 relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_ ..... [WARN 5 in 0.03s]
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-16:04:06
-16:04:06  Finished running 5 data tests in 0 hours 0 minutes and 0.20 seconds (0.20s).
-16:04:06
-16:04:06  Completed with 1 error, 0 partial successes, and 2 warnings:
-16:04:06
-16:04:06  [ERROR]: in test accepted_values_crm_cust_info_cst_marital_status__Singlex__Marriedx (models/silver/schema.yml)
-16:04:06    Got 2 results, configured to fail if != 0
-16:04:06
-16:04:06    compiled code at target/compiled/data_warehouse/models/silver/schema.yml/accepted_values_crm_cust_info_718b81d6c1c1931b2e18e8ae84caccfa.sql
-16:04:06
-16:04:06    See test failures:
-  ---------------------------------------------------------------------------------------------------------------
-  select * from "DataWarehouse"."_test_failures"."accepted_values_crm_cust_info_718b81d6c1c1931b2e18e8ae84caccfa"
-  ---------------------------------------------------------------------------------------------------------------
-16:04:06
-16:04:06  [WARNING]: in test min_row_crm_cust_info_1000000 (models/silver/schema.yml)
-16:04:06  [WARNING]: Got 1 result, configured to warn if != 0
-16:04:06
-16:04:06    compiled code at target/compiled/data_warehouse/models/silver/schema.yml/min_row_crm_cust_info_1000000.sql
-16:04:06
-16:04:06    See test failures:
-  ------------------------------------------------------------------------------
-  select * from "DataWarehouse"."_test_failures"."min_row_crm_cust_info_1000000"
-  ------------------------------------------------------------------------------
-16:04:06
-16:04:06  [WARNING]: in test relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_ (models/silver/schema.yml)
-16:04:06  [WARNING]: Got 5 results, configured to warn if != 0
-16:04:06
-16:04:06    compiled code at target/compiled/data_warehouse/models/silver/schema.yml/relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.sql
-16:04:06
-16:04:06    See test failures:
-  -------------------------------------------------------------------------------------------------------------
-  select * from "DataWarehouse"."_test_failures"."relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_"
-  -------------------------------------------------------------------------------------------------------------
-16:04:06
-16:04:06  Done. PASS=2 WARN=2 ERROR=1 SKIP=0 NO-OP=0 REUSED=0 TOTAL=5
-airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt run -s crm_cust_info
-16:04:14  Running with dbt=1.12.5
-16:04:14  Registered adapter: postgres=1.11.0
-16:04:14  Found 8 models, 1 snapshot, 1 seed, 5 data tests, 6 sources, 481 macros, 1 unit test
-16:04:14
-16:04:14  Concurrency: 4 threads (target='dev')
-16:04:14
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-16:04:14  1 of 1 START sql table model silver.crm_cust_info .............................. [RUN]
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-16:04:15  1 of 1 OK created sql table model silver.crm_cust_info ......................... [INSERT 0 18489 in 0.18s]
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-16:04:15
-16:04:15  Finished running 1 table model in 0 hours 0 minutes and 0.24 seconds (0.24s).
-16:04:15
-16:04:15  Completed successfully
-16:04:15
-16:04:15  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=1
-
----------------------------------------------------------------------------------------------------------------------------
---COMPILE /SHOW
-airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt compile --inline 'SELECT * from {{ ref("crm_cust_info") }} WHERE {{ no_empty_strings(ref("crm_cust_info")) }}'
-16:02:27  Running with dbt=1.12.5
-16:02:27  Registered adapter: postgres=1.11.0
-16:02:27  Found 8 models, 1 snapshot, 1 seed, 5 data tests, 1 sql operation, 6 sources, 481 macros, 1 unit test
-16:02:27
-16:02:27  Concurrency: 4 threads (target='dev')
-16:02:27
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-Compiled inline node is:
-SELECT * from "DataWarehouse"."silver"."crm_cust_info" WHERE
-            cst_key IS NOT NULL AND cst_key <> '' AND
-            cst_firstname IS NOT NULL AND cst_firstname <> '' AND
-            cst_lastname IS NOT NULL AND cst_lastname <> '' AND
-            cst_marital_status IS NOT NULL AND cst_marital_status <> '' AND
-            cst_gndr IS NOT NULL AND cst_gndr <> '' AND
-    TRUE
-
-airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt show --inline 'SELECT * from {{ ref("crm_cust_info") }} WHERE {{ no_empty_strings(ref("crm_cust_info")) }}'
-16:02:44  Running with dbt=1.12.5
-16:02:44  Registered adapter: postgres=1.11.0
-16:02:45  Found 8 models, 1 snapshot, 1 seed, 5 data tests, 1 sql operation, 6 sources, 481 macros, 1 unit test
-16:02:45
-16:02:45  Concurrency: 4 threads (target='dev')
-16:02:45
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-Previewing inline node:
-| cst_id | cst_key    | cst_firstname | cst_lastname | cst_marital_status | cst_gndr | ... |
-| ------ | ---------- | ------------- | ------------ | ------------------ | -------- | --- |
-|  11000 | AW00011000 | Jon           | Yang         | Married            | Male     | ... |
-|  11001 | AW00011001 | Eugene        | Huang        | Single             | Male     | ... |
-|  11002 | AW00011002 | Ruben         | Torres       | Married            | Male     | ... |
-|  11003 | AW00011003 | Christy       | Zhu          | Single             | Female   | ... |
-|  11004 | AW00011004 | Elizabeth     | Johnson      | Single             | Female   | ... |
----------------------------------------------------------------------------------------------------------------------------
---DEPS
-airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt deps
-16:27:34  Running with dbt=1.12.5
-16:27:34  Updating lock file in file path: /opt/airflow/dbt_project/package-lock.yml
-16:27:34  Installing dbt-labs/dbt_utils
-16:27:34  Installed from version 1.4.1
-16:27:34  Up to date!
-
-airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt run --select dim_customers
-16:32:23  Running with dbt=1.12.5
-16:32:23  Registered adapter: postgres=1.11.0
-16:32:23  Unable to do partial parsing because a project dependency has been added
-16:32:24  Found 8 models, 1 snapshot, 5 data tests, 1 seed, 6 sources, 597 macros, 1 unit test
-16:32:24
-16:32:24  Concurrency: 4 threads (target='dev')
-16:32:24
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-16:32:24  1 of 1 START sql view model gold.dim_customers ................................. [RUN]
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-16:32:24  1 of 1 OK created sql view model gold.dim_customers ............................ [CREATE VIEW in 0.04s]
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-16:32:24
-16:32:24  Finished running 1 view model in 0 hours 0 minutes and 0.10 seconds (0.10s).
-16:32:24
-16:32:24  Completed successfully
-16:32:24
-16:32:24  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=1
-
----------------------------------------------------------------------------------------------------------------------------
---DOCS
-airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt docs generate
-16:16:39  Running with dbt=1.12.5
-16:16:39  Registered adapter: postgres=1.11.0
-16:16:39  Found 8 models, 1 snapshot, 5 data tests, 1 seed, 6 sources, 597 macros, 1 unit test
-16:16:39
-16:16:39  Concurrency: 4 threads (target='dev')
-16:16:39
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-16:16:39  Building catalog
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-16:16:39  Catalog written to /opt/airflow/dbt_project/target/catalog.json
-
----------------------------------------------------------------------------------------------------------------------------
---SOURCES TESTING
-
-airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt test --select source:bronze
-18:43:34  Running with dbt=1.12.5
-18:43:34  Registered adapter: postgres=1.11.0
-18:43:35  Found 1 seed, 2 operations, 8 models, 1 snapshot, 1 analysis, 8 data tests, 6 sources, 864 macros, 1 unit test
-18:43:35
-18:43:35  Concurrency: 4 threads (target='dev')
-18:43:35
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-18:43:35  1 of 2 START hook: data_warehouse.on-run-start.0 ............................... [RUN]
-18:43:35  1 of 2 OK hook: data_warehouse.on-run-start.0 .................................. [OK in 0.01s]
-18:43:35  2 of 2 START hook: data_warehouse.on-run-start.1 ............................... [RUN]
-18:43:35  2 of 2 OK hook: data_warehouse.on-run-start.1 .................................. [OK in 0.00s]
-18:43:35
-18:43:35  1 of 2 START test dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_  [RUN]
-18:43:35  2 of 2 START test source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_  [RUN]
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-18:43:35  2 of 2 WARN 9 source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_ . [WARN 9 in 0.06s]
-18:43:35  1 of 2 FAIL 1 dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_  [FAIL 1 in 0.06s]
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-18:43:35
-18:43:35  Finished running 2 project hooks, 2 data tests in 0 hours 0 minutes and 0.13 seconds (0.13s).
-18:43:35
-18:43:35  Completed with 1 error, 0 partial successes, and 1 warning:
-18:43:35
-18:43:35  [ERROR]: in test dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_ (models/silver/schema.yml)
-18:43:35    Got 1 result, configured to fail if != 0
-18:43:35
-18:43:35    compiled code at target/compiled/data_warehouse/models/silver/schema.yml/dbt_expectations_expect_table__f54ba646b15da1f34349ef44861ee9ed.sql
-18:43:35
-18:43:35    See test failures:
-  ----------------------------------------------------------------------------------------------------------------
-  select * from "DataWarehouse"."_test_failures"."dbt_expectations_expect_table__f54ba646b15da1f34349ef44861ee9ed"
-  ----------------------------------------------------------------------------------------------------------------
-18:43:35
-18:43:35  [WARNING]: in test source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_ (models/sources.yml)
-18:43:35  [WARNING]: Got 9 results, configured to warn if != 0
-18:43:35
-18:43:35    compiled code at target/compiled/data_warehouse/models/sources.yml/source_relationships_bronze_cc_050072b8f49b7844142d24c5003ba592.sql
-18:43:35
-18:43:35    See test failures:
-  ----------------------------------------------------------------------------------------------------------------
-  select * from "DataWarehouse"."_test_failures"."source_relationships_bronze_cc_050072b8f49b7844142d24c5003ba592"
-  ----------------------------------------------------------------------------------------------------------------
-18:43:35
-18:43:35  Done. PASS=2 WARN=1 ERROR=1 SKIP=0 NO-OP=0 REUSED=0 TOTAL=4
-
----------------------------------------------------------------------------------------------------------------------------
---RUN ONLY MACRO
-airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt run-operation learn_log
-16:06:36  Running with dbt=1.12.5
-16:06:36  Registered adapter: postgres=1.11.0
-16:06:37  Found 1 seed, 2 operations, 8 models, 1 snapshot, 1 analysis, 14 data tests, 6 sources, 866 macros, 1 unit test
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
+--what models dbt see
+dbt ls
 
 ---------------------------------------------------------------------------------------------------------------------------
 --PARSING
-airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt parse
-20:10:52  Running with dbt=1.12.5
-20:10:52  Registered adapter: postgres=1.11.0
-20:10:53  [WARNING][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
-functionality
-Found top-level arguments to test
-`dbt_expectations.expect_table_row_count_to_equal_other_table` defined on
-'crm_cust_info' in package 'data_warehouse' (models/silver/schema.yml).
-Arguments to generic tests should be nested under the `arguments` property.
-20:10:53  [ERROR]: Encountered an error:
-Compilation Error
-  Snapshot 'snapshot.data_warehouse.crm_prd_info' (snapshots/crm_prd_info.sql) depends on a source named 'bronze.crm_prd_info' which was not found
-20:10:53  [WARNING][DeprecationsSummary]: Deprecated functionality
-Summary of encountered deprecations:
-- MissingArgumentsPropertyInGenericTestDeprecation: 7 occurrences
-To see all deprecation instances instead of just the first occurrence of each,
-run command again with the `--show-all-deprecations` flag. You may also need to
-run with `--no-partial-parse` as some deprecations are only encountered during
-parsing.
+--validate YAML
+dbt parse
+
+---------------------------------------------------------------------------------------------------------------------------
+--render Jinja to SQL, on dbt fusion also checks SQL syntax
+dbt complie
+
+---------------------------------------------------------------------------------------------------------------------------
+--CLEAN TARGET FOLDER
+dbt clean
+
+---------------------------------------------------------------------------------------------------------------------------
+--DOCS
+ dbt docs generate
+
+---------------------------------------------------------------------------------------------------------------------------
+--DEPS
+dbt deps
+
+---------------------------------------------------------------------------------------------------------------------------
+--TEST /RUN
+dbt test -s crm_cust_info
+
+---------------------------------------------------------------------------------------------------------------------------
+--COMPILE /SHOW
+dbt compile --inline 'SELECT * from {{ ref("crm_cust_info") }} WHERE {{ no_empty_strings(ref("crm_cust_info")) }}'
+
+---------------------------------------------------------------------------------------------------------------------------
+--SOURCES TESTING
+dbt test --select source:bronze
+
+---------------------------------------------------------------------------------------------------------------------------
+--RUN ONLY MACRO
+ dbt run-operation learn_log
 
 ---------------------------------------------------------------------------------------------------------------------------
 --RUN BY TAG
-airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt test -s source:bronze.ela,tag:gwk
-20:23:40  Running with dbt=1.12.5
-20:23:40  Registered adapter: postgres=1.11.0
-20:23:41  [WARNING][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
-functionality
-Found top-level arguments to test
-`dbt_expectations.expect_table_row_count_to_equal_other_table` defined on
-'crm_cust_info' in package 'data_warehouse' (models/silver/schema.yml).
-Arguments to generic tests should be nested under the `arguments` property.
-20:23:41  Found 1 seed, 3 operations, 20 data tests, 8 models, 1 snapshot, 1 analysis, 12 sources, 866 macros, 1 unit test
-20:23:41
-20:23:41  Concurrency: 4 threads (target='dev')
-20:23:41
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-20:23:41
---------------------------------------------Hello there!---------------------------------------
-
-20:23:41  1 of 3 START hook: data_warehouse.on-run-start.0 ............................... [RUN]
-20:23:41  1 of 3 OK hook: data_warehouse.on-run-start.0 .................................. [OK in 0.01s]
-20:23:41  2 of 3 START hook: data_warehouse.on-run-start.1 ............................... [RUN]
-20:23:41  2 of 3 OK hook: data_warehouse.on-run-start.1 .................................. [OK in 0.00s]
-20:23:41  3 of 3 START hook: data_warehouse.on-run-start.2 ............................... [RUN]
-20:23:41  3 of 3 OK hook: data_warehouse.on-run-start.2 .................................. [OK in 0.00s]
-20:23:41
-20:23:41  1 of 1 START test dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_  [RUN]
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-20:23:41  1 of 1 FAIL 337 dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_  [FAIL 337 in 0.04s]
-WARNING:  database "DataWarehouse" has no actual collation version, but a version was recorded
-20:23:41
-20:23:41  Finished running 3 project hooks, 1 test in 0 hours 0 minutes and 0.11 seconds (0.11s).
-20:23:41
-20:23:41  Completed with 1 error, 0 partial successes, and 0 warnings:
-20:23:41
-20:23:41  [ERROR]: in test dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_ (models/bronze/sources.yml)
-20:23:41    Got 337 results, configured to fail if != 0
-20:23:41
-20:23:41    compiled code at target/compiled/data_warehouse/models/bronze/sources.yml/dbt_expectations_source_expect_822c008b8b384c7b9911ffb5e497b5e6.sql
-20:23:41
-20:23:41    See test failures:
-  ----------------------------------------------------------------------------------------------------------------
-  select * from "DataWarehouse"."_test_failures"."dbt_expectations_source_expect_822c008b8b384c7b9911ffb5e497b5e6"
-  ----------------------------------------------------------------------------------------------------------------
-20:23:41
-20:23:41  Done. PASS=3 WARN=0 ERROR=1 SKIP=0 NO-OP=0 REUSED=0 TOTAL=4
-20:23:41  [WARNING][DeprecationsSummary]: Deprecated functionality
-Summary of encountered deprecations:
-- MissingArgumentsPropertyInGenericTestDeprecation: 4 occurrences
-To see all deprecation instances instead of just the first occurrence of each,
-run command again with the `--show-all-deprecations` flag. You may also need to
-run with `--no-partial-parse` as some deprecations are only encountered during
-parsing.
+dbt test -s source:bronze.ela,tag:gwk

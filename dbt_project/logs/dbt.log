@@ -108869,3 +108869,1489 @@ parsing.
 [0m18:55:21.093256 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x732c71c6f3b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x732c7112acf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x732c720bc1a0>]}
 [0m18:55:21.093452 [debug] [MainThread]: Flushing usage events
 [0m18:55:21.651245 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:03:56.971489 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a116d795a30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a116ffa3ec0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a116e6e6420>]}
+
+
+============================== 19:03:56.974853 | 37a51ede-d3d8-4781-88be-d9db8452c49d ==============================
+[0m19:03:56.974853 [info ] [MainThread]: Running with dbt=1.12.5
+[0m19:03:56.975121 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'write_json': 'True', 'maximum_seed_size_mib': '1', 'indirect_selection': 'eager', 'quiet': 'False', 'invocation_command': 'dbt parse', 'cache_selected_only': 'False', 'profiles_dir': '/opt/airflow/dbt_project', 'log_cache_events': 'False', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'use_colors': 'True', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/opt/airflow/dbt_project/logs', 'partial_parse': 'True', 'hints_enabled': 'True', 'no_print': 'None', 'target_path': 'None', 'log_format': 'default', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'empty': 'None', 'static_parser': 'True', 'use_experimental_parser': 'False'}
+[0m19:03:57.072315 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '37a51ede-d3d8-4781-88be-d9db8452c49d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a116e8164b0>]}
+[0m19:03:57.108278 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '37a51ede-d3d8-4781-88be-d9db8452c49d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a116e4b5550>]}
+[0m19:03:57.108712 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m19:03:57.162167 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m19:03:57.162590 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m19:03:57.162795 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '37a51ede-d3d8-4781-88be-d9db8452c49d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a116cf92a20>]}
+[0m19:03:58.458168 [info ] [MainThread]: 
+--------------------------------------------Hello there!---------------------------------------
+
+[0m19:03:58.760510 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test
+`dbt_expectations.expect_table_row_count_to_equal_other_table` defined on
+'crm_cust_info' in package 'data_warehouse' (models/silver/schema.yml).
+Arguments to generic tests should be nested under the `arguments` property.
+[0m19:03:58.760847 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '37a51ede-d3d8-4781-88be-d9db8452c49d', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a11695e3050>]}
+[0m19:03:58.920663 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '37a51ede-d3d8-4781-88be-d9db8452c49d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a11695e3050>]}
+[0m19:03:58.922917 [info ] [MainThread]: Performance info: /opt/airflow/dbt_project/target/perf_info.json
+[0m19:03:59.038233 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m19:03:59.039379 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m19:03:59.045609 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m19:03:59.045942 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 7 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m19:03:59.046459 [debug] [MainThread]: Resource report: {"command_name": "parse", "command_success": true, "command_wall_clock_time": 2.1093056, "process_in_blocks": "32", "process_kernel_time": 0.087094, "process_mem_max_rss": "143204", "process_out_blocks": "4944", "process_user_time": 3.000265}
+[0m19:03:59.046724 [debug] [MainThread]: Command `dbt parse` succeeded at 19:03:59.046676 after 2.11 seconds
+[0m19:03:59.046987 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a116ffa3ec0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a116b37b650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a116e30c170>]}
+[0m19:03:59.047298 [debug] [MainThread]: Flushing usage events
+[0m19:03:59.703547 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:05:26.032661 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8024233200>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f80242331a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8024231ac0>]}
+
+
+============================== 19:05:26.035620 | 3e4279f0-4b4f-47c8-8795-e375b0c3d16f ==============================
+[0m19:05:26.035620 [info ] [MainThread]: Running with dbt=1.12.5
+[0m19:05:26.035889 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'warn_error': 'None', 'log_format': 'default', 'fail_fast': 'False', 'no_print': 'None', 'log_cache_events': 'False', 'quiet': 'False', 'write_json': 'True', 'hints_enabled': 'True', 'introspect': 'True', 'log_path': '/opt/airflow/dbt_project/logs', 'debug': 'False', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'use_experimental_parser': 'False', 'version_check': 'True', 'empty': 'None', 'maximum_seed_size_mib': '1', 'profiles_dir': '/opt/airflow/dbt_project', 'partial_parse': 'True', 'invocation_command': 'dbt parse', 'printer_width': '80'}
+[0m19:05:26.133658 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3e4279f0-4b4f-47c8-8795-e375b0c3d16f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8023127c80>]}
+[0m19:05:26.169144 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3e4279f0-4b4f-47c8-8795-e375b0c3d16f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f802358bd10>]}
+[0m19:05:26.169580 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m19:05:26.221587 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m19:05:26.353162 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m19:05:26.353714 [debug] [MainThread]: Partial parsing: updated file: data_warehouse://models/silver/schema.yml
+[0m19:05:26.765794 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3e4279f0-4b4f-47c8-8795-e375b0c3d16f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f80203e8c50>]}
+[0m19:05:26.768145 [info ] [MainThread]: Performance info: /opt/airflow/dbt_project/target/perf_info.json
+[0m19:05:26.888615 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m19:05:26.889846 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m19:05:26.895955 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m19:05:26.896496 [debug] [MainThread]: Resource report: {"command_name": "parse", "command_success": true, "command_wall_clock_time": 0.897855, "process_in_blocks": "0", "process_kernel_time": 0.087073, "process_mem_max_rss": "136208", "process_out_blocks": "4936", "process_user_time": 1.830546}
+[0m19:05:26.896771 [debug] [MainThread]: Command `dbt parse` succeeded at 19:05:26.896721 after 0.90 seconds
+[0m19:05:26.896960 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f80250e96a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8025d34cb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8024233200>]}
+[0m19:05:26.897165 [debug] [MainThread]: Flushing usage events
+[0m19:05:27.635752 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:05:49.989063 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7788571749b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77885728eb40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x778857176060>]}
+
+
+============================== 19:05:49.992015 | fcd533b6-0713-4131-8c04-af7597e07f63 ==============================
+[0m19:05:49.992015 [info ] [MainThread]: Running with dbt=1.12.5
+[0m19:05:49.992290 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'log_format': 'default', 'printer_width': '80', 'version_check': 'True', 'debug': 'False', 'static_parser': 'True', 'write_json': 'True', 'log_path': '/opt/airflow/dbt_project/logs', 'warn_error': 'None', 'invocation_command': 'dbt compile', 'maximum_seed_size_mib': '1', 'empty': 'False', 'target_path': 'None', 'quiet': 'False', 'partial_parse': 'True', 'indirect_selection': 'eager', 'no_print': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'use_colors': 'True', 'profiles_dir': '/opt/airflow/dbt_project', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'hints_enabled': 'True'}
+[0m19:05:50.090653 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fcd533b6-0713-4131-8c04-af7597e07f63', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x778855e6d1f0>]}
+[0m19:05:50.126615 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'fcd533b6-0713-4131-8c04-af7597e07f63', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x778856bff380>]}
+[0m19:05:50.127057 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m19:05:50.180066 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m19:05:50.310983 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m19:05:50.311260 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m19:05:50.311410 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m19:05:50.317195 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'fcd533b6-0713-4131-8c04-af7597e07f63', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77885573c980>]}
+[0m19:05:50.514818 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m19:05:50.516041 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m19:05:50.522090 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m19:05:50.530207 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'fcd533b6-0713-4131-8c04-af7597e07f63', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x778854bc2900>]}
+[0m19:05:50.530470 [info ] [MainThread]: Found 8 models, 1 snapshot, 1 analysis, 20 data tests, 1 seed, 3 operations, 12 sources, 920 macros, 1 unit test
+[0m19:05:50.530649 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fcd533b6-0713-4131-8c04-af7597e07f63', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7788543de0f0>]}
+[0m19:05:50.532942 [info ] [MainThread]: 
+[0m19:05:50.533176 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m19:05:50.533338 [info ] [MainThread]: 
+[0m19:05:50.533626 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m19:05:50.536578 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse_gold'
+[0m19:05:50.536926 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse_silver'
+[0m19:05:50.542885 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse__test_failures'
+[0m19:05:50.553314 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_gold"
+[0m19:05:50.553518 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_silver"
+[0m19:05:50.553757 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse__test_failures"
+[0m19:05:50.553953 [debug] [ThreadPool]: On list_DataWarehouse_gold: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_gold"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'gold'
+  
+[0m19:05:50.554150 [debug] [ThreadPool]: On list_DataWarehouse_silver: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_silver"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'silver'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'silver'
+  
+[0m19:05:50.554345 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse__test_failures"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike '_test_failures'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike '_test_failures'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike '_test_failures'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike '_test_failures'
+  
+[0m19:05:50.554514 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:05:50.554656 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:05:50.554790 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:05:50.570976 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.016 seconds
+[0m19:05:50.571207 [debug] [ThreadPool]: SQL status: SELECT 34 in 0.016 seconds
+[0m19:05:50.571407 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.017 seconds
+[0m19:05:50.572133 [debug] [ThreadPool]: On list_DataWarehouse_gold: ROLLBACK
+[0m19:05:50.572932 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: ROLLBACK
+[0m19:05:50.573580 [debug] [ThreadPool]: On list_DataWarehouse_silver: ROLLBACK
+[0m19:05:50.573852 [debug] [ThreadPool]: On list_DataWarehouse_gold: Close
+[0m19:05:50.574024 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: Close
+[0m19:05:50.574180 [debug] [ThreadPool]: On list_DataWarehouse_silver: Close
+[0m19:05:50.579623 [debug] [MainThread]: Using postgres connection "master"
+[0m19:05:50.579844 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m19:05:50.580221 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:05:50.587097 [debug] [MainThread]: SQL status: SELECT 2 in 0.007 seconds
+[0m19:05:50.587968 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fcd533b6-0713-4131-8c04-af7597e07f63', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x778854f8db80>]}
+[0m19:05:50.588194 [debug] [MainThread]: On master: ROLLBACK
+[0m19:05:50.588377 [debug] [MainThread]: On master: Close
+[0m19:05:50.591008 [debug] [Thread-1 (]: Began running node model.data_warehouse.crm_cust_info
+[0m19:05:50.591242 [debug] [Thread-2 (]: Began running node model.data_warehouse.crm_sales_details
+[0m19:05:50.591492 [debug] [Thread-3 (]: Began running node model.data_warehouse.erp_cust_az12
+[0m19:05:50.591719 [debug] [Thread-4 (]: Began running node model.data_warehouse.erp_loc_a101
+[0m19:05:50.591957 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DataWarehouse_silver, now model.data_warehouse.crm_cust_info)
+[0m19:05:50.592256 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DataWarehouse__test_failures, now model.data_warehouse.crm_sales_details)
+[0m19:05:50.592488 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_DataWarehouse_gold, now model.data_warehouse.erp_cust_az12)
+[0m19:05:50.592741 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.data_warehouse.erp_loc_a101'
+[0m19:05:50.592922 [debug] [Thread-1 (]: Began compiling node model.data_warehouse.crm_cust_info
+[0m19:05:50.593100 [debug] [Thread-2 (]: Began compiling node model.data_warehouse.crm_sales_details
+[0m19:05:50.593323 [debug] [Thread-3 (]: Began compiling node model.data_warehouse.erp_cust_az12
+[0m19:05:50.593480 [debug] [Thread-4 (]: Began compiling node model.data_warehouse.erp_loc_a101
+[0m19:05:50.596648 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_warehouse.crm_cust_info"
+[0m19:05:50.600653 [debug] [Thread-2 (]: Writing injected SQL for node "model.data_warehouse.crm_sales_details"
+[0m19:05:50.601657 [debug] [Thread-3 (]: Writing injected SQL for node "model.data_warehouse.erp_cust_az12"
+[0m19:05:50.602602 [debug] [Thread-4 (]: Writing injected SQL for node "model.data_warehouse.erp_loc_a101"
+[0m19:05:50.603089 [debug] [Thread-3 (]: Began executing node model.data_warehouse.erp_cust_az12
+[0m19:05:50.603324 [debug] [Thread-1 (]: Began executing node model.data_warehouse.crm_cust_info
+[0m19:05:50.603509 [debug] [Thread-2 (]: Began executing node model.data_warehouse.crm_sales_details
+[0m19:05:50.603722 [debug] [Thread-4 (]: Began executing node model.data_warehouse.erp_loc_a101
+[0m19:05:50.604120 [debug] [Thread-3 (]: Finished running node model.data_warehouse.erp_cust_az12
+[0m19:05:50.604570 [debug] [Thread-1 (]: Finished running node model.data_warehouse.crm_cust_info
+[0m19:05:50.604883 [debug] [Thread-2 (]: Finished running node model.data_warehouse.crm_sales_details
+[0m19:05:50.605198 [debug] [Thread-4 (]: Finished running node model.data_warehouse.erp_loc_a101
+[0m19:05:50.605414 [debug] [Thread-3 (]: Began running node model.data_warehouse.erp_px_cat_g1v2
+[0m19:05:50.605770 [debug] [Thread-1 (]: Began running node operation.data_warehouse.data_warehouse-on-run-start-0
+[0m19:05:50.606186 [debug] [Thread-2 (]: Began running node operation.data_warehouse.data_warehouse-on-run-start-1
+[0m19:05:50.606429 [debug] [Thread-4 (]: Began running node operation.data_warehouse.data_warehouse-on-run-start-2
+[0m19:05:50.606671 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.data_warehouse.erp_cust_az12, now model.data_warehouse.erp_px_cat_g1v2)
+[0m19:05:50.606874 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.data_warehouse.crm_cust_info, now operation.data_warehouse.data_warehouse-on-run-start-0)
+[0m19:05:50.607087 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.data_warehouse.crm_sales_details, now operation.data_warehouse.data_warehouse-on-run-start-1)
+[0m19:05:50.607329 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.data_warehouse.erp_loc_a101, now operation.data_warehouse.data_warehouse-on-run-start-2)
+[0m19:05:50.607515 [debug] [Thread-3 (]: Began compiling node model.data_warehouse.erp_px_cat_g1v2
+[0m19:05:50.607690 [debug] [Thread-1 (]: Began compiling node operation.data_warehouse.data_warehouse-on-run-start-0
+[0m19:05:50.607874 [debug] [Thread-2 (]: Began compiling node operation.data_warehouse.data_warehouse-on-run-start-1
+[0m19:05:50.608041 [debug] [Thread-4 (]: Began compiling node operation.data_warehouse.data_warehouse-on-run-start-2
+[0m19:05:50.608963 [debug] [Thread-3 (]: Writing injected SQL for node "model.data_warehouse.erp_px_cat_g1v2"
+[0m19:05:50.610095 [info ] [Thread-1 (]: 
+--------------------------------------------Hello there!---------------------------------------
+
+[0m19:05:50.611669 [debug] [Thread-2 (]: Writing injected SQL for node "operation.data_warehouse.data_warehouse-on-run-start-1"
+[0m19:05:50.612532 [debug] [Thread-4 (]: Writing injected SQL for node "operation.data_warehouse.data_warehouse-on-run-start-2"
+[0m19:05:50.612820 [debug] [Thread-1 (]: Writing injected SQL for node "operation.data_warehouse.data_warehouse-on-run-start-0"
+[0m19:05:50.613023 [debug] [Thread-3 (]: Began executing node model.data_warehouse.erp_px_cat_g1v2
+[0m19:05:50.613617 [debug] [Thread-3 (]: Finished running node model.data_warehouse.erp_px_cat_g1v2
+[0m19:05:50.613807 [debug] [Thread-4 (]: Began executing node operation.data_warehouse.data_warehouse-on-run-start-2
+[0m19:05:50.614046 [debug] [Thread-2 (]: Began executing node operation.data_warehouse.data_warehouse-on-run-start-1
+[0m19:05:50.614272 [debug] [Thread-1 (]: Began executing node operation.data_warehouse.data_warehouse-on-run-start-0
+[0m19:05:50.614485 [debug] [Thread-3 (]: Began running node seed.data_warehouse.seed_full_moon_dates
+[0m19:05:50.614947 [debug] [Thread-4 (]: Finished running node operation.data_warehouse.data_warehouse-on-run-start-2
+[0m19:05:50.615386 [debug] [Thread-2 (]: Finished running node operation.data_warehouse.data_warehouse-on-run-start-1
+[0m19:05:50.615699 [debug] [Thread-1 (]: Finished running node operation.data_warehouse.data_warehouse-on-run-start-0
+[0m19:05:50.615915 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.data_warehouse.erp_px_cat_g1v2, now seed.data_warehouse.seed_full_moon_dates)
+[0m19:05:50.616184 [debug] [Thread-4 (]: Began running node snapshot.data_warehouse.crm_prd_info
+[0m19:05:50.616451 [debug] [Thread-2 (]: Began running node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_ela_cntry__7.ed9bf66166
+[0m19:05:50.616670 [debug] [Thread-1 (]: Began running node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_gwk_cntry__7.07b0906d5a
+[0m19:05:50.616872 [debug] [Thread-3 (]: Began compiling node seed.data_warehouse.seed_full_moon_dates
+[0m19:05:50.617089 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly operation.data_warehouse.data_warehouse-on-run-start-2, now snapshot.data_warehouse.crm_prd_info)
+[0m19:05:50.617320 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly operation.data_warehouse.data_warehouse-on-run-start-1, now test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_ela_cntry__7.ed9bf66166)
+[0m19:05:50.617527 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly operation.data_warehouse.data_warehouse-on-run-start-0, now test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_gwk_cntry__7.07b0906d5a)
+[0m19:05:50.617988 [debug] [Thread-3 (]: Began executing node seed.data_warehouse.seed_full_moon_dates
+[0m19:05:50.618182 [debug] [Thread-4 (]: Began compiling node snapshot.data_warehouse.crm_prd_info
+[0m19:05:50.618385 [debug] [Thread-2 (]: Began compiling node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_ela_cntry__7.ed9bf66166
+[0m19:05:50.618579 [debug] [Thread-1 (]: Began compiling node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_gwk_cntry__7.07b0906d5a
+[0m19:05:50.618921 [debug] [Thread-3 (]: Finished running node seed.data_warehouse.seed_full_moon_dates
+[0m19:05:50.620121 [debug] [Thread-4 (]: Writing injected SQL for node "snapshot.data_warehouse.crm_prd_info"
+[0m19:05:50.628133 [debug] [Thread-2 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_ela_cntry__7.ed9bf66166"
+[0m19:05:50.631094 [debug] [Thread-1 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_gwk_cntry__7.07b0906d5a"
+[0m19:05:50.631370 [debug] [Thread-3 (]: Began running node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_crm_sales_details_sls_price__200__0__0_95.3918eab3e4
+[0m19:05:50.631794 [debug] [Thread-4 (]: Began executing node snapshot.data_warehouse.crm_prd_info
+[0m19:05:50.632035 [debug] [Thread-2 (]: Began executing node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_ela_cntry__7.ed9bf66166
+[0m19:05:50.632245 [debug] [Thread-1 (]: Began executing node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_gwk_cntry__7.07b0906d5a
+[0m19:05:50.632465 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly seed.data_warehouse.seed_full_moon_dates, now test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_crm_sales_details_sls_price__200__0__0_95.3918eab3e4)
+[0m19:05:50.632811 [debug] [Thread-4 (]: Finished running node snapshot.data_warehouse.crm_prd_info
+[0m19:05:50.633164 [debug] [Thread-2 (]: Finished running node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_ela_cntry__7.ed9bf66166
+[0m19:05:50.633475 [debug] [Thread-1 (]: Finished running node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_gwk_cntry__7.07b0906d5a
+[0m19:05:50.633673 [debug] [Thread-3 (]: Began compiling node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_crm_sales_details_sls_price__200__0__0_95.3918eab3e4
+[0m19:05:50.633938 [debug] [Thread-4 (]: Began running node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_csd_sls_price__200__0__0_95.8f5f048583
+[0m19:05:50.634247 [debug] [Thread-2 (]: Began running node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_.b1ebef143f
+[0m19:05:50.634461 [debug] [Thread-1 (]: Began running node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_gwk_cntry___w_.a5c58afd40
+[0m19:05:50.641334 [debug] [Thread-3 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_crm_sales_details_sls_price__200__0__0_95.3918eab3e4"
+[0m19:05:50.641583 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly snapshot.data_warehouse.crm_prd_info, now test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_csd_sls_price__200__0__0_95.8f5f048583)
+[0m19:05:50.641830 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_ela_cntry__7.ed9bf66166, now test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_.b1ebef143f)
+[0m19:05:50.642047 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_gwk_cntry__7.07b0906d5a, now test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_gwk_cntry___w_.a5c58afd40)
+[0m19:05:50.642272 [debug] [Thread-4 (]: Began compiling node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_csd_sls_price__200__0__0_95.8f5f048583
+[0m19:05:50.642477 [debug] [Thread-2 (]: Began compiling node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_.b1ebef143f
+[0m19:05:50.642674 [debug] [Thread-3 (]: Began executing node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_crm_sales_details_sls_price__200__0__0_95.3918eab3e4
+[0m19:05:50.642854 [debug] [Thread-1 (]: Began compiling node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_gwk_cntry___w_.a5c58afd40
+[0m19:05:50.645867 [debug] [Thread-4 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_csd_sls_price__200__0__0_95.8f5f048583"
+[0m19:05:50.652842 [debug] [Thread-2 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_.b1ebef143f"
+[0m19:05:50.653252 [debug] [Thread-3 (]: Finished running node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_crm_sales_details_sls_price__200__0__0_95.3918eab3e4
+[0m19:05:50.656200 [debug] [Thread-1 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_gwk_cntry___w_.a5c58afd40"
+[0m19:05:50.656550 [debug] [Thread-4 (]: Began executing node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_csd_sls_price__200__0__0_95.8f5f048583
+[0m19:05:50.656779 [debug] [Thread-3 (]: Began running node test.data_warehouse.dbt_utils_source_equality_bronze_eca_cid__bdate__gen__ref_erp_cust_az12_.89104eec89
+[0m19:05:50.656963 [debug] [Thread-2 (]: Began executing node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_.b1ebef143f
+[0m19:05:50.657386 [debug] [Thread-4 (]: Finished running node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_csd_sls_price__200__0__0_95.8f5f048583
+[0m19:05:50.657545 [debug] [Thread-1 (]: Began executing node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_gwk_cntry___w_.a5c58afd40
+[0m19:05:50.657774 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_crm_sales_details_sls_price__200__0__0_95.3918eab3e4, now test.data_warehouse.dbt_utils_source_equality_bronze_eca_cid__bdate__gen__ref_erp_cust_az12_.89104eec89)
+[0m19:05:50.658118 [debug] [Thread-2 (]: Finished running node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_.b1ebef143f
+[0m19:05:50.658332 [debug] [Thread-4 (]: Began running node test.data_warehouse.dbt_utils_source_equality_bronze_erp_cust_az12_gwk_cid__bdate__gen__ref_erp_cust_az12_.5340c3198d
+[0m19:05:50.658647 [debug] [Thread-1 (]: Finished running node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_gwk_cntry___w_.a5c58afd40
+[0m19:05:50.658838 [debug] [Thread-3 (]: Began compiling node test.data_warehouse.dbt_utils_source_equality_bronze_eca_cid__bdate__gen__ref_erp_cust_az12_.89104eec89
+[0m19:05:50.659044 [debug] [Thread-2 (]: Began running node test.data_warehouse.source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_.afca150cec
+[0m19:05:50.659267 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_csd_sls_price__200__0__0_95.8f5f048583, now test.data_warehouse.dbt_utils_source_equality_bronze_erp_cust_az12_gwk_cid__bdate__gen__ref_erp_cust_az12_.5340c3198d)
+[0m19:05:50.659465 [debug] [Thread-1 (]: Began running node test.data_warehouse.source_relationships_bronze_crm_cust_info_gwk_cst_key__cid__ref_erp_cust_az12_.714fb51859
+[0m19:05:50.674901 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_.b1ebef143f, now test.data_warehouse.source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_.afca150cec)
+[0m19:05:50.679755 [debug] [Thread-3 (]: Writing injected SQL for node "test.data_warehouse.dbt_utils_source_equality_bronze_eca_cid__bdate__gen__ref_erp_cust_az12_.89104eec89"
+[0m19:05:50.679999 [debug] [Thread-4 (]: Began compiling node test.data_warehouse.dbt_utils_source_equality_bronze_erp_cust_az12_gwk_cid__bdate__gen__ref_erp_cust_az12_.5340c3198d
+[0m19:05:50.680374 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_gwk_cntry___w_.a5c58afd40, now test.data_warehouse.source_relationships_bronze_crm_cust_info_gwk_cst_key__cid__ref_erp_cust_az12_.714fb51859)
+[0m19:05:50.680688 [debug] [Thread-2 (]: Began compiling node test.data_warehouse.source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_.afca150cec
+[0m19:05:50.685460 [debug] [Thread-4 (]: Writing injected SQL for node "test.data_warehouse.dbt_utils_source_equality_bronze_erp_cust_az12_gwk_cid__bdate__gen__ref_erp_cust_az12_.5340c3198d"
+[0m19:05:50.685680 [debug] [Thread-3 (]: Began executing node test.data_warehouse.dbt_utils_source_equality_bronze_eca_cid__bdate__gen__ref_erp_cust_az12_.89104eec89
+[0m19:05:50.685901 [debug] [Thread-1 (]: Began compiling node test.data_warehouse.source_relationships_bronze_crm_cust_info_gwk_cst_key__cid__ref_erp_cust_az12_.714fb51859
+[0m19:05:50.691619 [debug] [Thread-2 (]: Writing injected SQL for node "test.data_warehouse.source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_.afca150cec"
+[0m19:05:50.692150 [debug] [Thread-3 (]: Finished running node test.data_warehouse.dbt_utils_source_equality_bronze_eca_cid__bdate__gen__ref_erp_cust_az12_.89104eec89
+[0m19:05:50.692403 [debug] [Thread-4 (]: Began executing node test.data_warehouse.dbt_utils_source_equality_bronze_erp_cust_az12_gwk_cid__bdate__gen__ref_erp_cust_az12_.5340c3198d
+[0m19:05:50.697008 [debug] [Thread-1 (]: Writing injected SQL for node "test.data_warehouse.source_relationships_bronze_crm_cust_info_gwk_cst_key__cid__ref_erp_cust_az12_.714fb51859"
+[0m19:05:50.697395 [debug] [Thread-3 (]: Began running node test.data_warehouse.accepted_values_crm_cust_info_cst_gndr__Female__Male__n_a.a8372533ea
+[0m19:05:50.697652 [debug] [Thread-2 (]: Began executing node test.data_warehouse.source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_.afca150cec
+[0m19:05:50.698369 [debug] [Thread-4 (]: Finished running node test.data_warehouse.dbt_utils_source_equality_bronze_erp_cust_az12_gwk_cid__bdate__gen__ref_erp_cust_az12_.5340c3198d
+[0m19:05:50.698795 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_utils_source_equality_bronze_eca_cid__bdate__gen__ref_erp_cust_az12_.89104eec89, now test.data_warehouse.accepted_values_crm_cust_info_cst_gndr__Female__Male__n_a.a8372533ea)
+[0m19:05:50.699004 [debug] [Thread-1 (]: Began executing node test.data_warehouse.source_relationships_bronze_crm_cust_info_gwk_cst_key__cid__ref_erp_cust_az12_.714fb51859
+[0m19:05:50.699380 [debug] [Thread-2 (]: Finished running node test.data_warehouse.source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_.afca150cec
+[0m19:05:50.699713 [debug] [Thread-4 (]: Began running node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m19:05:50.700052 [debug] [Thread-3 (]: Began compiling node test.data_warehouse.accepted_values_crm_cust_info_cst_gndr__Female__Male__n_a.a8372533ea
+[0m19:05:50.700400 [debug] [Thread-1 (]: Finished running node test.data_warehouse.source_relationships_bronze_crm_cust_info_gwk_cst_key__cid__ref_erp_cust_az12_.714fb51859
+[0m19:05:50.700619 [debug] [Thread-2 (]: Began running node test.data_warehouse.create_cust_date_test_crm_cust_info_cst_create_date__2025_10_01.99fd3c47ef
+[0m19:05:50.700859 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_utils_source_equality_bronze_erp_cust_az12_gwk_cid__bdate__gen__ref_erp_cust_az12_.5340c3198d, now test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a)
+[0m19:05:50.710184 [debug] [Thread-3 (]: Writing injected SQL for node "test.data_warehouse.accepted_values_crm_cust_info_cst_gndr__Female__Male__n_a.a8372533ea"
+[0m19:05:50.710531 [debug] [Thread-1 (]: Began running node test.data_warehouse.crm_cust_info_jon
+[0m19:05:50.710892 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.data_warehouse.source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_.afca150cec, now test.data_warehouse.create_cust_date_test_crm_cust_info_cst_create_date__2025_10_01.99fd3c47ef)
+[0m19:05:50.711203 [debug] [Thread-4 (]: Began compiling node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m19:05:50.711517 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.data_warehouse.source_relationships_bronze_crm_cust_info_gwk_cst_key__cid__ref_erp_cust_az12_.714fb51859, now test.data_warehouse.crm_cust_info_jon)
+[0m19:05:50.711736 [debug] [Thread-2 (]: Began compiling node test.data_warehouse.create_cust_date_test_crm_cust_info_cst_create_date__2025_10_01.99fd3c47ef
+[0m19:05:50.711940 [debug] [Thread-3 (]: Began executing node test.data_warehouse.accepted_values_crm_cust_info_cst_gndr__Female__Male__n_a.a8372533ea
+[0m19:05:50.717943 [debug] [Thread-4 (]: Writing injected SQL for node "test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a"
+[0m19:05:50.718314 [debug] [Thread-1 (]: Began compiling node test.data_warehouse.crm_cust_info_jon
+[0m19:05:50.723456 [debug] [Thread-2 (]: Writing injected SQL for node "test.data_warehouse.create_cust_date_test_crm_cust_info_cst_create_date__2025_10_01.99fd3c47ef"
+[0m19:05:50.723861 [debug] [Thread-3 (]: Finished running node test.data_warehouse.accepted_values_crm_cust_info_cst_gndr__Female__Male__n_a.a8372533ea
+[0m19:05:50.725327 [debug] [Thread-1 (]: Writing injected SQL for node "test.data_warehouse.crm_cust_info_jon"
+[0m19:05:50.725523 [debug] [Thread-4 (]: Began executing node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m19:05:50.725812 [debug] [Thread-3 (]: Began running node test.data_warehouse.dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_.1edd85fcb6
+[0m19:05:50.726049 [debug] [Thread-2 (]: Began executing node test.data_warehouse.create_cust_date_test_crm_cust_info_cst_create_date__2025_10_01.99fd3c47ef
+[0m19:05:50.726441 [debug] [Thread-4 (]: Finished running node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m19:05:50.726682 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.data_warehouse.accepted_values_crm_cust_info_cst_gndr__Female__Male__n_a.a8372533ea, now test.data_warehouse.dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_.1edd85fcb6)
+[0m19:05:50.726884 [debug] [Thread-1 (]: Began executing node test.data_warehouse.crm_cust_info_jon
+[0m19:05:50.727263 [debug] [Thread-2 (]: Finished running node test.data_warehouse.create_cust_date_test_crm_cust_info_cst_create_date__2025_10_01.99fd3c47ef
+[0m19:05:50.727450 [debug] [Thread-4 (]: Began running node test.data_warehouse.min_row_crm_cust_info_1000000.2f6cbaa0c2
+[0m19:05:50.727666 [debug] [Thread-3 (]: Began compiling node test.data_warehouse.dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_.1edd85fcb6
+[0m19:05:50.728022 [debug] [Thread-1 (]: Finished running node test.data_warehouse.crm_cust_info_jon
+[0m19:05:50.728247 [debug] [Thread-2 (]: Began running node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m19:05:50.728489 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a, now test.data_warehouse.min_row_crm_cust_info_1000000.2f6cbaa0c2)
+[0m19:05:50.740083 [debug] [Thread-3 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_.1edd85fcb6"
+[0m19:05:50.740362 [debug] [Thread-1 (]: Began running node model.data_warehouse.dim_customers
+[0m19:05:50.740748 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.data_warehouse.create_cust_date_test_crm_cust_info_cst_create_date__2025_10_01.99fd3c47ef, now test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528)
+[0m19:05:50.740971 [debug] [Thread-4 (]: Began compiling node test.data_warehouse.min_row_crm_cust_info_1000000.2f6cbaa0c2
+[0m19:05:50.741339 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.data_warehouse.crm_cust_info_jon, now model.data_warehouse.dim_customers)
+[0m19:05:50.741527 [debug] [Thread-3 (]: Began executing node test.data_warehouse.dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_.1edd85fcb6
+[0m19:05:50.741760 [debug] [Thread-2 (]: Began compiling node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m19:05:50.745467 [debug] [Thread-4 (]: Writing injected SQL for node "test.data_warehouse.min_row_crm_cust_info_1000000.2f6cbaa0c2"
+[0m19:05:50.745702 [debug] [Thread-1 (]: Began compiling node model.data_warehouse.dim_customers
+[0m19:05:50.746072 [debug] [Thread-3 (]: Finished running node test.data_warehouse.dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_.1edd85fcb6
+[0m19:05:50.750576 [debug] [Thread-2 (]: Writing injected SQL for node "test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528"
+[0m19:05:50.757445 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_warehouse.dim_customers"
+[0m19:05:50.757701 [debug] [Thread-4 (]: Began executing node test.data_warehouse.min_row_crm_cust_info_1000000.2f6cbaa0c2
+[0m19:05:50.757938 [debug] [Thread-3 (]: Began running node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63
+[0m19:05:50.758319 [debug] [Thread-2 (]: Began executing node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m19:05:50.758702 [debug] [Thread-4 (]: Finished running node test.data_warehouse.min_row_crm_cust_info_1000000.2f6cbaa0c2
+[0m19:05:50.758932 [debug] [Thread-1 (]: Began executing node model.data_warehouse.dim_customers
+[0m19:05:50.759164 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_.1edd85fcb6, now test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63)
+[0m19:05:50.759548 [debug] [Thread-2 (]: Finished running node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m19:05:50.759774 [debug] [Thread-4 (]: Began running node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af
+[0m19:05:50.760155 [debug] [Thread-1 (]: Finished running node model.data_warehouse.dim_customers
+[0m19:05:50.760355 [debug] [Thread-3 (]: Began compiling node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63
+[0m19:05:50.760599 [debug] [Thread-2 (]: Began running node test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2
+[0m19:05:50.760847 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.data_warehouse.min_row_crm_cust_info_1000000.2f6cbaa0c2, now test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af)
+[0m19:05:50.761085 [debug] [Thread-1 (]: Began running node model.data_warehouse.dim_products
+[0m19:05:50.774132 [debug] [Thread-3 (]: Using postgres connection "test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63"
+[0m19:05:50.774404 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528, now test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2)
+[0m19:05:50.774643 [debug] [Thread-4 (]: Began compiling node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af
+[0m19:05:50.774901 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.data_warehouse.dim_customers, now model.data_warehouse.dim_products)
+[0m19:05:50.775149 [debug] [Thread-3 (]: On test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "DataWarehouse".INFORMATION_SCHEMA.columns
+      where table_name = 'erp_px_cat_g1v2'
+        
+        and table_schema = 'silver'
+        
+      order by ordinal_position
+
+  
+[0m19:05:50.775391 [debug] [Thread-2 (]: Began compiling node test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2
+[0m19:05:50.780398 [debug] [Thread-4 (]: Using postgres connection "test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af"
+[0m19:05:50.780637 [debug] [Thread-1 (]: Began compiling node model.data_warehouse.dim_products
+[0m19:05:50.780872 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m19:05:50.783612 [debug] [Thread-2 (]: Using postgres connection "test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2"
+[0m19:05:50.783852 [debug] [Thread-4 (]: On test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "DataWarehouse".INFORMATION_SCHEMA.columns
+      where table_name = 'erp_px_cat_g1v2'
+        
+        and table_schema = 'silver'
+        
+      order by ordinal_position
+
+  
+[0m19:05:50.784941 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_warehouse.dim_products"
+[0m19:05:50.785292 [debug] [Thread-2 (]: On test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "DataWarehouse".INFORMATION_SCHEMA.columns
+      where table_name = 'erp_px_cat_g1v2'
+        
+        and table_schema = 'bronze'
+        
+      order by ordinal_position
+
+  
+[0m19:05:50.785554 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m19:05:50.785826 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m19:05:50.786037 [debug] [Thread-1 (]: Began executing node model.data_warehouse.dim_products
+[0m19:05:50.786884 [debug] [Thread-1 (]: Finished running node model.data_warehouse.dim_products
+[0m19:05:50.787163 [debug] [Thread-1 (]: Began running node model.data_warehouse.fact_sales
+[0m19:05:50.787353 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.data_warehouse.dim_products, now model.data_warehouse.fact_sales)
+[0m19:05:50.787524 [debug] [Thread-1 (]: Began compiling node model.data_warehouse.fact_sales
+[0m19:05:50.788636 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_warehouse.fact_sales"
+[0m19:05:50.788943 [debug] [Thread-1 (]: Began executing node model.data_warehouse.fact_sales
+[0m19:05:50.789245 [debug] [Thread-1 (]: Finished running node model.data_warehouse.fact_sales
+[0m19:05:50.789475 [debug] [Thread-1 (]: Began running node analysis.data_warehouse.product_sales_yearly
+[0m19:05:50.789643 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.data_warehouse.fact_sales, now analysis.data_warehouse.product_sales_yearly)
+[0m19:05:50.789781 [debug] [Thread-1 (]: Began compiling node analysis.data_warehouse.product_sales_yearly
+[0m19:05:50.790614 [debug] [Thread-1 (]: Writing injected SQL for node "analysis.data_warehouse.product_sales_yearly"
+[0m19:05:50.790866 [debug] [Thread-1 (]: Began executing node analysis.data_warehouse.product_sales_yearly
+[0m19:05:50.791155 [debug] [Thread-1 (]: Finished running node analysis.data_warehouse.product_sales_yearly
+[0m19:05:50.798297 [debug] [Thread-2 (]: SQL status: SELECT 4 in 0.012 seconds
+[0m19:05:50.800073 [debug] [Thread-2 (]: Writing injected SQL for node "test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2"
+[0m19:05:50.800319 [debug] [Thread-4 (]: SQL status: SELECT 4 in 0.015 seconds
+[0m19:05:50.800548 [debug] [Thread-3 (]: SQL status: SELECT 4 in 0.020 seconds
+[0m19:05:50.801351 [debug] [Thread-4 (]: Writing injected SQL for node "test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af"
+[0m19:05:50.801596 [debug] [Thread-2 (]: Began executing node test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2
+[0m19:05:50.802328 [debug] [Thread-3 (]: Writing injected SQL for node "test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63"
+[0m19:05:50.802623 [debug] [Thread-2 (]: On test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2: ROLLBACK
+[0m19:05:50.802815 [debug] [Thread-4 (]: Began executing node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af
+[0m19:05:50.803116 [debug] [Thread-4 (]: On test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af: ROLLBACK
+[0m19:05:50.803296 [debug] [Thread-2 (]: On test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2: Close
+[0m19:05:50.803497 [debug] [Thread-3 (]: Began executing node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63
+[0m19:05:50.803716 [debug] [Thread-4 (]: On test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af: Close
+[0m19:05:50.804057 [debug] [Thread-2 (]: Finished running node test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2
+[0m19:05:50.804256 [debug] [Thread-3 (]: On test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63: ROLLBACK
+[0m19:05:50.804635 [debug] [Thread-4 (]: Finished running node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af
+[0m19:05:50.804936 [debug] [Thread-3 (]: On test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63: Close
+[0m19:05:50.805270 [debug] [Thread-3 (]: Finished running node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63
+[0m19:05:50.805932 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:05:50.806135 [debug] [MainThread]: Connection 'test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63' was properly closed.
+[0m19:05:50.806276 [debug] [MainThread]: Connection 'analysis.data_warehouse.product_sales_yearly' was properly closed.
+[0m19:05:50.806398 [debug] [MainThread]: Connection 'test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2' was properly closed.
+[0m19:05:50.806518 [debug] [MainThread]: Connection 'test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af' was properly closed.
+[0m19:05:50.808549 [debug] [MainThread]: Command end result
+[0m19:05:50.843921 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m19:05:50.845179 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m19:05:50.846225 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m19:05:50.850832 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_project/target/run_results.json
+[0m19:05:50.851452 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 0.89630556, "process_in_blocks": "64", "process_kernel_time": 0.084432, "process_mem_max_rss": "139780", "process_out_blocks": "5696", "process_user_time": 1.77509}
+[0m19:05:50.851728 [debug] [MainThread]: Command `dbt compile` succeeded at 19:05:50.851678 after 0.90 seconds
+[0m19:05:50.851922 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7788566104a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x778853f2f530>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7788577ab950>]}
+[0m19:05:50.852119 [debug] [MainThread]: Flushing usage events
+[0m19:05:51.373505 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:09:55.663865 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ad61a6d670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ad61c4dd00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ad624bb710>]}
+
+
+============================== 19:09:55.666893 | 09495712-659a-4567-ad0f-089c81b7386d ==============================
+[0m19:09:55.666893 [info ] [MainThread]: Running with dbt=1.12.5
+[0m19:09:55.667185 [debug] [MainThread]: running dbt with arguments {'log_path': '/opt/airflow/dbt_project/logs', 'maximum_seed_size_mib': '1', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'indirect_selection': 'eager', 'version_check': 'True', 'introspect': 'True', 'target_path': 'None', 'write_json': 'True', 'use_colors': 'True', 'quiet': 'False', 'empty': 'False', 'debug': 'False', 'hints_enabled': 'True', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'log_format': 'default', 'log_cache_events': 'False', 'static_parser': 'True', 'partial_parse': 'True', 'invocation_command': 'dbt compile', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'profiles_dir': '/opt/airflow/dbt_project', 'cache_selected_only': 'False'}
+[0m19:09:55.767354 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '09495712-659a-4567-ad0f-089c81b7386d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ad63c71490>]}
+[0m19:09:55.802945 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '09495712-659a-4567-ad0f-089c81b7386d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ad624757c0>]}
+[0m19:09:55.803467 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m19:09:55.857082 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m19:09:55.988408 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m19:09:55.988704 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m19:09:55.988867 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m19:09:55.994619 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '09495712-659a-4567-ad0f-089c81b7386d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ad60ba4410>]}
+[0m19:09:56.197181 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m19:09:56.198425 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m19:09:56.204579 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m19:09:56.212620 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '09495712-659a-4567-ad0f-089c81b7386d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ad5f23ad50>]}
+[0m19:09:56.212887 [info ] [MainThread]: Found 8 models, 1 snapshot, 1 analysis, 20 data tests, 1 seed, 3 operations, 12 sources, 920 macros, 1 unit test
+[0m19:09:56.213064 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '09495712-659a-4567-ad0f-089c81b7386d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ad5fb47f80>]}
+[0m19:09:56.214771 [info ] [MainThread]: 
+[0m19:09:56.214978 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m19:09:56.215126 [info ] [MainThread]: 
+[0m19:09:56.215400 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m19:09:56.218316 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse_gold'
+[0m19:09:56.224360 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse_silver'
+[0m19:09:56.224777 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse__test_failures'
+[0m19:09:56.234919 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_gold"
+[0m19:09:56.235103 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_silver"
+[0m19:09:56.235304 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse__test_failures"
+[0m19:09:56.235614 [debug] [ThreadPool]: On list_DataWarehouse_gold: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_gold"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'gold'
+  
+[0m19:09:56.235973 [debug] [ThreadPool]: On list_DataWarehouse_silver: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_silver"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'silver'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'silver'
+  
+[0m19:09:56.236153 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse__test_failures"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike '_test_failures'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike '_test_failures'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike '_test_failures'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike '_test_failures'
+  
+[0m19:09:56.236387 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:09:56.236672 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:09:56.236826 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:09:56.242499 [debug] [ThreadPool]: SQL status: SELECT 34 in 0.006 seconds
+[0m19:09:56.242711 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.006 seconds
+[0m19:09:56.242913 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.006 seconds
+[0m19:09:56.243799 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: ROLLBACK
+[0m19:09:56.244385 [debug] [ThreadPool]: On list_DataWarehouse_gold: ROLLBACK
+[0m19:09:56.245002 [debug] [ThreadPool]: On list_DataWarehouse_silver: ROLLBACK
+[0m19:09:56.245235 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: Close
+[0m19:09:56.245380 [debug] [ThreadPool]: On list_DataWarehouse_gold: Close
+[0m19:09:56.245534 [debug] [ThreadPool]: On list_DataWarehouse_silver: Close
+[0m19:09:56.250809 [debug] [MainThread]: Using postgres connection "master"
+[0m19:09:56.251159 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m19:09:56.251346 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:09:56.255083 [debug] [MainThread]: SQL status: SELECT 2 in 0.004 seconds
+[0m19:09:56.255961 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '09495712-659a-4567-ad0f-089c81b7386d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ad5ffacec0>]}
+[0m19:09:56.256185 [debug] [MainThread]: On master: ROLLBACK
+[0m19:09:56.256368 [debug] [MainThread]: On master: Close
+[0m19:09:56.258387 [debug] [Thread-1 (]: Began running node model.data_warehouse.crm_cust_info
+[0m19:09:56.258619 [debug] [Thread-2 (]: Began running node model.data_warehouse.crm_sales_details
+[0m19:09:56.258863 [debug] [Thread-3 (]: Began running node model.data_warehouse.erp_cust_az12
+[0m19:09:56.259079 [debug] [Thread-4 (]: Began running node model.data_warehouse.erp_loc_a101
+[0m19:09:56.259322 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DataWarehouse_silver, now model.data_warehouse.crm_cust_info)
+[0m19:09:56.259610 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DataWarehouse_gold, now model.data_warehouse.crm_sales_details)
+[0m19:09:56.259860 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_DataWarehouse__test_failures, now model.data_warehouse.erp_cust_az12)
+[0m19:09:56.260155 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.data_warehouse.erp_loc_a101'
+[0m19:09:56.260357 [debug] [Thread-1 (]: Began compiling node model.data_warehouse.crm_cust_info
+[0m19:09:56.260556 [debug] [Thread-2 (]: Began compiling node model.data_warehouse.crm_sales_details
+[0m19:09:56.260759 [debug] [Thread-3 (]: Began compiling node model.data_warehouse.erp_cust_az12
+[0m19:09:56.260934 [debug] [Thread-4 (]: Began compiling node model.data_warehouse.erp_loc_a101
+[0m19:09:56.264013 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_warehouse.crm_cust_info"
+[0m19:09:56.267839 [debug] [Thread-2 (]: Writing injected SQL for node "model.data_warehouse.crm_sales_details"
+[0m19:09:56.268851 [debug] [Thread-3 (]: Writing injected SQL for node "model.data_warehouse.erp_cust_az12"
+[0m19:09:56.269843 [debug] [Thread-4 (]: Writing injected SQL for node "model.data_warehouse.erp_loc_a101"
+[0m19:09:56.270252 [debug] [Thread-1 (]: Began executing node model.data_warehouse.crm_cust_info
+[0m19:09:56.270466 [debug] [Thread-2 (]: Began executing node model.data_warehouse.crm_sales_details
+[0m19:09:56.270884 [debug] [Thread-1 (]: Finished running node model.data_warehouse.crm_cust_info
+[0m19:09:56.271060 [debug] [Thread-3 (]: Began executing node model.data_warehouse.erp_cust_az12
+[0m19:09:56.271282 [debug] [Thread-4 (]: Began executing node model.data_warehouse.erp_loc_a101
+[0m19:09:56.271688 [debug] [Thread-2 (]: Finished running node model.data_warehouse.crm_sales_details
+[0m19:09:56.271888 [debug] [Thread-1 (]: Began running node model.data_warehouse.erp_px_cat_g1v2
+[0m19:09:56.272356 [debug] [Thread-3 (]: Finished running node model.data_warehouse.erp_cust_az12
+[0m19:09:56.272690 [debug] [Thread-4 (]: Finished running node model.data_warehouse.erp_loc_a101
+[0m19:09:56.272883 [debug] [Thread-2 (]: Began running node operation.data_warehouse.data_warehouse-on-run-start-0
+[0m19:09:56.273093 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.data_warehouse.crm_cust_info, now model.data_warehouse.erp_px_cat_g1v2)
+[0m19:09:56.273300 [debug] [Thread-3 (]: Began running node operation.data_warehouse.data_warehouse-on-run-start-1
+[0m19:09:56.273543 [debug] [Thread-4 (]: Began running node operation.data_warehouse.data_warehouse-on-run-start-2
+[0m19:09:56.273751 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.data_warehouse.crm_sales_details, now operation.data_warehouse.data_warehouse-on-run-start-0)
+[0m19:09:56.273925 [debug] [Thread-1 (]: Began compiling node model.data_warehouse.erp_px_cat_g1v2
+[0m19:09:56.274123 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.data_warehouse.erp_cust_az12, now operation.data_warehouse.data_warehouse-on-run-start-1)
+[0m19:09:56.274314 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.data_warehouse.erp_loc_a101, now operation.data_warehouse.data_warehouse-on-run-start-2)
+[0m19:09:56.274477 [debug] [Thread-2 (]: Began compiling node operation.data_warehouse.data_warehouse-on-run-start-0
+[0m19:09:56.275381 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_warehouse.erp_px_cat_g1v2"
+[0m19:09:56.275565 [debug] [Thread-3 (]: Began compiling node operation.data_warehouse.data_warehouse-on-run-start-1
+[0m19:09:56.275724 [debug] [Thread-4 (]: Began compiling node operation.data_warehouse.data_warehouse-on-run-start-2
+[0m19:09:56.277664 [info ] [Thread-2 (]: 
+--------------------------------------------Hello there!---------------------------------------
+
+[0m19:09:56.278448 [debug] [Thread-3 (]: Writing injected SQL for node "operation.data_warehouse.data_warehouse-on-run-start-1"
+[0m19:09:56.278657 [debug] [Thread-1 (]: Began executing node model.data_warehouse.erp_px_cat_g1v2
+[0m19:09:56.279344 [debug] [Thread-4 (]: Writing injected SQL for node "operation.data_warehouse.data_warehouse-on-run-start-2"
+[0m19:09:56.279568 [debug] [Thread-2 (]: Writing injected SQL for node "operation.data_warehouse.data_warehouse-on-run-start-0"
+[0m19:09:56.279961 [debug] [Thread-1 (]: Finished running node model.data_warehouse.erp_px_cat_g1v2
+[0m19:09:56.280207 [debug] [Thread-3 (]: Began executing node operation.data_warehouse.data_warehouse-on-run-start-1
+[0m19:09:56.280463 [debug] [Thread-1 (]: Began running node seed.data_warehouse.seed_full_moon_dates
+[0m19:09:56.280620 [debug] [Thread-4 (]: Began executing node operation.data_warehouse.data_warehouse-on-run-start-2
+[0m19:09:56.280823 [debug] [Thread-2 (]: Began executing node operation.data_warehouse.data_warehouse-on-run-start-0
+[0m19:09:56.281218 [debug] [Thread-3 (]: Finished running node operation.data_warehouse.data_warehouse-on-run-start-1
+[0m19:09:56.281490 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.data_warehouse.erp_px_cat_g1v2, now seed.data_warehouse.seed_full_moon_dates)
+[0m19:09:56.281827 [debug] [Thread-4 (]: Finished running node operation.data_warehouse.data_warehouse-on-run-start-2
+[0m19:09:56.282150 [debug] [Thread-2 (]: Finished running node operation.data_warehouse.data_warehouse-on-run-start-0
+[0m19:09:56.282394 [debug] [Thread-3 (]: Began running node snapshot.data_warehouse.crm_prd_info
+[0m19:09:56.282623 [debug] [Thread-1 (]: Began compiling node seed.data_warehouse.seed_full_moon_dates
+[0m19:09:56.282843 [debug] [Thread-4 (]: Began running node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_ela_cntry__7.ed9bf66166
+[0m19:09:56.283061 [debug] [Thread-2 (]: Began running node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_gwk_cntry__7.07b0906d5a
+[0m19:09:56.283305 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly operation.data_warehouse.data_warehouse-on-run-start-1, now snapshot.data_warehouse.crm_prd_info)
+[0m19:09:56.283764 [debug] [Thread-1 (]: Began executing node seed.data_warehouse.seed_full_moon_dates
+[0m19:09:56.283974 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly operation.data_warehouse.data_warehouse-on-run-start-2, now test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_ela_cntry__7.ed9bf66166)
+[0m19:09:56.284287 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly operation.data_warehouse.data_warehouse-on-run-start-0, now test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_gwk_cntry__7.07b0906d5a)
+[0m19:09:56.284501 [debug] [Thread-3 (]: Began compiling node snapshot.data_warehouse.crm_prd_info
+[0m19:09:56.284870 [debug] [Thread-1 (]: Finished running node seed.data_warehouse.seed_full_moon_dates
+[0m19:09:56.285039 [debug] [Thread-4 (]: Began compiling node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_ela_cntry__7.ed9bf66166
+[0m19:09:56.285217 [debug] [Thread-2 (]: Began compiling node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_gwk_cntry__7.07b0906d5a
+[0m19:09:56.286366 [debug] [Thread-3 (]: Writing injected SQL for node "snapshot.data_warehouse.crm_prd_info"
+[0m19:09:56.286623 [debug] [Thread-1 (]: Began running node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_crm_sales_details_sls_price__200__0__0_95.3918eab3e4
+[0m19:09:56.295046 [debug] [Thread-4 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_ela_cntry__7.ed9bf66166"
+[0m19:09:56.298039 [debug] [Thread-2 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_gwk_cntry__7.07b0906d5a"
+[0m19:09:56.298367 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.data_warehouse.seed_full_moon_dates, now test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_crm_sales_details_sls_price__200__0__0_95.3918eab3e4)
+[0m19:09:56.298644 [debug] [Thread-3 (]: Began executing node snapshot.data_warehouse.crm_prd_info
+[0m19:09:56.298933 [debug] [Thread-4 (]: Began executing node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_ela_cntry__7.ed9bf66166
+[0m19:09:56.299139 [debug] [Thread-1 (]: Began compiling node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_crm_sales_details_sls_price__200__0__0_95.3918eab3e4
+[0m19:09:56.299513 [debug] [Thread-3 (]: Finished running node snapshot.data_warehouse.crm_prd_info
+[0m19:09:56.299856 [debug] [Thread-4 (]: Finished running node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_ela_cntry__7.ed9bf66166
+[0m19:09:56.300039 [debug] [Thread-2 (]: Began executing node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_gwk_cntry__7.07b0906d5a
+[0m19:09:56.306992 [debug] [Thread-1 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_crm_sales_details_sls_price__200__0__0_95.3918eab3e4"
+[0m19:09:56.307260 [debug] [Thread-3 (]: Began running node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_csd_sls_price__200__0__0_95.8f5f048583
+[0m19:09:56.307561 [debug] [Thread-4 (]: Began running node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_.b1ebef143f
+[0m19:09:56.307965 [debug] [Thread-2 (]: Finished running node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_gwk_cntry__7.07b0906d5a
+[0m19:09:56.308254 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly snapshot.data_warehouse.crm_prd_info, now test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_csd_sls_price__200__0__0_95.8f5f048583)
+[0m19:09:56.308460 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_ela_cntry__7.ed9bf66166, now test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_.b1ebef143f)
+[0m19:09:56.308639 [debug] [Thread-1 (]: Began executing node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_crm_sales_details_sls_price__200__0__0_95.3918eab3e4
+[0m19:09:56.308906 [debug] [Thread-2 (]: Began running node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_gwk_cntry___w_.a5c58afd40
+[0m19:09:56.309133 [debug] [Thread-3 (]: Began compiling node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_csd_sls_price__200__0__0_95.8f5f048583
+[0m19:09:56.309316 [debug] [Thread-4 (]: Began compiling node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_.b1ebef143f
+[0m19:09:56.309677 [debug] [Thread-1 (]: Finished running node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_crm_sales_details_sls_price__200__0__0_95.3918eab3e4
+[0m19:09:56.309907 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_gwk_cntry__7.07b0906d5a, now test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_gwk_cntry___w_.a5c58afd40)
+[0m19:09:56.313001 [debug] [Thread-3 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_csd_sls_price__200__0__0_95.8f5f048583"
+[0m19:09:56.320024 [debug] [Thread-4 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_.b1ebef143f"
+[0m19:09:56.320295 [debug] [Thread-1 (]: Began running node test.data_warehouse.accepted_values_crm_cust_info_cst_gndr__Female__Male__n_a.a8372533ea
+[0m19:09:56.320553 [debug] [Thread-2 (]: Began compiling node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_gwk_cntry___w_.a5c58afd40
+[0m19:09:56.320953 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_crm_sales_details_sls_price__200__0__0_95.3918eab3e4, now test.data_warehouse.accepted_values_crm_cust_info_cst_gndr__Female__Male__n_a.a8372533ea)
+[0m19:09:56.321180 [debug] [Thread-3 (]: Began executing node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_csd_sls_price__200__0__0_95.8f5f048583
+[0m19:09:56.321431 [debug] [Thread-4 (]: Began executing node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_.b1ebef143f
+[0m19:09:56.324661 [debug] [Thread-2 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_gwk_cntry___w_.a5c58afd40"
+[0m19:09:56.324905 [debug] [Thread-1 (]: Began compiling node test.data_warehouse.accepted_values_crm_cust_info_cst_gndr__Female__Male__n_a.a8372533ea
+[0m19:09:56.325315 [debug] [Thread-3 (]: Finished running node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_csd_sls_price__200__0__0_95.8f5f048583
+[0m19:09:56.325691 [debug] [Thread-4 (]: Finished running node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_.b1ebef143f
+[0m19:09:56.334976 [debug] [Thread-1 (]: Writing injected SQL for node "test.data_warehouse.accepted_values_crm_cust_info_cst_gndr__Female__Male__n_a.a8372533ea"
+[0m19:09:56.335357 [debug] [Thread-3 (]: Began running node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m19:09:56.335698 [debug] [Thread-2 (]: Began executing node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_gwk_cntry___w_.a5c58afd40
+[0m19:09:56.335961 [debug] [Thread-4 (]: Began running node test.data_warehouse.create_cust_date_test_crm_cust_info_cst_create_date__2025_10_01.99fd3c47ef
+[0m19:09:56.336288 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_csd_sls_price__200__0__0_95.8f5f048583, now test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a)
+[0m19:09:56.336524 [debug] [Thread-1 (]: Began executing node test.data_warehouse.accepted_values_crm_cust_info_cst_gndr__Female__Male__n_a.a8372533ea
+[0m19:09:56.336908 [debug] [Thread-2 (]: Finished running node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_gwk_cntry___w_.a5c58afd40
+[0m19:09:56.337143 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_.b1ebef143f, now test.data_warehouse.create_cust_date_test_crm_cust_info_cst_create_date__2025_10_01.99fd3c47ef)
+[0m19:09:56.337368 [debug] [Thread-3 (]: Began compiling node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m19:09:56.337753 [debug] [Thread-1 (]: Finished running node test.data_warehouse.accepted_values_crm_cust_info_cst_gndr__Female__Male__n_a.a8372533ea
+[0m19:09:56.337984 [debug] [Thread-2 (]: Began running node test.data_warehouse.crm_cust_info_jon
+[0m19:09:56.338215 [debug] [Thread-4 (]: Began compiling node test.data_warehouse.create_cust_date_test_crm_cust_info_cst_create_date__2025_10_01.99fd3c47ef
+[0m19:09:56.344256 [debug] [Thread-3 (]: Writing injected SQL for node "test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a"
+[0m19:09:56.344615 [debug] [Thread-1 (]: Began running node test.data_warehouse.dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_.1edd85fcb6
+[0m19:09:56.344871 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_gwk_cntry___w_.a5c58afd40, now test.data_warehouse.crm_cust_info_jon)
+[0m19:09:56.349927 [debug] [Thread-4 (]: Writing injected SQL for node "test.data_warehouse.create_cust_date_test_crm_cust_info_cst_create_date__2025_10_01.99fd3c47ef"
+[0m19:09:56.350252 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.data_warehouse.accepted_values_crm_cust_info_cst_gndr__Female__Male__n_a.a8372533ea, now test.data_warehouse.dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_.1edd85fcb6)
+[0m19:09:56.350481 [debug] [Thread-3 (]: Began executing node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m19:09:56.350690 [debug] [Thread-2 (]: Began compiling node test.data_warehouse.crm_cust_info_jon
+[0m19:09:56.350974 [debug] [Thread-1 (]: Began compiling node test.data_warehouse.dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_.1edd85fcb6
+[0m19:09:56.351196 [debug] [Thread-4 (]: Began executing node test.data_warehouse.create_cust_date_test_crm_cust_info_cst_create_date__2025_10_01.99fd3c47ef
+[0m19:09:56.351530 [debug] [Thread-3 (]: Finished running node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m19:09:56.352336 [debug] [Thread-2 (]: Writing injected SQL for node "test.data_warehouse.crm_cust_info_jon"
+[0m19:09:56.364140 [debug] [Thread-1 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_.1edd85fcb6"
+[0m19:09:56.364548 [debug] [Thread-4 (]: Finished running node test.data_warehouse.create_cust_date_test_crm_cust_info_cst_create_date__2025_10_01.99fd3c47ef
+[0m19:09:56.364775 [debug] [Thread-3 (]: Began running node test.data_warehouse.min_row_crm_cust_info_1000000.2f6cbaa0c2
+[0m19:09:56.365149 [debug] [Thread-2 (]: Began executing node test.data_warehouse.crm_cust_info_jon
+[0m19:09:56.365393 [debug] [Thread-1 (]: Began executing node test.data_warehouse.dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_.1edd85fcb6
+[0m19:09:56.365679 [debug] [Thread-4 (]: Began running node test.data_warehouse.dbt_utils_source_equality_bronze_eca_cid__bdate__gen__ref_erp_cust_az12_.89104eec89
+[0m19:09:56.365933 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a, now test.data_warehouse.min_row_crm_cust_info_1000000.2f6cbaa0c2)
+[0m19:09:56.366296 [debug] [Thread-2 (]: Finished running node test.data_warehouse.crm_cust_info_jon
+[0m19:09:56.366647 [debug] [Thread-1 (]: Finished running node test.data_warehouse.dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_.1edd85fcb6
+[0m19:09:56.366991 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.data_warehouse.create_cust_date_test_crm_cust_info_cst_create_date__2025_10_01.99fd3c47ef, now test.data_warehouse.dbt_utils_source_equality_bronze_eca_cid__bdate__gen__ref_erp_cust_az12_.89104eec89)
+[0m19:09:56.367309 [debug] [Thread-3 (]: Began compiling node test.data_warehouse.min_row_crm_cust_info_1000000.2f6cbaa0c2
+[0m19:09:56.367532 [debug] [Thread-2 (]: Began running node test.data_warehouse.dbt_utils_source_equality_bronze_erp_cust_az12_gwk_cid__bdate__gen__ref_erp_cust_az12_.5340c3198d
+[0m19:09:56.367795 [debug] [Thread-1 (]: Began running node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m19:09:56.368113 [debug] [Thread-4 (]: Began compiling node test.data_warehouse.dbt_utils_source_equality_bronze_eca_cid__bdate__gen__ref_erp_cust_az12_.89104eec89
+[0m19:09:56.371454 [debug] [Thread-3 (]: Writing injected SQL for node "test.data_warehouse.min_row_crm_cust_info_1000000.2f6cbaa0c2"
+[0m19:09:56.371717 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.data_warehouse.crm_cust_info_jon, now test.data_warehouse.dbt_utils_source_equality_bronze_erp_cust_az12_gwk_cid__bdate__gen__ref_erp_cust_az12_.5340c3198d)
+[0m19:09:56.371972 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_.1edd85fcb6, now test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528)
+[0m19:09:56.392095 [debug] [Thread-4 (]: Writing injected SQL for node "test.data_warehouse.dbt_utils_source_equality_bronze_eca_cid__bdate__gen__ref_erp_cust_az12_.89104eec89"
+[0m19:09:56.392497 [debug] [Thread-2 (]: Began compiling node test.data_warehouse.dbt_utils_source_equality_bronze_erp_cust_az12_gwk_cid__bdate__gen__ref_erp_cust_az12_.5340c3198d
+[0m19:09:56.392851 [debug] [Thread-3 (]: Began executing node test.data_warehouse.min_row_crm_cust_info_1000000.2f6cbaa0c2
+[0m19:09:56.393076 [debug] [Thread-1 (]: Began compiling node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m19:09:56.397883 [debug] [Thread-2 (]: Writing injected SQL for node "test.data_warehouse.dbt_utils_source_equality_bronze_erp_cust_az12_gwk_cid__bdate__gen__ref_erp_cust_az12_.5340c3198d"
+[0m19:09:56.398239 [debug] [Thread-4 (]: Began executing node test.data_warehouse.dbt_utils_source_equality_bronze_eca_cid__bdate__gen__ref_erp_cust_az12_.89104eec89
+[0m19:09:56.398818 [debug] [Thread-3 (]: Finished running node test.data_warehouse.min_row_crm_cust_info_1000000.2f6cbaa0c2
+[0m19:09:56.404606 [debug] [Thread-1 (]: Writing injected SQL for node "test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528"
+[0m19:09:56.405322 [debug] [Thread-4 (]: Finished running node test.data_warehouse.dbt_utils_source_equality_bronze_eca_cid__bdate__gen__ref_erp_cust_az12_.89104eec89
+[0m19:09:56.405608 [debug] [Thread-2 (]: Began executing node test.data_warehouse.dbt_utils_source_equality_bronze_erp_cust_az12_gwk_cid__bdate__gen__ref_erp_cust_az12_.5340c3198d
+[0m19:09:56.405873 [debug] [Thread-3 (]: Began running node test.data_warehouse.source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_.afca150cec
+[0m19:09:56.406211 [debug] [Thread-4 (]: Began running node test.data_warehouse.source_relationships_bronze_crm_cust_info_gwk_cst_key__cid__ref_erp_cust_az12_.714fb51859
+[0m19:09:56.406598 [debug] [Thread-2 (]: Finished running node test.data_warehouse.dbt_utils_source_equality_bronze_erp_cust_az12_gwk_cid__bdate__gen__ref_erp_cust_az12_.5340c3198d
+[0m19:09:56.406931 [debug] [Thread-1 (]: Began executing node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m19:09:56.407309 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.data_warehouse.min_row_crm_cust_info_1000000.2f6cbaa0c2, now test.data_warehouse.source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_.afca150cec)
+[0m19:09:56.407558 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_utils_source_equality_bronze_eca_cid__bdate__gen__ref_erp_cust_az12_.89104eec89, now test.data_warehouse.source_relationships_bronze_crm_cust_info_gwk_cst_key__cid__ref_erp_cust_az12_.714fb51859)
+[0m19:09:56.407776 [debug] [Thread-2 (]: Began running node model.data_warehouse.dim_customers
+[0m19:09:56.408143 [debug] [Thread-1 (]: Finished running node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m19:09:56.408346 [debug] [Thread-3 (]: Began compiling node test.data_warehouse.source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_.afca150cec
+[0m19:09:56.408564 [debug] [Thread-4 (]: Began compiling node test.data_warehouse.source_relationships_bronze_crm_cust_info_gwk_cst_key__cid__ref_erp_cust_az12_.714fb51859
+[0m19:09:56.408775 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_utils_source_equality_bronze_erp_cust_az12_gwk_cid__bdate__gen__ref_erp_cust_az12_.5340c3198d, now model.data_warehouse.dim_customers)
+[0m19:09:56.408969 [debug] [Thread-1 (]: Began running node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63
+[0m19:09:56.413577 [debug] [Thread-3 (]: Writing injected SQL for node "test.data_warehouse.source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_.afca150cec"
+[0m19:09:56.418119 [debug] [Thread-4 (]: Writing injected SQL for node "test.data_warehouse.source_relationships_bronze_crm_cust_info_gwk_cst_key__cid__ref_erp_cust_az12_.714fb51859"
+[0m19:09:56.418333 [debug] [Thread-2 (]: Began compiling node model.data_warehouse.dim_customers
+[0m19:09:56.418556 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528, now test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63)
+[0m19:09:56.418927 [debug] [Thread-3 (]: Began executing node test.data_warehouse.source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_.afca150cec
+[0m19:09:56.425263 [debug] [Thread-2 (]: Writing injected SQL for node "model.data_warehouse.dim_customers"
+[0m19:09:56.425530 [debug] [Thread-4 (]: Began executing node test.data_warehouse.source_relationships_bronze_crm_cust_info_gwk_cst_key__cid__ref_erp_cust_az12_.714fb51859
+[0m19:09:56.425824 [debug] [Thread-1 (]: Began compiling node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63
+[0m19:09:56.426224 [debug] [Thread-3 (]: Finished running node test.data_warehouse.source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_.afca150cec
+[0m19:09:56.426639 [debug] [Thread-4 (]: Finished running node test.data_warehouse.source_relationships_bronze_crm_cust_info_gwk_cst_key__cid__ref_erp_cust_az12_.714fb51859
+[0m19:09:56.426832 [debug] [Thread-2 (]: Began executing node model.data_warehouse.dim_customers
+[0m19:09:56.439615 [debug] [Thread-1 (]: Using postgres connection "test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63"
+[0m19:09:56.439874 [debug] [Thread-3 (]: Began running node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af
+[0m19:09:56.440162 [debug] [Thread-4 (]: Began running node test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2
+[0m19:09:56.440552 [debug] [Thread-2 (]: Finished running node model.data_warehouse.dim_customers
+[0m19:09:56.440791 [debug] [Thread-1 (]: On test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "DataWarehouse".INFORMATION_SCHEMA.columns
+      where table_name = 'erp_px_cat_g1v2'
+        
+        and table_schema = 'silver'
+        
+      order by ordinal_position
+
+  
+[0m19:09:56.441051 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.data_warehouse.source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_.afca150cec, now test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af)
+[0m19:09:56.441291 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.data_warehouse.source_relationships_bronze_crm_cust_info_gwk_cst_key__cid__ref_erp_cust_az12_.714fb51859, now test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2)
+[0m19:09:56.441522 [debug] [Thread-2 (]: Began running node model.data_warehouse.dim_products
+[0m19:09:56.441746 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:09:56.441939 [debug] [Thread-3 (]: Began compiling node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af
+[0m19:09:56.442119 [debug] [Thread-4 (]: Began compiling node test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2
+[0m19:09:56.442344 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.data_warehouse.dim_customers, now model.data_warehouse.dim_products)
+[0m19:09:56.447659 [debug] [Thread-3 (]: Using postgres connection "test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af"
+[0m19:09:56.450403 [debug] [Thread-4 (]: Using postgres connection "test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2"
+[0m19:09:56.450645 [debug] [Thread-2 (]: Began compiling node model.data_warehouse.dim_products
+[0m19:09:56.450889 [debug] [Thread-3 (]: On test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "DataWarehouse".INFORMATION_SCHEMA.columns
+      where table_name = 'erp_px_cat_g1v2'
+        
+        and table_schema = 'silver'
+        
+      order by ordinal_position
+
+  
+[0m19:09:56.451112 [debug] [Thread-4 (]: On test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "DataWarehouse".INFORMATION_SCHEMA.columns
+      where table_name = 'erp_px_cat_g1v2'
+        
+        and table_schema = 'bronze'
+        
+      order by ordinal_position
+
+  
+[0m19:09:56.452189 [debug] [Thread-2 (]: Writing injected SQL for node "model.data_warehouse.dim_products"
+[0m19:09:56.452429 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m19:09:56.452673 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m19:09:56.452932 [debug] [Thread-1 (]: SQL status: SELECT 4 in 0.011 seconds
+[0m19:09:56.453391 [debug] [Thread-2 (]: Began executing node model.data_warehouse.dim_products
+[0m19:09:56.455279 [debug] [Thread-1 (]: Writing injected SQL for node "test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63"
+[0m19:09:56.455715 [debug] [Thread-2 (]: Finished running node model.data_warehouse.dim_products
+[0m19:09:56.456060 [debug] [Thread-2 (]: Began running node model.data_warehouse.fact_sales
+[0m19:09:56.456237 [debug] [Thread-1 (]: Began executing node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63
+[0m19:09:56.456447 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.data_warehouse.dim_products, now model.data_warehouse.fact_sales)
+[0m19:09:56.456633 [debug] [Thread-1 (]: On test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63: ROLLBACK
+[0m19:09:56.456793 [debug] [Thread-2 (]: Began compiling node model.data_warehouse.fact_sales
+[0m19:09:56.457906 [debug] [Thread-2 (]: Writing injected SQL for node "model.data_warehouse.fact_sales"
+[0m19:09:56.458078 [debug] [Thread-1 (]: On test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63: Close
+[0m19:09:56.458450 [debug] [Thread-1 (]: Finished running node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63
+[0m19:09:56.458609 [debug] [Thread-2 (]: Began executing node model.data_warehouse.fact_sales
+[0m19:09:56.458977 [debug] [Thread-2 (]: Finished running node model.data_warehouse.fact_sales
+[0m19:09:56.459225 [debug] [Thread-1 (]: Began running node analysis.data_warehouse.product_sales_yearly
+[0m19:09:56.459403 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63, now analysis.data_warehouse.product_sales_yearly)
+[0m19:09:56.459548 [debug] [Thread-1 (]: Began compiling node analysis.data_warehouse.product_sales_yearly
+[0m19:09:56.460417 [debug] [Thread-1 (]: Writing injected SQL for node "analysis.data_warehouse.product_sales_yearly"
+[0m19:09:56.460645 [debug] [Thread-4 (]: SQL status: SELECT 4 in 0.008 seconds
+[0m19:09:56.460869 [debug] [Thread-3 (]: SQL status: SELECT 4 in 0.008 seconds
+[0m19:09:56.461668 [debug] [Thread-4 (]: Writing injected SQL for node "test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2"
+[0m19:09:56.461901 [debug] [Thread-1 (]: Began executing node analysis.data_warehouse.product_sales_yearly
+[0m19:09:56.462628 [debug] [Thread-3 (]: Writing injected SQL for node "test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af"
+[0m19:09:56.463063 [debug] [Thread-1 (]: Finished running node analysis.data_warehouse.product_sales_yearly
+[0m19:09:56.463254 [debug] [Thread-4 (]: Began executing node test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2
+[0m19:09:56.463565 [debug] [Thread-4 (]: On test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2: ROLLBACK
+[0m19:09:56.463764 [debug] [Thread-3 (]: Began executing node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af
+[0m19:09:56.463939 [debug] [Thread-4 (]: On test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2: Close
+[0m19:09:56.464129 [debug] [Thread-3 (]: On test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af: ROLLBACK
+[0m19:09:56.464458 [debug] [Thread-4 (]: Finished running node test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2
+[0m19:09:56.464603 [debug] [Thread-3 (]: On test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af: Close
+[0m19:09:56.464956 [debug] [Thread-3 (]: Finished running node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af
+[0m19:09:56.465549 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:09:56.465749 [debug] [MainThread]: Connection 'model.data_warehouse.fact_sales' was properly closed.
+[0m19:09:56.465887 [debug] [MainThread]: Connection 'analysis.data_warehouse.product_sales_yearly' was properly closed.
+[0m19:09:56.466009 [debug] [MainThread]: Connection 'test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af' was properly closed.
+[0m19:09:56.466131 [debug] [MainThread]: Connection 'test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2' was properly closed.
+[0m19:09:56.468183 [debug] [MainThread]: Command end result
+[0m19:09:56.503230 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m19:09:56.504359 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m19:09:56.505362 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m19:09:56.509896 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_project/target/run_results.json
+[0m19:09:56.510501 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 0.8810605, "process_in_blocks": "0", "process_kernel_time": 0.091133, "process_mem_max_rss": "139764", "process_out_blocks": "5704", "process_user_time": 1.7816}
+[0m19:09:56.510777 [debug] [MainThread]: Command `dbt compile` succeeded at 19:09:56.510728 after 0.88 seconds
+[0m19:09:56.510965 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ad626f9e20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ad626d65a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ad5f779370>]}
+[0m19:09:56.511157 [debug] [MainThread]: Flushing usage events
+[0m19:09:57.131418 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:11:10.199224 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8682ba6060>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8684a47cb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8683916690>]}
+
+
+============================== 19:11:10.202147 | bc4468b6-2d91-4b1d-a20a-51fc671ec2a9 ==============================
+[0m19:11:10.202147 [info ] [MainThread]: Running with dbt=1.12.5
+[0m19:11:10.202421 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'quiet': 'False', 'target_path': 'None', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'version_check': 'True', 'fail_fast': 'False', 'empty': 'False', 'use_experimental_parser': 'False', 'log_path': '/opt/airflow/dbt_project/logs', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '/opt/airflow/dbt_project', 'printer_width': '80', 'debug': 'False', 'invocation_command': 'dbt compile', 'log_format': 'default', 'maximum_seed_size_mib': '1', 'no_print': 'None', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'use_colors': 'True', 'partial_parse': 'True'}
+[0m19:11:10.301369 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'bc4468b6-2d91-4b1d-a20a-51fc671ec2a9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8682558b30>]}
+[0m19:11:10.336605 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'bc4468b6-2d91-4b1d-a20a-51fc671ec2a9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b86821d5850>]}
+[0m19:11:10.337101 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m19:11:10.390412 [debug] [MainThread]: checksum: 68111a01608c7414f2d0616e65852653b4b1b9b7a67b277583e7a70bf534f4f2, vars: {}, profile: dwh_profile, target: dev, version: 1.12.5
+[0m19:11:10.522883 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m19:11:10.523173 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m19:11:10.523330 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m19:11:10.529077 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'bc4468b6-2d91-4b1d-a20a-51fc671ec2a9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8681d3dc70>]}
+[0m19:11:10.731544 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m19:11:10.732801 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m19:11:10.738903 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m19:11:10.747023 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'bc4468b6-2d91-4b1d-a20a-51fc671ec2a9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b86804eae70>]}
+[0m19:11:10.747293 [info ] [MainThread]: Found 8 models, 1 snapshot, 1 analysis, 20 data tests, 1 seed, 3 operations, 12 sources, 920 macros, 1 unit test
+[0m19:11:10.747492 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bc4468b6-2d91-4b1d-a20a-51fc671ec2a9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b86804ea720>]}
+[0m19:11:10.749194 [info ] [MainThread]: 
+[0m19:11:10.749401 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m19:11:10.749550 [info ] [MainThread]: 
+[0m19:11:10.749837 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m19:11:10.752924 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse__test_failures'
+[0m19:11:10.753427 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse_silver'
+[0m19:11:10.759597 [debug] [ThreadPool]: Acquiring new postgres connection 'list_DataWarehouse_gold'
+[0m19:11:10.770318 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse__test_failures"
+[0m19:11:10.770538 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_silver"
+[0m19:11:10.770814 [debug] [ThreadPool]: Using postgres connection "list_DataWarehouse_gold"
+[0m19:11:10.771133 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse__test_failures"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike '_test_failures'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike '_test_failures'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike '_test_failures'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike '_test_failures'
+  
+[0m19:11:10.771388 [debug] [ThreadPool]: On list_DataWarehouse_silver: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_silver"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'silver'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'silver'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'silver'
+  
+[0m19:11:10.771635 [debug] [ThreadPool]: On list_DataWarehouse_gold: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "list_DataWarehouse_gold"} */
+select
+      'DataWarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold'
+    union all
+    select
+      'DataWarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold'
+    union all
+    select distinct
+     'DataWarehouse' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'gold'
+  
+[0m19:11:10.771824 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:11:10.771978 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:11:10.772148 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:11:10.777634 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.006 seconds
+[0m19:11:10.777874 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.006 seconds
+[0m19:11:10.778071 [debug] [ThreadPool]: SQL status: SELECT 34 in 0.006 seconds
+[0m19:11:10.778844 [debug] [ThreadPool]: On list_DataWarehouse_silver: ROLLBACK
+[0m19:11:10.779441 [debug] [ThreadPool]: On list_DataWarehouse_gold: ROLLBACK
+[0m19:11:10.780212 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: ROLLBACK
+[0m19:11:10.780438 [debug] [ThreadPool]: On list_DataWarehouse_silver: Close
+[0m19:11:10.780581 [debug] [ThreadPool]: On list_DataWarehouse_gold: Close
+[0m19:11:10.780722 [debug] [ThreadPool]: On list_DataWarehouse__test_failures: Close
+[0m19:11:10.786059 [debug] [MainThread]: Using postgres connection "master"
+[0m19:11:10.786402 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m19:11:10.786575 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:11:10.790158 [debug] [MainThread]: SQL status: SELECT 2 in 0.004 seconds
+[0m19:11:10.790999 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bc4468b6-2d91-4b1d-a20a-51fc671ec2a9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8680563230>]}
+[0m19:11:10.791221 [debug] [MainThread]: On master: ROLLBACK
+[0m19:11:10.791399 [debug] [MainThread]: On master: Close
+[0m19:11:10.793393 [debug] [Thread-1 (]: Began running node model.data_warehouse.crm_cust_info
+[0m19:11:10.793615 [debug] [Thread-2 (]: Began running node model.data_warehouse.crm_sales_details
+[0m19:11:10.793864 [debug] [Thread-3 (]: Began running node model.data_warehouse.erp_cust_az12
+[0m19:11:10.794096 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DataWarehouse__test_failures, now model.data_warehouse.crm_cust_info)
+[0m19:11:10.794360 [debug] [Thread-4 (]: Began running node model.data_warehouse.erp_loc_a101
+[0m19:11:10.794670 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DataWarehouse_gold, now model.data_warehouse.crm_sales_details)
+[0m19:11:10.794917 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_DataWarehouse_silver, now model.data_warehouse.erp_cust_az12)
+[0m19:11:10.795140 [debug] [Thread-1 (]: Began compiling node model.data_warehouse.crm_cust_info
+[0m19:11:10.795411 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.data_warehouse.erp_loc_a101'
+[0m19:11:10.795594 [debug] [Thread-2 (]: Began compiling node model.data_warehouse.crm_sales_details
+[0m19:11:10.795771 [debug] [Thread-3 (]: Began compiling node model.data_warehouse.erp_cust_az12
+[0m19:11:10.798828 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_warehouse.crm_cust_info"
+[0m19:11:10.799031 [debug] [Thread-4 (]: Began compiling node model.data_warehouse.erp_loc_a101
+[0m19:11:10.802766 [debug] [Thread-2 (]: Writing injected SQL for node "model.data_warehouse.crm_sales_details"
+[0m19:11:10.803765 [debug] [Thread-3 (]: Writing injected SQL for node "model.data_warehouse.erp_cust_az12"
+[0m19:11:10.804122 [debug] [Thread-1 (]: Began executing node model.data_warehouse.crm_cust_info
+[0m19:11:10.805062 [debug] [Thread-4 (]: Writing injected SQL for node "model.data_warehouse.erp_loc_a101"
+[0m19:11:10.805385 [debug] [Thread-2 (]: Began executing node model.data_warehouse.crm_sales_details
+[0m19:11:10.805813 [debug] [Thread-1 (]: Finished running node model.data_warehouse.crm_cust_info
+[0m19:11:10.806014 [debug] [Thread-3 (]: Began executing node model.data_warehouse.erp_cust_az12
+[0m19:11:10.806386 [debug] [Thread-2 (]: Finished running node model.data_warehouse.crm_sales_details
+[0m19:11:10.806590 [debug] [Thread-1 (]: Began running node model.data_warehouse.erp_px_cat_g1v2
+[0m19:11:10.807581 [debug] [Thread-4 (]: Began executing node model.data_warehouse.erp_loc_a101
+[0m19:11:10.808044 [debug] [Thread-3 (]: Finished running node model.data_warehouse.erp_cust_az12
+[0m19:11:10.808246 [debug] [Thread-2 (]: Began running node operation.data_warehouse.data_warehouse-on-run-start-0
+[0m19:11:10.808483 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.data_warehouse.crm_cust_info, now model.data_warehouse.erp_px_cat_g1v2)
+[0m19:11:10.808843 [debug] [Thread-4 (]: Finished running node model.data_warehouse.erp_loc_a101
+[0m19:11:10.809013 [debug] [Thread-3 (]: Began running node operation.data_warehouse.data_warehouse-on-run-start-1
+[0m19:11:10.809267 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.data_warehouse.crm_sales_details, now operation.data_warehouse.data_warehouse-on-run-start-0)
+[0m19:11:10.809451 [debug] [Thread-1 (]: Began compiling node model.data_warehouse.erp_px_cat_g1v2
+[0m19:11:10.809660 [debug] [Thread-4 (]: Began running node operation.data_warehouse.data_warehouse-on-run-start-2
+[0m19:11:10.809876 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.data_warehouse.erp_cust_az12, now operation.data_warehouse.data_warehouse-on-run-start-1)
+[0m19:11:10.810030 [debug] [Thread-2 (]: Began compiling node operation.data_warehouse.data_warehouse-on-run-start-0
+[0m19:11:10.810927 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_warehouse.erp_px_cat_g1v2"
+[0m19:11:10.811144 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.data_warehouse.erp_loc_a101, now operation.data_warehouse.data_warehouse-on-run-start-2)
+[0m19:11:10.811318 [debug] [Thread-3 (]: Began compiling node operation.data_warehouse.data_warehouse-on-run-start-1
+[0m19:11:10.812509 [info ] [Thread-2 (]: 
+--------------------------------------------Hello there!---------------------------------------
+
+[0m19:11:10.812778 [debug] [Thread-4 (]: Began compiling node operation.data_warehouse.data_warehouse-on-run-start-2
+[0m19:11:10.813463 [debug] [Thread-3 (]: Writing injected SQL for node "operation.data_warehouse.data_warehouse-on-run-start-1"
+[0m19:11:10.813678 [debug] [Thread-1 (]: Began executing node model.data_warehouse.erp_px_cat_g1v2
+[0m19:11:10.813910 [debug] [Thread-2 (]: Writing injected SQL for node "operation.data_warehouse.data_warehouse-on-run-start-0"
+[0m19:11:10.814610 [debug] [Thread-4 (]: Writing injected SQL for node "operation.data_warehouse.data_warehouse-on-run-start-2"
+[0m19:11:10.815052 [debug] [Thread-1 (]: Finished running node model.data_warehouse.erp_px_cat_g1v2
+[0m19:11:10.815264 [debug] [Thread-3 (]: Began executing node operation.data_warehouse.data_warehouse-on-run-start-1
+[0m19:11:10.815601 [debug] [Thread-1 (]: Began running node seed.data_warehouse.seed_full_moon_dates
+[0m19:11:10.815839 [debug] [Thread-2 (]: Began executing node operation.data_warehouse.data_warehouse-on-run-start-0
+[0m19:11:10.816247 [debug] [Thread-3 (]: Finished running node operation.data_warehouse.data_warehouse-on-run-start-1
+[0m19:11:10.816417 [debug] [Thread-4 (]: Began executing node operation.data_warehouse.data_warehouse-on-run-start-2
+[0m19:11:10.816650 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.data_warehouse.erp_px_cat_g1v2, now seed.data_warehouse.seed_full_moon_dates)
+[0m19:11:10.816985 [debug] [Thread-2 (]: Finished running node operation.data_warehouse.data_warehouse-on-run-start-0
+[0m19:11:10.817188 [debug] [Thread-3 (]: Began running node snapshot.data_warehouse.crm_prd_info
+[0m19:11:10.817506 [debug] [Thread-4 (]: Finished running node operation.data_warehouse.data_warehouse-on-run-start-2
+[0m19:11:10.817673 [debug] [Thread-1 (]: Began compiling node seed.data_warehouse.seed_full_moon_dates
+[0m19:11:10.817877 [debug] [Thread-2 (]: Began running node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_ela_cntry__7.ed9bf66166
+[0m19:11:10.818092 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly operation.data_warehouse.data_warehouse-on-run-start-1, now snapshot.data_warehouse.crm_prd_info)
+[0m19:11:10.818287 [debug] [Thread-4 (]: Began running node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_gwk_cntry__7.07b0906d5a
+[0m19:11:10.818694 [debug] [Thread-1 (]: Began executing node seed.data_warehouse.seed_full_moon_dates
+[0m19:11:10.818914 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly operation.data_warehouse.data_warehouse-on-run-start-0, now test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_ela_cntry__7.ed9bf66166)
+[0m19:11:10.819091 [debug] [Thread-3 (]: Began compiling node snapshot.data_warehouse.crm_prd_info
+[0m19:11:10.819396 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly operation.data_warehouse.data_warehouse-on-run-start-2, now test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_gwk_cntry__7.07b0906d5a)
+[0m19:11:10.819714 [debug] [Thread-1 (]: Finished running node seed.data_warehouse.seed_full_moon_dates
+[0m19:11:10.819880 [debug] [Thread-2 (]: Began compiling node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_ela_cntry__7.ed9bf66166
+[0m19:11:10.821042 [debug] [Thread-3 (]: Writing injected SQL for node "snapshot.data_warehouse.crm_prd_info"
+[0m19:11:10.821233 [debug] [Thread-4 (]: Began compiling node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_gwk_cntry__7.07b0906d5a
+[0m19:11:10.821436 [debug] [Thread-1 (]: Began running node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_crm_sales_details_sls_price__200__0__0_95.3918eab3e4
+[0m19:11:10.829560 [debug] [Thread-2 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_ela_cntry__7.ed9bf66166"
+[0m19:11:10.832579 [debug] [Thread-4 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_gwk_cntry__7.07b0906d5a"
+[0m19:11:10.832846 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.data_warehouse.seed_full_moon_dates, now test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_crm_sales_details_sls_price__200__0__0_95.3918eab3e4)
+[0m19:11:10.833102 [debug] [Thread-3 (]: Began executing node snapshot.data_warehouse.crm_prd_info
+[0m19:11:10.833541 [debug] [Thread-1 (]: Began compiling node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_crm_sales_details_sls_price__200__0__0_95.3918eab3e4
+[0m19:11:10.833883 [debug] [Thread-3 (]: Finished running node snapshot.data_warehouse.crm_prd_info
+[0m19:11:10.834044 [debug] [Thread-4 (]: Began executing node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_gwk_cntry__7.07b0906d5a
+[0m19:11:10.834229 [debug] [Thread-2 (]: Began executing node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_ela_cntry__7.ed9bf66166
+[0m19:11:10.840903 [debug] [Thread-1 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_crm_sales_details_sls_price__200__0__0_95.3918eab3e4"
+[0m19:11:10.841138 [debug] [Thread-3 (]: Began running node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_csd_sls_price__200__0__0_95.8f5f048583
+[0m19:11:10.841546 [debug] [Thread-4 (]: Finished running node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_gwk_cntry__7.07b0906d5a
+[0m19:11:10.841889 [debug] [Thread-2 (]: Finished running node test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_ela_cntry__7.ed9bf66166
+[0m19:11:10.842129 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly snapshot.data_warehouse.crm_prd_info, now test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_csd_sls_price__200__0__0_95.8f5f048583)
+[0m19:11:10.842336 [debug] [Thread-4 (]: Began running node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_.b1ebef143f
+[0m19:11:10.842508 [debug] [Thread-1 (]: Began executing node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_crm_sales_details_sls_price__200__0__0_95.3918eab3e4
+[0m19:11:10.842728 [debug] [Thread-2 (]: Began running node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_gwk_cntry___w_.a5c58afd40
+[0m19:11:10.842910 [debug] [Thread-3 (]: Began compiling node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_csd_sls_price__200__0__0_95.8f5f048583
+[0m19:11:10.843097 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_erp_loc_a101_gwk_cntry__7.07b0906d5a, now test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_.b1ebef143f)
+[0m19:11:10.843419 [debug] [Thread-1 (]: Finished running node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_crm_sales_details_sls_price__200__0__0_95.3918eab3e4
+[0m19:11:10.843598 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_expectations_source_expect_column_distinct_count_to_equal_bronze_ela_cntry__7.ed9bf66166, now test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_gwk_cntry___w_.a5c58afd40)
+[0m19:11:10.846594 [debug] [Thread-3 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_csd_sls_price__200__0__0_95.8f5f048583"
+[0m19:11:10.846878 [debug] [Thread-4 (]: Began compiling node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_.b1ebef143f
+[0m19:11:10.847199 [debug] [Thread-1 (]: Began running node test.data_warehouse.accepted_values_crm_cust_info_cst_gndr__Female__Male__n_a.a8372533ea
+[0m19:11:10.847401 [debug] [Thread-2 (]: Began compiling node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_gwk_cntry___w_.a5c58afd40
+[0m19:11:10.854406 [debug] [Thread-4 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_.b1ebef143f"
+[0m19:11:10.854829 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_crm_sales_details_sls_price__200__0__0_95.3918eab3e4, now test.data_warehouse.accepted_values_crm_cust_info_cst_gndr__Female__Male__n_a.a8372533ea)
+[0m19:11:10.855235 [debug] [Thread-3 (]: Began executing node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_csd_sls_price__200__0__0_95.8f5f048583
+[0m19:11:10.858768 [debug] [Thread-2 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_gwk_cntry___w_.a5c58afd40"
+[0m19:11:10.859040 [debug] [Thread-1 (]: Began compiling node test.data_warehouse.accepted_values_crm_cust_info_cst_gndr__Female__Male__n_a.a8372533ea
+[0m19:11:10.859224 [debug] [Thread-4 (]: Began executing node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_.b1ebef143f
+[0m19:11:10.859595 [debug] [Thread-3 (]: Finished running node test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_csd_sls_price__200__0__0_95.8f5f048583
+[0m19:11:10.868668 [debug] [Thread-1 (]: Writing injected SQL for node "test.data_warehouse.accepted_values_crm_cust_info_cst_gndr__Female__Male__n_a.a8372533ea"
+[0m19:11:10.869373 [debug] [Thread-4 (]: Finished running node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_.b1ebef143f
+[0m19:11:10.869649 [debug] [Thread-2 (]: Began executing node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_gwk_cntry___w_.a5c58afd40
+[0m19:11:10.869899 [debug] [Thread-3 (]: Began running node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m19:11:10.870201 [debug] [Thread-4 (]: Began running node test.data_warehouse.create_cust_date_test_crm_cust_info_cst_create_date__2025_10_01.99fd3c47ef
+[0m19:11:10.870404 [debug] [Thread-1 (]: Began executing node test.data_warehouse.accepted_values_crm_cust_info_cst_gndr__Female__Male__n_a.a8372533ea
+[0m19:11:10.870708 [debug] [Thread-2 (]: Finished running node test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_gwk_cntry___w_.a5c58afd40
+[0m19:11:10.870918 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_expectations_source_expect_column_quantile_values_to_be_between_bronze_csd_sls_price__200__0__0_95.8f5f048583, now test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a)
+[0m19:11:10.871132 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_ela_cntry___w_.b1ebef143f, now test.data_warehouse.create_cust_date_test_crm_cust_info_cst_create_date__2025_10_01.99fd3c47ef)
+[0m19:11:10.871452 [debug] [Thread-1 (]: Finished running node test.data_warehouse.accepted_values_crm_cust_info_cst_gndr__Female__Male__n_a.a8372533ea
+[0m19:11:10.871632 [debug] [Thread-2 (]: Began running node test.data_warehouse.crm_cust_info_jon
+[0m19:11:10.871822 [debug] [Thread-3 (]: Began compiling node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m19:11:10.871990 [debug] [Thread-4 (]: Began compiling node test.data_warehouse.create_cust_date_test_crm_cust_info_cst_create_date__2025_10_01.99fd3c47ef
+[0m19:11:10.872172 [debug] [Thread-1 (]: Began running node test.data_warehouse.dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_.1edd85fcb6
+[0m19:11:10.872359 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_expectations_source_expect_column_values_to_match_regex_bronze_erp_loc_a101_gwk_cntry___w_.a5c58afd40, now test.data_warehouse.crm_cust_info_jon)
+[0m19:11:10.878346 [debug] [Thread-3 (]: Writing injected SQL for node "test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a"
+[0m19:11:10.883855 [debug] [Thread-4 (]: Writing injected SQL for node "test.data_warehouse.create_cust_date_test_crm_cust_info_cst_create_date__2025_10_01.99fd3c47ef"
+[0m19:11:10.884077 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.data_warehouse.accepted_values_crm_cust_info_cst_gndr__Female__Male__n_a.a8372533ea, now test.data_warehouse.dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_.1edd85fcb6)
+[0m19:11:10.884273 [debug] [Thread-2 (]: Began compiling node test.data_warehouse.crm_cust_info_jon
+[0m19:11:10.884549 [debug] [Thread-1 (]: Began compiling node test.data_warehouse.dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_.1edd85fcb6
+[0m19:11:10.884743 [debug] [Thread-3 (]: Began executing node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m19:11:10.884925 [debug] [Thread-4 (]: Began executing node test.data_warehouse.create_cust_date_test_crm_cust_info_cst_create_date__2025_10_01.99fd3c47ef
+[0m19:11:10.885743 [debug] [Thread-2 (]: Writing injected SQL for node "test.data_warehouse.crm_cust_info_jon"
+[0m19:11:10.897533 [debug] [Thread-1 (]: Writing injected SQL for node "test.data_warehouse.dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_.1edd85fcb6"
+[0m19:11:10.897887 [debug] [Thread-3 (]: Finished running node test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a
+[0m19:11:10.898549 [debug] [Thread-4 (]: Finished running node test.data_warehouse.create_cust_date_test_crm_cust_info_cst_create_date__2025_10_01.99fd3c47ef
+[0m19:11:10.898902 [debug] [Thread-3 (]: Began running node test.data_warehouse.min_row_crm_cust_info_1000000.2f6cbaa0c2
+[0m19:11:10.899071 [debug] [Thread-2 (]: Began executing node test.data_warehouse.crm_cust_info_jon
+[0m19:11:10.899301 [debug] [Thread-1 (]: Began executing node test.data_warehouse.dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_.1edd85fcb6
+[0m19:11:10.899540 [debug] [Thread-4 (]: Began running node test.data_warehouse.dbt_utils_source_equality_bronze_eca_cid__bdate__gen__ref_erp_cust_az12_.89104eec89
+[0m19:11:10.899784 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.data_warehouse.accepted_values_crm_cust_info_cst_marital_status__Single__Married.f47d814f6a, now test.data_warehouse.min_row_crm_cust_info_1000000.2f6cbaa0c2)
+[0m19:11:10.900117 [debug] [Thread-2 (]: Finished running node test.data_warehouse.crm_cust_info_jon
+[0m19:11:10.900430 [debug] [Thread-1 (]: Finished running node test.data_warehouse.dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_.1edd85fcb6
+[0m19:11:10.900634 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.data_warehouse.create_cust_date_test_crm_cust_info_cst_create_date__2025_10_01.99fd3c47ef, now test.data_warehouse.dbt_utils_source_equality_bronze_eca_cid__bdate__gen__ref_erp_cust_az12_.89104eec89)
+[0m19:11:10.900811 [debug] [Thread-3 (]: Began compiling node test.data_warehouse.min_row_crm_cust_info_1000000.2f6cbaa0c2
+[0m19:11:10.901006 [debug] [Thread-2 (]: Began running node test.data_warehouse.dbt_utils_source_equality_bronze_erp_cust_az12_gwk_cid__bdate__gen__ref_erp_cust_az12_.5340c3198d
+[0m19:11:10.901236 [debug] [Thread-1 (]: Began running node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m19:11:10.901424 [debug] [Thread-4 (]: Began compiling node test.data_warehouse.dbt_utils_source_equality_bronze_eca_cid__bdate__gen__ref_erp_cust_az12_.89104eec89
+[0m19:11:10.904669 [debug] [Thread-3 (]: Writing injected SQL for node "test.data_warehouse.min_row_crm_cust_info_1000000.2f6cbaa0c2"
+[0m19:11:10.904913 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.data_warehouse.crm_cust_info_jon, now test.data_warehouse.dbt_utils_source_equality_bronze_erp_cust_az12_gwk_cid__bdate__gen__ref_erp_cust_az12_.5340c3198d)
+[0m19:11:10.905140 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_expectations_expect_table_row_count_to_equal_other_table_crm_cust_info_source_bronze_cci_.1edd85fcb6, now test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528)
+[0m19:11:10.925665 [debug] [Thread-4 (]: Writing injected SQL for node "test.data_warehouse.dbt_utils_source_equality_bronze_eca_cid__bdate__gen__ref_erp_cust_az12_.89104eec89"
+[0m19:11:10.925945 [debug] [Thread-2 (]: Began compiling node test.data_warehouse.dbt_utils_source_equality_bronze_erp_cust_az12_gwk_cid__bdate__gen__ref_erp_cust_az12_.5340c3198d
+[0m19:11:10.926211 [debug] [Thread-1 (]: Began compiling node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m19:11:10.926433 [debug] [Thread-3 (]: Began executing node test.data_warehouse.min_row_crm_cust_info_1000000.2f6cbaa0c2
+[0m19:11:10.931377 [debug] [Thread-2 (]: Writing injected SQL for node "test.data_warehouse.dbt_utils_source_equality_bronze_erp_cust_az12_gwk_cid__bdate__gen__ref_erp_cust_az12_.5340c3198d"
+[0m19:11:10.937302 [debug] [Thread-1 (]: Writing injected SQL for node "test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528"
+[0m19:11:10.937516 [debug] [Thread-4 (]: Began executing node test.data_warehouse.dbt_utils_source_equality_bronze_eca_cid__bdate__gen__ref_erp_cust_az12_.89104eec89
+[0m19:11:10.937921 [debug] [Thread-3 (]: Finished running node test.data_warehouse.min_row_crm_cust_info_1000000.2f6cbaa0c2
+[0m19:11:10.938275 [debug] [Thread-2 (]: Began executing node test.data_warehouse.dbt_utils_source_equality_bronze_erp_cust_az12_gwk_cid__bdate__gen__ref_erp_cust_az12_.5340c3198d
+[0m19:11:10.938590 [debug] [Thread-4 (]: Finished running node test.data_warehouse.dbt_utils_source_equality_bronze_eca_cid__bdate__gen__ref_erp_cust_az12_.89104eec89
+[0m19:11:10.938808 [debug] [Thread-3 (]: Began running node test.data_warehouse.source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_.afca150cec
+[0m19:11:10.938983 [debug] [Thread-1 (]: Began executing node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m19:11:10.939398 [debug] [Thread-2 (]: Finished running node test.data_warehouse.dbt_utils_source_equality_bronze_erp_cust_az12_gwk_cid__bdate__gen__ref_erp_cust_az12_.5340c3198d
+[0m19:11:10.939631 [debug] [Thread-4 (]: Began running node test.data_warehouse.source_relationships_bronze_crm_cust_info_gwk_cst_key__cid__ref_erp_cust_az12_.714fb51859
+[0m19:11:10.939880 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.data_warehouse.min_row_crm_cust_info_1000000.2f6cbaa0c2, now test.data_warehouse.source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_.afca150cec)
+[0m19:11:10.940226 [debug] [Thread-1 (]: Finished running node test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528
+[0m19:11:10.940449 [debug] [Thread-2 (]: Began running node model.data_warehouse.dim_customers
+[0m19:11:10.940705 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_utils_source_equality_bronze_eca_cid__bdate__gen__ref_erp_cust_az12_.89104eec89, now test.data_warehouse.source_relationships_bronze_crm_cust_info_gwk_cst_key__cid__ref_erp_cust_az12_.714fb51859)
+[0m19:11:10.940903 [debug] [Thread-3 (]: Began compiling node test.data_warehouse.source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_.afca150cec
+[0m19:11:10.941092 [debug] [Thread-1 (]: Began running node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63
+[0m19:11:10.941327 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.data_warehouse.dbt_utils_source_equality_bronze_erp_cust_az12_gwk_cid__bdate__gen__ref_erp_cust_az12_.5340c3198d, now model.data_warehouse.dim_customers)
+[0m19:11:10.941545 [debug] [Thread-4 (]: Began compiling node test.data_warehouse.source_relationships_bronze_crm_cust_info_gwk_cst_key__cid__ref_erp_cust_az12_.714fb51859
+[0m19:11:10.946155 [debug] [Thread-3 (]: Writing injected SQL for node "test.data_warehouse.source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_.afca150cec"
+[0m19:11:10.946386 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.data_warehouse.relationships_crm_cust_info_cst_key__cid__ref_erp_cust_az12_.8ec70a3528, now test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63)
+[0m19:11:10.946590 [debug] [Thread-2 (]: Began compiling node model.data_warehouse.dim_customers
+[0m19:11:10.951169 [debug] [Thread-4 (]: Writing injected SQL for node "test.data_warehouse.source_relationships_bronze_crm_cust_info_gwk_cst_key__cid__ref_erp_cust_az12_.714fb51859"
+[0m19:11:10.951475 [debug] [Thread-1 (]: Began compiling node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63
+[0m19:11:10.957874 [debug] [Thread-2 (]: Writing injected SQL for node "model.data_warehouse.dim_customers"
+[0m19:11:10.958085 [debug] [Thread-3 (]: Began executing node test.data_warehouse.source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_.afca150cec
+[0m19:11:10.971045 [debug] [Thread-1 (]: Using postgres connection "test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63"
+[0m19:11:10.971281 [debug] [Thread-4 (]: Began executing node test.data_warehouse.source_relationships_bronze_crm_cust_info_gwk_cst_key__cid__ref_erp_cust_az12_.714fb51859
+[0m19:11:10.971674 [debug] [Thread-3 (]: Finished running node test.data_warehouse.source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_.afca150cec
+[0m19:11:10.971854 [debug] [Thread-2 (]: Began executing node model.data_warehouse.dim_customers
+[0m19:11:10.972063 [debug] [Thread-1 (]: On test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "DataWarehouse".INFORMATION_SCHEMA.columns
+      where table_name = 'erp_px_cat_g1v2'
+        
+        and table_schema = 'silver'
+        
+      order by ordinal_position
+
+  
+[0m19:11:10.972370 [debug] [Thread-4 (]: Finished running node test.data_warehouse.source_relationships_bronze_crm_cust_info_gwk_cst_key__cid__ref_erp_cust_az12_.714fb51859
+[0m19:11:10.972562 [debug] [Thread-3 (]: Began running node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af
+[0m19:11:10.972851 [debug] [Thread-2 (]: Finished running node model.data_warehouse.dim_customers
+[0m19:11:10.973032 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:11:10.973221 [debug] [Thread-4 (]: Began running node test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2
+[0m19:11:10.973432 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.data_warehouse.source_relationships_bronze_cci_cst_key__cid__ref_erp_cust_az12_.afca150cec, now test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af)
+[0m19:11:10.973610 [debug] [Thread-2 (]: Began running node model.data_warehouse.dim_products
+[0m19:11:10.973864 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.data_warehouse.source_relationships_bronze_crm_cust_info_gwk_cst_key__cid__ref_erp_cust_az12_.714fb51859, now test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2)
+[0m19:11:10.974042 [debug] [Thread-3 (]: Began compiling node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af
+[0m19:11:10.974243 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.data_warehouse.dim_customers, now model.data_warehouse.dim_products)
+[0m19:11:10.974431 [debug] [Thread-4 (]: Began compiling node test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2
+[0m19:11:10.979532 [debug] [Thread-3 (]: Using postgres connection "test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af"
+[0m19:11:10.979884 [debug] [Thread-2 (]: Began compiling node model.data_warehouse.dim_products
+[0m19:11:10.982687 [debug] [Thread-4 (]: Using postgres connection "test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2"
+[0m19:11:10.982908 [debug] [Thread-3 (]: On test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "DataWarehouse".INFORMATION_SCHEMA.columns
+      where table_name = 'erp_px_cat_g1v2'
+        
+        and table_schema = 'silver'
+        
+      order by ordinal_position
+
+  
+[0m19:11:10.984386 [debug] [Thread-2 (]: Writing injected SQL for node "model.data_warehouse.dim_products"
+[0m19:11:10.984585 [debug] [Thread-1 (]: SQL status: SELECT 4 in 0.012 seconds
+[0m19:11:10.984801 [debug] [Thread-4 (]: On test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2: /* {"app": "dbt", "dbt_version": "1.12.5", "profile_name": "dwh_profile", "target_name": "dev", "node_id": "test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "DataWarehouse".INFORMATION_SCHEMA.columns
+      where table_name = 'erp_px_cat_g1v2'
+        
+        and table_schema = 'bronze'
+        
+      order by ordinal_position
+
+  
+[0m19:11:10.985014 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m19:11:10.987066 [debug] [Thread-1 (]: Writing injected SQL for node "test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63"
+[0m19:11:10.987304 [debug] [Thread-2 (]: Began executing node model.data_warehouse.dim_products
+[0m19:11:10.987489 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m19:11:10.987935 [debug] [Thread-2 (]: Finished running node model.data_warehouse.dim_products
+[0m19:11:10.988141 [debug] [Thread-1 (]: Began executing node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63
+[0m19:11:10.988421 [debug] [Thread-1 (]: On test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63: ROLLBACK
+[0m19:11:10.988806 [debug] [Thread-2 (]: Began running node model.data_warehouse.fact_sales
+[0m19:11:10.988989 [debug] [Thread-1 (]: On test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63: Close
+[0m19:11:10.989201 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.data_warehouse.dim_products, now model.data_warehouse.fact_sales)
+[0m19:11:10.989535 [debug] [Thread-1 (]: Finished running node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63
+[0m19:11:10.989721 [debug] [Thread-2 (]: Began compiling node model.data_warehouse.fact_sales
+[0m19:11:10.991399 [debug] [Thread-2 (]: Writing injected SQL for node "model.data_warehouse.fact_sales"
+[0m19:11:10.991791 [debug] [Thread-2 (]: Began executing node model.data_warehouse.fact_sales
+[0m19:11:10.992242 [debug] [Thread-2 (]: Finished running node model.data_warehouse.fact_sales
+[0m19:11:10.992525 [debug] [Thread-1 (]: Began running node analysis.data_warehouse.product_sales_yearly
+[0m19:11:10.992694 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.data_warehouse.source_mac_compare_dynamic_columns_bronze_epcg_ref_erp_px_cat_g1v2___X_maintenance.0c7954bc63, now analysis.data_warehouse.product_sales_yearly)
+[0m19:11:10.992832 [debug] [Thread-1 (]: Began compiling node analysis.data_warehouse.product_sales_yearly
+[0m19:11:10.993710 [debug] [Thread-1 (]: Writing injected SQL for node "analysis.data_warehouse.product_sales_yearly"
+[0m19:11:10.993963 [debug] [Thread-1 (]: Began executing node analysis.data_warehouse.product_sales_yearly
+[0m19:11:10.994263 [debug] [Thread-1 (]: Finished running node analysis.data_warehouse.product_sales_yearly
+[0m19:11:10.995592 [debug] [Thread-3 (]: SQL status: SELECT 4 in 0.011 seconds
+[0m19:11:10.996357 [debug] [Thread-3 (]: Writing injected SQL for node "test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af"
+[0m19:11:10.996572 [debug] [Thread-4 (]: SQL status: SELECT 4 in 0.009 seconds
+[0m19:11:10.997335 [debug] [Thread-4 (]: Writing injected SQL for node "test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2"
+[0m19:11:10.997634 [debug] [Thread-3 (]: Began executing node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af
+[0m19:11:10.997926 [debug] [Thread-3 (]: On test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af: ROLLBACK
+[0m19:11:10.998138 [debug] [Thread-4 (]: Began executing node test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2
+[0m19:11:10.998358 [debug] [Thread-4 (]: On test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2: ROLLBACK
+[0m19:11:10.998518 [debug] [Thread-3 (]: On test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af: Close
+[0m19:11:10.998851 [debug] [Thread-3 (]: Finished running node test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af
+[0m19:11:10.998992 [debug] [Thread-4 (]: On test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2: Close
+[0m19:11:10.999373 [debug] [Thread-4 (]: Finished running node test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2
+[0m19:11:10.999968 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:11:11.000158 [debug] [MainThread]: Connection 'analysis.data_warehouse.product_sales_yearly' was properly closed.
+[0m19:11:11.000292 [debug] [MainThread]: Connection 'test.data_warehouse.source_mac_compare_dynamic_columns_bronze_erp_px_cat_g1v2_gwk_ref_erp_px_cat_g1v2___X_maintenance.30db2c78af' was properly closed.
+[0m19:11:11.000413 [debug] [MainThread]: Connection 'model.data_warehouse.fact_sales' was properly closed.
+[0m19:11:11.000530 [debug] [MainThread]: Connection 'test.data_warehouse.sql_compare_dynamic_columns_erp_px_cat_g1v2' was properly closed.
+[0m19:11:11.002503 [debug] [MainThread]: Command end result
+[0m19:11:11.037211 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_project/target/manifest.json
+[0m19:11:11.038301 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_project/target/semantic_manifest.json
+[0m19:11:11.039310 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/dbt_project/target/osi_document.json
+[0m19:11:11.043783 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_project/target/run_results.json
+[0m19:11:11.044355 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 0.8790167, "process_in_blocks": "0", "process_kernel_time": 0.100174, "process_mem_max_rss": "139800", "process_out_blocks": "5712", "process_user_time": 1.752047}
+[0m19:11:11.044623 [debug] [MainThread]: Command `dbt compile` succeeded at 19:11:11.044575 after 0.88 seconds
+[0m19:11:11.044804 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8684a47cb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8684a71820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b86805629c0>]}
+[0m19:11:11.044991 [debug] [MainThread]: Flushing usage events
+[0m19:11:11.654951 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:12:39.306531 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x709c9ed7f740>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x709c9e75faa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x709c9ca39940>]}
+
+
+============================== 19:12:39.309501 | f81537cd-e1d2-440a-9fb6-f92bfe4109e7 ==============================
+[0m19:12:39.309501 [info ] [MainThread]: Running with dbt=1.12.5
+[0m19:12:39.309768 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'empty': 'None', 'write_json': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'hints_enabled': 'True', 'fail_fast': 'False', 'log_cache_events': 'False', 'static_parser': 'True', 'warn_error': 'None', 'use_experimental_parser': 'False', 'introspect': 'True', 'maximum_seed_size_mib': '1', 'no_print': 'None', 'invocation_command': 'dbt clean', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'partial_parse': 'True', 'profiles_dir': '/opt/airflow/dbt_project', 'use_colors': 'True', 'log_path': '/opt/airflow/dbt_project/logs', 'version_check': 'True', 'printer_width': '80', 'cache_selected_only': 'False', 'debug': 'False'}
+[0m19:12:39.372758 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f81537cd-e1d2-440a-9fb6-f92bfe4109e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x709c9cf88c80>]}
+[0m19:12:39.382387 [debug] [MainThread]: Resource report: {"command_name": "clean", "command_success": true, "command_wall_clock_time": 0.10935867, "process_in_blocks": "0", "process_kernel_time": 0.068087, "process_mem_max_rss": "114232", "process_out_blocks": "8", "process_user_time": 1.02332}
+[0m19:12:39.382625 [debug] [MainThread]: Command `dbt clean` succeeded at 19:12:39.382581 after 0.11 seconds
+[0m19:12:39.382780 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x709c9d2c6030>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x709c9bc42db0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x709c9ba33dd0>]}
+[0m19:12:39.382935 [debug] [MainThread]: Flushing usage events
+[0m19:12:39.985085 [debug] [MainThread]: An error was encountered while trying to flush usage events
