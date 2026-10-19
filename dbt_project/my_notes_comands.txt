@@ -45,6 +45,7 @@
 {% endif %}
 
 ---------------------------------------------------------------------------------------------------------------------------
+--DEBUG
 --warehouse connection
 dbt debug
 ---------------------------------------------------------------------------------------------------------------------------
@@ -61,7 +62,8 @@ dbt parse
 dbt complie
 
 ---------------------------------------------------------------------------------------------------------------------------
---CLEAN TARGET FOLDER
+--CLEAN TARGET AND PACKAGES FOLDER
+-- def in dbt_project.yml : clean-targets: ["target", "dbt_packages"]
 dbt clean
 
 ---------------------------------------------------------------------------------------------------------------------------
@@ -73,7 +75,42 @@ dbt clean
 dbt deps
 
 ---------------------------------------------------------------------------------------------------------------------------
---TEST /RUN
+--BUILD
+--dbt seed + dbt run + dbt snapshot + dbt test
+
+---------------------------------------------------------------------------------------------------------------------------
+--RUN MATERIALIZE
+dbt run -s crm_cust_info
+
+--run with limit 0
+dbt run --empty
+
+---<time expression>  działa względem kolumny event_time którą trzeba wskazać na config modelu
+dbt run --sample <time expression>
+
+dbt run -s crm_cust_info --sample "3 days"
+
+---------------------------------------------------------------------------------------------------------------------------
+--SHOW
+airflow@2c8d81a066d2:/opt/airflow/dbt_project$ dbt show -s crm_prd_info
+19:20:13  Running with dbt=1.12.5
+19:20:13  Registered adapter: postgres=1.11.0
+19:20:14  Found 8 models, 1 snapshot, 1 analysis, 20 data tests, 1 seed, 3 operations, 12 sources, 920 macros, 1 unit test
+19:20:14
+19:20:14  Concurrency: 4 threads (target='dev')
+19:20:14
+Previewing node 'crm_prd_info':
+| prd_id | cat_id | prd_key | prd_nm               | prd_cost | prd_line    | ... |
+| ------ | ------ | ------- | -------------------- | -------- | ----------- | --- |
+|    478 | AC_BC  | BC-M005 | Mountain Bottle Cage |        4 | Moutain     | ... |
+|    479 | AC_BC  | BC-R205 | Road Bottle Cage     |        3 | Road        | ... |
+|    477 | AC_BC  | WB-H098 | Water Bottle - 30... |        2 | Other Sales | ... |
+|    483 | AC_BR  | RA-H123 | Hitch Rack - 4-Bike  |       45 | Other Sales | ... |
+
+
+
+---------------------------------------------------------------------------------------------------------------------------
+--TEST
 dbt test -s crm_cust_info
 
 ---------------------------------------------------------------------------------------------------------------------------
