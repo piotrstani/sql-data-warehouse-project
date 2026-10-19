@@ -1,6 +1,7 @@
 {{ config(
     materialized='table',
-    unique_key='cst_id'
+    unique_key='cst_id',
+    event_time='cst_create_date'
 ) }}
 
 WITH source_data AS (
