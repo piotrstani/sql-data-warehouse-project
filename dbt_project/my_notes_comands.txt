@@ -127,4 +127,26 @@ dbt test --select source:bronze
 
 ---------------------------------------------------------------------------------------------------------------------------
 --RUN BY TAG
-dbt test -s source:bronze.ela,tag:gwk
+dbt test -s source:bronze.ela,tag:tests2
+
+dbt test -s tag:all
+dbt test -s tag:tst3
+dbt test -s source:bronze.test_crm_cust_info --vars '{"table_id": "_info"}'
+
+TABLE_ID="_info" dbt test -s source:bronze.test_crm_cust_info
+TABLE_ID="_info" dbt test -s tag:tst1
+
+export TABLE_ID="_info"
+dbt test -s source:bronze.test_crm_cust_info
+
+/dbt_project/sources
+.
+├── bronze
+│   └── sources.yml
+└── bronze_test
+    ├── crm_cust_info.yml
+    ├── crm_prd_info.yml
+    └── crm_sales_details.yml
+
+ALTER DATABASE "DataWarehouse" SET client_min_messages = ERROR;
+UPDATE pg_database SET datcollversion = NULL WHERE datname = 'DataWarehouse'
