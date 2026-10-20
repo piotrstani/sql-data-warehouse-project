@@ -1,0 +1,8 @@
+version: 2
+sources:
+  - name: bronze
+    tags: [ 'all','tst2', ]
+    schema: bronze
+    tables:
+      - name: test_crm_prd_info
+        identifier: crm_prd_info
