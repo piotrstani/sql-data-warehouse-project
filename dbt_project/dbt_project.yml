@@ -8,7 +8,7 @@ profile: 'dwh_profile'
 vars:
   audit_schema: "audit"
 
-model-paths: ["models"]
+model-paths: ["models", "sources"]
 clean-targets: ["target"]
 seed-paths: ["seeds"]
 snapshot-paths: ["snapshots"]
