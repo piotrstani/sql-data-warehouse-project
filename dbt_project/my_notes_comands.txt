@@ -117,9 +117,6 @@ dbt test -s crm_cust_info
 --COMPILE /SHOW
 dbt compile --inline 'SELECT * from {{ ref("crm_cust_info") }} WHERE {{ no_empty_strings(ref("crm_cust_info")) }}'
 
----------------------------------------------------------------------------------------------------------------------------
---SOURCES TESTING
-dbt test --select source:bronze
 
 ---------------------------------------------------------------------------------------------------------------------------
 --RUN ONLY MACRO
@@ -131,10 +128,21 @@ dbt test --select source:bronze
 dbt_project$ dbt run -s tags:fact
 
 ---------------------------------------------------------------------------------------------------------------------------
+--RUN WITH SELECTORS / DAG FILTER
+-- +model downstream modelu
+-- 1+model downstream modelu 1 poziom w dół
+-- model+ upstream modelu
+-- @model downstream + upstream modelu
+dbt run -s crm_sales_details+
+
+---------------------------------------------------------------------------------------------------------------------------
 --SNAPSHOT SCD2 BY TAG
 --START snapshot silver.crm_prd_info
 dbt snapshot -s tag:scd2
 
+---------------------------------------------------------------------------------------------------------------------------
+--TEST
+dbt test --select source:bronze
 
 ---------------------------------------------------------------------------------------------------------------------------
 --TEST BY TAG
@@ -142,6 +150,9 @@ dbt test -s source:bronze.ela,tag:tests2
 
 dbt test -s tag:all
 dbt test -s tag:tst3
+
+---------------------------------------------------------------------------------------------------------------------------
+--TEST WITH VARS
 dbt test -s source:bronze.test_crm_cust_info --vars '{"table_id": "_info"}'
 
 TABLE_ID="_info" dbt test -s source:bronze.test_crm_cust_info
@@ -149,6 +160,12 @@ TABLE_ID="_info" dbt test -s tag:tst1
 
 export TABLE_ID="_info"
 dbt test -s source:bronze.test_crm_cust_info
+
+---------------------------------------------------------------------------------------------------------------------------
+--TEST WITH PATHS
+dbt test -s path:sources/bronze_test/crm_sales_details.yml
+dbt test -s path:sources/bronze_test/crm_cust_info.yml --vars '{"table_id": "_info"}'
+
 
 /dbt_project/sources
 .
