@@ -1,0 +1,16 @@
+version: 2
+sources:
+  - name: bronze
+    tags: [ 'all','tst3', ]
+    schema: bronze
+    tables:
+      - name: test_crm_sales_details
+        identifier: crm_sales_details
+        columns:
+          - name: sls_price
+            data_tests:
+              - dbt_expectations.expect_column_quantile_values_to_be_between:
+                  arguments:
+                    quantile: .95
+                    min_value: 0
+                    max_value: 200

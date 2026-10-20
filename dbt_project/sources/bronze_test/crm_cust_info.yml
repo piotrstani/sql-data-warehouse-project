@@ -1,0 +1,28 @@
+version: 2
+sources:
+  - name: bronze
+    tags: [ 'all','tst1', ]
+    schema: bronze
+    tables:
+      - name: test_crm_cust_info
+        #identifier: crm_cust_info
+        #VAR
+        #identifier: crm_cust{{ var('table_id', '') }} #crm_cust + _info
+        #ENV
+        identifier: crm_cust{{ env_var('TABLE_ID', '') }} #crm_cust + _info
+        loaded_at_field: cst_create_date::timestamp
+        freshness:
+          warn_after: {count: 1, period: day}
+          error_after: {count: 5, period: day}
+        columns:
+          - name: cst_id
+            data_type: integer
+          - name: cst_key
+            data_type: varchar(50)
+            data_tests:
+              - relationships:
+                  arguments:
+                    to: ref('erp_cust_az12')
+                    field: cid
+                  config:
+                    severity: warn
