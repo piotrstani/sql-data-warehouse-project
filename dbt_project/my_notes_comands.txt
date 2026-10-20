@@ -127,6 +127,17 @@ dbt test --select source:bronze
 
 ---------------------------------------------------------------------------------------------------------------------------
 --RUN BY TAG
+--START sql incremental model silver.crm_sales_details
+dbt_project$ dbt run -s tags:fact
+
+---------------------------------------------------------------------------------------------------------------------------
+--SNAPSHOT SCD2 BY TAG
+--START snapshot silver.crm_prd_info
+dbt snapshot -s tag:scd2
+
+
+---------------------------------------------------------------------------------------------------------------------------
+--TEST BY TAG
 dbt test -s source:bronze.ela,tag:tests2
 
 dbt test -s tag:all

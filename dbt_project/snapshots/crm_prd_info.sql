@@ -8,7 +8,8 @@
         unique_key='prd_id',
         strategy='check',
         check_cols='all',
-        invalidate_hard_deletes=True
+        invalidate_hard_deletes=True,
+        tags='scd2'
     )
 }}
 

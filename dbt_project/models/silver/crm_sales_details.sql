@@ -2,7 +2,8 @@
     materialized='incremental',
     incremental_strategy='append',
     on_schema_change='fail',
-    unique_key='sls_ord_num'
+    unique_key='sls_ord_num',
+    tags='fact'
 ) }}
 
 WITH source_data AS (
