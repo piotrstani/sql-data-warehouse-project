@@ -32,7 +32,14 @@ select
 )
 
 SELECT * FROM transformed_data src
-
+WHERE sls_order_dt is not null
 {% if is_incremental() %}
-    WHERE sls_order_dt > (SELECT coalesce(MAX(sls_order_dt), '1900-01-01') FROM {{ this }})
+  {% if var("start_date", False) and var("end_date", False) %}
+    {{ log('Loading ' ~ this ~ ' incrementally (start_date: ' ~ var("start_date") ~ ', end_date: ' ~ var("end_date") ~ ')', info=True) }}
+    AND sls_order_dt >= '{{ var("start_date") }}'
+    AND sls_order_dt < '{{ var("end_date") }}'
+  {% else %}
+    AND sls_order_dt > (SELECT coalesce(MAX(sls_order_dt), '1900-01-01') FROM {{ this }})
+    {{ log('Loading ' ~ this ~ ' incrementally (all missing dates)', info=True)}}
+  {% endif %}
 {% endif %}
