@@ -7,6 +7,7 @@ profile: 'dwh_profile'
 # Definicja zmiennej Jinja
 vars:
   audit_schema: "audit"
+  user_name: default_user_name
 
 model-paths: ["models", "sources"]
 clean-targets: ["target"]
