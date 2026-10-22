@@ -63,3 +63,10 @@ models:
               arguments:
                 cutoff_date: '2025-10-01'
   - name: erp_cust_az12
+    versions:
+      - v: 1
+        defined_in: erp_cust_az12
+        deprecation_date: 2026-10-21
+      - v: 2
+        defined_in: erp_cust_az12_v2
+    latest_version: 2

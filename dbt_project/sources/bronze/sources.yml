@@ -19,7 +19,7 @@ sources:
             data_tests:
               - relationships:
                   arguments:
-                    to: ref('erp_cust_az12')
+                    to: ref('erp_cust_az12', v=1)
                     field: cid
                   config:
                     severity: warn
@@ -41,7 +41,7 @@ sources:
           - dbt_utils.equality:
               arguments:
                 # Wskazujesz tabelę/model referencyjny do porównania
-                compare_model: "ref('erp_cust_az12')"
+                compare_model: "ref('erp_cust_az12', v=1)"
                 # Wskazujesz tylko te kolumny, których wartości chcesz sprawdzić
                 compare_columns:
                   - cid
