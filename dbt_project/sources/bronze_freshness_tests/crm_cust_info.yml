@@ -1,0 +1,11 @@
+version: 2
+sources:
+  - name: tests_bronze_freshness
+    schema: bronze
+    tables:
+      - name: test_freshness_crm_cust_info
+        identifier: crm_cust_info
+        loaded_at_field: cst_create_date::timestamp
+        freshness:
+          warn_after: {count: 1, period: day}
+          error_after: {count: 5, period: day}

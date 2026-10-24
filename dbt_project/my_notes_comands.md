@@ -127,6 +127,10 @@ dbt test -s source:bronze.test_crm_cust_info
 - `dbt test -s path:sources/bronze_test/crm_cust_info.yml --vars '{"table_id": "_info"}'`
 
 ---
+### FRESHNESS
+`dbt source freshness -s path:sources/bronze_freshness_tests`
+
+---
 ### RETRY
 - retry zasobów które zakończyły się błędem (ERROR) lub zostały pominięte (SKIP), komenda  automatycznie odczytuje stan z pliku run_results.json w folderze target/
 - `dbt retry`
