@@ -4,3 +4,4 @@
 /.idea/data_source_mapping.xml
 dbt_project/dbt_packages/
 dbt_project/logs/
+dbt_project/target/
