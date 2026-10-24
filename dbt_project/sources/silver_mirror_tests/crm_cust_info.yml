@@ -1,8 +1,9 @@
 version: 2
 sources:
-  - name: silver_mirror_tests
+  - name: tests_silver_mirror
     tags: [ 'all','tst1', ]
     schema: silver
+    description: '{{ doc("opis_silver_mirror_tests") }}'
     tables:
       - name: test_mirror_crm_cust_info
         #identifier: crm_cust_info
