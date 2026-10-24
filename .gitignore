@@ -2,3 +2,4 @@
 /.idea/dataSources.xml
 /.idea/sqldialects.xml
 /.idea/data_source_mapping.xml
+dbt_project/dbt_packages/
