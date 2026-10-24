@@ -1,0 +1,8 @@
+version: 2
+sources:
+  - name: tests_gold_biz_test
+    schema: gold
+    description: '{{ doc("opis_gold_biz_tests") }}'
+    tables:
+      - name: test_biz_fact_sales
+        identifier: fact_sales

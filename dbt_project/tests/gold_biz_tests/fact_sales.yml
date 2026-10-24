@@ -1,0 +1,11 @@
+#Katalog tests/ jest zarezerwowany wyłącznie dla testów singularnych (skryptów .sql) oraz plików .yml, które służą do ich konfiguracji.
+#Silnik dbt domyślnie nie szuka w tym folderze definicji tabel zewnętrznych, dlatego próba zadeklarowania źródła w tym miejscu zakończy się zignorowaniem pliku lub błędem parsowania.
+version: 2
+
+tests:
+  - name: fact_sales_assert_dates_are_chronological
+    description: "Ten test weryfikuje logikę chronologiczną dat w tabeli fact_sales."
+    config:
+      severity: warn             # Zmienia zachowanie: znalezione błędy wygenerują [WARN], a nie [ERROR]
+      error_if: "> 50"           # Test obleje (ERROR) dopiero, gdy znajdzie więcej niż 50 błędnych wierszy
+      tags: ['gold_biz', 'sales']
