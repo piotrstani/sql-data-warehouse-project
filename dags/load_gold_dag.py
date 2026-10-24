@@ -56,7 +56,7 @@ with DAG(
         task_id='dbt_run_gold_models',
         bash_command=(
             "export DBT_PROFILES_DIR=/opt/airflow/dbt_project && "
-            "/opt/airflow/dbt_venv/bin/dbt run "
+            "dbt run "
             "--project-dir /opt/airflow/dbt_project "
             "--select gold"
         ),
