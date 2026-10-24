@@ -1,6 +1,6 @@
 version: 2
 sources:
-  - name: silver_mirror_tests
+  - name: tests_sliver_scd2
     tags: [ 'all','tst2', ]
     schema: silver
     tables:
@@ -9,7 +9,8 @@ sources:
         # Testy na poziomie tabeli:
         tests:
           - dbt_utils.mutually_exclusive_ranges:
-              partition_by: prd_id     # Klucz biznesowy (np. ID klienta/zamówienia)
-              lower_bound_column: dbt_valid_from # Kolumna początku obowiązywania
-              upper_bound_column: dbt_valid_to   # Kolumna końca obowiązywania
-              gaps: allowed
+              arguments:
+                partition_by: prd_id     # Klucz biznesowy (np. ID klienta/zamówienia)
+                lower_bound_column: dbt_valid_from # Kolumna początku obowiązywania
+                upper_bound_column: dbt_valid_to   # Kolumna końca obowiązywania
+                gaps: allowed
