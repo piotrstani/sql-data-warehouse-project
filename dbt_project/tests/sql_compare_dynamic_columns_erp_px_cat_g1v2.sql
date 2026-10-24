@@ -1,5 +1,5 @@
 ---erp_px_cat_g1v2 brak transformacij
-{% set source_relation = source('bronze', 'epcg') %}
+{% set source_relation = source('bronze', 'erp_px_cat_g1v2') %}
 {% set target_relation = ref('erp_px_cat_g1v2') %}
 
 -- 1. Zdefiniuj listę kolumn, które chcesz pominąć w porównaniu (np. techniczne timestampy)

@@ -7,7 +7,7 @@
 WITH source_data AS (
     -- Deduplikacja danych źródłowych z warstwy Bronze
     SELECT DISTINCT ON (cst_id) *
-    FROM {{ source('bronze', 'cci') }}
+    FROM {{ source('bronze', 'crm_cust_info') }}
     WHERE cst_id is not null
     ORDER BY cst_id, cst_create_date DESC
 ),

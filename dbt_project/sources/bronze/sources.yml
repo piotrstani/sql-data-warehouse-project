@@ -3,7 +3,7 @@ sources:
   - name: bronze
     schema: bronze
     tables:
-      - name: cci
+      - name: crm_cust_info
         identifier: crm_cust_info
         loaded_at_field: cst_create_date::timestamp
         freshness:
@@ -23,9 +23,9 @@ sources:
                     field: cid
                   config:
                     severity: warn
-      - name: cpi
+      - name: crm_prd_info
         identifier: crm_prd_info
-      - name: csd
+      - name: crm_sales_details
         identifier: crm_sales_details
         columns:
           - name: sls_price
@@ -35,7 +35,7 @@ sources:
                     quantile: .95
                     min_value: 0
                     max_value: 200
-      - name: eca
+      - name: erp_cust_az12
         identifier: erp_cust_az12
         data_tests:
           - dbt_utils.equality:
@@ -47,7 +47,7 @@ sources:
                   - cid
                   - bdate
                   - gen
-      - name: ela
+      - name: erp_loc_a101
         identifier: erp_loc_a101
         columns:
           - name: cntry
@@ -60,7 +60,7 @@ sources:
             - dbt_expectations.expect_column_values_to_match_regex:
                 arguments:
                   regex: '\w+'
-      - name: epcg
+      - name: erp_px_cat_g1v2
         identifier: erp_px_cat_g1v2
         data_tests:
            # dwa testy:

@@ -5,7 +5,7 @@
 
 WITH source_data AS (
     SELECT *
-    FROM {{ source('bronze', 'eca') }}
+    FROM {{ source('bronze', 'erp_cust_az12') }}
 ),
 
 transformed_data AS (

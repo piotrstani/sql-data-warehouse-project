@@ -13,7 +13,7 @@ models:
             min_row_cnt: 1000000
       - dbt_expectations.expect_table_row_count_to_equal_other_table:
           arguments:
-            compare_model: "source('bronze', 'cci')"
+            compare_model: "source('bronze', 'crm_cust_info')"
     description: 'Stores customer information'
     columns:
       - name: cst_id

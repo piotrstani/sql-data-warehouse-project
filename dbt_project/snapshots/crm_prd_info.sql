@@ -15,7 +15,7 @@
 
 WITH source_data AS (
     SELECT *
-    FROM {{ source('bronze', 'cpi') }}
+    FROM {{ source('bronze', 'crm_prd_info') }}
 ),
 
 transformed_data AS (
