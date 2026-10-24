@@ -1,19 +1,16 @@
 version: 2
 sources:
-  - name: bronze
+  - name: silver_mirror_tests
     tags: [ 'all','tst1', ]
-    schema: bronze
+    schema: silver
     tables:
-      - name: test_crm_cust_info
+      - name: test_mirror_crm_cust_info
         #identifier: crm_cust_info
         #VAR
         #identifier: crm_cust{{ var('table_id', '') }} #crm_cust + _info
         #ENV
-        identifier: crm_cust{{ env_var('TABLE_ID', '') }} #crm_cust + _info
-        loaded_at_field: cst_create_date::timestamp
-        freshness:
-          warn_after: {count: 1, period: day}
-          error_after: {count: 5, period: day}
+        #identifier: crm_cust{{ env_var('TABLE_ID', '') }} #crm_cust + _info
+        identifier: crm_cust_info
         columns:
           - name: cst_id
             data_type: integer

@@ -1,11 +1,12 @@
 version: 2
 sources:
-  - name: bronze
+  - name: sliver_scd2_test
     tags: [ 'all','tst3', ]
-    schema: bronze
+    schema: silver
     tables:
-      - name: test_crm_sales_details
+      - name: test_mirror_crm_sales_details
         identifier: crm_sales_details
+        description: 'Test test'
         columns:
           - name: sls_price
             data_tests:

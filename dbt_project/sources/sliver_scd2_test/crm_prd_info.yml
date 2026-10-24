@@ -1,0 +1,15 @@
+version: 2
+sources:
+  - name: silver_mirror_tests
+    tags: [ 'all','tst2', ]
+    schema: silver
+    tables:
+      - name: test_scd2_crm_prd_info
+        identifier: crm_prd_info
+        # Testy na poziomie tabeli:
+        tests:
+          - dbt_utils.mutually_exclusive_ranges:
+              partition_by: prd_id     # Klucz biznesowy (np. ID klienta/zamówienia)
+              lower_bound_column: dbt_valid_from # Kolumna początku obowiązywania
+              upper_bound_column: dbt_valid_to   # Kolumna końca obowiązywania
+              gaps: allowed
