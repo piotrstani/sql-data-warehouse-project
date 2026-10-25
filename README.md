@@ -141,7 +141,7 @@ docker logs sql-data-warehouse-airflow | grep password
 ```
 Powinieneś zobaczyć linijkę typu: `Airflow standalone is for development purposes only... password: <losowy_ciąg_znaków>`
 
-- **OPCJA 2: **Usunięcie konta `admin` i utworzenie go ponownie z hasłem (zawsze działa)**
+- **OPCJA 2: Usunięcie konta `admin` i utworzenie go ponownie z hasłem (zawsze działa)**
 Komunikat `admin already exist in the db` oznacza, że mechanizm `standalone` zdążył jednak utworzyć to konto w tle, ale hasło przepadło gdzieś w gąszczu logów (lub zostało nadpisane przez inne procesy startowe).
 
 1. Usuń istniejące konto `admin`:
@@ -233,6 +233,19 @@ Stycznie poprzez wywołanie `dbt docs generate` a następnie otworzenie w przegl
 dbt docs generate
 dbt docs serve --port 8080 --host 0.0.0.0
 ```
+
+---
+## 🗺️ Roadmapa i plany na przyszłość 
+
+Ponieważ traktuję ten projekt jako żywy poligon doświadczalny, lista rzeczy do przetestowania i wdrożenia stale rośnie:
+
+* **[TODO] Refaktoryzacja hurtowni:** Uzupełnienie brakujących opisów dla tabel i kluczowych kolumn, ogólne uporządkowanie struktury hurtowni.
+* **[TODO] Sprawdzenie dbt Fusion:** Zbadanie i przetestowanie możliwości, jak może zoptymalizować zarządzanie modelami i integrację danych.
+* **[TODO] Warstwa Ingestion / Processing (PySpark):** rezygnacja z wywoływania procedur wbudowanych na rzecz przetwarzania i ładowania na **PySparka** (do praktyczna nauka ekosystemu Apache Spark).
+* **[TODO] Zaawansowana orkiestracja - refaktoryzacja DAG-ów w Airflow.** Do weryfikacji pakiet *Astronomer Cosmos*, dynamiczne mapowanie modeli dbt jako osobnych tasków w interfejsie Airflow.
+* **[TBD] Migracja do Cloud DWH:** Przeniesienie warstwy storage'u z lokalnego PostgreSQL na chmurową hurtownię danych (rozważam Snowflake lub Google BigQuery).
+* **[TBD] CI/CD (Slim CI):** Stworzenie automatycznych (pipelines). Pull Request automatycznie uruchamia kontener, buduje środowisko efemeryczne i odpala `dbt test` oraz `dbt build` (tzw. Slim CI).
+* **[TBD] Warstwa Wizualizacji (BI):** Podłączenie open-source'owego narzędzia Business Intelligence (np. Metabase lub Apache Superset)
 
 ---
 ## 👤 Autor
