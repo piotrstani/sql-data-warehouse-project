@@ -17,7 +17,7 @@ models:
     description: 'Stores customer information'
     columns:
       - name: cst_id
-        data_type: integer
+        data_type: int
         description: 'Unique numerical identifier assigned to each customer'
       - name: cst_key
         data_type: varchar(50)
@@ -30,15 +30,15 @@ models:
               config:
                 severity: warn
       - name: cst_firstname
-        data_type: string
+        data_type: varchar(50)
         description: 'The customer''s first name, as recorded in the system'
       - name: cst_lastname
-        data_type: string
+        data_type: varchar(50)
         constraints:
           - type: not_null
         description: 'The customer''s last name or family name'
       - name: cst_marital_status
-        data_type: string
+        data_type: varchar(50)
         description: 'The marital status of the customer'
         data_tests:
           - accepted_values:
@@ -47,7 +47,7 @@ models:
               config:
                 severity: warn
       - name: cst_gndr
-        data_type: string
+        data_type: varchar(50)
         description: 'The gender of the customer'
         data_tests:
           - accepted_values:
@@ -62,6 +62,8 @@ models:
           - create_cust_date_test:
               arguments:
                 cutoff_date: '2025-10-01'
+      - name: dwh_create_ts
+        data_type: timestamptz
   - name: erp_cust_az12
     versions:
       - v: 1

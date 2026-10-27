@@ -30,7 +30,9 @@ transformed_data AS (
             WHEN UPPER(TRIM(cst_gndr)) = 'M' THEN 'Male'
             ELSE 'n/a'
         END AS cst_gndr,
-        cst_create_date
+        cst_create_date,
+        -- Zastępuje DEFAULT GETDATE()
+        {{ current_timestamp() }} AS dwh_create_ts
     FROM source_data
 )
 
