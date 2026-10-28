@@ -40,6 +40,8 @@ WHERE sls_order_dt is not null
     AND sls_order_dt < '{{ var("end_date") }}'
   {% else %}
     AND sls_order_dt > (SELECT coalesce(MAX(sls_order_dt), '1900-01-01') FROM {{ this }})
-    {{ log('Loading ' ~ this ~ ' incrementally (all missing dates)', info=True)}}
+    {% if execute %}
+        {{ log('Loading "DataWarehouse"."silver"."crm_sales_details" incrementally...', info=True) }}
+    {% endif %}
   {% endif %}
 {% endif %}
