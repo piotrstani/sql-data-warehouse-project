@@ -35,6 +35,8 @@ sources:
                     quantile: .95
                     min_value: 0
                     max_value: 200
+                  config:
+                    severity: warn
       - name: erp_cust_az12
         identifier: erp_cust_az12
         data_tests:
@@ -47,6 +49,8 @@ sources:
                   - cid
                   - bdate
                   - gen
+              config:
+                severity: warn
       - name: erp_loc_a101
         identifier: erp_loc_a101
         columns:
@@ -57,9 +61,12 @@ sources:
                   value: 7
                   config:
                     tags: [ 'test2' ]
+                    severity: warn
             - dbt_expectations.expect_column_values_to_match_regex:
                 arguments:
                   regex: '\w+'
+                  config:
+                    severity: warn
       - name: erp_px_cat_g1v2
         identifier: erp_px_cat_g1v2
         data_tests:

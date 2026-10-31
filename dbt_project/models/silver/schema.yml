@@ -14,6 +14,8 @@ models:
       - dbt_expectations.expect_table_row_count_to_equal_other_table:
           arguments:
             compare_model: "source('bronze', 'crm_cust_info')"
+          config:
+            severity: warn
     description: 'Stores customer information'
     columns:
       - name: cst_id

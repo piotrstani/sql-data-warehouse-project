@@ -18,4 +18,4 @@ unit_tests:
     expect:
       rows:
         - {gender: 'Male'}
-        - {gender: 'test' }
+        - {gender: 'Female' }
