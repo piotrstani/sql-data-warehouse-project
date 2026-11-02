@@ -234,13 +234,14 @@ dbt docs serve --port 8080 --host 0.0.0.0
 Ponieważ traktuję ten projekt jako żywy poligon doświadczalny, lista rzeczy do przetestowania i wdrożenia stale rośnie:
 
 * **[TODO] Refaktoryzacja hurtowni:** Uzupełnienie brakujących opisów dla tabel i kluczowych kolumn, ogólne uporządkowanie struktury hurtowni.
-* **[TODO] Sprawdzenie dbt Fusion:** Zbadanie i przetestowanie możliwości, jak może zoptymalizować zarządzanie modelami i integrację danych.
-* **[TODO] Warstwa Ingestion / Processing (PySpark):** rezygnacja z wywoływania procedur wbudowanych na rzecz przetwarzania i ładowania na **PySparka** (do praktyczna nauka ekosystemu Apache Spark).
-* **[TODO] Zaawansowana orkiestracja - refaktoryzacja DAG-ów w Airflow.** Do weryfikacji pakiet *Astronomer Cosmos*, dynamiczne mapowanie modeli dbt jako osobnych tasków w interfejsie Airflow.
+* **[TODO] dbt Fusion:** Zbadanie i przetestowanie możliwości, jak może zoptymalizować zarządzanie modelami i integrację danych.
+* **[TODO] Data Catalog:** Zbadanie i przetestowanie możliwości DataHub OSS.
+* **[TODO] Monitoring:** Zbadanie i przetestowanie możliwości: Elementary OSS (Historia testów, awarie, trendy, anomali). Późniejszy etap: Grafana + Loki/Prometheus.
+* **[TODO] Zaawansowana orkiestracja - refaktoryzacja DAG-ów w Airflow.** Do weryfikacji: Dagster, pakiet *Astronomer Cosmos*- dynamiczne mapowanie modeli dbt jako osobnych tasków w interfejsie Airflow.
 * **[TBD] Migracja do Cloud DWH:** Przeniesienie warstwy storage'u z lokalnego PostgreSQL na chmurową hurtownię danych (rozważam Snowflake lub Google BigQuery).
 * **[TBD] CI/CD (Slim CI):** Stworzenie automatycznych (pipelines). Pull Request automatycznie uruchamia kontener, buduje środowisko efemeryczne i odpala `dbt test` oraz `dbt build` (tzw. Slim CI).
 * **[TBD] Warstwa Wizualizacji (BI):** Podłączenie open-source'owego narzędzia Business Intelligence (np. Metabase lub Apache Superset)
-
+* **[TBD] Warstwa Ingestion / Processing (PySpark):** rezygnacja z wywoływania procedur wbudowanych na rzecz przetwarzania i ładowania na **PySparka** (do praktyczna nauka ekosystemu Apache Spark).
 ---
 ## 👤 Autor
 
