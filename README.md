@@ -66,9 +66,9 @@ sql-data-warehouse-project/
 ├── datasets/                   # Statyczne pliki z danymi źródłowymi (CSV)
 ├── dbt_project/                # Główny katalog projektu Data Build Tool
 │   ├── models/                 # Modele transformacji SQL (bronze, silver, gold)
-│   │   ├── bronze/
 │   │   ├── silver/
 │   │   └── gold/
+│   ├── snapshots/              # Definicjie snapshotów mechanizmu podobnego do SCD Type 2
 │   ├── sources/                # Deklaracje źródeł zewnętrznych (YAML)
 │   │   ├── bronze/             # Deklaracje źródeł dla modeli transformacji
 │   ├── tests/                  # Testy singular
