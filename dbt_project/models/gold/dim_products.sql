@@ -19,7 +19,7 @@ WITH crm_prd_info AS (
 , dim_data AS (
 select
     '{{ v_due_dt_val }}'::date as due_dt,
-	MD5(cpi.prd_key::text) AS product_key,
+	MD5(cpi.prd_id::text) AS product_key,
 	cpi.prd_id as product_id,
 	cpi.prd_key as product_number,
 	cpi.prd_nm as product_name,
