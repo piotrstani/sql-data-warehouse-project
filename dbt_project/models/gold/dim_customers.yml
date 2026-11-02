@@ -6,10 +6,14 @@ models:
       - name: customer_key
         description: 'Surrogate key uniquely identifying each customer record in the dimension table'
         meta:
-          primary_key: true  #widok ale mozna zasygnalizować że to PK dla narzędzi takich jak DataHub
+          primary_key: true
         data_tests:
-          - unique
-          - not_null
+          - not_null:
+              config:
+                tags: ['pk_test_gold']
+          - unique:
+              config:
+                tags: ['pk_test_gold']
       - name: customer_id
         description: 'Unique numerical identifier assigned to each customer'
       - name: customer_number
