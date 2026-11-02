@@ -70,14 +70,8 @@ sql-data-warehouse-project/
 │   │   ├── silver/
 │   │   └── gold/
 │   ├── sources/                # Deklaracje źródeł zewnętrznych (YAML)
-│   │   ├── bronze              # Deklaracje źródeł dla modeli transformacji
-│   │   ├── bronze_freshness_tests/  # TBD Deklaracje modeli jako źródeł testowych (dbt jako repozytorium testów)
-│   │   ├── silver_mirror_tests/     # jw
-│   │   ├── bronze_freshness_tests/  # jw
-│   │   ├── gold_biz_tests           # jw
-│   │   └── silver_scd2_tests/       # jw
-│   ├── tests/                  # Testy singularne
-│   │   └── gold_biz_tests/     # TBD Reguły walidacji logiki biznesowej (dbt jako repozytorium testów)
+│   │   ├── bronze/             # Deklaracje źródeł dla modeli transformacji
+│   ├── tests/                  # Testy singular
 │   ├── dbt_project.yml         # Konfiguracja projektu dbt
 │   └── packages.yml            # Zależności dbt (dbt-utils, dbt-expectations)
 ├── docker/                     # Pliki Dockerfile i konfiguracje obrazów (np. niestandardowy Airflow)
