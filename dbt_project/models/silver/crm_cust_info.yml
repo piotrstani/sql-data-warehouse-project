@@ -18,9 +18,11 @@ models:
             severity: warn
     description: 'Stores customer information'
     columns:
+
       - name: cst_id
         data_type: int
         description: 'Unique numerical identifier assigned to each customer'
+
       - name: cst_key
         data_type: varchar(50)
         description: 'Alphanumeric identifier representing the customer'
@@ -31,14 +33,18 @@ models:
                 field: cid
               config:
                 severity: warn
+
       - name: cst_firstname
         data_type: varchar(50)
         description: 'The customer''s first name, as recorded in the system'
+
       - name: cst_lastname
         data_type: varchar(50)
+        description: 'The customer''s last name or family name'
         constraints:
           - type: not_null
-        description: 'The customer''s last name or family name'
+
+
       - name: cst_marital_status
         data_type: varchar(50)
         description: 'The marital status of the customer'
@@ -48,6 +54,7 @@ models:
                 values: ['Single','Married']
               config:
                 severity: warn
+
       - name: cst_gndr
         data_type: varchar(50)
         description: 'The gender of the customer'
@@ -57,6 +64,7 @@ models:
                 values: [ 'Female','Male','n/a']
               config:
                 severity: warn
+
       - name: cst_create_date
         data_type: date
         description: 'The date and time when the customer record was created in the system'
@@ -64,5 +72,7 @@ models:
           - create_cust_date_test:
               arguments:
                 cutoff_date: '2025-10-01'
+
       - name: dwh_create_ts
         data_type: timestamptz
+        description: "Timestamp indicating when the record was loaded into the Data Warehouse."
