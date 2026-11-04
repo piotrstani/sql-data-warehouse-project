@@ -14,6 +14,15 @@ sources:
           - name: cst_id
             data_type: integer
             description: 'Unique numerical identifier assigned to each customer'
+            data_tests:
+              - not_null:
+                  config:
+                    severity: 'warn'
+                    tags: [ 'bronze_quality' ]
+              - unique:
+                  config:
+                    severity: 'warn'
+                    tags: [ 'bronze_quality' ]
           - name: cst_key
             data_type: varchar(50)
             description: 'Alphanumeric identifier representing the customer'
