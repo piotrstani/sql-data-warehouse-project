@@ -1,0 +1,70 @@
+version: 2
+models:
+  - name: crm_sales_details
+    config:
+      contract:
+        enforced: true
+    data_tests:
+      #	Package-provided generic data test
+      - dbt_utils.expression_is_true:
+          arguments:
+            expression: "sls_quantity::bigint * sls_price::bigint = sls_sales::bigint"
+          config:
+            tags: ['test_crm_sales_amount_consistency']
+            severity: error
+      #Custom generic data test tests/generic/sales_amount_matches.sql
+      - sales_amount_matches:
+          arguments:
+            quantity_column: sls_quantity
+            price_column: sls_price
+            sales_column: sls_sales
+          config:
+            tags: [ 'test_crm_sales_amount_consistency' ]
+            severity: error
+    description: 'Transactional Records about Sales and Orders'
+    columns:
+      - name: sls_ord_num
+        data_type: varchar(50)
+        description: "Unique identifier of the sales order."
+        constraints:
+          - type: not_null
+
+      - name: sls_prd_key
+        data_type: varchar(50)
+        description: "Product identifier associated with the sales transaction."
+        constraints:
+          - type: not_null
+
+      - name: sls_cust_id
+        data_type: integer
+        description: "Customer identifier associated with the sales transaction."
+        constraints:
+          - type: not_null
+
+      - name: sls_order_dt
+        data_type: date
+        description: "Date when the sales order was placed."
+
+      - name: sls_ship_dt
+        data_type: date
+        description: "Date when the sales order was shipped."
+
+      - name: sls_due_dt
+        data_type: date
+        description: "Date when the sales order was due."
+
+      - name: sls_sales
+        data_type: integer
+        description: "Total sales amount for the transaction."
+
+      - name: sls_quantity
+        data_type: integer
+        description: "Quantity of products sold in the transaction."
+
+      - name: sls_price
+        data_type: integer
+        description: "Unit selling price of the product."
+
+      - name: dwh_create_ts
+        data_type: timestamp with time zone
+        description: "Timestamp indicating when the record was loaded into the Data Warehouse."
