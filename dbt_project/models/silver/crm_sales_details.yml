@@ -37,6 +37,15 @@ models:
         description: "Product identifier associated with the sales transaction."
         constraints:
           - type: not_null
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('crm_prd_info')
+                field: prd_key
+              config:
+                tags: [ 'fk_test' ]
+                severity: warn
+
 
       - name: sls_cust_id
         data_type: integer
