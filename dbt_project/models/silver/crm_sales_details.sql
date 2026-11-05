@@ -2,7 +2,6 @@
     materialized='incremental',
     incremental_strategy='append',
     on_schema_change='fail',
-    unique_key='sls_ord_num',
     tags='fact'
 ) }}
 
@@ -27,7 +26,8 @@ select
 	sls_quantity,
 	case when sls_price = 0 or sls_price is null then sls_sales / nullif(sls_quantity,0)
 	    when sls_price < 0 then abs(sls_sales)
-		else sls_price end as sls_price
+		else sls_price end as sls_price,
+	{{ current_timestamp() }} AS dwh_create_ts
     FROM source_data
 )
 

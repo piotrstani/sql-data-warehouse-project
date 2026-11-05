@@ -1,0 +1,45 @@
+version: 2
+models:
+  - name: erp_px_cat_g1v2
+    description: "Contains ERP product category information, including categories, subcategories, and maintenance classifications."
+
+    config:
+      materialized: table
+      contract:
+        enforced: true
+
+    constraints:
+      - type: primary_key
+        columns: [id]
+
+    columns:
+      - name: id
+        data_type: varchar(50)
+        description: "Primary key uniquely identifying each product category record."
+        meta:
+          primary_key: true
+        data_tests:
+          - not_null:
+              config:
+                tags: ['pk_test']
+                severity: error
+          - unique:
+              config:
+                tags: ['pk_test']
+                severity: error
+
+      - name: cat
+        data_type: varchar(50)
+        description: "High-level product category, such as Bikes or Components."
+
+      - name: subcat
+        data_type: varchar(50)
+        description: "Product subcategory providing a more detailed classification within the main category."
+
+      - name: maintenance
+        data_type: varchar(50)
+        description: "Indicates whether products in the category require maintenance."
+
+      - name: dwh_create_ts
+        data_type: timestamp with time zone
+        description: "Timestamp indicating when the record was loaded into the Data Warehouse."

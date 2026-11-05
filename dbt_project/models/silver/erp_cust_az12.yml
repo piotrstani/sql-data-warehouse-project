@@ -1,6 +1,8 @@
 version: 2
 models:
   - name: erp_cust_az12
+    description: "Contains ERP customer information, including customer identifiers, birth dates, gender, and Data Warehouse loading timestamps."
+
     versions:
       - v: 1
         defined_in: erp_cust_az12
@@ -8,3 +10,39 @@ models:
       - v: 2
         defined_in: erp_cust_az12_v2
     latest_version: 2
+
+    config:
+      contract:
+        enforced: true
+
+    constraints:
+      - type: primary_key
+        columns: [ cid ]
+
+    columns:
+      - name: cid
+        data_type: varchar(50)
+        description: "Customer identifier used to associate ERP records with customer data from other source systems."
+        meta:
+          primary_key: true
+        data_tests:
+          - not_null:
+              config:
+                tags: ['pk_test']
+                severity: error
+          - unique:
+              config:
+                tags: ['pk_test']
+                severity: error
+
+      - name: bdate
+        data_type: date
+        description: "Date of birth of the customer."
+
+      - name: gen
+        data_type: varchar(50)
+        description: "Gender of the customer."
+
+      - name: dwh_create_ts
+        data_type: timestamp with time zone
+        description: "Timestamp indicating when the record was loaded into the Data Warehouse."

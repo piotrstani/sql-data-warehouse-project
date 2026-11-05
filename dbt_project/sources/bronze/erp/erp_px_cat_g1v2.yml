@@ -13,6 +13,6 @@ sources:
           - mac_compare_dynamic_columns:
               arguments:
                 compare_to_relation: "ref('erp_px_cat_g1v2')"
-                exclude_columns: [ 'X maintenance' ]
+                exclude_columns: [ 'dwh_create_ts' ]
               config:
                 severity: warn

@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: erp_loc_a101
+    description: "Contains ERP customer location information, including customer identifiers and countries of residence."
+
+    config:
+      contract:
+        enforced: true
+
+    constraints:
+      - type: primary_key
+        columns: [ cid ]
+
+    columns:
+      - name: cid
+        data_type: varchar(50)
+        description: "Primary key uniquely identifying each customer location record."
+        meta:
+          primary_key: true
+        data_tests:
+          - not_null:
+              config:
+                tags: ['pk_test']
+                severity: error
+          - unique:
+              config:
+                tags: ['pk_test']
+                severity: error
+
+      - name: cntry
+        data_type: varchar(50)
+
+      - name: dwh_create_ts
+        data_type: timestamp with time zone
+        description: "Timestamp indicating when the record was loaded into the Data Warehouse."
