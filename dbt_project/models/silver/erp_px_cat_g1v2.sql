@@ -13,7 +13,8 @@ SELECT
 id,
 cat,
 subcat,
-maintenance
+maintenance,
+{{ current_timestamp() }} AS dwh_create_ts
 FROM source_data
 )
 

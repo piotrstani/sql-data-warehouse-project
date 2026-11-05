@@ -1,6 +1,5 @@
 {{ config(
-    materialized='table',
-    unique_key='cid'
+    materialized='table'
 ) }}
 
 WITH source_data AS (
@@ -16,7 +15,8 @@ case when bdate > CURRENT_DATE then null
 else bdate end as bdate,
 case when UPPER(TRIM(gen)) in ('F','FEMALE') then 'Female'
 	 when UPPER(TRIM(gen)) in ('M','MALE') then 'Male'
-	 else 'n/a' end as gen
+	 else 'n/a' end as gen,
+{{ current_timestamp() }} AS dwh_create_ts
 FROM source_data
 )
 

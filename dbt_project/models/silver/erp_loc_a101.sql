@@ -1,6 +1,5 @@
 {{ config(
-    materialized='table',
-    unique_key='cid'
+    materialized='table'
 ) }}
 
 WITH source_data AS (
@@ -14,7 +13,8 @@ replace(cid,'-','') as cid,
 case when UPPER(TRIM(cntry)) in ('US','USA') then 'United States'
 	 when UPPER(TRIM(cntry)) in ('DE') then 'Germany'
 	 when UPPER(TRIM(cntry)) = '' or cntry is null then 'n/a'
-	 else TRIM(cntry) end as cntry
+	 else TRIM(cntry) end as cntry,
+{{ current_timestamp() }} AS dwh_create_ts
 FROM source_data
 )
 

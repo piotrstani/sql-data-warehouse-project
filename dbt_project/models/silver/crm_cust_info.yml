@@ -1,12 +1,16 @@
 version: 2
 models:
   - name: crm_cust_info
+    description: 'Stores customer information'
+
     config:
       contract:
         enforced: true
+
     constraints:
       - type: primary_key
         columns: [cst_id]
+
     data_tests:
       - min_row:
           arguments:
@@ -16,12 +20,23 @@ models:
             compare_model: "source('bronze', 'crm_cust_info')"
           config:
             severity: warn
-    description: 'Stores customer information'
-    columns:
 
+    columns:
       - name: cst_id
         data_type: int
         description: 'Unique numerical identifier assigned to each customer'
+        meta:
+          primary_key: true
+        data_tests:
+          - not_null:
+              config:
+                tags: [ 'pk_test' ]
+                severity: error
+          - unique:
+              config:
+                tags: [ 'pk_test' ]
+                severity: error
+
 
       - name: cst_key
         data_type: varchar(50)

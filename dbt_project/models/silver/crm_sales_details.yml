@@ -1,9 +1,12 @@
 version: 2
 models:
   - name: crm_sales_details
+    description: 'Transactional Records about Sales and Orders'
+
     config:
       contract:
         enforced: true
+
     data_tests:
       #	Package-provided generic data test
       - dbt_utils.expression_is_true:
@@ -21,7 +24,7 @@ models:
           config:
             tags: [ 'test_crm_sales_amount_consistency' ]
             severity: error
-    description: 'Transactional Records about Sales and Orders'
+
     columns:
       - name: sls_ord_num
         data_type: varchar(50)
