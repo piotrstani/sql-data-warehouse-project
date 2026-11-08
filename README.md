@@ -231,8 +231,9 @@ Można ją również wyświetlić poprzez otworzenie w przeglądarce pliku: `dbt
 
 Ponieważ traktuję ten projekt jako żywy poligon doświadczalny, lista rzeczy do przetestowania i wdrożenia stale rośnie:
 
-* **[TODO] Refaktoryzacja hurtowni:** Uzupełnienie brakujących opisów dla tabel i kluczowych kolumn, ogólne uporządkowanie struktury hurtowni.
-* **[TODO] dbt Fusion:** Zbadanie i przetestowanie możliwości, jak może zoptymalizować zarządzanie modelami i integrację danych.
+* **[IN PROGRES] Refaktoryzacja hurtowni:** Uzupełnienie brakujących opisów dla tabel i kluczowych kolumn, ogólne uporządkowanie struktury hurtowni.
+* **[IN PROGRES] dbt Fusion:** Zbadanie i przetestowanie możliwości, jak może zoptymalizować zarządzanie modelami i integrację danych.
+  - `test_dbt_fusion_eksperyment.md` eksperymentalny adapter PostgreSQL 
 * **[TODO] Data Catalog:** Zbadanie i przetestowanie możliwości DataHub OSS.
 * **[TODO] Monitoring:** Zbadanie i przetestowanie możliwości: Elementary OSS (Historia testów, awarie, trendy, anomali). Późniejszy etap: Grafana + Loki/Prometheus.
 * **[TODO] Zaawansowana orkiestracja - refaktoryzacja DAG-ów w Airflow.** Do weryfikacji: Dagster, pakiet *Astronomer Cosmos*- dynamiczne mapowanie modeli dbt jako osobnych tasków w interfejsie Airflow.
