@@ -1,0 +1,18 @@
+version: 2
+sources:
+  - name: bronze
+    schema: bronze
+    tables:
+      - name: erp_px_cat_g1v2
+        description: "ERP source system"
+        identifier: erp_px_cat_g1v2
+        data_tests:
+           # dwa testy:
+           # /tests/compare_dynamic_columns_erp_px_cat_g1v2.sql -- leci po ref()
+           # /macros/tests/test_compare_dynamic_columns.sql
+          - mac_compare_dynamic_columns:
+              arguments:
+                compare_to_relation: "ref('erp_px_cat_g1v2')"
+                exclude_columns: [ 'dwh_create_ts' ]
+              config:
+                severity: warn

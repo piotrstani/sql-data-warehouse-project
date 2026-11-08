@@ -1,0 +1,36 @@
+version: 2
+sources:
+  - name: bronze
+    schema: bronze
+    tables:
+      - name: crm_cust_info
+        description: "CRM source system"
+        identifier: crm_cust_info
+        config:
+          loaded_at_field: cst_create_date::timestamp
+          freshness:
+            warn_after: {count: 1, period: day}
+            error_after: {count: 5, period: day}
+        columns:
+          - name: cst_id
+            data_type: integer
+            description: 'Unique numerical identifier assigned to each customer'
+            data_tests:
+              - not_null:
+                  config:
+                    severity: 'warn'
+                    tags: [ 'bronze_quality' ]
+              - unique:
+                  config:
+                    severity: 'warn'
+                    tags: [ 'bronze_quality' ]
+          - name: cst_key
+            data_type: varchar(50)
+            description: 'Alphanumeric identifier representing the customer'
+            data_tests:
+              - relationships:
+                  arguments:
+                    to: ref('erp_cust_az12')
+                    field: cid
+                  config:
+                    severity: warn

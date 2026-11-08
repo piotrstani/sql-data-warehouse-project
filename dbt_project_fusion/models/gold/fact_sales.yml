@@ -1,0 +1,23 @@
+version: 2
+models:
+  - name: fact_sales
+    description: "Stores transactional sales data for analytical purposes"
+    columns:
+      - name: order_number
+        description: "A unique alphanumeric identifier for each sales order"
+      - name: product_key
+        description: "Surrogate key linking the order to the product dimension table"
+      - name: customer_key
+        description: "Surrogate key linking the order to the customer dimension table"
+      - name: order_date
+        description: "The date when the order was placed"
+      - name: shipping_date
+        description: "The date when the order was shipped to the customer"
+      - name: due_dt
+        description: "The date when the order payment was due"
+      - name: sales_amount
+        description: "The total monetary value of the sale for the line item, in whole currency units"
+      - name: quantity
+        description: "The number of units of the product ordered for the line item"
+      - name: price
+        description: "The price per unit of the product for the line item, in whole currency units"

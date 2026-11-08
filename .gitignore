@@ -2,9 +2,29 @@
 /.idea/dataSources.xml
 /.idea/sqldialects.xml
 /.idea/data_source_mapping.xml
+
+# dbt Core
+.user.yml
+# dbt Core - pliki generowane
 dbt_project/dbt_packages/
 dbt_project/dbt_internal_packages/
 dbt_project/package-lock.yml
 dbt_project/logs/
 dbt_project/target*/
-.user.yml
+
+
+# dbt Fusion - publikujemy kod dbt_project_fusion, ale nie artefakty
+/dbt_project_fusion/dbt_packages/
+/dbt_project_fusion/dbt_internal_packages/
+/dbt_project_fusion/package-lock.yml
+/dbt_project_fusion/logs/
+/dbt_project_fusion/target*/
+/dbt_project_fusion/.user.yml
+/dbt_project_fusion/profiles.yml
+/dbt_project_fusion/.env
+/dbt_project_fusion/.env.*
+!/dbt_project_fusion/.env.example
+
+# Lokalny eksport bazy testowej Fusion
+/fusion_seed.dump
+/fusion_seed.backup

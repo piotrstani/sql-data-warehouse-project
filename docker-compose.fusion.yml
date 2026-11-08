@@ -1,0 +1,37 @@
+
+name: sql-data-warehouse-fusion
+
+services:
+
+  postgres_fusion:
+    image: postgres:18.1-alpine
+    ports:
+      - "127.0.0.1:5433:5432"
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_fusion_data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  dbt_fusion:
+    build: ./docker/dbt-fusion
+    depends_on:
+      postgres_fusion:
+        condition: service_healthy
+    environment:
+      DBT_ALLOW_EXPERIMENTAL_ADAPTERS: "true"
+      APP_USER: ${APP_USER}
+      APP_PASSWORD: ${APP_PASSWORD}
+    volumes:
+      - ./dbt_project_fusion:/app/dbt_project
+    working_dir: /app/dbt_project
+    command: ["sleep", "infinity"]
+
+volumes:
+  postgres_fusion_data:

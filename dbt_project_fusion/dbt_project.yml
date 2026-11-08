@@ -1,0 +1,43 @@
+# dbt_project/dbt_project.yml
+name: 'data_warehouse'
+version: '1.0.0'
+config-version: 2
+profile: 'dwh_profile'
+
+# Definicja zmiennej Jinja
+vars:
+  audit_schema: "audit"
+  user_name: default_user_name
+
+model-paths: ["models", "sources"]
+clean-targets: ["target"]
+seed-paths: ["seeds"]
+snapshot-paths: ["snapshots"]
+asset-paths: ["assets"]
+
+on-run-start:
+  - "{{ learn_log() }}" # <-- makra hello
+  - "CREATE SCHEMA IF NOT EXISTS {{ var('audit_schema') }}"
+  - "CREATE TABLE IF NOT EXISTS {{ var('audit_schema') }}.audit_log (
+      model_nm VARCHAR,
+      run_ts TIMESTAMP
+    )"
+
+models:
+  data_warehouse:
+    +post-hook:
+      - "INSERT INTO {{ var('audit_schema') }}.audit_log VALUES ('{{ this }}', CURRENT_TIMESTAMP)"
+    silver:
+      +materialized: table # DROP TABLE oraz INSERT INTO Domyślnie wszystkie modele stworzą fizyczne tabele (zastępując stare przy każdym uruchomieniu)
+      +persist_docs:
+        relation: true
+        columns: false
+    gold:
+      +materialized: view
+      +schema: gold # Dodany parametr kierujący widoki do schematu gold
+      +persist_docs:
+        relation: true
+        columns: false
+data_tests:
+  +store_failures: true
+  +schema: _test_failures
