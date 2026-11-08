@@ -16,8 +16,9 @@ models:
       - name: cid
         data_type: varchar(50)
         description: "Primary key uniquely identifying each customer location record."
-        meta:
-          primary_key: true
+        config:
+          meta:
+            primary_key: true
         data_tests:
           - not_null:
               config:

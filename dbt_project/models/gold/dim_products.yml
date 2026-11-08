@@ -5,8 +5,9 @@ models:
     columns:
       - name: product_key
         description: "Surrogate key uniquely identifying each product record in the product dimension table."
-        meta:
-          primary_key: true
+        config:
+          meta:
+            primary_key: true
         data_tests:
           - not_null:
               config:

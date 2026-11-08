@@ -6,10 +6,11 @@ sources:
       - name: crm_cust_info
         description: "CRM source system"
         identifier: crm_cust_info
-        loaded_at_field: cst_create_date::timestamp
-        freshness:
-          warn_after: {count: 1, period: day}
-          error_after: {count: 5, period: day}
+        config:
+          loaded_at_field: cst_create_date::timestamp
+          freshness:
+            warn_after: {count: 1, period: day}
+            error_after: {count: 5, period: day}
         columns:
           - name: cst_id
             data_type: integer
@@ -29,7 +30,7 @@ sources:
             data_tests:
               - relationships:
                   arguments:
-                    to: ref('erp_cust_az12', v=1)
+                    to: ref('erp_cust_az12')
                     field: cid
                   config:
                     severity: warn

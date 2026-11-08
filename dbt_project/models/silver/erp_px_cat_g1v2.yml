@@ -16,8 +16,9 @@ models:
       - name: id
         data_type: varchar(50)
         description: "Primary key uniquely identifying each product category record."
-        meta:
-          primary_key: true
+        config:
+          meta:
+            primary_key: true
         data_tests:
           - not_null:
               config:
