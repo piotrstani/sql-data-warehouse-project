@@ -10,7 +10,7 @@ WITH crm_cust_info AS (
 )
  ,erp_cust_az12 AS (
     SELECT  *
-    FROM {{ ref('erp_cust_az12', v=2) }}
+    FROM {{ ref('erp_cust_az12') }}
 )
 
  ,erp_loc_a101 AS (

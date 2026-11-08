@@ -25,8 +25,9 @@ models:
       - name: cst_id
         data_type: int
         description: 'Unique numerical identifier assigned to each customer'
-        meta:
-          primary_key: true
+        config:
+          meta:
+            primary_key: true
         data_tests:
           - not_null:
               config:
