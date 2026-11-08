@@ -217,16 +217,14 @@ dbt build
 
  **📊 Dokumentacja i podgląd Lineage Graph:**
 
-Środowisko posiada zintegrowaną, interaktywną dokumentację dbt (dbt docs), która wizualizuje graf zależności (DAG) pomiędzy tabelami z różnych warstw, a także przypięte do nich testy generyczne i singularne.
+Środowisko posiada zintegrowaną, interaktywną dokumentację dbt (dbt docs)
+Zawiera wizualizuje graf zależności (DAG) pomiędzy tabelami z różnych warstw, a także przypięte do nich testy generyczne i singularne.
 
-#OBECNIE
-Stycznie poprzez wywołanie `dbt docs generate` a następnie otworzenie w przeglądarce: `dbt_project/target/index.html`
+Wymagane jest jej wygenrowanie komendą: `dbt docs generate`
+Dokumentacja jest serwowana z sql-data-warehouse-dbt-docs i dostępna przeglądarce pod adresem: `http://localhost:8580/#!/overview` 
+Można ją również wyświetlić poprzez otworzenie w przeglądarce pliku: `dbt_project/target/index.html`
 
-#TODO Dokumentacja w przeglądarce pod adresem: `http://localhost:8080` 
-```bash
-dbt docs generate
-dbt docs serve --port 8080 --host 0.0.0.0
-```
+
 
 ---
 ## 🗺️ Roadmapa i plany na przyszłość 

@@ -61,5 +61,28 @@ services:
       - ./docs:/opt/airflow/docs
       - ./dbt_project:/opt/airflow/dbt_project  #dbt
     command: standalone
+
+  dbt_docs:
+    image: python:3.12-alpine
+    container_name: sql-data-warehouse-dbt-docs
+
+    ports:
+      - "127.0.0.1:8580:8580"
+
+    volumes:
+      - ./dbt_project/target:/site:ro
+
+    command:
+      - python
+      - -m
+      - http.server
+      - "8580"
+      - --bind
+      - 0.0.0.0
+      - --directory
+      - /site
+
+    restart: unless-stopped
+
 volumes:
   postgres_data:
