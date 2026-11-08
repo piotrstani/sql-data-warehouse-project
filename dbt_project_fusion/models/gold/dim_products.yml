@@ -1,0 +1,37 @@
+version: 2
+models:
+  - name: dim_products
+    description: "Provides information about the products and their attributes."
+    columns:
+      - name: product_key
+        description: "Surrogate key uniquely identifying each product record in the product dimension table."
+        config:
+          meta:
+            primary_key: true
+        data_tests:
+          - not_null:
+              config:
+                tags: ['pk_test_gold']
+          - unique:
+              config:
+                tags: ['pk_test_gold']
+      - name: product_id
+        description: "A unique identifier assigned to the product for internal tracking and referencing."
+      - name: product_number
+        description: "A structured alphanumeric code representing the product, often used for categorization or inventory."
+      - name: product_name
+        description: "Descriptive name of the product, including key details such as type, color, and size."
+      - name: category_id
+        description: "A unique identifier for the product's category, linking to its high-level classification."
+      - name: category
+        description: "The broader classification of the product (e.g., Bikes, Components) to group related items."
+      - name: subcategory
+        description: "A more detailed classification of the product within the category, such as product type."
+      - name: maintenance
+        description: "Indicates whether the product requires maintenance."
+      - name: cost
+        description: "The cost or base price of the product, measured in monetary units."
+      - name: product_line
+        description: "The specific product line or series to which the product belongs."
+      - name: start_date
+        description: "The date when the product became available for sale or use."
