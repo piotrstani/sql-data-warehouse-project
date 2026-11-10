@@ -82,7 +82,5 @@ services:
       - --directory
       - /site
 
-    restart: unless-stopped
-
 volumes:
   postgres_data:
