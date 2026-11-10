@@ -99,7 +99,7 @@ dbt build --exclude-resource-type unit_test --profiles-dir .
 
 #### **Nie uzyskano końcowego raportu zakończonego sukcesem**, ponieważ proces zakończył się awarią adaptera Rust.
 #### **Główna blokada migracji:**
-- nieukończona implementacja **PostgreSQL `list_relations_schemas`** w Fusion 2.0.11. **Nie przełączamy jeszcze DAG-ów Airflow na Fusion.**
+- nieukończona implementacja **PostgreSQL `list_relations_schemas`** w Fusion 2.0.11.
 
 ## Rollback / zakończenie eksperymentu
 Na hoście:
