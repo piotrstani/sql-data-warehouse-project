@@ -1,4 +1,5 @@
 .env
+.env.datahub
 /.idea/dataSources.xml
 /.idea/sqldialects.xml
 /.idea/data_source_mapping.xml
