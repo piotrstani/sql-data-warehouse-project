@@ -232,9 +232,13 @@ Można ją również wyświetlić poprzez otworzenie w przeglądarce pliku: `dbt
 Ponieważ traktuję ten projekt jako żywy poligon doświadczalny, lista rzeczy do przetestowania i wdrożenia stale rośnie:
 
 * **[IN PROGRES] Refaktoryzacja hurtowni:** Uzupełnienie brakujących opisów dla tabel i kluczowych kolumn, ogólne uporządkowanie struktury hurtowni.
-* **[IN PROGRES] dbt Fusion:** Zbadanie i przetestowanie możliwości, jak może zoptymalizować zarządzanie modelami i integrację danych.
-  - `test_dbt_fusion_eksperyment.md` eksperymentalny adapter PostgreSQL 
-* **[TODO] Data Catalog:** Zbadanie i przetestowanie możliwości DataHub OSS.
+* **[STOPED] dbt Fusion:** Zbadanie i przetestowanie możliwości, jak może zoptymalizować zarządzanie modelami i integrację danych.
+  - &#9940; nieukończona implementacja adaptera PostgreSQL w Fusion 2.0.11, problem z `list_relations_schemas` Szczegóły w: `test_dbt_fusion_eksperyment.md`
+* **[IN PROGRES]] Data Catalog:** Zbadanie i przetestowanie możliwości DataHub OSS.
+  - [x] Uruchomienie DataHub w Dockerze
+  - [ ] Integracja PostgreSQL 18
+  - [ ] Integracja dbt Core i jego artefaktów
+  - [ ] Uruchomienie column-level lineage
 * **[TODO] Monitoring:** Zbadanie i przetestowanie możliwości: Elementary OSS (Historia testów, awarie, trendy, anomali). Późniejszy etap: Grafana + Loki/Prometheus.
 * **[TODO] Zaawansowana orkiestracja - refaktoryzacja DAG-ów w Airflow.** Do weryfikacji: Dagster, pakiet *Astronomer Cosmos*- dynamiczne mapowanie modeli dbt jako osobnych tasków w interfejsie Airflow.
 * **[TBD] Migracja do Cloud DWH:** Przeniesienie warstwy storage'u z lokalnego PostgreSQL na chmurową hurtownię danych (rozważam Snowflake lub Google BigQuery).
