@@ -10,6 +10,7 @@
 >  - uruchomienie DataHub,
 >  - import fizycznych metadanych PostgreSQL 
 >  - integracja dbt Core **wraz z column-level lineage (CLL)**. 
+> 
 > **Status weryfikacji:** potwierdzono działanie DataHub, zgodność obiektów PostgreSQL i dbt (*siblings*) oraz rzeczywisty CLL między kolumnami.
 
 
@@ -150,17 +151,22 @@ source:
   config:
     host_port: "127.0.0.1:5432"
     database: "DataWarehouse"
+    convert_urns_to_lowercase: false
+
     username: "dwh_user1"
     password: "${DATAHUB_PG_PASSWORD}"
+
     env: DEV
-    convert_urns_to_lowercase: false
+
     include_tables: true
     include_views: true
+
     schema_pattern:
       allow:
         - "^bronze$"
         - "^silver$"
         - "^gold$"
+
     profiling:
       enabled: false
 
@@ -170,11 +176,15 @@ sink:
     server: "http://127.0.0.1:58080"
 ```
 
-**Po co:** konektor `postgres` odczytuje metadane fizycznej bazy, takie jak schematy, tabele, widoki i kolumny, a `datahub-rest` wysyła je do API GMS. Wskazaliśmy **Core na porcie 5432**, nie testowego Fusion na 5433. Nazwę użytkownika i faktyczny port sprawdź w konfiguracji swojej bazy, jeśli uległy zmianie.
+>Konektor `postgres` odczytuje metadane fizycznej bazy, takie jak schematy, tabele, widoki i kolumny, a `datahub-rest` wysyła je do API GMS.
 
-`schema_pattern` ogranicza katalog do Bronze/Silver/Gold; `profiling.enabled: false` wyłącza analizę zawartości/statystyk danych. Hasła nie zapisujemy w YAML. Ustawienie `env: DEV` klasyfikuje zasoby jako deweloperskie — w następnym etapie zachowaj tę samą nazwę środowiska dla dbt.
+>`schema_pattern` ogranicza katalog do Bronze/Silver/Gold; `profiling.enabled: false` wyłącza analizę zawartości/statystyk danych. 
 
-**Ustawienie krytyczne: `convert_urns_to_lowercase: false`.** Baza fizyczna nazywa się dokładnie `DataWarehouse`. Jeśli importer dbt utworzy odwołania do `datawarehouse` (małymi literami), DataHub potraktuje je jako **inne URN**, co może wytworzyć puste / niepełne obiekty PostgreSQL (*shell entities*). W obu plikach recipe zachowujemy wielkość liter nazw bazy. Ta poprawka wynika z problemu zdiagnozowanego i rozwiązanego podczas uruchamiania CLL.
+>Ustawienie `env: DEV` klasyfikuje zasoby jako deweloperskie — w następnym etapie zachowaj tę samą nazwę środowiska dla dbt.
+
+>Ustawienie krytyczne: `convert_urns_to_lowercase: false`. Baza fizyczna nazywa się dokładnie `DataWarehouse`. 
+>Jeśli importer dbt utworzy odwołania do `datawarehouse` (małymi literami), DataHub potraktuje je jako **inne URN**, co może wytworzyć puste / niepełne obiekty PostgreSQL (*shell entities*). 
+>W obu plikach recipe zachowujemy wielkość liter nazw bazy. 
 
 ### 2.2. Powtarzalnie — podaj hasło bez wyświetlania
 
@@ -234,8 +244,10 @@ ls -lh target/manifest.json target/catalog.json
 
 - `manifest.json` zawiera definicje węzłów projektu: źródła, modele, seed, snapshoty, testy, dokumentację YAML, zależności `ref()` i `source()` oraz skompilowany SQL, o ile został wygenerowany.
 - `catalog.json` zawiera informacje o faktycznych relacjach i kolumnach z PostgreSQL. Uzupełnia dane z manifestu.
-- `dbt docs generate` **nie zastępuje `dbt build` i nie przebudowuje tabel**; pobiera katalog metadanych. `dbt deps` uruchamiaj tylko w razie brakujących/zmienionych pakietów.
-- Same definicje testów w `manifest.json` **nie oznaczają zaimportowanych wyników ich wykonania**. Do wyników służy oddzielny artefakt `run_results.json`; jego import nie jest objęty tą instrukcją.
+
+>Same definicje testów w `manifest.json` **nie oznaczają zaimportowanych wyników ich wykonania**. 
+>- Do wyników służy oddzielny artefakt `run_results.json`; jego import nie jest objęty tą instrukcją.
+
 
 Na hoście Linux sprawdź dostępność tych samych plików przez montowanie projektu do Airflow:
 
@@ -256,10 +268,13 @@ source:
   config:
     manifest_path: /dbt/target/manifest.json
     catalog_path: /dbt/target/catalog.json
+
     target_platform: postgres
     env: DEV
+
     platform_instance: data_warehouse
     convert_urns_to_lowercase: false
+
     include_database_name: true
     include_compiled_code: true
     infer_dbt_schemas: true

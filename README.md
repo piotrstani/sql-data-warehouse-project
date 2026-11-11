@@ -238,6 +238,7 @@ Ponieważ traktuję ten projekt jako żywy poligon doświadczalny, lista rzeczy 
   - [x] Uruchomienie DataHub w Dockerze
   - [x] Integracja PostgreSQL 18
   - [x] Integracja dbt Core i column-level lineage
+  - [ ] `run_results.json` import wyników
   - [ ] DAG dla Ingest PostgreSQL i dbt Core
 * **[TODO] Monitoring:** Zbadanie i przetestowanie możliwości: Elementary OSS (Historia testów, awarie, trendy, anomali). Późniejszy etap: Grafana + Loki/Prometheus.
 * **[TODO] Zaawansowana orkiestracja - refaktoryzacja DAG-ów w Airflow.** Do weryfikacji: Dagster, pakiet *Astronomer Cosmos*- dynamiczne mapowanie modeli dbt jako osobnych tasków w interfejsie Airflow.
