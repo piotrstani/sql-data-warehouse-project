@@ -1,0 +1,28 @@
+source:
+  type: postgres
+  config:
+    host_port: "127.0.0.1:5432"
+    database: "DataWarehouse"
+    convert_urns_to_lowercase: false
+
+    username: "dwh_user1"
+    password: "${DATAHUB_PG_PASSWORD}"
+
+    env: DEV
+
+    include_tables: true
+    include_views: true
+
+    schema_pattern:
+      allow:
+        - "^bronze$"
+        - "^silver$"
+        - "^gold$"
+
+    profiling:
+      enabled: false
+
+sink:
+  type: datahub-rest
+  config:
+    server: "http://127.0.0.1:58080"
