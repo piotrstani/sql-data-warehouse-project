@@ -4,7 +4,10 @@ sources:
     schema: bronze
     tables:
       - name: erp_loc_a101
-        description: "ERP source system"
+        description: >
+          SOURCE DEFINITION
+          Bronze layer: raw ERP customer data imported
+          into PostgreSQL without dbt transformations.
         identifier: erp_loc_a101
         columns:
           - name: cntry

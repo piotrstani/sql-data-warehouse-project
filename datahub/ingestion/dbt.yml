@@ -1,0 +1,21 @@
+source:
+  type: dbt
+  config:
+    manifest_path: /dbt/target/manifest.json
+    catalog_path: /dbt/target/catalog.json
+
+    target_platform: postgres
+    env: DEV
+
+    platform_instance: data_warehouse
+    convert_urns_to_lowercase: false
+
+    include_database_name: true
+    include_compiled_code: true
+    infer_dbt_schemas: true
+    include_column_lineage: true
+
+sink:
+  type: datahub-rest
+  config:
+    server: "http://127.0.0.1:58080"

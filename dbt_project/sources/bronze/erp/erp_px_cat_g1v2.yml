@@ -4,7 +4,10 @@ sources:
     schema: bronze
     tables:
       - name: erp_px_cat_g1v2
-        description: "ERP source system"
+        description: >
+          SOURCE DEFINITION
+          Bronze layer: raw ERP customer data imported
+          into PostgreSQL without dbt transformations.
         identifier: erp_px_cat_g1v2
         data_tests:
            # dwa testy:

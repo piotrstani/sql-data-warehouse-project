@@ -236,9 +236,9 @@ Ponieważ traktuję ten projekt jako żywy poligon doświadczalny, lista rzeczy 
   - &#9940; nieukończona implementacja adaptera PostgreSQL w Fusion 2.0.11, problem z `list_relations_schemas` Szczegóły w: `test_dbt_fusion_eksperyment.md`
 * **[IN PROGRES]] Data Catalog:** Zbadanie i przetestowanie możliwości DataHub OSS.
   - [x] Uruchomienie DataHub w Dockerze
-  - [ ] Integracja PostgreSQL 18
-  - [ ] Integracja dbt Core i jego artefaktów
-  - [ ] Uruchomienie column-level lineage
+  - [x] Integracja PostgreSQL 18
+  - [x] Integracja dbt Core i column-level lineage
+  - [ ] DAG dla Ingest PostgreSQL i dbt Core
 * **[TODO] Monitoring:** Zbadanie i przetestowanie możliwości: Elementary OSS (Historia testów, awarie, trendy, anomali). Późniejszy etap: Grafana + Loki/Prometheus.
 * **[TODO] Zaawansowana orkiestracja - refaktoryzacja DAG-ów w Airflow.** Do weryfikacji: Dagster, pakiet *Astronomer Cosmos*- dynamiczne mapowanie modeli dbt jako osobnych tasków w interfejsie Airflow.
 * **[TBD] Migracja do Cloud DWH:** Przeniesienie warstwy storage'u z lokalnego PostgreSQL na chmurową hurtownię danych (rozważam Snowflake lub Google BigQuery).

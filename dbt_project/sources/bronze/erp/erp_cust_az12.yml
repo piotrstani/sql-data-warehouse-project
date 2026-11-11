@@ -4,7 +4,10 @@ sources:
     schema: bronze
     tables:
       - name: erp_cust_az12
-        description: "ERP source system"
+        description: >
+          SOURCE DEFINITION
+          Bronze layer: raw ERP customer data imported
+          into PostgreSQL without dbt transformations.
         identifier: erp_cust_az12
         data_tests:
           - dbt_utils.equality:
