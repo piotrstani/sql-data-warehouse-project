@@ -4,7 +4,10 @@ sources:
     schema: bronze
     tables:
       - name: crm_cust_info
-        description: "CRM source system"
+        description: >
+          SOURCE DEFINITION
+          Bronze layer: raw CRM customer data imported
+          into PostgreSQL without dbt transformations.
         identifier: crm_cust_info
         config:
           loaded_at_field: cst_create_date::timestamp

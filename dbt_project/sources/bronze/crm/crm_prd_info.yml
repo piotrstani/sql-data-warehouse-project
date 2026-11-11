@@ -4,5 +4,8 @@ sources:
     schema: bronze
     tables:
       - name: crm_prd_info
-        description: "CRM source system"
+        description: >
+          SOURCE DEFINITION
+          Bronze layer: raw CRM customer data imported
+          into PostgreSQL without dbt transformations.
         identifier: crm_prd_info
