@@ -15,6 +15,13 @@ source:
     infer_dbt_schemas: true
     include_column_lineage: true
 
+    column_meta_mapping:
+      primary_key:
+        match: true
+        operation: add_tag
+        config:
+          tag: logical_primary_key
+
 sink:
   type: datahub-rest
   config:
