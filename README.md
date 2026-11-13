@@ -231,9 +231,8 @@ Można ją również wyświetlić poprzez otworzenie w przeglądarce pliku: `dbt
 
 Ponieważ traktuję ten projekt jako żywy poligon doświadczalny, lista rzeczy do przetestowania i wdrożenia stale rośnie:
 
+* **[TBD] Warstwa Ingestion / Processing (PySpark):** rezygnacja z wywoływania procedur wbudowanych na rzecz przetwarzania i ładowania na **PySparka** (do praktyczna nauka ekosystemu Apache Spark).
 * **[IN PROGRES] Refaktoryzacja hurtowni:** Uzupełnienie brakujących opisów dla tabel i kluczowych kolumn, ogólne uporządkowanie struktury hurtowni.
-* **[STOPED] dbt Fusion:** Zbadanie i przetestowanie możliwości, jak może zoptymalizować zarządzanie modelami i integrację danych.
-  - &#9940; nieukończona implementacja adaptera PostgreSQL w Fusion 2.0.11, problem z `list_relations_schemas` Szczegóły w: `test_dbt_fusion_eksperyment.md`
 * **[IN PROGRES]] Data Catalog:** Zbadanie i przetestowanie możliwości DataHub OSS.
   - [x] Uruchomienie DataHub w Dockerze
   - [x] Integracja PostgreSQL 18
@@ -245,7 +244,8 @@ Ponieważ traktuję ten projekt jako żywy poligon doświadczalny, lista rzeczy 
 * **[TBD] Migracja do Cloud DWH:** Przeniesienie warstwy storage'u z lokalnego PostgreSQL na chmurową hurtownię danych (rozważam Snowflake lub Google BigQuery).
 * **[TBD] CI/CD (Slim CI):** Stworzenie automatycznych (pipelines). Pull Request automatycznie uruchamia kontener, buduje środowisko efemeryczne i odpala `dbt test` oraz `dbt build` (tzw. Slim CI).
 * **[TBD] Warstwa Wizualizacji (BI):** Podłączenie open-source'owego narzędzia Business Intelligence (np. Metabase lub Apache Superset)
-* **[TBD] Warstwa Ingestion / Processing (PySpark):** rezygnacja z wywoływania procedur wbudowanych na rzecz przetwarzania i ładowania na **PySparka** (do praktyczna nauka ekosystemu Apache Spark).
+* **[STOPED] dbt Fusion:** Zbadanie i przetestowanie możliwości, jak może zoptymalizować zarządzanie modelami i integrację danych.
+  - &#9940; nieukończona implementacja adaptera PostgreSQL w Fusion 2.0.11, problem z `list_relations_schemas` Szczegóły w: `test_dbt_fusion_eksperyment.md`
 ---
 ## 👤 Autor
 
