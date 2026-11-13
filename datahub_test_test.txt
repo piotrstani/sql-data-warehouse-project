@@ -1,0 +1,47 @@
+
+sudo cp dbt_project/target/run_results.json dbt_project/target/run_results_datahub.json
+
+dbt docs generate
+
+
+
+set -o pipefail
+
+docker run --rm \
+  --network host \
+  -v "$PWD/datahub/ingestion:/workspace:ro" \
+  -v "$PWD/dbt_project/target:/dbt/target:ro" \
+  acryldata/datahub-ingestion:v1.8.0-slim \
+  ingest -c /workspace/dbt.yml \
+  2>&1 | tee /tmp/datahub-dbt.log
+
+echo "Kod zakończenia importu: ${PIPESTATUS[0]}"
+
+
+
+
+
+set -o pipefail
+
+docker run --rm \
+  --network host \
+  -v "$PWD/datahub/ingestion:/workspace:ro" \
+  -v "$PWD/dbt_project/target:/dbt/target:ro" \
+  acryldata/datahub-ingestion:v1.8.0-slim \
+  ingest -c /workspace/dbt.yml \
+  2>&1 | tee /tmp/dbt.log
+
+echo "Kod zakończenia importu: ${PIPESTATUS[0]}"
+
+---DELETE
+
+docker run --rm \
+  --network host \
+  -e DATAHUB_GMS_URL=http://127.0.0.1:58080 \
+  acryldata/datahub-ingestion:v1.8.0-slim \
+  delete \
+  --entity-type assertion \
+  --hard \
+  --force
+
+

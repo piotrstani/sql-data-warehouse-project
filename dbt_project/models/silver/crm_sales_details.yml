@@ -11,9 +11,9 @@ models:
       #	Package-provided generic data test
       - dbt_utils.expression_is_true:
           arguments:
-            expression: "sls_quantity::bigint * sls_price::bigint = sls_sales::bigint"
+            expression: "sls_quantity::bigint - sls_price::bigint = sls_sales::bigint"
           config:
-            tags: ['test_crm_sales_amount_consistency']
+            tags: ['test_xyz']
             severity: error
       #Custom generic data test tests/generic/sales_amount_matches.sql
       - sales_amount_matches:
@@ -40,8 +40,8 @@ models:
         data_tests:
           - relationships:
               arguments:
-                to: ref('crm_prd_info')
-                field: prd_key
+                to: ref('crm_sales_details')
+                field: sls_prd_key
               config:
                 tags: [ 'fk_test' ]
                 severity: warn

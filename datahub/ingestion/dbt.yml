@@ -1,3 +1,5 @@
+pipeline_name: dbt_core_data_warehouse_dev
+
 source:
   type: dbt
   config:
@@ -21,6 +23,13 @@ source:
         operation: add_tag
         config:
           tag: logical_primary_key
+
+    run_results_paths:
+      - /dbt/target/run_results_datahub.json
+
+    stateful_ingestion:
+      enabled: true
+      remove_stale_metadata: true
 
 sink:
   type: datahub-rest
