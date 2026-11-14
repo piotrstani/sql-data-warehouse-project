@@ -5,10 +5,24 @@
 
 WITH source_data AS (
     -- Deduplikacja danych źródłowych z warstwy Bronze
-    SELECT DISTINCT ON (cst_id) *
+    SELECT DISTINCT ON (cst_id)
+        cst_id,
+        cst_key,
+        cst_firstname,
+        cst_lastname,
+        cst_marital_status,
+        cst_gndr,
+        cst_create_date
     FROM {{ source('bronze', 'crm_cust_info') }}
     WHERE cst_id is not null
-    ORDER BY cst_id, cst_create_date DESC
+    ORDER BY
+    cst_id,
+    cst_create_date DESC NULLS LAST,
+    cst_key DESC NULLS LAST,
+    cst_firstname DESC NULLS LAST,
+    cst_lastname DESC NULLS LAST,
+    cst_marital_status DESC NULLS LAST,
+    cst_gndr DESC NULLS LAST
 ),
 
 transformed_data AS (
@@ -30,9 +44,29 @@ transformed_data AS (
             ELSE 'n/a'
         END AS cst_gndr,
         cst_create_date,
-        -- Zastępuje DEFAULT GETDATE()
-        {{ current_timestamp() }} AS dwh_create_ts
+
+         -- Znacznik bieżącego ładowania (table: odświeżany przy każdym dbt run).
+        {{ current_timestamp() }} AS dwh_create_ts,
+
+        -- Airflow przekaże wspólny identyfikator batcha przez --vars.
+        -- Bez niego wykorzystujemy invocation_id bieżącego polecenia dbt.
+        '{{ var("dwh_batch_id", invocation_id) | replace("'", "''") }}'::varchar(255) AS dwh_batch_id,
+
+        'CRM'::varchar(50) AS dwh_source_system
+
     FROM source_data
+
 )
 
-SELECT * FROM transformed_data src
+SELECT
+    cst_id,
+    cst_key,
+    cst_firstname,
+    cst_lastname,
+    cst_marital_status,
+    cst_gndr,
+    cst_create_date,
+    dwh_create_ts,
+    dwh_batch_id,
+    dwh_source_system
+FROM transformed_data

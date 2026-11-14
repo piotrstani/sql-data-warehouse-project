@@ -4,30 +4,31 @@ from datetime import datetime, timedelta
 from airflow.operators.bash import BashOperator
 from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 
+#------------------------------------------------------------------------------------------
+DBT_PROJECT_DIR = "/opt/airflow/dbt_project"
 
 # Definicja funkcji przechwytującej błędy (Callback)
 def log_failure(context):
-    """
-    Funkcja wywoływana automatycznie, gdy dowolne zadanie w DAG-u
-    zakończy się statusem FAILED.
-    """
+
+    """Zapisz szczegóły błędu zadania do logów Airflow."""
     task_id = context.get('task_instance').task_id
-    execution_date = context.get('execution_date')
-    exception = context.get('exception')
+    logging.getLogger("airflow.task").error(
+        "DAG load_silver_layer: task=%s, logical_date=%s, error=%s",
+        task_id.task_id if task_id else "unknown",
+        context.get("logical_date"),
+        context.get("exception"),
+    )
 
-    logger = logging.getLogger("airflow.task")
+def dbt_bash(command):
+    """Jednolite środowisko wykonania wszystkich poleceń dbt Core."""
+    return (
+        "set -euo pipefail\n"
+        f'cd "{DBT_PROJECT_DIR}"\n'
+        f'export DBT_PROFILES_DIR="{DBT_PROJECT_DIR}"\n'
+        f'dbt {command} --project-dir "{DBT_PROJECT_DIR}"\n'
+    )
 
-    error_msg = f"""
-    ====================================================
-    🚨 ALARM 🚨
-    Zadanie: {task_id}
-    Data logiczna: {execution_date}
-    Błąd: {str(exception)}
-    ====================================================
-    """
-
-    logger.error(error_msg)
-
+#------------------------------------------------------------------------------------------
 
 # Domyślne argumenty dla zadań w DAG-u
 default_args = {
@@ -41,37 +42,45 @@ default_args = {
 # Definicja DAG-a
 with DAG(
     dag_id='load_silver_layer',
-    default_args=default_args,
+    default_args={
+        "owner": "data_engineer",
+        "retries": 0,
+        "retry_delay": timedelta(minutes=2),
+        "on_failure_callback": log_failure,
+    },
     start_date=datetime(2024, 1, 1),
     # schedule_interval='@daily',
     schedule=None,
     catchup=False,
-    tags=['silver', 'dbt'],
-    description='Zasila tabele warstwy Silver na podstawie tabel warstwy Bronze'
+    tags=["silver", "dbt", "quality"],
+    description="Bronze -> Silver: snapshot, modele, testy jakości, następnie Gold"
 ) as dag:
 
-    # 2.5 Zrzuty dbt (Snapshots dla tabel SCD2)
+#------------------------------------------------------------------------------------------
+    #1. Snapshots dla tabel SCD2 (model v_crm_prd_info zależy od snapshotu)
     run_dbt_snapshots = BashOperator(
         task_id='dbt_run_silver_snapshots',
-        bash_command=(
-            "export DBT_PROFILES_DIR=/opt/airflow/dbt_project && "
-            "dbt snapshot "
-            "--project-dir /opt/airflow/dbt_project"
-        ),
+        bash_command=dbt_bash("snapshot"),
     )
 
-    # 3. Transformacja dbt (Bronze -> Silver)
+    #2. Zbudowanie wszystkich modeli z katalogu models/silver
     run_dbt_silver = BashOperator(
         task_id='dbt_run_silver_models',
-        bash_command=(
-            "export DBT_PROFILES_DIR=/opt/airflow/dbt_project && "
-            "dbt run "
-            "--project-dir /opt/airflow/dbt_project "
-            "--select silver "
-        ),
+        bash_command=dbt_bash('run --select "silver"'),
     )
 
-    # 4. Uruchomienie warstwy Gold po sukcesie Silver
+    #3. Testy jako osobny krok. 'buildable' ogranicza testy do wybranej
+    # warstwy i jej zależności wstecznych, bez testów wymagających Gold.
+    test_dbt_silver = BashOperator(
+        task_id="dbt_test_silver_models",
+        bash_command=dbt_bash(
+            'test --select "silver" --indirect-selection=buildable'
+        ),
+    )
+#------------------------------------------------------------------------------------------
+
+    # 4. Domyślna reguła Airflow: all_success. Gold uruchomi się tylko wtedy,
+    # gdy transformacje i testy zakończą się powodzeniem.
     trigger_gold_layer = TriggerDagRunOperator(
         task_id='trigger_gold_layer_dag',
         trigger_dag_id='load_gold_layer',
@@ -80,4 +89,4 @@ with DAG(
     )
 
     # Kolejność wykonywania zadań
-    run_dbt_snapshots >> run_dbt_silver >> trigger_gold_layer
+    run_dbt_snapshots >> run_dbt_silver >> test_dbt_silver >> trigger_gold_layer
