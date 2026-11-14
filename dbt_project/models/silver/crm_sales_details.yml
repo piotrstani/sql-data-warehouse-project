@@ -11,7 +11,7 @@ models:
       #	Package-provided generic data test
       - dbt_utils.expression_is_true:
           arguments:
-            expression: "sls_quantity::bigint - sls_price::bigint = sls_sales::bigint"
+            expression: "sls_quantity::bigint * sls_price::bigint = sls_sales::bigint"
           config:
             tags: ['test_xyz']
             severity: error
