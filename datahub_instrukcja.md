@@ -99,10 +99,11 @@ docker compose --env-file .env.datahub \
 
 ### 1.4. Powtarzalnie — uruchom lub wznów DataHub
 
-```bash
-docker compose --env-file .env.datahub \
-  -f docker-compose.datahub.yml --profile quickstart up -d
-```
+> [!NOTE]
+> ```bash
+> docker compose --env-file .env.datahub \
+>  -f docker-compose.datahub.yml --profile quickstart up -d
+> ```
 
 `up -d` uruchamia lub odtwarza brakujące kontenery w tle. Przy kolejnych uruchomieniach **nie pobiera ponownie obrazów, jeśli nie jest to konieczne**. Dane DataHub są przechowywane w wolumenach Docker.
 
