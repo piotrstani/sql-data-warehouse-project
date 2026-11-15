@@ -33,5 +33,22 @@ models:
         data_type: varchar(50)
 
       - name: dwh_create_ts
-        data_type: timestamp with time zone
+        data_type: timestamptz
         description: "Timestamp indicating when the record was loaded into the Data Warehouse."
+        data_tests:
+          - not_null
+
+      - name: dwh_batch_id
+        data_type: varchar(255)
+        description: "Identifier of the dbt or Airflow batch that loaded the row."
+        data_tests:
+          - not_null
+
+      - name: dwh_source_system
+        data_type: varchar(50)
+        description: "Originating source system; CRM for this model."
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [ 'ERP' ]

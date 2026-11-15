@@ -25,7 +25,16 @@ Architektura i najlepsze praktyki wdrożone w tym projekcie są fuzją wynikają
 
 *   [Building a Modern Data Warehouse - Data Engineering Bootcamp](https://www.udemy.com/course/building-a-modern-data-warehouse-data-engineering-bootcamp)
 *   [Complete dbt (Data Build Tool) Bootcamp: Zero to Hero](https://www.udemy.com/course/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt)
+---
 
+## 🤖 Wsparcie AI w Projekcie
+W ramach tego projektu eksperymentujemy z integracją narzędzi sztucznej inteligencji do wspomagania procesów analitycznych, dokumentacji oraz optymalizacji kodu.## 
+### 🔧 Używane Modele AI
+| Model               | Opis                                                                                     | Dostępność / Źródło       | Wersja / Data |
+|---------------------|-----------------------------------------------------------------------------------------|---------------------------|----------------|
+| **ChatGPT (GPT-6)** | Główny model wykorzystywany do generowania pomysłów i budowy projektu | (web-based) | GPT-6          |
+| **Gemini**          | Główny model wykorzystywany do generowania pomysłów i budowy projektu  | (web-based) | Aktualna       |
+| **Ministral-3:14b** | Lokalny model uruchamiany za pomocą Ollama. Znintegrowany do PyCharm poprzez AI Assistance. Ogólny testy użytecznosci lokalnego modelu | (lokalnie)| Ollama 0.32.1         |
 
 ---
 ## 🎯 Główne założenia i badane koncepcje
@@ -237,7 +246,8 @@ Ponieważ traktuję ten projekt jako żywy poligon doświadczalny, lista rzeczy 
   - [x] Uruchomienie DataHub w Dockerze
   - [x] Integracja PostgreSQL 18
   - [x] Integracja dbt Core i column-level lineage
-  - [ ] `run_results.json` import wyników
+  - [STOPED]  `run_results.json` import wyników tetsów, działa, 
+  > &#9940; do rozpracowania `stateful_ingestion` wycofywanie starych asercji, przy zmianie definicji testu dbt, DataHub powinien zachować nową asercję, a poprzednią, nieaktualną definicję oznaczyć jako usuniętą. Stary wynik FAILURE nie powinien powodować ostrzeżenia „See failing assertions”.
   - [ ] DAG dla Ingest PostgreSQL i dbt Core
 * **[TODO] Monitoring:** Zbadanie i przetestowanie możliwości: Elementary OSS (Historia testów, awarie, trendy, anomali). Późniejszy etap: Grafana + Loki/Prometheus.
 * **[TODO] Zaawansowana orkiestracja - refaktoryzacja DAG-ów w Airflow.** Do weryfikacji: Dagster, pakiet *Astronomer Cosmos*- dynamiczne mapowanie modeli dbt jako osobnych tasków w interfejsie Airflow.
@@ -245,7 +255,7 @@ Ponieważ traktuję ten projekt jako żywy poligon doświadczalny, lista rzeczy 
 * **[TBD] CI/CD (Slim CI):** Stworzenie automatycznych (pipelines). Pull Request automatycznie uruchamia kontener, buduje środowisko efemeryczne i odpala `dbt test` oraz `dbt build` (tzw. Slim CI).
 * **[TBD] Warstwa Wizualizacji (BI):** Podłączenie open-source'owego narzędzia Business Intelligence (np. Metabase lub Apache Superset)
 * **[STOPED] dbt Fusion:** Zbadanie i przetestowanie możliwości, jak może zoptymalizować zarządzanie modelami i integrację danych.
-  - &#9940; nieukończona implementacja adaptera PostgreSQL w Fusion 2.0.11, problem z `list_relations_schemas` Szczegóły w: `test_dbt_fusion_eksperyment.md`
+  > &#9940; nieukończona implementacja adaptera PostgreSQL w Fusion 2.0.11, problem z `list_relations_schemas` Szczegóły w: `test_dbt_fusion_eksperyment.md`
 ---
 ## 👤 Autor
 
