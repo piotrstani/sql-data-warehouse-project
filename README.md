@@ -149,10 +149,12 @@ cp .env.example .env
 ```bash
 docker-compose up -d
 ```
-##### Krok 4: Wystartuj bazę danych PostgreSQL oraz usługę orkiestracji Airflow+dbt
+##### Kntenery z bazą danych PostgreSQL oraz usługą orkiestracji Airflow oraz dbt core
 ```bash
-docker start sql-data-warehouse-postgres 
-docker start sql-data-warehouse-airflow 
+apache/airflow:2.9.1  0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp   sql-data-warehouse-airflow
+postgres:18.1-alpine  0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   sql-data-warehouse-postgres
+
+
 ```
 
 ---
