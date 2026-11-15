@@ -335,10 +335,57 @@ W interfejsie `http://localhost:9003` sprawdź kolejno:
 - Pod platformą **dbt** nadrzędny kontener `datawarehouse` może zawierać właściwy kontener `DataWarehouse`. Ten **poziom nadrzędny jest prawidłową organizacją katalogu**, nie dowodem duplikacji obiektów.
 - Węzły `dbt Source`, `dbt Model` i fizyczne obiekty PostgreSQL to różne rodzaje metadanych. Ich wspólna obecność na grafie nie jest błędem, o ile URN fizycznego datasetu, sibling i lineage wskazują właściwe relacje.
 
+
+### 3.5. Import wyników uruchomienia testów do DataHub
+
+**W kontenerze Airflow**, wygenruj wyniki testów:
+```bash
+dbt test
+```
+
+**Na hoście**, zabezpiecz wyniki przed `dbt docs generate`:
+ ```bash
+sudo cp dbt_project/target/run_results.json dbt_project/target/run_results_datahub.json
+```
+
+**W kontenerze Airflow**, wygeneruj dokumentacje (jeśli jest to potrzebne):
+```bash
+dbt docs generate
+```
+
+**Na hoście**, wykonaj ingest dbt do DataHub:
+```bash
+set -o pipefail
+
+docker run --rm \
+  --network host \
+  -v "$PWD/datahub/ingestion:/workspace:ro" \
+  -v "$PWD/dbt_project/target:/dbt/target:ro" \
+  acryldata/datahub-ingestion:v1.8.0-slim \
+  ingest -c /workspace/dbt.yml \
+  2>&1 | tee /tmp/datahub-dbt.log
+
+echo "Kod zakończenia importu: ${PIPESTATUS[0]}"
+```
+
+> [!WARNING] 
+> **Na hoście**, HARD DELETE assertion na DataHub:
+```bash
+docker run --rm \
+  --network host \
+  -e DATAHUB_GMS_URL=http://127.0.0.1:58080 \
+  acryldata/datahub-ingestion:v1.8.0-slim \
+  delete \
+  --entity-type assertion \
+  --hard \
+  --force
+```
+
+
 ### 3.5. Zakres metadanych — co faktycznie osiągnięto
 
-W projekcie zidentyfikowano **17 logicznych zasobów dbt**: 6 źródeł Bronze, 8 zasobów Silver (6 modeli, 1 seed, 1 snapshot) i 3 modele Gold. Dodatkowo manifest zawierał definicje testów, a część modeli korzystała z kontraktów dbt. Poniżej rozróżnienie metadanych od wyników wykonania:
-
+W projekcie zidentyfikowano **17 logicznych zasobów dbt**: 6 źródeł Bronze, 8 zasobów Silver (6 modeli, 1 seed, 1 snapshot) i 3 modele Gold.
+  
 | Element | W tym etapie |
 |---|---|
 | Źródła, modele, seed, snapshot | Importowane z artefaktów dbt |
@@ -347,7 +394,8 @@ W projekcie zidentyfikowano **17 logicznych zasobów dbt**: 6 źródeł Bronze, 
 | Zależności między modelami / źródłami | Importowane (model-level lineage) |
 | Zależności między kolumnami | Importowane przy `include_column_lineage: true`, zweryfikowane w UI |
 | Definicje testów i konfiguracja kontraktów w dbt | Obecne w metadanych manifestu; **nie oznacza automatycznie** osobnej prezentacji wszystkich szczegółów w DataHub |
-| Wyniki uruchomienia testów (`run_results.json`) | **Poza zakresem tej instrukcji**; nie były potwierdzonym wynikiem tego importu |
+| Wyniki uruchomienia testów (`run_results.json`) |  &#9940; do rozpracowania `stateful_ingestion` wycofywanie starych asercji, przy zmianie definicji testu dbt, DataHub powinien zachować nową asercję, a poprzednią, nieaktualną definicję oznaczyć jako usuniętą. Stary wynik FAILURE nie powinien powodować ostrzeżenia „See failing assertions”.
+
 
 ### 3.6. Jak często odświeżać katalog?
 
@@ -356,7 +404,6 @@ W projekcie zidentyfikowano **17 logicznych zasobów dbt**: 6 źródeł Bronze, 
 | Fizyczny schemat PostgreSQL: nowa tabela, widok, kolumna lub typ | Import PostgreSQL (etap 2.2–2.4); następnie odśwież artefakty i import dbt (etap 3.1–3.4), jeśli modele też się zmieniły |
 | SQL modeli, `ref()`, `source()`, dokumentacja YAML, definicje testów | `dbt docs generate` i ponowny import dbt (etap 3.1, 3.3, 3.4) |
 | Wyłącznie nowe rekordy bez zmiany schematu | Zwykle bez importu (profilowanie wyłączone) |
-| Restart DataHub / hosta | Etap 1.4–1.5; **nie** instalacja od nowa |
 
 >#### **Import PostgreSQL i dbt można docelowo zautomatyzować w Airflow.**
 

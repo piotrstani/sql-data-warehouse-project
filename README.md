@@ -28,7 +28,7 @@ Architektura i najlepsze praktyki wdrożone w tym projekcie są fuzją wynikają
 ---
 
 ## 🤖 Wsparcie AI w Projekcie
-W ramach tego projektu eksperymentujemy z integracją narzędzi sztucznej inteligencji do wspomagania procesów analitycznych, dokumentacji oraz optymalizacji kodu.## 
+W ramach tego projektu eksperymentujemy z integracją narzędzi sztucznej inteligencji. 
 ### 🔧 Używane Modele AI
 | Model               | Opis                                                                                     | Dostępność / Źródło       | Wersja / Data |
 |---------------------|-----------------------------------------------------------------------------------------|---------------------------|----------------|
@@ -72,23 +72,59 @@ Ponieważ jest to projekt edukacyjny, celowo zastosowałem w nim pewne skróty, 
 ```text
 sql-data-warehouse-project/
 ├── dags/                       # Skrypty orkiestracji (DAGi Apache Airflow)
-├── datasets/                   # Statyczne pliki z danymi źródłowymi (CSV)
+│   ├── load_bronze_dag.py      # DAG dla ładowania danych do warstwy Bronze
+│   ├── load_silver_dag.py      # DAG dla transformacji Silver
+│   └── load_gold_dag.py        # DAG dla modeli Gold
+├── datahub/                    # Katalog z plikami DataHub
+├── datasets/                   # Statyczne pliki z danymi źródłowymi (CSV, JSON itp.)
 ├── dbt_project/                # Główny katalog projektu Data Build Tool
-│   ├── models/                 # Modele transformacji SQL (bronze, silver, gold)
-│   │   ├── silver/
-│   │   └── gold/
-│   ├── snapshots/              # Definicjie snapshotów mechanizmu podobnego do SCD Type 2
+│   ├── analyses/               # Analizy SQL i raporty
+│   ├── assets/                 # Pliki asetów pomocniczych (makra, funkcje)
+│   ├── datahub/                # Katalog z plikami DataHub w projekcie dbt
+│   ├── macros/                 # Makra Jinja2 dla dbt
+│   ├── models/                 # Modele transformacji SQL
+│   │   ├── gold/               # Modele biznesowe (widoki)
+│   │   └── silver/             # Modele ustandaryzowane (tabele)
+│   │       ├── crm/            # Modele CRM
+│   │       │   ├── crm_cust_info.sql # Model klientów
+│   │       │   └── crm_sales_details.sql # Model szczegółów sprzedaży (szkoleniowe materialized='incremental')
+│   │       └── erp/            # Modele ERP
+│   │           ├── erp_cust_az12.sql # Model klientów z systemu ERP
+│   │           ├── erp_loc_a101.sql # Model lokalizacji
+│   │           └── erp_px_cat_g1v2.sql # Model kategorii produktów
+│   ├── snapshots/              # Definicje snapshotów (SCD Type 2)
+│   │   └── crm_prd_info.sql    # Model informacje o produktach (szkoleniowe SCD2)
 │   ├── sources/                # Deklaracje źródeł zewnętrznych (YAML)
-│   │   ├── bronze/             # Deklaracje źródeł dla modeli transformacji
-│   ├── tests/                  # Testy singular
-│   ├── dbt_project.yml         # Konfiguracja projektu dbt
-│   └── packages.yml            # Zależności dbt (dbt-utils, dbt-expectations)
-├── docker/                     # Pliki Dockerfile i konfiguracje obrazów (np. niestandardowy Airflow)
-├── docs/                       # Dodatkowa dokumentacja projektowa i notatki architektoniczne
-├── scripts/                    # Skrypty pomocnicze (np. bash/python do inicjalizacji bazy)
-├── tools/                      # Konfiguracje zewnętrznych narzędzi wspierających
-├── .env.example                # Szablon zmiennych środowiskowych (do skopiowania jako .env)
-├── docker-compose.yml          # Konfiguracja całego środowiska lokalnego
+│   │   ├── bronze/             # Źródła warstwy Bronze
+│   ├── seeds/                  # Pliki seed 
+│   ├── tests/                  # Testy danych
+│   │   ├── biz_tests/          # Biznesowe testy singularne
+│   │   ├── biz_tests/          # Testy generyczne
+│   │   └── singular/           # Testy singularne
+│   ├── dbt_project.yml         # Konfiguracja projektu dbt (warstwy, schematy)
+│   ├── my_notes_commands.md    # Notatki i polecenia pomocnicze
+│   ├── packages.yml            # Zależności dbt (dbt-utils itp.)
+│   └── profiles.yml            # Profile połączeń z bazą danych
+├── dbt_project_fusion/         # Alternatywny testowy projekt dbt dla wersji fusion
+├── docker/                     # Pliki Dockerfile i konfiguracje obrazów
+│   ├── dbt-fusion/             # Konfiguracja dla wersji fusion
+│   └── python/                 # Konfiguracja środowiska Python
+├── docs/                       # Dokumentacja projektowa - (nieużywane w projekcie)
+├── scripts/                    # Skrypty pomocnicze (inicjalizacja bazy)
+│   ├── bronze/                 # Skrypty dla warstwy Bronze
+│   ├── gold/                   # Skrypty dla warstwy Gold
+│   ├── silver/                 # Skrypty dla warstwy Silver
+│   ├── create_database.sql     # Skrypt tworzenia bazy danych
+│   ├── create_schemas.sql      # Skrypt tworzenia schematów
+│   └── create_user_add_privileges.sql # Uprawnienia użytkowników
+├── tests/                      # Testy jednostkowe i integracyjne (nieużywane w projekcie)
+├── tools/                      # Narzędzia wspierające (nieużywane w projekcie)
+├── .env.example                # Szablon zmiennych środowiskowych
+├── datahub_instrukcja.md       # Instrukcje dotyczące DataHub
+├── dbt_fusion_eksperyment.md   # Notatki eksperymentalne dla wersji fusion
+├── docker-compose.datahub.yml  # Konfiguracja DataHub 
+├── docker-compose.fusion.yml   # Konfiguracja środowiska fusion
+├── docker-compose.yml          # Główny plik kompozycji Docker
 └── README.md                   # Ten plik
 ```
 
