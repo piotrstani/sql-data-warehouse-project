@@ -34,7 +34,7 @@ W ramach tego projektu eksperymentujemy z integracją narzędzi sztucznej inteli
 |---------------------|-----------------------------------------------------------------------------------------|---------------------------|----------------|
 | **ChatGPT (GPT-6)** | Główny model wykorzystywany do generowania pomysłów i budowy projektu | (web-based) | GPT-6          |
 | **Gemini**          | Główny model wykorzystywany do generowania pomysłów i budowy projektu  | (web-based) | Aktualna       |
-| **Ministral-3:14b** | Lokalny model uruchamiany za pomocą Ollama. Znintegrowany do PyCharm poprzez AI Assistance. Ogólny testy użytecznosci lokalnego modelu | (lokalnie)| Ollama 0.32.1         |
+| **Ministral-3:14b** | Lokalny model uruchamiany za pomocą Ollama. Znintegrowany do PyCharm poprzez AI Assistance. Ogólny testy użytecznosci lokalnego modelu contex:49152 | (lokalnie)| Ollama 0.32.1         |
 
 ---
 ## 🎯 Główne założenia i badane koncepcje
@@ -77,6 +77,7 @@ sql-data-warehouse-project/
 │   └── load_gold_dag.py        # DAG dla modeli Gold
 ├── datahub/                    # Katalog z plikami DataHub
 ├── datasets/                   # Statyczne pliki z danymi źródłowymi (CSV, JSON itp.)
+-------------------------------------------dbt core---------------------------------------------------------------------
 ├── dbt_project/                # Główny katalog projektu Data Build Tool
 │   ├── analyses/               # Analizy SQL i raporty
 │   ├── assets/                 # Pliki asetów pomocniczych (makra, funkcje)
@@ -105,7 +106,10 @@ sql-data-warehouse-project/
 │   ├── my_notes_commands.md    # Notatki i polecenia pomocnicze
 │   ├── packages.yml            # Zależności dbt (dbt-utils itp.)
 │   └── profiles.yml            # Profile połączeń z bazą danych
+-------------------------------------------dbt core---------------------------------------------------------------------
+-------------------------------------------dbt fusion-------------------------------------------------------------------
 ├── dbt_project_fusion/         # Alternatywny testowy projekt dbt dla wersji fusion
+-------------------------------------------dbt fusion-------------------------------------------------------------------
 ├── docker/                     # Pliki Dockerfile i konfiguracje obrazów
 │   ├── dbt-fusion/             # Konfiguracja dla wersji fusion
 │   └── python/                 # Konfiguracja środowiska Python
