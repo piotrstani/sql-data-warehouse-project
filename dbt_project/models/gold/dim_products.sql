@@ -9,7 +9,7 @@
 
 WITH crm_prd_info AS (
     SELECT  *
-    FROM {{ ref('v_crm_prd_info') }}
+    FROM {{ ref('v_scd2_crm_prd_info') }}
 )
  ,erp_px_cat_g1v2 AS (
     SELECT  *

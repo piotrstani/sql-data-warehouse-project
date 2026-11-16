@@ -13,7 +13,7 @@ WITH crm_prd_info AS (
     SELECT
     dbt_scd_id,
     dbt_valid_from::date AS start_dt,
-    dbt_valid_to::date AS end_dt,
+    (COALESCE(dbt_valid_to, '9999-12-31'::timestamp))::date AS end_dt,
     dbt_updated_at,
     prd_id,
     cat_id,

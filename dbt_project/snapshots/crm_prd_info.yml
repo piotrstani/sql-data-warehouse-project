@@ -3,7 +3,6 @@ version: 2
 snapshots:
   - name: crm_prd_info
     description: "Historical CRM product information maintained using SCD Type 2, including product attributes, categories, costs, and validity periods."
-
     columns:
       - name: prd_id
         data_type: integer
